@@ -1,0 +1,1347 @@
+
+
+
+//Remember to backup your [fltsim.x]/Repaint section before patching
+[GENERAL]
+atc_type				= AIRBUS
+atc_model				= A333RR
+editable				= 0
+performance				= "Cruise Speed\n0.82 Mach 871 km\/h\n\nEngine options\nRR Trent 700\n\nMaximum Range\n6,350 nm 11,759 km\n\nService Ceiling\n41,000 ft 12,497 m\n\nFuel Capacity\n240,712 lb 109,158 kg\n\nEmpty Weight\n285,300 lb 129,400 kg\n\nMaximum Gross Weight\n242,000 lb 533,000 kg\n\nLength\n209 ft 63.67 m\n\nWingspan\n198 ft, 10 in 60.03 m\n\nHeight\n55 ft, 16.76 m\n\nSeating (maximum configuration)\n440"
+Category=airplane
+
+[REFERENCE SPEEDS]
+flaps_up_stall_speed			= 142.0
+full_flaps_stall_speed			= 113.0
+cruise_speed				= 477.0
+max_mach				= 0.90      
+max_indicated_speed			= 360
+
+[VIEWS]  
+eyepoint    				= 94.30, -2.00 , 3.42
+
+[WEIGHT_AND_BALANCE]
+max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
+empty_weight 				= 280700 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
+reference_datum_position 		= 0, 0, 0.0
+empty_weight_CG_position		= 5.65, 0, 0 // F.W. 2019.08.19: That would mean for CG of 21.15 (330-343 in intl long config with OEW of 127326 kg): Datum at 25% REF = -0.2115*(25) + 10.9 = 5.6125
+max_number_of_stations 			= 4
+station_load.0 				= 5280,  67.34,  0.0,  0.0 ,First Class
+station_load.1 				= 44220,  -13.18,  0.0,  0.0,Economy Class
+station_load.2 				= 41599.02,  24.03,  0.0,  0.0,Forward Cargo
+station_load.3				= 41246.28,  -20.23,  0.0,  0.0,Aft Cargo
+empty_weight_pitch_MOI  =15319252.470640
+empty_weight_roll_MOI   =5953258.499166
+empty_weight_yaw_MOI    =15275249.629763
+empty_weight_coupled_MOI= 0.0
+
+[FUEL]
+fuel_type 				= 2
+number_of_tank_selectors 		= 2                  
+electric_pump				= 1
+fuel_dump_rate 				= 0.0167    // Percent of fuel that can be dumped per second, 0.0167 for an A321 according to SDK description
+LeftMain				= 10.66, -24.15, -8.00, 11095, 0		// LEFT INNER tank, 11095 US gallons (32970kg, 42000lit, 0.785kg/l according to Airbus, 0.8028kg/l according to sim) usable fuel, Y-ARM 7.365m  (24.15ft) when compl. filled, temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightMain				= 10.66,  24.15, -8.00, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+LeftAux					= -12.575, -66.04, -8.00, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightAux				= -12.575,  66.04, -8.00, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+center1					= 0.0,   0.00, -8.00, 10980,  0		// CENTER TANK, not implemented in A330-300, but spare for possible A330-200 or A330-300E
+center2					= -90.55,   0.00, 8.00, 1646,  0	// TRIM TANK! 1646 US gallons (4891kg) usable fuel, position relative to datum ref point only estimatad so far 100ft backwards from dat ref point
+
+[AIRPLANE_GEOMETRY]
+wing_area				= 3893.0
+wing_span				= 197.83
+wing_root_chord				= 35.1
+wing_dihedral				= 5.5
+wing_incidence				= 1.0
+wing_twist				= -0.5
+oswald_efficiency_factor		= 0.65
+wing_winglets_flag			= 1
+wing_sweep				= 30.0
+wing_pos_apex_lon			= 32.0
+wing_pos_apex_vert			= -3.0
+htail_area				= 716.9
+htail_span				= 63.16
+htail_pos_lon				= -80.0
+htail_pos_vert				= 5.87
+htail_incidence				= 0.0
+htail_sweep				= 34.0
+vtail_area				= 583.0
+vtail_span				= 30.84
+vtail_sweep				= 39.0
+vtail_pos_lon				= -70.0
+vtail_pos_vert				= 9.0
+elevator_area				= 85.9
+aileron_area				= 48.0
+rudder_area				= 121.0
+elevator_up_limit			= 30.0
+elevator_down_limit			= 15.0
+aileron_up_limit			= 25.0
+aileron_down_limit			= 25.0
+rudder_limit				= 31.6
+elevator_trim_limit			= 15.0
+spoiler_limit				= 90.0 //35
+spoiler_extension_time			= 0.0 //2.0
+spoilerons_available			= 1
+aileron_to_spoileron_gain		= 3
+min_ailerons_for_spoilerons		= 10
+min_flaps_for_spoilerons		= 0
+auto_spoiler_available			= 0
+positive_g_limit_flaps_up		= 4.0
+positive_g_limit_flaps_down		= 3.0
+negative_g_limit_flaps_up		= -3.0
+negative_g_limit_flaps_down		= -2.0
+load_safety_factor			= 1.6
+//fly_by_wire				= 1
+fly_by_wire					= 0
+
+//tricking ecam flaps detent
+[FLAPS.0]
+type					= 1
+system_type				= 1
+span-outboard				= 0.8 
+extending-time				= 20  //F.W. confirmed according to video 
+damaging-speed = 240 
+blowout-speed = 260 
+lift_scalar				= 0	// Set to 40 Degrees
+drag_scalar				= 0
+pitch_scalar				=0
+flaps-position.0			= 0.0
+flaps-position.2			= 8.0   // 9.0 - correct deflection; 8.0 - correct lift
+flaps-position.3			= 20.0	// 24.0 - correct deflection; 20.0 - correct lift
+flaps-position.4			= 30.0	// 28.0 - correct deflection; 30.0 - correct lift
+flaps-position.5			= 40.0
+
+[FLAPS.1]
+type					= 2
+system_type				= 1
+span-outboard				= 0.8
+extending-time				= 10  
+damaging-speed = 260
+blowout-speed = 270
+lift_scalar				= 0.0
+drag_scalar				= 0  //ATTENTION F.W. 2019.07.10 sheer estimation so far as 1:1 value from A321, ATTENTION F.W. 2019.08.13 decreased as reported a bit too much drag in Flap 1 condition
+pitch_scalar				= 0.0
+flaps-position.0			= 0.0
+flaps-position.1			= 18.0 
+flaps-position.3			= 22.0
+flaps-position.5			= 27.0
+
+//real angle flaps 
+[FLAPS.2]
+type = 1 
+system_type = 1 
+span-outboard = 0.8 
+extending-time = 20 
+damaging-speed = 240 
+blowout-speed = 260 
+lift_scalar = 0.75
+drag_scalar = 0.55
+pitch_scalar = 1 
+flaps-position.0 =  0	      ; CONF 0
+flaps-position.2 = 8.00, 215  ; CONF 1+F
+flaps-position.3 = 14.00, 196 ; CONF 2
+flaps-position.4 = 22.00, 186 ; CONF 3
+flaps-position.5 = 32.00, 180 ; CONF FULL
+
+[FLAPS.3]
+type = 2 
+system_type = 1
+span-outboard = 0.8
+extending-time = 10
+damaging-speed = 260
+blowout-speed = 270
+lift_scalar = 0.01
+drag_scalar = 0.55
+pitch_scalar = 1 
+flaps-position.0 =  0.00      ; CONF 0
+flaps-position.1 = 16.00, 240 ; CONF 1
+flaps-position.3 = 20.00, 196 ; CONF 2
+flaps-position.4 = 23.00, 190 ; CONF 3
+[flight_tuning]
+elevator_effectiveness			= 0.7
+aileron_effectiveness			= 0.33						
+rudder_effectiveness			= .7
+spoiler_effectiveness			= 0.825
+[GENERALENGINEDATA]
+engine_type 				= 1
+fuel_flow_scalar 			= .6
+min_throttle_limit 			= -0.054
+max_contrail_temperature 		= -30
+Engine.0 				= 13.94, -31.06, -9.41
+Engine.1 				= 13.94,  31.06, -9.41
+starter_type				= 1// added for test 2017_04_12 F.W.
+
+[TURBINEENGINEDATA]
+fuel_flow_gain 				= 0.0020
+rated_N2_rpm 				= 10611
+afterburner_available 			= 0
+reverser_available 			= 1
+static_thrust 				= 71100
+inlet_area 				= 51.576526
+thrustspecificfuelconsumption		= 0.343
+
+[JET_ENGINE]	
+thrust_scalar 				= 1.1
+
+[AIRSPEED_INDICATORS]
+airspeed_indicator.0			= 1
+airspeed_indicator.1			= 1
+
+[ALTIMETERS]
+altimeter.0				= 1
+altimeter.1				= 1
+altimeter.2				= 1
+
+[ATTITUDE_INDICATORS]
+attitude_indicator.0 			= 1
+attitude_indicator.1 			= 1
+
+[AUTOPILOT]
+autopilot_available			= 0
+flight_director_available		= 1
+default_vertical_speed			= 1800
+autothrottle_available			= 0
+autothrottle_arming_required		= 0
+autothrottle_max_rpm 			= 105.00
+autothrottle_takeoff_ga			= 1
+pitch_takeoff_ga 			= 8
+max_pitch				= 10.0
+max_pitch_acceleration			= 0.85
+max_pitch_velocity_lo_alt		= 2.0
+max_pitch_velocity_hi_alt		= 1.5
+max_pitch_velocity_lo_alt_breakpoint	= 20000.0
+max_pitch_velocity_hi_alt_breakpoint	= 28000.0
+max_bank				= 25.0
+max_bank_acceleration			= 1.8
+max_bank_velocity			= 3.00
+max_throttle_rate			= 0.30
+nav_proportional_control		= 25.00
+nav_integrator_control			= 0.10
+nav_derivative_control			= 0.00
+nav_integrator_boundary			= 2.50
+nav_derivative_boundary			= 0.00
+gs_proportional_control			= 25.0
+gs_integrator_control			= 0.53
+gs_derivative_control			= 0.00
+gs_integrator_boundary			= 0.70
+gs_derivative_boundary			= 0.00
+yaw_damper_gain 			= 1.0
+yaw_slip_control_gain			= 0.0
+yaw_control_uses_trim			= 0.0
+
+[BRAKES]
+parking_brake 				= 1
+hydraulic_system_scalar 		= 1
+toe_brakes_scale 			= 1 
+auto_brakes				= 0
+differential_braking_scale		= 1
+parking_brake_linked_to_toe_brakes = 0
+
+[CONTACT_POINTS]  
+
+//gear------------1-------2------3------4--5-----6---7-----8------9-----10-----11----12-13-----14-----15
+point.0=1,   80.57,   0.00, -16.5,  1600, 0, 1.64, 72, 1.00,  1.55,  0.92,  19.0, 19.0, 0, 220.0, 250.0
+point.1=1,   -3.30, -18.55, -17.7,  1600, 1, 2.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
+point.2=1,   -3.30,  18.55, -17.7,  1600, 2, 2.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
+point.3=1,   -3.30, -18.55, -20.2,  1600, 1, 4.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
+point.4=1,   -3.30,  18.55, -20.2,  1600, 2, 4.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
+
+point.5=2,   27.00, -31.06, -14.200,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 5,   0.0,   0.0
+point.6=2,   27.00,  31.06, -14.200,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 6,   0.0,   0.0
+point.7=2,  -30.00, -95.00,   3.600,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 5,   0.0,   0.0
+point.8=2,  -30.00,  95.00,   3.600,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 6,   0.0,   0.0
+point.9=2,  -40.00,   0.00,  -9.000,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 9,   0.0,   0.0
+point.10=2,   78.00,   0.00,  -9.000,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 9,   0.0,   0.0
+point.11=2,  102.30,   0.00,  -1.000,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 4,   0.0,   0.0
+point.12=2, -103.80,   0.00,   5.500,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 9,   0.0,   0.0
+
+max_number_of_points			= 13 //11
+static_cg_height			= 17.4 //17 original , 20.5 after gear correction
+static_pitch		 		= -0.6 //-0.8 original
+gear_system_type			= 1
+
+[DEICE_SYSTEM]
+structural_deice_type			= 1
+
+[DIRECTION_INDICATORS]
+direction_indicator.0			= 3,0
+direction_indicator.1			= 3,0
+
+[EFFECTS]
+wake					= fx_wake
+water					= fx_spray
+dirt					= fx_tchdrt
+concrete				= fx_sparks
+//42 - Disabled by PFX --  //touchdown				= fx_tchdwn, 1
+//42 - Disabled by PFX --  touchdown				= fx_dummy
+//42 - Disabled by PFX --  contrail				= fx_dummy
+//42 - Disabled by PFX --  vaportrail_l				= fx_dummy
+//42 - Disabled by PFX --  vaportrail_r				= fx_dummy
+
+touchdown = fsfx_PFX_5451754250764F397544796D3272546754336958544C5A414562734555613368  //42 - Enabled by PFX
+contrail = fsfx_PFX_3263496B6372304972726C58476F30724A6E6642493438546C5369687130724B  //42 - Enabled by PFX
+vaportrail_l = fsfx_PFX_34674C5337767A6562726E38486D6958794975646E594E357576646268717151  //42 - Enabled by PFX
+vaportrail_r = fsfx_PFX_34674C5337767A6562726E38486D6958794975646E594E357576646268717151  //42 - Enabled by PFX
+SnowEngineWash = fsfx_PFX_3263496B6372304972726D3730684D4C74476972496C62414973497447333165  //42 - Enabled by PFX
+WetEngineWash = fsfx_PFX_3263496B6372304972726B7A6C552B3438463674612F5544396C754D5A516C55  //42 - Enabled by PFX
+WheelSnowSpray = fsfx_PFX_77755038474E6775336E5979767345506C38564553346F68304B333832395476  //42 - Enabled by PFX
+WheelWetSpray = fsfx_PFX_77755038474E6775336E61444251543245683042306545366578725A326A6E6A  //42 - Enabled by PFX
+SkidPavement = fsfx_PFX_77755038474E6775336E5A6C3231714C4F656D4E4E48576F4544356C6F36676F  //42 - Enabled by PFX
+[SMOKESYSTEM]
+smoke.0					= 13.94, -31.06, -9.41, fx_contrail_l   
+smoke.1					= 13.94,  31.06, -9.41, fx_contrail_l
+
+[ELECTRICAL]
+max_battery_voltage			= 28.5
+generator_alternator_voltage		= 30.0
+max_generator_alternator_amps		= 400.0
+electric_always_available 		= 1
+autopilot 				= 0, 0, 1
+avionics_bus 				= 0, 0, 1
+avionics 				= 0, 0, 1
+pitot_heat 				= 0, 0, 1
+additional_system 			= 0, 0, 1
+marker_beacon 				= 0, 0, 1
+gear_warning 				= 0, 0, 1
+fuel_pump 				= 0, 0, 1
+starter1 				= 0, 0, 1
+starter2 				= 0, 0, 1
+starter3 				= 0, 0, 1
+starter4 				= 0, 0, 1
+light_nav 				= 0, 0, 1
+light_beacon 				= 0, 0, 1
+light_landing 				= 0, 0, 1
+light_taxi 				= 0, 0, 1
+light_strobe 				= 0, 0, 1
+light_panel 				= 0, 0, 1
+auto_brakes 				= 0, 0, 1
+hydraulic_pump 				= 0, 0, 1
+fuel_transfer_pump 			= 0, 0, 1
+light_recognition 			= 0, 0, 1
+light_wing 				= 0, 0, 1
+light_logo 				= 0, 0, 1
+light_cabin				= 0, 0, 1
+
+[EXITS]
+number_of_exits				= 9
+exit.0					= 0.4, 83.2, -8.2, -0.6, 0 	//PAX LEFT FWD1     25.35m, -2.5m, -0.18m
+exit.1					= 0.4, 83.2, 8.2, -0.6, 0	//PAX RIGHT FWD1    25.35m, 2.5m, -0.18m
+exit.2					= 0.4, 70.9, 5.2, -6.8, 1 	//CARGO FWD    	    21.6m, 1.575m, -2.125m
+exit.3					= 0.4, -43.2, 5.2, -6.9, 1 	//CARGO AFT    	   -13.18m, 1.595m, -2.093m
+exit.4					= 0.4, 44.0, -9.2, -0.6, 0 	//PAX LEFT FWD2     13.42m, -2.8m, -0.18m
+exit.5					= 0.4, -64.8, -7.8, 0.0, 0 	//PAX LEFT AFT     -19.76m, -2.375m, 0.00m
+exit.6					= 0.4, 44.0, 9.2, -0.6, 0 	//PAX RIGHT FWD2    13.42m, 2.8m, -0.18m
+exit.7					= 0.4, -64.8, 7.8, 0.0, 0 	//PAX RIGHT AFT    -19.76m, 2.375m, 0.00m
+exit.8					= 0.4, -53.0, 4.8, -6.6, 1 	//CARGO BULK       -16.1625m, 1.467m, -2.024m
+
+[FORCEFEEDBACK]	
+gear_bump_nose_magnitude		= 3000
+gear_bump_nose_direction		= 18000
+gear_bump_nose_duration			= 250000
+gear_bump_left_magnitude		= 2700 
+gear_bump_left_direction		= 35500
+gear_bump_left_duration			= 250000
+gear_bump_right_magnitude		= 2700
+gear_bump_right_direction		= 00500
+gear_bump_right_duration		= 250000
+ground_bumps_magnitude1			= 1300
+ground_bumps_angle1			= 08900
+ground_bumps_intercept1			= 3.0
+ground_bumps_slope1			= 0.20
+ground_bumps_magnitude2			= 200
+ground_bumps_angle2			= 09100
+ground_bumps_intercept2			= 1.075
+ground_bumps_slope2			= 0.035
+crash_magnitude1			= 10000
+crash_direction1			= 01000
+crash_magnitude2			= 10000
+crash_direction2			= 9000
+crash_period2				= 75000
+crash_duration2				= 2500000
+
+[GEAR_WARNING_SYSTEM]
+gear_warning_available 			= 0 
+pct_throttle_limit 			= 0.1
+flap_limit_idle    			= 25.5
+flap_limit_power   			= 30.5
+
+[GPWS]	
+max_warning_height 			= -1
+
+[HYDRAULIC_SYSTEM]	
+normal_pressure 			= 3000.0   
+electric_pumps  			= 1        
+engine_map      			= 0,0,0,0 //1,1,0,0 
+
+[KEYBOARD_RESPONSE] 
+elevator 				= 150, 250   
+aileron  				= 150, 250
+rudder   				= 150, 250
+
+[LIGHTS] 
+light.0                 	   	= 10, 35.71,   0.00, -0.50, fx_airbusx_vclight ,
+
+[PITOT_STATIC]	
+vertical_speed_time_constant 		=1
+pitot_heat 				= 1
+
+[PNEUMATIC_SYSTEM]
+max_pressure				= 18
+bleed_air_scalar			= 1
+
+[RADIOS]
+Audio.1      				= 1
+Com.1        				= 1, 1
+Com.2        				= 1, 1
+Nav.1        				= 1, 0, 1
+Nav.2         				= 1, 0,1
+Adf.1         				= 1, 0
+Adf.2         				= 1, 0
+Transponder.1 				= 1
+Marker.1      				= 1
+
+[STALL_WARNING]	
+type					= 2
+stick_shaker				= 1
+
+[TURN_INDICATORS]
+turn_indicator.0			= 0,0
+
+[VACUUM_SYSTEM]	
+max_pressure				= 5.15
+vacuum_type				= 2
+
+// ------------ Internal Camera Defintitions -------------------
+
+[CameraDefinition.000]
+Title = "GLARESHIELD MAIN PANEL"
+Guid = {871125e3-c7de-428c-a345-f146709e518f}
+Origin = Virtual Cockpit
+InitialZoom = 0.40
+InitialXyz = 0.275, -0.03, 0.069
+InitialPbh = 14.5, -0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = Yes
+PitchPanRate = 25
+HeadingPanRate = 25
+// (Disabled by ChasePlane)HotKeySelect = 1
+
+[CameraDefinition.001]
+Title = "MCDU I 2D"
+Guid = {3207596e-0916-48ab-ade8-b040bde36ae2}
+Origin = Virtual Cockpit
+InitialZoom = 0.80
+InitialXyz = 0.36, -0.05,0.408
+InitialPbh = 75.0, 0, 0
+Category = Custom
+SnapPbhAdjust = None
+SnapPbhReturn = No
+PanPbhAdjust = None
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.002]
+Title = "OXYGEN MASK"
+Guid = {94164957-786b-4a8e-a961-fd97121ab9f0}
+Origin = Virtual Cockpit
+InitialZoom = 0.70
+InitialXyz = 0.07, 0.00, 0.02
+InitialPbh = 39, 0, -81
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+AllowPbhAdjust = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.003]
+Title = "LOWER ECAM - TRIM WHEEL"
+Guid = {3c038f3f-97c4-42a7-9bf9-f12ef981e888}
+Origin = Virtual Cockpit
+InitialZoom = 0.54
+InitialXyz = 0.61, -0.30, 0.30
+InitialPbh = 48, 0, 5
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = YES
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+HotKeySelect = 2
+
+[CameraDefinition.004]
+Title = "PEDESTAL - PARK BRAKE - RUDDER TRIM"
+Guid = {13e68daf-256b-4fd9-80ab-5b78e049939d}
+Origin = Virtual Cockpit
+InitialZoom = 0.93
+InitialXyz = 0.51, -0.22, -0.23
+InitialPbh = 66, 11, 19
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+HotKeySelect = 3
+
+[CameraDefinition.005]
+Title = "OVERHEAD"
+Guid = {bc6bf5a9-8f66-4833-aa52-ddf2bf2bd9ce}
+Origin = Virtual Cockpit
+InitialZoom = 0.34
+InitialXyz = 0.61, -0.12, -0.03
+InitialPbh = -72, -2, 2
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+AllowPbhAdjust = No
+PitchPanRate = 25
+HeadingPanRate = 25
+HotKeySelect = 4
+
+[CameraDefinition.006]
+Title = "LOWER OVERHEAD"
+Guid = {ec04fbbe-51a3-40f4-bdf5-0b5e475c313e}
+Description = Lower Overhead
+Origin = Virtual Cockpit
+InitialZoom = 0.82
+InitialXyz = 0.40, 0.04, 0.09
+InitialPbh = -25, 2, 37
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = Yes
+AllowPbhAdjust = No
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+
+[CameraDefinition.007]
+Title = "CP MAIN PANEL"
+Guid = {95b3a0ae-f0a8-4934-8e56-890c628300c7}
+Description = This is the description of the virtual cockpit view.
+Origin = Virtual Cockpit
+InitialZoom = 0.70
+InitialXyz = 0.07, 0.00, 0.02
+InitialPbh = 13, 0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 20.00
+HeadingPanRate = 10.00
+CycleHidden = No
+// (Disabled by ChasePlane)HotKeySelect = 6
+
+[CameraDefinition.008]
+Title = "FO MAIN PANEL"
+Guid = {d943b42c-cf72-467f-9278-804847d6267f}
+Origin = Virtual Cockpit
+InitialZoom = 0.70
+InitialXyz = 1.1635, 0, 0.015
+InitialPbh = 13.1, -0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 20.00
+HeadingPanRate = 10.00
+CycleHidden = No
+HotKeySelect = 7
+
+[CameraDefinition.009	]
+Title = "FCU"
+Guid = {208e7915-a74a-4664-b662-68a9baae672a}
+Origin = Virtual Cockpit
+InitialZoom = 0.80
+InitialXyz = 0.03, 0.00, 0.00
+InitialPbh = 14, 0, 16
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = Yes
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+// (Disabled by ChasePlane)HotKeySelect = 8
+
+[CameraDefinition.010]
+Title = "MCDU I"
+Guid = {ac240bda-72c0-4269-9ec1-f879a6a9a8ca}
+Origin = Virtual Cockpit
+InitialZoom = 0.90
+InitialXyz = 0.389, -0.395, 0.298
+InitialPbh = 55.0, 0, 16
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+// (Disabled by ChasePlane)HotKeySelect = 5
+
+[CameraDefinition.011]
+Title = "EFB"
+Guid = {90da4b73-2570-4361-b544-2705d0f5a986}
+Origin = Virtual Cockpit
+InitialZoom = 2.00
+InitialXyz = 0.53, 0.08, 0.02
+InitialPbh = 27, -4, -82
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+HotKeySelect = 9
+
+[CameraDefinition.012]
+Title = "RADIO - WXR - ENG MASTER - SPOILERS - FLAPS"
+Guid = {e643b4af-fb11-4701-810d-5eac5059c82f}
+Description = VC Panel
+Origin = Virtual Cockpit
+InitialZoom = 1.35
+InitialXyz = 0.42, -0.17, -0.14
+InitialPbh = 60, 0, 23
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 0.50
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+
+[CameraDefinition.013]
+Title = "SECOND JUMP SEAT"
+Guid = {5dac4ac0-3cba-4018-a82e-382918e9445b}
+Description = VC Panel
+Origin = Virtual Cockpit
+InitialZoom = 0.41
+InitialXyz = -0.05, 0.03, -0.70
+InitialPbh = 8, 0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = Yes
+PanPbhAdjust = Swivel
+PanPbhReturn = Yes
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 20.00
+HeadingPanRate = 60.00
+CycleHidden = No
+
+[CameraDefinition.014]
+Title = "TCAS - ATC - THRUST LEVERS"
+Guid = {b1f84cb7-98be-4601-9e29-6ab073e4849f}
+Description = TCAS ATC PANEL
+Origin = Virtual Cockpit
+InitialZoom = 1.24
+InitialXyz = 0.59, -0.17, -0.11
+InitialPbh = 56, -4, 3
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 0.50
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+CycleHidden = No
+
+[CameraDefinition.015]
+Title = "FLIGHTDECK"
+Guid = {853ee96f-03ff-4231-843b-dd5ff7605628}
+Origin = Virtual Cockpit
+InitialZoom = 0.40
+InitialXyz = 0.606, 0.19, -0.852
+InitialPbh = 20, 0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 20.00
+HeadingPanRate = 60.00
+
+[CameraDefinition.016]
+Title = "JUMP SEAT"
+Guid = {1fdc76df-9403-4b56-9580-13f42dcfa8c5}
+Origin = Virtual Cockpit
+InitialZoom = 0.30
+InitialXyz = 0.62, -0.01, -0.61
+InitialPbh = 16, 0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = Yes
+PanPbhAdjust = Swivel
+PanPbhReturn = Yes
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 20.00
+HeadingPanRate = 60.00
+
+[CameraDefinition.017]
+Title = "LEFT SIDE WINDOW"
+Guid = {3cab72ce-c7d1-4d76-b4b7-fe8f55b703a5}
+Description = Left Side Window
+Origin = Virtual Cockpit
+InitialZoom = 0.40
+InitialXyz = 0.01, -0.02, 0.050
+InitialPbh = 1.0, 0, 275
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.018]
+Title = "RIGHT SIDE WINDOW"
+Guid = {7afa3c27-f88a-468b-a736-c89c38678876}
+Description = Right Side Window
+Origin = Virtual Cockpit
+InitialZoom = 0.40
+InitialXyz = 1.18, 0.04, 0.004
+InitialPbh = 1.0, 0, 85
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 2.00
+ZoomPanScalar = 1.00
+ShowLensFlare = Yes
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.019]
+Title = "CP RADIO PANEL 2D"
+Guid = {0900ea75-75ab-432d-8884-921c0fd52443}
+Description = 2D Panel
+Origin = Virtual Cockpit
+InitialZoom = 0.80
+InitialXyz = 0.36, 0,0.129
+InitialPbh = 75.1, 0, 0
+Category = Custom
+SnapPbhAdjust = None
+SnapPbhReturn = No
+PanPbhAdjust = None
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.020]
+Title = "LANDING VIEW"
+Guid = {396a40dd-9275-4f6e-ad0d-19e8f71d43e1}
+Description = 2D Panel
+Origin = Virtual Cockpit
+InitialZoom = 0.40
+InitialXyz = 0.01, -0.04, 0.219
+InitialPbh = 14.0, -0, 0
+Category = Custom
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = Yes
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = Yes
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = Yes
+
+[CameraDefinition.021]
+Title = "TCAS PANEL 2D"
+Guid = {b96b0500-b1a2-47d0-b028-0023a757f9de}
+Description = TCAS 2D Panel
+Origin = Virtual Cockpit
+InitialZoom = 0.80
+InitialXyz = 0.75, -0.16,0.069
+InitialPbh = 75.1, 0, 0
+Category = Custom
+SnapPbhAdjust = None
+SnapPbhReturn = No
+PanPbhAdjust = None
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = No
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.022]
+Title = "OXYGEN MASK"
+Guid = {DDF2712E-13FD-446F-B5E3-62157ABA5007}
+Origin = Virtual Cockpit
+InitialZoom = 0.70
+InitialXyz = 0.07, 0.00, 0.02
+InitialPbh = 39, 0, -81
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+AllowPbhAdjust = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+[CameraDefinition.023]
+Title = "LEFT ENGINE VIEW"
+Guid = {0feb3ab2-1d94-444b-a402-ae69fb71c365}
+Description = LEFT ENGINE VIEW
+Origin = Center
+InitialZoom = 0.45
+InitialXyz = -3.38, -0.62, 14.05
+InitialPbh = 10, 0, -130
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+PitchPanRate = 1.00
+HeadingPanRate = 1.00
+HotKeySelect = 10
+
+[CameraDefinition.024]
+Title = "WINGTIP LEFT LOW"
+Guid = {9a3b8ff5-6d55-48b7-a8d5-52ccaf00cbb8}
+Description = WINGTIP LEFT LOW
+Origin = Center
+InitialZoom = 0.40
+InitialXyz = -33.00, -4.00, -17.00
+InitialPbh = -20, 0, 64
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.025]
+Title = "WINGROOT LEFT TOP"
+Guid = {0d42b2ad-84c6-4536-8d41-91746b06276e}
+Description = WINGROOT LEFT TOP
+Origin = Center
+InitialZoom = 0.40
+InitialXyz = -3, 0.5, -6.0
+InitialPbh = 10, 0, -70
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.026]
+Title = "LOW FUSELAGE SIDE"
+Guid = {944bba11-f9e8-457f-b145-a609fbe7d791}
+Description = NOSE GEAR DETAIL
+Origin = Center
+InitialZoom = 0.70
+InitialXyz = -35.30, -4.00, 16.27
+InitialPbh = -12, 0, 106
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.027]
+Title = "LOW FUSELAGE TAIL"
+Guid = {0a7e07f6-046b-4727-a0f4-4314582b75e6}
+Description = LOW FUSELAGE TAIL
+Origin = Center
+InitialZoom = 0.50
+InitialXyz = 0.00, -4.00, -15.00
+InitialPbh = -10, 0, 0
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.028]
+Title = "LOW FUSELAGE FRONT"
+Guid = {b039b146-3ab3-4f19-9eeb-49fa3693e679}
+Description = LOW FUSELAGE FRONT
+Origin = Center
+InitialZoom = 0.50
+InitialXyz = 0.00, -4.00, 32.28
+InitialPbh = -5, 0, -180
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.029]
+Title = "RIGHT ENGINE VIEW"
+Guid = {67d22fb6-82eb-4b39-96a8-fe6fbb2125fb}
+Description = RIGHT ENGINE VIEW
+Origin = Center
+InitialZoom = 0.45
+InitialXyz = 3.38, -0.62, 14.05
+InitialPbh = 10, 0, 130
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.030]
+Title = "WINGTIP RIGHT LOW"
+Guid = {2f7a47ec-149b-4aad-b02a-618cb47869dc}
+Description = WINGTIP RIGHT LOW
+Origin = Center
+InitialZoom = 0.40
+InitialXyz = 33.00, -4.00, -17.00
+InitialPbh = -20, 0, -64
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.031]
+Title = "WINGROOT RIGHT TOP"
+Guid = {e6e9e4fa-359e-4516-975d-92a1efcdb431}
+Description = WINGROOT RIGHT TOP
+Origin = Center
+InitialZoom = 0.40
+InitialXyz = 3, 0.5, -6.0
+InitialPbh = 10, 0, 70
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.032]
+Title = "PLANE FRONT"
+Guid = {76399461-25bd-41ef-86f6-186b39d7d433}
+Description = PLANE FRONT
+Origin = Center
+InitialZoom = 1.00
+InitialXyz = 0.00, 6.06, 47.91
+InitialPbh = 11, 1, -180
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.033]
+Title = "PLANE BACK LEFT"
+Guid = {218c519d-7571-4734-9423-258515cab8d1}
+Description = PLANE BACK LEFT
+Origin = Center
+InitialZoom = 1.10
+InitialXyz = -49.57, 6.16, -52.03
+InitialPbh = 2, 0, 49
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.034]
+Title = "PLANE FRONT LEFT"
+Guid = {29d88a88-076a-4728-a87c-e277fd14136b}
+Description = PLANE FRONT LEFT
+Origin = Center
+InitialZoom = 1.10
+InitialXyz = -36.76, 6.16, 58.02
+InitialPbh = 2, 0, 148
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.035]
+Title = "TAIL CAM"
+Guid = {eff3b057-9c59-4d97-8238-aa31e9ebe2e6}
+Description = TAIL CAM VIEW
+Origin = Center
+InitialZoom = 0.50
+InitialXyz = 0.00, 7.07, -23.46
+InitialPbh = 11, 0, 0
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.036]
+Title = "LEFT MAIN GEAR CAM"
+Guid = {ab0d870a-0b1b-4b9c-ba05-83058982680d}
+Description = LEFT MAIN GEAR CAM
+Origin = Center
+InitialZoom = 0.70
+InitialXyz = -12.00, -6.00, 0.27
+InitialPbh = 0, 0, 106
+Category = Outside
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = No
+MomentumEffect = No
+ClipMode = Minimum
+
+[CameraDefinition.037]
+Title = "UPPER OVERHEAD PANEL VIEW"
+Guid = {65c48b36-eaa1-4220-a7a6-2e76b6b5ed06}
+Origin = Virtual Cockpit
+InitialZoom = 0.37
+InitialXyz = 0.55, -0.173, -0.331
+InitialPbh = -70.000, 0, 0
+Category = Cockpit
+SnapPbhAdjust = Swivel
+SnapPbhReturn = No
+PanPbhAdjust = Swivel
+PanPbhReturn = No
+Track = None
+ShowAxis = No
+AllowZoom = Yes
+ShowWeather = Yes
+XyzAdjust = Yes
+MomentumEffect = No
+ClipMode = Normal
+SmoothZoomTime = 0.00
+ZoomPanScalar = 0.00
+ShowLensFlare = No
+AllowPbhAdjust = No
+PitchPanRate = 25
+HeadingPanRate = 25
+
+
+//Paste your [fltsim.x]/repaints below this line
+
+
+
