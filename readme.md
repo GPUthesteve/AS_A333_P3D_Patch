@@ -1,4 +1,4 @@
-#Aerosoft A330 FDE Patch and sound improvements
+## Aerosoft A330 FDE Patch and sound improvements
 
 English ver.
 
@@ -16,7 +16,7 @@ installation :
 3. now replace your `"A330-343.air"` with given one, back up on your discretion, I suggest don't since old fde flies like shit.
 
 
-#Sound Enhancement
+# Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
 
 installation
@@ -24,7 +24,7 @@ installation
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
 
-แปลไทยแล้วครับ 
+## แปลไทยแล้วครับ 
 
 สิ่งที่ปรับแก้
 - อัตราการกินน้ำมัน : แม้ว่า A330 ตัวที่เขาทำมา เป็นแบบใช้น้ำมัน 2 ถัง (ปีกซ้ายขวาหลัก กับ ถังปรับสมดุล ทำไรไม่ได้นอกจากปรับ CG) แต่อัตราการกินน้ำมัน เมื่อเทียบกับ Dispatch software แล้ว พบว่า กินน้ำมันกว่าที่คำนวณไว้อย่างมาก (เกินความเป็นจริง) 
