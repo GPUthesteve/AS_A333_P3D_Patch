@@ -19,6 +19,8 @@ installation :
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
 
+Aural RA forked from A350 aurals on the net
+
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
@@ -40,6 +42,8 @@ installation
 เสียงเพิ่มเติม
 คุณภาพชีวิต นอกจาก flight model ผมยังให้ "ระบบเสียงบรรยากาศสำหรับ Aerosoft" (ก็มันเรียกแบบนี้)
 เพียงไปหาโฟลเดอร์ `Aerosoft A330 Professional Base` อยู่ข้างๆโฟลเดอร์หลักของตัวเครื่องเมื่อสักครู่ เข้าไป จะเจอ Sub-Folder ที่ชื่อว่า `sound_asc` ให้เอาของที่ให้มา ไปแทนที่ได้เลย
+
+
 
 บินให้สนุก แล้วเจอกันใน IVAO ครับ
 
