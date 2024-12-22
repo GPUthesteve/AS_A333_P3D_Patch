@@ -98,12 +98,12 @@ fly_by_wire					= 0
 type					= 1
 system_type				= 1
 span-outboard				= 0.8 
-extending-time				= 20  //F.W. confirmed according to video 
+extending-time				= 20  
 damaging-speed = 240 
 blowout-speed = 260 
-lift_scalar				= 0	// Set to 40 Degrees
+lift_scalar				= 0	
 drag_scalar				= 0
-pitch_scalar				=0
+pitch_scalar				= 0
 flaps-position.0			= 0.0
 flaps-position.2			= 8.0   // 9.0 - correct deflection; 8.0 - correct lift
 flaps-position.3			= 20.0	// 24.0 - correct deflection; 20.0 - correct lift
@@ -117,9 +117,9 @@ span-outboard				= 0.8
 extending-time				= 10  
 damaging-speed = 260
 blowout-speed = 270
-lift_scalar				= 0.0
-drag_scalar				= 0  //ATTENTION F.W. 2019.07.10 sheer estimation so far as 1:1 value from A321, ATTENTION F.W. 2019.08.13 decreased as reported a bit too much drag in Flap 1 condition
-pitch_scalar				= 0.0
+lift_scalar				= 0
+drag_scalar				= 0  
+pitch_scalar				= 0
 flaps-position.0			= 0.0
 flaps-position.1			= 18.0 
 flaps-position.3			= 22.0
@@ -156,11 +156,13 @@ flaps-position.0 =  0.00      ; CONF 0
 flaps-position.1 = 16.00, 240 ; CONF 1
 flaps-position.3 = 20.00, 196 ; CONF 2
 flaps-position.4 = 23.00, 190 ; CONF 3
+
 [flight_tuning]
 elevator_effectiveness			= 0.7
-aileron_effectiveness			= 0.33						
+aileron_effectiveness			= 0.25	//nerfed effectiveness 241222					
 rudder_effectiveness			= .7
 spoiler_effectiveness			= 0.825
+
 [GENERALENGINEDATA]
 engine_type 				= 1
 fuel_flow_scalar 			= .6
@@ -180,7 +182,7 @@ inlet_area 				= 51.576526
 thrustspecificfuelconsumption		= 0.343
 
 [JET_ENGINE]	
-thrust_scalar 				= 1.1
+thrust_scalar 				= 1.2 //Rescaled both in cfg and airfile 241222
 
 [AIRSPEED_INDICATORS]
 airspeed_indicator.0			= 1
