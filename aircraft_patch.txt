@@ -163,10 +163,10 @@ aileron_effectiveness			= 0.25	//nerfed effectiveness 241222
 rudder_effectiveness			= .7
 spoiler_effectiveness			= 0.825
 
-[GENERALENGINEDATA]
+[GENERALENGINEDATA]//RB211-772B "Trent 772B"
 engine_type 				= 1
 fuel_flow_scalar 			= .6
-min_throttle_limit 			= -0.054
+min_throttle_limit 			= -0.06 //increases reverse thrust 241222
 max_contrail_temperature 		= -30
 Engine.0 				= 13.94, -31.06, -9.41
 Engine.1 				= 13.94,  31.06, -9.41
