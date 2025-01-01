@@ -25,6 +25,9 @@ installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
+# Potato VC Textures
+2k downscaled VC textures for better vram usage.
+
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
 
