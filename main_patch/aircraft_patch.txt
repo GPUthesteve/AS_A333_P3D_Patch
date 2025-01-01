@@ -157,11 +157,10 @@ flaps-position.1 = 16.00, 240 ; CONF 1
 flaps-position.3 = 20.00, 196 ; CONF 2
 flaps-position.4 = 23.00, 190 ; CONF 3
 
-[flight_tuning]
+[flight_tuning] //250101 
+aileron_effectiveness			= 0.3							
+roll_stability              =2
 elevator_effectiveness			= 0.7
-aileron_effectiveness			= 0.25	//nerfed effectiveness 241222					
-rudder_effectiveness			= .7
-spoiler_effectiveness			= 0.825
 
 [GENERALENGINEDATA]//RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
