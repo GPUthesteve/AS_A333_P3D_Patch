@@ -382,7 +382,7 @@ rudder   				= 150, 250
 light.0                 	   	= 10, 35.71,   0.00, -0.50, fx_airbusx_vclight ,
 
 [PITOT_STATIC]	
-vertical_speed_time_constant 		=1
+vertical_speed_time_constant 		=10
 pitot_heat 				= 1
 
 [PNEUMATIC_SYSTEM]
