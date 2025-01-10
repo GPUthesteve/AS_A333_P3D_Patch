@@ -4,7 +4,7 @@ English ver.
 
 in this FDE Patch, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file
 Improvements :
-- Fuel Consumption : Two-Tank A330 could do some Long-haul but not with aerosoft's. its just too fuel guzzler so I fixed it, 1% off from  pfpx/simbrief calculation.
+- Fuel Consumption : Two-Tank A330 could do some Long-haul but not with aerosoft's. its just too fuel guzzler so I fixed it, now 1% off from  pfpx/simbrief calculation.
 - Flight Model : Vastly improved drag model, it doesn't rocket climb at full load, but it doesn't perform like a rock as well. (for me, the aerosoft one does perform like a rock.)
 	also, improved flaps drag model by simply using real flaps detent angle then adjust its aerodynamics, now this flies like heavier a321, i'd say
 
