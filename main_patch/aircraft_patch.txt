@@ -23,7 +23,7 @@ eyepoint    				= 94.30, -2.00 , 3.42
 max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
 empty_weight 				= 280700 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
 reference_datum_position 		= 0, 0, 0.0
-empty_weight_CG_position		= 5.65, 0, 0 // F.W. 2019.08.19: That would mean for CG of 21.15 (330-343 in intl long config with OEW of 127326 kg): Datum at 25% REF = -0.2115*(25) + 10.9 = 5.6125
+empty_weight_CG_position		= 5.65, 0, 0 
 max_number_of_stations 			= 4
 station_load.0 				= 5280,  67.34,  0.0,  0.0 ,First Class
 station_load.1 				= 44220,  -33.18,  0.0,  0.0,Economy Class
@@ -134,6 +134,7 @@ extending-time = 20
 damaging-speed = 240 
 blowout-speed = 260 
 drag_scalar = 0.6
+lift_scalar=0.9
 flaps-position.0 =  0	      ; CONF 0
 flaps-position.2 = 8.00, 215  ; CONF 1+F
 flaps-position.3 = 14.00, 196 ; CONF 2
