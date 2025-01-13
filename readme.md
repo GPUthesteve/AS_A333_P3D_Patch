@@ -1,7 +1,7 @@
 # Aerosoft A330 FDE Patch and sound improvements
 
 250111. "Stable" Release.\n
-#English ver.
+# English ver.
 
 in this FDE Patch, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file
 Improvements :
