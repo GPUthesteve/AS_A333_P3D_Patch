@@ -238,5 +238,6 @@ Z Scale Goal=0.00
 Falloff Exponent=1.7
 Inner Cone Angle=1.00
 Outer Cone Angle=20.00
-
+Intensity Day=0.00
+Intensity Night=140.00
 
