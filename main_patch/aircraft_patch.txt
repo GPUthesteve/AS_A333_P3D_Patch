@@ -24,8 +24,8 @@ eyepoint    				= 94.30, -2.00 , 3.42
 [WEIGHT_AND_BALANCE]
 max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
 empty_weight 				= 280700 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
-reference_datum_position 		= 0, 0, 0.0
-empty_weight_CG_position		= 3.65, 0, 0 // F.W. 2019.08.19: That would mean for CG of 21.15 (330-343 in intl long config with OEW of 127326 kg): Datum at 25% REF = -0.2115*(25) + 10.9 = 5.6125
+reference_datum_position 		= 0, 0, 0
+empty_weight_CG_position		= 5, 0, 0 
 max_number_of_stations 			= 4
 station_load.0 				= 5280,  65,  0.0,  0.0 ,First Class
 station_load.1 				= 44220,  -15,  0.0,  0.0,Economy Class
@@ -41,10 +41,10 @@ fuel_type 				= 2
 number_of_tank_selectors 		= 2                  
 electric_pump				= 1
 fuel_dump_rate 				= 0.0167    // Percent of fuel that can be dumped per second, 0.0167 for an A321 according to SDK description
-LeftMain				= 10.66, -24.15, -8.00, 11095, 0		// LEFT INNER tank, 11095 US gallons (32970kg, 42000lit, 0.785kg/l according to Airbus, 0.8028kg/l according to sim) usable fuel, Y-ARM 7.365m  (24.15ft) when compl. filled, temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-RightMain				= 10.66,  24.15, -8.00, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-LeftAux					= -12.575, -66.04, -8.00, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-RightAux				= -12.575,  66.04, -8.00, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+LeftMain				= 10.66, -24.15, 0, 11095, 0		// LEFT INNER tank, 11095 US gallons (32970kg, 42000lit, 0.785kg/l according to Airbus, 0.8028kg/l according to sim) usable fuel, Y-ARM 7.365m  (24.15ft) when compl. filled, temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightMain				= 10.66,  24.15, 0, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+LeftAux					= -12.575, -66.04, 0, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightAux				= -12.575,  66.04, 0, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
 center1					= 0.0,   0.00, -8.00, 10980,  0		// CENTER TANK, not implemented in A330-300, but spare for possible A330-200 or A330-300E
 center2					= -90.55,   0.00, 8.00, 1646,  0	// TRIM TANK! 1646 US gallons (4891kg) usable fuel
 
@@ -240,11 +240,11 @@ parking_brake_linked_to_toe_brakes = 0
 [CONTACT_POINTS]  
 
 //gear------------1-------2------3------4--5-----6---7-----8------9-----10-----11----12-13-----14-----15
-point.0=1,   80.57,   0.00, -16.5,  1600, 0, 1.64, 72, 1.00,  1.55,  0.92,  19.0, 19.0, 0, 220.0, 250.0
-point.1=1,   -3.30, -18.55, -17.7,  1600, 1, 2.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
-point.2=1,   -3.30,  18.55, -17.7,  1600, 2, 2.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
-point.3=1,   -3.30, -18.55, -20.2,  1600, 1, 4.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
-point.4=1,   -3.30,  18.55, -20.2,  1600, 2, 4.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
+point.0=1,   81,   0, -16.5,  1600, 0, 1.64, 72, 1.00,  1.55,  0.92,  19.0, 19.0, 0, 220.0, 250.0
+point.1=1,   -7, -18, -17.7,  1600, 1, 2.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
+point.2=1,   -7,  18, -17.7,  1600, 2, 2.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
+point.3=1,   -7, -18, -20.2,  1600, 1, 4.46,  0, 4.90,  0.75,  0.80,  19.0, 19.0, 2, 220.0, 250.0
+point.4=1,   -7,  18, -20.2,  1600, 2, 4.46,  0, 4.90,  0.75,  0.80,  18.9, 18.9, 3, 220.0, 250.0
 
 point.5=2,   27.00, -31.06, -14.200,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 5,   0.0,   0.0
 point.6=2,   27.00,  31.06, -14.200,  400, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 6,   0.0,   0.0
