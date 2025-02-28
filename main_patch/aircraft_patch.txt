@@ -157,8 +157,8 @@ flaps-position.3 = 20.00, 196 ; CONF 2
 flaps-position.4 = 23.00, 190 ; CONF 3
 
 [flight_tuning]
-aileron_effectiveness= 0.5		
-elevator_effectiveness=	0.7			
+aileron_effectiveness= 0.45	
+elevator_effectiveness=	0.6					
 roll_stability=2
 pitch_stability=2
 
