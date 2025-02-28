@@ -3,7 +3,7 @@
 250111. "Stable" Release.\n
 # English ver.
 
-in this FDE Patch, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file
+in this FDE Patch, I give you `"A330-343.air"` airfile, `"Trent772B.dat"` reworked FADEC data and `"aircraft_patch.txt"` source patch config file
 Improvements :
 - Fuel Consumption : Two-Tank A330 could do some Long-haul but not with aerosoft's. its just too fuel guzzler so I fixed it, now 1% off from  pfpx/simbrief calculation.
 - Flight Model : Vastly improved drag model, it doesn't rocket climb at full load, but it doesn't perform like a rock as well. (for me, the aerosoft one does perform like a rock.)
