@@ -3,7 +3,6 @@
 
 //Remember to backup your [fltsim.x]/Repaint section before patching
 
-
 [GENERAL]
 atc_type				= AIRBUS
 atc_model				= A333RR
@@ -24,8 +23,8 @@ eyepoint    				= 94.30, -2.00 , 3.42
 [WEIGHT_AND_BALANCE]
 max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
 empty_weight 				= 280700 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
-reference_datum_position 		= 0, 0, 0
-empty_weight_CG_position		= 5, 0, 0 
+reference_datum_position 		= 0, 0, 0.0
+empty_weight_CG_position		= 5, 0, 0 // F.W. 2019.08.19: That would mean for CG of 21.15 (330-343 in intl long config with OEW of 127326 kg): Datum at 25% REF = -0.2115*(25) + 10.9 = 5.6125
 max_number_of_stations 			= 4
 station_load.0 				= 5280,  65,  0.0,  0.0 ,First Class
 station_load.1 				= 44220,  -20,  0.0,  0.0,Economy Class
@@ -41,10 +40,10 @@ fuel_type 				= 2
 number_of_tank_selectors 		= 2                  
 electric_pump				= 1
 fuel_dump_rate 				= 0.0167    // Percent of fuel that can be dumped per second, 0.0167 for an A321 according to SDK description
-LeftMain				= 10.66, -24.15, 0, 11095, 0		// LEFT INNER tank, 11095 US gallons (32970kg, 42000lit, 0.785kg/l according to Airbus, 0.8028kg/l according to sim) usable fuel, Y-ARM 7.365m  (24.15ft) when compl. filled, temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-RightMain				= 10.66,  24.15, 0, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-LeftAux					= -12.575, -66.04, 0, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-RightAux				= -12.575,  66.04, 0, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+LeftMain				= 10.66, -24.15, -8.00, 11095, 0		// LEFT INNER tank, 11095 US gallons (32970kg, 42000lit, 0.785kg/l according to Airbus, 0.8028kg/l according to sim) usable fuel, Y-ARM 7.365m  (24.15ft) when compl. filled, temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightMain				= 10.66,  24.15, -8.00, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+LeftAux					= -12.575, -66.04, -8.00, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
+RightAux				= -12.575,  66.04, -8.00, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
 center1					= 0.0,   0.00, -8.00, 10980,  0		// CENTER TANK, not implemented in A330-300, but spare for possible A330-200 or A330-300E
 center2					= -90.55,   0.00, 8.00, 1646,  0	// TRIM TANK! 1646 US gallons (4891kg) usable fuel
 
@@ -104,7 +103,7 @@ damaging-speed = 240
 blowout-speed = 260 
 lift_scalar				= 0	
 drag_scalar				= 0
-pitch_scalar				=0
+pitch_scalar			= 0
 flaps-position.0			= 0.0
 flaps-position.2			= 8.0   
 flaps-position.3			= 20.0
@@ -118,51 +117,67 @@ span-outboard				= 0.8
 extending-time				= 10  
 damaging-speed = 260
 blowout-speed = 270
-lift_scalar				= 0.0
+lift_scalar				= 0
 drag_scalar				= 0 
-pitch_scalar				= 0.0
+pitch_scalar			= 0
 flaps-position.0			= 0.0
 flaps-position.1			= 18.0 
 flaps-position.3			= 22.0
 flaps-position.5			= 27.0
 
-//real angle flaps 
+//real flaps
 [FLAPS.2]
 type = 1 
 system_type = 1 
-span-outboard = 0.8 
+span-outboard = 0.6 
 extending-time = 20 
 damaging-speed = 240 
 blowout-speed = 260 
 drag_scalar = 0.6
-lift_scalar=0.75
-flaps-position.0 =  0	      ; CONF 0
-flaps-position.2 = 8.00, 215  ; CONF 1+F
-flaps-position.3 = 14.00, 196 ; CONF 2
-flaps-position.4 = 22.00, 186 ; CONF 3
-flaps-position.5 = 32.00, 180 ; CONF FULL
+lift_scalar=0.8
+flaps-position.0 = 0	   ; CONF 0
+flaps-position.2 = 8, 215  ; CONF 1+F
+flaps-position.3 = 14, 196 ; CONF 2
+flaps-position.4 = 22, 186 ; CONF 3
+flaps-position.5 = 32, 180 ; CONF FULL
 
 [FLAPS.3]
 type = 2 
 system_type = 1
-span-outboard = 0.8
+span-outboard = 0.95
 extending-time = 10
 damaging-speed = 260
 blowout-speed = 270
-lift_scalar = 0.01
+lift_scalar = 0.1
 drag_scalar = 0.6
-flaps-position.0 =  0.00      ; CONF 0
-flaps-position.1 = 16.00, 240 ; CONF 1
-flaps-position.3 = 20.00, 196 ; CONF 2
-flaps-position.4 = 23.00, 190 ; CONF 3
+flaps-position.0 =  0      ; CONF 0
+flaps-position.1 = 16, 240 ; CONF 1
+flaps-position.3 = 20, 196 ; CONF 2
+flaps-position.4 = 23, 190 ; CONF 3
+
+//aileron droop
+[FLAPS.4]
+type = 1 
+system_type = 1 
+span-outboard = 0.3
+extending-time = 20 
+damaging-speed = 240 
+blowout-speed = 260 
+drag_scalar = 0.4
+lift_scalar=0.6
+flaps-position.0 = 0	   ; CONF 0
+flaps-position.2 = 5, 215  ; CONF 1+F
+flaps-position.3 = 10, 196 ; CONF 2
 
 [flight_tuning]
+//this isnt a320, effectiveness should be lower
 aileron_effectiveness= 0.45	
-elevator_effectiveness=	0.6					
+elevator_effectiveness=	0.6		
+//fix for wonky fbw controls	
 roll_stability=2
 pitch_stability=2
 
-[GENERALENGINEDATA] //RB211-772B-60 "RB211 Trent 772B-60"
+[GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
 fuel_flow_scalar 			= 0.7
 min_throttle_limit 			= -0.08
@@ -181,7 +196,7 @@ inlet_area 				= 51.576526
 thrustspecificfuelconsumption		= 0.343
 
 [JET_ENGINE]	
-thrust_scalar 				= 1.2
+thrust_scalar 				= 1.3
 
 [AIRSPEED_INDICATORS]
 airspeed_indicator.0			= 1
