@@ -133,8 +133,8 @@ span-outboard = 0.6
 extending-time = 20 
 damaging-speed = 240 
 blowout-speed = 260 
-drag_scalar = 0.6
-lift_scalar=0.8
+drag_scalar = 0.5
+lift_scalar=0.75
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 8, 215  ; CONF 1+F
 flaps-position.3 = 14, 196 ; CONF 2
@@ -149,7 +149,7 @@ extending-time = 10
 damaging-speed = 260
 blowout-speed = 270
 lift_scalar = 0.1
-drag_scalar = 0.6
+drag_scalar = 0.5
 flaps-position.0 =  0      ; CONF 0
 flaps-position.1 = 16, 240 ; CONF 1
 flaps-position.3 = 20, 196 ; CONF 2
@@ -163,17 +163,13 @@ span-outboard = 0.3
 extending-time = 20 
 damaging-speed = 240 
 blowout-speed = 260 
-drag_scalar = 0.4
-lift_scalar=0.6
+drag_scalar = 0.1
+lift_scalar=0.33
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 5, 215  ; CONF 1+F
 flaps-position.3 = 10, 196 ; CONF 2
 
 [flight_tuning]
-//this isnt a320, effectiveness should be lower
-aileron_effectiveness= 0.45	
-elevator_effectiveness=	0.6		
-//fix for wonky fbw controls	
 roll_stability=2
 pitch_stability=2
 
