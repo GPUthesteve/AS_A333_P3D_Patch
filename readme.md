@@ -19,7 +19,7 @@ installation :
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
 
-Aural RA forked from A350 aurals on the net, authentic A330/A340 RA will be made later.
+Aural RA is A330/A340 RA from the net.
 
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
