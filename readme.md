@@ -1,9 +1,8 @@
 # Aerosoft A330 FDE Patch and sound improvements
 
-250111. "Stable" Release.\n
 # English ver.
 
-in this FDE Patch, I give you `"A330-343.air"` airfile, `"Trent772B.dat"` reworked FADEC data and `"aircraft_patch.txt"` source patch config file
+in this FDE Patch, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file
 Improvements :
 - Fuel Consumption : Two-Tank A330 could do some Long-haul but not with aerosoft's. its just too fuel guzzler so I fixed it, now 1% off from  pfpx/simbrief calculation.
 - Flight Model : Vastly improved drag model, it doesn't rocket climb at full load, but it doesn't perform like a rock as well. (for me, the aerosoft one does perform like a rock.)
@@ -20,7 +19,7 @@ installation :
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
 
-Aural RA forked from A350 aurals on the net, authentic A330/A340 RA will be made later.
+Aural RA is A330/A340 RA from the net.
 
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
