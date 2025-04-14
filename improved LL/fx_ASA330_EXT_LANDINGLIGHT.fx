@@ -213,7 +213,7 @@ Heading=0.00, 0.00
 [Particle.3]
 Lifetime=0.00, 0.00
 Type=28
-X Scale=1280.00, 1280.00
+X Scale=1600,1600
 Y Scale=0.00, 0.00
 Z Scale=0.00, 0.00
 X Scale Rate=0.00, 0.00
@@ -236,10 +236,9 @@ Bounce=0.00
 X Scale Goal=0.00
 Y Scale Goal=0.00
 Z Scale Goal=0.00
-Falloff Exponent=1.7
+Falloff Exponent=1.4
 Inner Cone Angle=1.00
 Outer Cone Angle=17.00
-Intensity Day=0.00
-Intensity Night=140
+
 
 
