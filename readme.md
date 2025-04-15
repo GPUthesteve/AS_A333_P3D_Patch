@@ -2,7 +2,7 @@
 
 # Aerosoft A330 FDE Patch, sound improvements and PFD Rework
 
-#FDE Improvements :
+# FDE Improvements :
 in this section, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file to be used with your `"aircraft.cfg`
 - Fuel Consumption. Simply put, it burns fuel like what it should
 - Flight Model and Flight Characteristics, it should behave like every other bus, at least. 
@@ -22,7 +22,7 @@ installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
-#PFD Rework
+# PFD Rework
 Bring back "Ground Reference line" that was missing.
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `Panel_Fallback`, go in it, and you'll see bunch of other folders, look for `displays`
@@ -39,8 +39,6 @@ This spool sound reportedly crash some simulators, especially with P3Dv5, disabl
 installation 
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
 2. replace `asc.cfg` with the one you gotfrom here
-
-
 
 
 # Bug Reports
