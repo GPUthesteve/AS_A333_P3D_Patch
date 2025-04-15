@@ -1,11 +1,9 @@
 # Read Me --English ver.--
 
-
-# Aerosoft A330 FDE Patch and sound improvements
-in this patch package, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file to be used with your `"aircraft.cfg`
-
+# Aerosoft A330 FDE Patch, sound improvements and PFD Rework
 
 #FDE Improvements :
+in this section, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file to be used with your `"aircraft.cfg`
 - Fuel Consumption. Simply put, it burns fuel like what it should
 - Flight Model and Flight Characteristics, it should behave like every other bus, at least. 
 
@@ -16,22 +14,33 @@ installation :
 	2.2 then, you take `[fltsim]` section, aka liveries, back to your `"patched"` config from your backup (to restore your liveries. of course!)
 3. now replace your `"A330-343.air"` with given one, back up on your discretion, I suggest don't since old fde flies like shit.
 
-
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
-Aural RA included A330/A340 RA from the net.
+Reworked aural by using A330/A340 RA from the net.
 
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `sound_asc`, make a backup by simply renaming it to sth else (can skip if don't want to backup, who would?)
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
+#PFD Rework
+Bring back "Ground Reference line" that was missing.
+installation
+1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `Panel_Fallback`, go in it, and you'll see bunch of other folders, look for `displays`
+2. replace 2 xml files (`pfd_cpt/fo.xml`) with ones you got from here.
 
 # Potato VC Textures
-2k downscaled VC textures for better vram usage.
-
+2k downscaled VC textures for better vram usage/moar fps.
 installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a folder named `texture_FallbackVC`,
-2. go in that folder then put these new textures innit.
+2. go in that folder then put these new textures you got from here.
+
+#Fake "Howl/Spool" sound removal
+This spool sound reportedly crash some simulators, especially with P3Dv5, disable this would fix the crash.
+installation 
+1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
+2. replace `asc.cfg` with the one you gotfrom here
+
+
 
 
 # Bug Reports
