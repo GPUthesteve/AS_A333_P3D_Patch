@@ -1321,7 +1321,7 @@
 							<Axis>50,-77</Axis>
 							<FontFace>AirbusPFD</FontFace>
 							<FontColor>0x17E400</FontColor>
-							<FontHeight>11</FontHeight>
+							<FontHeight>12</FontHeight>
 							<BackgroundColor>#7d3902</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
