@@ -169,10 +169,6 @@ flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 5, 215  ; CONF 1+F
 flaps-position.3 = 10, 196 ; CONF 2
 
-[flight_tuning]
-roll_stability=2
-pitch_stability=2
-
 [GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
 fuel_flow_scalar 			= 0.57
