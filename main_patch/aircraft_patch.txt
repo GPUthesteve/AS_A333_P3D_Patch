@@ -130,7 +130,6 @@ extending-time = 20
 damaging-speed = 240 
 blowout-speed = 260 
 drag_scalar = 0.5
-lift_scalar=0.73
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 8, 215  ; CONF 1+F
 flaps-position.3 = 14, 196 ; CONF 2
@@ -146,6 +145,7 @@ damaging-speed = 260
 blowout-speed = 270
 lift_scalar = 0.1
 drag_scalar = 0.3
+pitch_scalar = 0.1
 flaps-position.0 =  0      ; CONF 0
 flaps-position.1 = 16, 240 ; CONF 1
 flaps-position.3 = 20, 196 ; CONF 2
@@ -160,7 +160,7 @@ extending-time = 20
 damaging-speed = 240 
 blowout-speed = 260 
 drag_scalar = 0.1
-lift_scalar=0.3
+lift_scalar=0.2
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 5, 215  ; CONF 1+F
 flaps-position.3 = 10, 196 ; CONF 2
@@ -1345,4 +1345,4 @@ AllowPbhAdjust = No
 PitchPanRate = 25
 HeadingPanRate = 25
 
-//Repaints goes below//
+//repaints goes below//
