@@ -26,9 +26,9 @@ station_load.0 				= 5280,  65,  0.0,  0.0 ,First Class
 station_load.1 				= 44220,  -15,  0.0,  0.0,Economy Class
 station_load.2 				= 41599.02,  25,  0.0,  -5.0,Forward Cargo
 station_load.3				= 41246.28,  -20,  0.0,  -5.0,Aft Cargo
-empty_weight_pitch_MOI  =15319252.470640
-empty_weight_roll_MOI   =5953258.499166
-empty_weight_yaw_MOI    =15275249.629763
+empty_weight_roll_MOI    =6015960.948291
+empty_weight_pitch_MOI   =15480601.864222
+empty_weight_yaw_MOI     =15436135.565242
 empty_weight_coupled_MOI= 0.0
 
 [FUEL]
@@ -1345,4 +1345,4 @@ AllowPbhAdjust = No
 PitchPanRate = 25
 HeadingPanRate = 25
 
-//repaints goes below//
+//Repaints goes below//
