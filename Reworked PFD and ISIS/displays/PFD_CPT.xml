@@ -1878,7 +1878,14 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0 &lt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
+					<Visibility>
+						(A:SIM ON GROUND, bool) 1 == (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; 
+						if{(L:Flightmode, number) 7 == if{ <!--Filter for flight phrase 7, aka touchdown-->
+							(A:PLANE PITCH DEGREES, radians) 0 &lt; if{1} els{0} <!--Cannot have it appear before NLG touches ground-->
+							}
+						els{1}
+						}els{0}<!--disregard everything lol-->
+					</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
