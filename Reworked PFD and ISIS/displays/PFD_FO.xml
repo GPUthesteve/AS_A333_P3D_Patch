@@ -1802,7 +1802,7 @@
 										(L:AB_AP_VdevFPAIAS, number) /-/ (L:AP_VDEV_DIF, number) -100 / (L:IAS_SM, number) 220 / / 2 min -4 max + -0.5 min -2 * (A:PLANE PITCH DEGREES, radians) rddg 2 * - }
 										
 										els{
-										(A:VELOCITY WORLD Y,feet per minute) (L:AP_ALT_MANAGEDSpdDif, number) 2 / (A:ACCELERATION BODY Z, Feet per second d) (L:ACCELERATION BODY Z, Feet per second squared) (A:VELOCITY WORLD Y,feet per minute) 48000 / - + 0.592484 * 10 * - -100 * + 60 / (A:AIRSPEED TRUE,knots) 1.68781 * / asin rddg -2 * (A:PLANE PITCH DEGREES, radians) rddg 2 * - }
+										(A:VELOCITY WORLD Y,feet per minute) (L:AP_ALT_MANAGEDSpdDif, number) 2 / (A:ACCELERATION BODY Z, Feet per second squared) (L:ACCELERATION BODY Z, Feet per second squared) (A:VELOCITY WORLD Y,feet per minute) 48000 / - + 0.592484 * 10 * - -100 * + 60 / (A:AIRSPEED TRUE,knots) 1.68781 * / asin rddg -2 * (A:PLANE PITCH DEGREES, radians) rddg 2 * - }
 										
 									}
 									
