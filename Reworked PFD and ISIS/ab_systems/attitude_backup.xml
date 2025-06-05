@@ -30,7 +30,7 @@
 			<FontFace>AirbusISIS</FontFace>
 			<FontHeight>8</FontHeight>
 			<FontColor>#ffffff</FontColor>
-			<BackgroundColor>#3A8CC7</BackgroundColor>
+			<BackgroundColor>#0080ff</BackgroundColor>
 			<HorizontalAlign>CENTER</HorizontalAlign>
 			<Multiline>True</Multiline>
 			<Tabs>0,27L,42L,44L</Tabs>
@@ -103,7 +103,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#3A8CC7</BackgroundColor>
+				<BackgroundColor>#0080ff</BackgroundColor>
 				<GaugeString>*</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
 				<Size>80,31</Size>
@@ -119,7 +119,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#3A8CC7</BackgroundColor>
+				<BackgroundColor>#0080ff</BackgroundColor>
 				<GaugeString>l</GaugeString>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<Size>6,10</Size>
@@ -135,7 +135,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#3A8CC7</BackgroundColor>
+				<BackgroundColor>#0080ff</BackgroundColor>
 				<GaugeString>r</GaugeString>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<Size>6,10</Size>
@@ -149,9 +149,9 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>False</Bold>
-				<FontColor>#CDB73D</FontColor>
+				<FontColor>#ffff00</FontColor>
 				<FontHeight>14</FontHeight>
-				<BackgroundColor>#3A8CC7</BackgroundColor>
+				<BackgroundColor>#0080ff</BackgroundColor>
 				<Transparent>TRUE</Transparent>
 				<GaugeString>#</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -167,7 +167,7 @@
 			<FontFace>AirbusISIS</FontFace>
 			<FontHeight>8</FontHeight>
 			<FontColor>#ffffff</FontColor>
-			<BackgroundColor>#7d3902</BackgroundColor>
+			<BackgroundColor>#804000</BackgroundColor>
 			<HorizontalAlign>CENTER</HorizontalAlign>
 			<Multiline>True</Multiline>
 			<Tabs>0,27L,42L,44L</Tabs>
@@ -452,7 +452,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>False</Bold>
-				<FontColor>#CDB73D</FontColor>
+				<FontColor>#ffff00</FontColor>
 				<FontHeight>13</FontHeight>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Transparent>False</Transparent>
@@ -471,7 +471,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-010</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -498,7 +498,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -525,7 +525,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -552,7 +552,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -579,7 +579,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -606,7 +606,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-005</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -633,7 +633,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -660,7 +660,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -687,7 +687,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -714,7 +714,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -741,7 +741,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-000</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -768,7 +768,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-000</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -795,7 +795,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -822,7 +822,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -849,7 +849,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -876,7 +876,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -903,7 +903,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-005</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -930,7 +930,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -957,7 +957,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -984,7 +984,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1011,7 +1011,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1038,7 +1038,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-010</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1065,7 +1065,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1092,7 +1092,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1119,7 +1119,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1146,7 +1146,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1173,7 +1173,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-015</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1200,7 +1200,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1227,7 +1227,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1254,7 +1254,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1281,7 +1281,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1308,7 +1308,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-020</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1335,7 +1335,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1362,7 +1362,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1389,7 +1389,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1416,7 +1416,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1443,7 +1443,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-025</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1470,7 +1470,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1497,7 +1497,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1524,7 +1524,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1551,7 +1551,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1578,7 +1578,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-030</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1605,7 +1605,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1632,7 +1632,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1659,7 +1659,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1686,7 +1686,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1713,7 +1713,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-035</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1740,7 +1740,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1767,7 +1767,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1794,7 +1794,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1821,7 +1821,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1848,7 +1848,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-040</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -1875,7 +1875,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1902,7 +1902,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1929,7 +1929,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1956,7 +1956,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -1983,7 +1983,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-045</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2010,7 +2010,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2037,7 +2037,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2064,7 +2064,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2091,7 +2091,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2118,7 +2118,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-050</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2145,7 +2145,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2172,7 +2172,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2199,7 +2199,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2226,7 +2226,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2253,7 +2253,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-055</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2280,7 +2280,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2307,7 +2307,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2334,7 +2334,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2361,7 +2361,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2388,7 +2388,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-060</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2415,7 +2415,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2442,7 +2442,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2469,7 +2469,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2496,7 +2496,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2523,7 +2523,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-065</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2550,7 +2550,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2577,7 +2577,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2604,7 +2604,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2631,7 +2631,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2658,7 +2658,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-070</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2685,7 +2685,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2712,7 +2712,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2739,7 +2739,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2766,7 +2766,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2793,7 +2793,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-075</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2820,7 +2820,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2847,7 +2847,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2874,7 +2874,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2901,7 +2901,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2928,7 +2928,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-080</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -2955,7 +2955,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -2982,7 +2982,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3009,7 +3009,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3036,7 +3036,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3063,7 +3063,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-085</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3090,7 +3090,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3117,7 +3117,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3144,7 +3144,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3171,7 +3171,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3198,7 +3198,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-090</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3225,7 +3225,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3252,7 +3252,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3279,7 +3279,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3306,7 +3306,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3333,7 +3333,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-095</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3360,7 +3360,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3387,7 +3387,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3414,7 +3414,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3441,7 +3441,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3468,7 +3468,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-100</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3495,7 +3495,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3522,7 +3522,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3549,7 +3549,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3576,7 +3576,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3603,7 +3603,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-105</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3630,7 +3630,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3657,7 +3657,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3684,7 +3684,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3711,7 +3711,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3738,7 +3738,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-110</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3765,7 +3765,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3792,7 +3792,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3819,7 +3819,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3846,7 +3846,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3873,7 +3873,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-115</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -3900,7 +3900,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3927,7 +3927,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3954,7 +3954,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -3981,7 +3981,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4008,7 +4008,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-120</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4035,7 +4035,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4062,7 +4062,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4089,7 +4089,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4116,7 +4116,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4143,7 +4143,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-125</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4170,7 +4170,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4197,7 +4197,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4224,7 +4224,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4251,7 +4251,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4278,7 +4278,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-130</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4305,7 +4305,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4332,7 +4332,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4359,7 +4359,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4386,7 +4386,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4413,7 +4413,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-135</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4440,7 +4440,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4467,7 +4467,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4494,7 +4494,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4521,7 +4521,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4548,7 +4548,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-140</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4575,7 +4575,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4602,7 +4602,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4629,7 +4629,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4656,7 +4656,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4683,7 +4683,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-145</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4710,7 +4710,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4737,7 +4737,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4764,7 +4764,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4791,7 +4791,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4818,7 +4818,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-150</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4845,7 +4845,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4872,7 +4872,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4899,7 +4899,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4926,7 +4926,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -4953,7 +4953,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-155</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -4980,7 +4980,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5007,7 +5007,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5034,7 +5034,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5061,7 +5061,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5088,7 +5088,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-160</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5115,7 +5115,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5142,7 +5142,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5169,7 +5169,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5196,7 +5196,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5223,7 +5223,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-165</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5250,7 +5250,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5277,7 +5277,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5304,7 +5304,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5331,7 +5331,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5358,7 +5358,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-170</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5385,7 +5385,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5412,7 +5412,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5439,7 +5439,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5466,7 +5466,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5493,7 +5493,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-175</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5520,7 +5520,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5547,7 +5547,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5574,7 +5574,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5601,7 +5601,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5628,7 +5628,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-180</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5655,7 +5655,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5682,7 +5682,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5709,7 +5709,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5736,7 +5736,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5763,7 +5763,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-185</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5790,7 +5790,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5817,7 +5817,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5844,7 +5844,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5871,7 +5871,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5898,7 +5898,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-190</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -5925,7 +5925,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5952,7 +5952,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -5979,7 +5979,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6006,7 +6006,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6033,7 +6033,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-195</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6060,7 +6060,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6087,7 +6087,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6114,7 +6114,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6141,7 +6141,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6168,7 +6168,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-200</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6195,7 +6195,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6222,7 +6222,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6249,7 +6249,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6276,7 +6276,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6303,7 +6303,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-205</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6330,7 +6330,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6357,7 +6357,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6384,7 +6384,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6411,7 +6411,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6438,7 +6438,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-210</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6465,7 +6465,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6492,7 +6492,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6519,7 +6519,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6546,7 +6546,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6573,7 +6573,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-215</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6600,7 +6600,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6627,7 +6627,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6654,7 +6654,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6681,7 +6681,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6708,7 +6708,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-220</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6735,7 +6735,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6762,7 +6762,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6789,7 +6789,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6816,7 +6816,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6843,7 +6843,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-225</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -6870,7 +6870,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6897,7 +6897,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6924,7 +6924,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6951,7 +6951,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -6978,7 +6978,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-230</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7005,7 +7005,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7032,7 +7032,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7059,7 +7059,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7086,7 +7086,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7113,7 +7113,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-235</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7140,7 +7140,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7167,7 +7167,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7194,7 +7194,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7221,7 +7221,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7248,7 +7248,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-240</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7275,7 +7275,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7302,7 +7302,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7329,7 +7329,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7356,7 +7356,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7383,7 +7383,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-245</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7410,7 +7410,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7437,7 +7437,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7464,7 +7464,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7491,7 +7491,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7518,7 +7518,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-250</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7545,7 +7545,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7572,7 +7572,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7599,7 +7599,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7626,7 +7626,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7653,7 +7653,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-255</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7680,7 +7680,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7707,7 +7707,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7734,7 +7734,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7761,7 +7761,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7788,7 +7788,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-260</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7815,7 +7815,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7842,7 +7842,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7869,7 +7869,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7896,7 +7896,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7923,7 +7923,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-265</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -7950,7 +7950,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -7977,7 +7977,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8004,7 +8004,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8031,7 +8031,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8058,7 +8058,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-270</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8085,7 +8085,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8112,7 +8112,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8139,7 +8139,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8166,7 +8166,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8193,7 +8193,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-275</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8220,7 +8220,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8247,7 +8247,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8274,7 +8274,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8301,7 +8301,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8328,7 +8328,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-280</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8355,7 +8355,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8382,7 +8382,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8409,7 +8409,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8436,7 +8436,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8463,7 +8463,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-285</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8490,7 +8490,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8517,7 +8517,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8544,7 +8544,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8571,7 +8571,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8598,7 +8598,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-290</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8625,7 +8625,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8652,7 +8652,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8679,7 +8679,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8706,7 +8706,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8733,7 +8733,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-295</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8760,7 +8760,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8787,7 +8787,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8814,7 +8814,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8841,7 +8841,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8868,7 +8868,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-300</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -8895,7 +8895,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8922,7 +8922,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8949,7 +8949,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -8976,7 +8976,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9003,7 +9003,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-305</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9030,7 +9030,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9057,7 +9057,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9084,7 +9084,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9111,7 +9111,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9138,7 +9138,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-310</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9165,7 +9165,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9192,7 +9192,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9219,7 +9219,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9246,7 +9246,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9273,7 +9273,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-315</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9300,7 +9300,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9327,7 +9327,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9354,7 +9354,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9381,7 +9381,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9408,7 +9408,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-320</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9435,7 +9435,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9462,7 +9462,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9489,7 +9489,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9516,7 +9516,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9543,7 +9543,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-325</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9570,7 +9570,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9597,7 +9597,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9624,7 +9624,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9651,7 +9651,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9678,7 +9678,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-330</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9705,7 +9705,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9732,7 +9732,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9759,7 +9759,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9786,7 +9786,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9813,7 +9813,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-335</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9840,7 +9840,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9867,7 +9867,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9894,7 +9894,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9921,7 +9921,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -9948,7 +9948,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-340</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -9975,7 +9975,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10002,7 +10002,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10029,7 +10029,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10056,7 +10056,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10083,7 +10083,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-345</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10110,7 +10110,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10137,7 +10137,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10164,7 +10164,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10191,7 +10191,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10218,7 +10218,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-350</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10245,7 +10245,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10272,7 +10272,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10299,7 +10299,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10326,7 +10326,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10353,7 +10353,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-355</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10380,7 +10380,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10407,7 +10407,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10434,7 +10434,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10461,7 +10461,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10488,7 +10488,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-360</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10515,7 +10515,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10542,7 +10542,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10569,7 +10569,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10596,7 +10596,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10623,7 +10623,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-365</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10650,7 +10650,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10677,7 +10677,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10704,7 +10704,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10731,7 +10731,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10758,7 +10758,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-370</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10785,7 +10785,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10812,7 +10812,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10839,7 +10839,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10866,7 +10866,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10893,7 +10893,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-375</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -10920,7 +10920,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10947,7 +10947,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -10974,7 +10974,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11001,7 +11001,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11028,7 +11028,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-380</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11055,7 +11055,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11082,7 +11082,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11109,7 +11109,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11136,7 +11136,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11163,7 +11163,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-385</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11190,7 +11190,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11217,7 +11217,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11244,7 +11244,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11271,7 +11271,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11298,7 +11298,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-390</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11325,7 +11325,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11352,7 +11352,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11379,7 +11379,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11406,7 +11406,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11433,7 +11433,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-395</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11460,7 +11460,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11487,7 +11487,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11514,7 +11514,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11541,7 +11541,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11568,7 +11568,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-400</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11595,7 +11595,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11622,7 +11622,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11649,7 +11649,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11676,7 +11676,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11703,7 +11703,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-405</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11730,7 +11730,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11757,7 +11757,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11784,7 +11784,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11811,7 +11811,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11838,7 +11838,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-410</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -11865,7 +11865,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11892,7 +11892,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11919,7 +11919,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11946,7 +11946,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -11973,7 +11973,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-415</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12000,7 +12000,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12027,7 +12027,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12054,7 +12054,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12081,7 +12081,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12108,7 +12108,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-420</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12177,7 +12177,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>#35C0DC</FontColor>
+				<FontColor>#0080ff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>M</GaugeString>
 				<HorizontalAlign>RIGHT</HorizontalAlign>
@@ -12515,7 +12515,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>0-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12543,7 +12543,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12571,7 +12571,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12599,7 +12599,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12627,7 +12627,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>20-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12655,7 +12655,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12683,7 +12683,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12711,7 +12711,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12739,7 +12739,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>40-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12767,7 +12767,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12795,7 +12795,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12823,7 +12823,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12851,7 +12851,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>60-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12879,7 +12879,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12907,7 +12907,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12935,7 +12935,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -12963,7 +12963,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>80-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -12991,7 +12991,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13019,7 +13019,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13047,7 +13047,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13075,7 +13075,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>100-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13103,7 +13103,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13131,7 +13131,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13159,7 +13159,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13187,7 +13187,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>120-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13215,7 +13215,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13243,7 +13243,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13271,7 +13271,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13299,7 +13299,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>140-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13327,7 +13327,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13355,7 +13355,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13383,7 +13383,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13411,7 +13411,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>160-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13439,7 +13439,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13467,7 +13467,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13495,7 +13495,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13523,7 +13523,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>180-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13551,7 +13551,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13579,7 +13579,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13607,7 +13607,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13635,7 +13635,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>200-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13663,7 +13663,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13691,7 +13691,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13719,7 +13719,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13747,7 +13747,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>220-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13775,7 +13775,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13803,7 +13803,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13831,7 +13831,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13859,7 +13859,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>240-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13887,7 +13887,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13915,7 +13915,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13943,7 +13943,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>260-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -13971,7 +13971,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -13999,7 +13999,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>280-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14027,7 +14027,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14055,7 +14055,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>300-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14083,7 +14083,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14111,7 +14111,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>320-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14139,7 +14139,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14167,7 +14167,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>340-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14195,7 +14195,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14223,7 +14223,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>360-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14251,7 +14251,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14279,7 +14279,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>380-</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14307,7 +14307,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14335,7 +14335,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>0xb3b3b3</FontColor>
+				<FontColor>#ffffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>400-</GaugeString>
 				<HorizontalAlign>Right</HorizontalAlign>
@@ -14449,7 +14449,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#35C0DC</FontColor>
+						<FontColor>#0080ff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14467,7 +14467,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#35C0DC</FontColor>
+						<FontColor>#0080ff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!/%((A:KOHLSMAN SETTING HG:2, inHg) 100.0 * near 100.0 / )%!2.2f</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14485,7 +14485,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#35C0DC</FontColor>
+						<FontColor>#0080ff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!/%((A:KOHLSMAN SETTING HG:2, inHg) 100.0 * near 100.0 / )%!2.2f</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14498,42 +14498,7 @@
 	<Element id="baro">
 		<Visibility>
 			(L:MP_CONN, number) 0 ==
-				if{
-                                <!-- F.W. 2019.02.25 
-				logic moved to ECAM-dll
-
-				(L:AB_Stdb_Baro_STD, number) 0 ==
-				if{
-					(A:KOHLSMAN SETTING MB:2, millibars) (&gt; L:Kohlsman_isis_mem, number)
-				}
-				
-				(L:AB_Stdb_Baro_STD, number) 0 ==
-				(A:KOHLSMAN SETTING HG:2, millibars) 100 * int (L:Kohlsman_isis_mem, number) 100 * int != &amp;&amp;
-				if{			
-					(A:KOHLSMAN SETTING HG:2,millibars) 100 * int (L:Kohlsman_isis_mem, number) 100 * int &lt; 
-					if{			
-						2 (&gt; K:KOHLSMAN_INC) 
-					}
-					(A:KOHLSMAN SETTING HG:2, millibars) 100 * int (L:Kohlsman_isis_mem, number) 100 * int &gt;
-					if{			
-						2 (&gt; K:KOHLSMAN_DEC) 
-					}	
-				}
-				
-				(L:AB_Stdb_Baro_STD, number) 1 ==
-				(A:KOHLSMAN SETTING HG:2, InHg) 100 * int 2992 != &amp;&amp;
-				if{			
-					(A:KOHLSMAN SETTING Hg:2, InHg) 100 * int 2992 &lt; 
-					if{			
-						2 (&gt; K:KOHLSMAN_INC) }
-						
-					(A:KOHLSMAN SETTING Hg:2, InHg) 100 * int 2992 &gt;
-					if{			
-						2 (&gt; K:KOHLSMAN_DEC) }					
-				}
-                                -->
-			}
-				
+				if{}
 			(L:AB_Stdb_Baro_STD, number) 1 ==</Visibility>
 			<Element id="baro">
 				<FloatPosition>44.000,90.500</FloatPosition>
@@ -14541,7 +14506,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#35C0DC</FontColor>
+						<FontColor>#0080ff</FontColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>STD</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14565,7 +14530,7 @@
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
 						<FontColor>#050508</FontColor>
-						<BackgroundColor>#EFB02A</BackgroundColor>
+						<BackgroundColor>#ffff00</BackgroundColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>ATT</GaugeString>
 						<HorizontalAlign>Center</HorizontalAlign>
@@ -14580,7 +14545,7 @@
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
 						<FontColor>#050508</FontColor>
-						<BackgroundColor>#EFB02A</BackgroundColor>
+						<BackgroundColor>#ffff00</BackgroundColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>SPD</GaugeString>
 						<HorizontalAlign>Center</HorizontalAlign>
@@ -14595,7 +14560,7 @@
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
 						<FontColor>#050508</FontColor>
-						<BackgroundColor>#EFB02A</BackgroundColor>
+						<BackgroundColor>#ffff00</BackgroundColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>ALT</GaugeString>
 						<HorizontalAlign>Center</HorizontalAlign>
@@ -14609,7 +14574,7 @@
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
 						<FontColor>#050508</FontColor>
-						<BackgroundColor>#EFB02A</BackgroundColor>
+						<BackgroundColor>#ffff00</BackgroundColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>INIT 90s</GaugeString>
 						<HorizontalAlign>Center</HorizontalAlign>
