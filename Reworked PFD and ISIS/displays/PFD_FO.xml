@@ -622,270 +622,6 @@
 						</Expression>
 					</Rotation>
 				</Element>
-				<Element id="Strike Pitch Chevron 318">
-					<Visibility>
-					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
-					(L:AB_TypeIdent, number) 11 == (L:AB_TypeIdent, number) 12 == || &amp;&amp;
-					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp;	
-					</Visibility>
-					<Polygon id="Tail Chevron 318">
-						<Bright>True</Bright>
-						<LineWidth>2</LineWidth>
-						<LineColor>#ff0000</LineColor>
-						<FillColor>#000000</FillColor>
-						<Point>
-							<FloatPosition>0,-58</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-13,-83</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-8,-83</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-66</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>8,-83</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>13,-83</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-58</FloatPosition>
-						</Point>
-						<Axis id="Axis">
-							<FloatPosition>0,0</FloatPosition>
-						</Axis>
-					</Polygon>
-					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-						<Axis>100,100</Axis>
-						<Transparent>True</Transparent>
-					</MaskImage>
-					<Shift>
-						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -30 max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>40</ExpressionResult>
-								<FloatPosition>-1,-144</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>-1,0</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>-40</ExpressionResult>
-								<FloatPosition>-1,144</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation>
-				</Element>
-				<Element id="Strike Pitch Chevron 319">
-					<Visibility>
-					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
-					(L:AB_TypeIdent, number) 21 == (L:AB_TypeIdent, number) 22 == || &amp;&amp;
-					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp;
-					</Visibility>
-					<Polygon id="Tail Chevron 319">
-						<Bright>True</Bright>
-						<LineWidth>2</LineWidth>
-						<LineColor>#ff0000</LineColor>
-						<FillColor>#000000</FillColor>
-						<Point>
-							<FloatPosition>0,-53</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-13,-78</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-8,-78</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-61</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>8,-78</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>13,-78</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-53</FloatPosition>
-						</Point>
-						<Axis id="Axis">
-							<FloatPosition>0,0</FloatPosition>
-						</Axis>
-					</Polygon>
-					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-						<Axis>100,100</Axis>
-						<Transparent>True</Transparent>
-					</MaskImage>
-					<Shift>
-						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -30 max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>40</ExpressionResult>
-								<FloatPosition>-1,-144</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>-1,0</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>-40</ExpressionResult>
-								<FloatPosition>-1,144</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation>
-				</Element>
-				<Element id="Strike Pitch Chevron 320">
-					<Visibility>
-					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
-					(L:AB_TypeIdent, number) 31 == (L:AB_TypeIdent, number) 32 == || &amp;&amp;
-					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp;
-					</Visibility>
-					<Polygon id="Tail Chevron 320">
-						<Bright>True</Bright>
-						<LineWidth>2</LineWidth>
-						<LineColor>#ff0000</LineColor>
-						<FillColor>#000000</FillColor>
-						<Point>
-							<FloatPosition>0,-38</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-13,-63</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-8,-63</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-46</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>8,-63</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>13,-63</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-38</FloatPosition>
-						</Point>
-						<Axis id="Axis">
-							<FloatPosition>0,0</FloatPosition>
-						</Axis>
-					</Polygon>
-					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-						<Axis>100,100</Axis>
-						<Transparent>True</Transparent>
-					</MaskImage>
-					<Shift>
-						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -30 max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>40</ExpressionResult>
-								<FloatPosition>-1,-144</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>-1,0</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>-40</ExpressionResult>
-								<FloatPosition>-1,144</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation>
-				</Element>
-				<Element id="Strike Pitch Chevron 321">
-					<Visibility>
-					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
-					(L:AB_TypeIdent, number) 41 == (L:AB_TypeIdent, number) 42 == || &amp;&amp;
-					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp;
-					</Visibility>
-					<Polygon id="Tail Chevron 321">
-						<Bright>True</Bright>
-						<LineWidth>2</LineWidth>
-						<LineColor>#ff0000</LineColor>
-						<FillColor>#000000</FillColor>
-						<Point>
-							<FloatPosition>0,-33</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-13,-58</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>-8,-58</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-41</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>8,-58</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>13,-58</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,-33</FloatPosition>
-						</Point>
-						<Axis id="Axis">
-							<FloatPosition>0,0</FloatPosition>
-						</Axis>
-					</Polygon>
-					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-						<Axis>100,100</Axis>
-						<Transparent>True</Transparent>
-					</MaskImage>
-					<Shift>
-						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -30 max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>40</ExpressionResult>
-								<FloatPosition>-1,-144</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>-1,0</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>-40</ExpressionResult>
-								<FloatPosition>-1,144</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation>
-				</Element>
 				<Element id="Strike Pitch Chevron 333">
 					<Visibility>
 					(L:Flightmode, number) 4 == ( L:Flightmode, number) 5 == || 
@@ -1133,7 +869,7 @@
 						</Expression>
 					</Rotation>
 				</Element>				
-				<Element id="Ground Ref Line">
+				<Element id="Ground Ref Line"> <!--Reworking to rely solely on Radalt, kicks in at 150 RA-->
 					<Element id="Brown Lip Bottom">
 						<Visibility></Visibility>
 						<Rectangle id="Rectangle">
@@ -1310,11 +1046,6 @@
 							<Transparent>True</Transparent>
 						</MaskImage>
 					</Element>
-					<!-- <Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation> -->
 					<Element id="Radalt Numbers small">
 						<Visibility>(L:PFD_Radalt, number) 2500 &lt; (L:PFD_Radalt_Fnt, number) 0 == &amp;&amp;</Visibility>
 						<GaugeText id="text">
@@ -1333,46 +1064,6 @@
 								%( 0 3 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) int 3- 0 max )%!1d!%{end}
 							</GaugeString>
 							<Size>100,20</Size>
-							<Bright>True</Bright>
-						</GaugeText>
-						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-							<Axis>100,100</Axis>
-							<Transparent>True</Transparent>
-						</MaskImage>
-					</Element>
-					<!-- <Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation> -->
-					<Element id="DH text">
-						<Visibility>
-						<!-- SET THE TIMER 9 SECOND /A32S or 3 SECOND /A330 REFERENCE ONLY ONCE IF IN DH RANGE, IF OUT OF RANGE OF DH, RESET TO ZERO -->
-						(L:MCDU_FLT_PHS, number) 5 == (L:MCDU_APP_DH_ENT, bool) 1 == &amp;&amp; (A:Radio height, feet) 14 - (L:MCDU_APP_DH, number) &lt; and if{ (L:APP_DH_TIMER, number) 0 == if{ (P:Absolute time, seconds) 3 + (>L:APP_DH_TIMER, number) } }
-						els{ 0 (>L:APP_DH_TIMER, number) }
-
-						<!-- NOW USE THE "APP_DH_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
-						(L:APP_DH_TIMER, number) 0 != if{
-
-						<!-- THE SOLID STATE AFTER 9 SECONDS -->
-						(P:Absolute time, seconds) (L:APP_DH_TIMER, number) &gt;  if{ 1 }
-						<!-- THE BLINKING STATE BEFORE THE 9 SECOND LIMIT -->
-						els{ (P:Absolute time, seconds) 0.5 % 0.25 1 * &gt;  ! }
-
-						<!-- THE VAR IS ZERO -->
-						} els{ 0 }
-						</Visibility>
-						<GaugeText id="text">
-							<Axis>15,-55</Axis>
-							<FontFace>AirbusPFD</FontFace>
-							<FontColor>#ff8000</FontColor>
-							<FontHeight>15</FontHeight>
-							<Transparent>TRUE</Transparent>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>
-							%DH%
-							</GaugeString>
-							<Size>30,20</Size>
 							<Bright>True</Bright>
 						</GaugeText>
 						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
@@ -1879,12 +1570,12 @@
 				</Element>
 				<Element id="Control Indicator Elements">
 					<Visibility>
-						(A:SIM ON GROUND, bool) 1 == (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; 
-						if{(L:Flightmode, number) 7 == if{ <!--Filter for flight phrase 7, aka touchdown-->
-							(A:PLANE PITCH DEGREES, radians) 0 &lt; if{1} els{0} <!--Cannot have it appear before NLG touches ground-->
+						(A:SIM ON GROUND, bool) 1 == (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; if{
+							(L:Flightmode, number) 7 == if{ <!--Filter for flight phrase 7-->
+								(A:PLANE PITCH DEGREES, radians) 0 &lt; if{1} els{0} <!--Cannot have it appear before NLG touches ground-->
 							}
-						els{1}
-						}els{0}<!--disregard everything lol-->
+							els{1}<!--just throw 1 out if it isn't 7-->
+						}els{0} <!--disregard everything and throws out 0-->
 					</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
