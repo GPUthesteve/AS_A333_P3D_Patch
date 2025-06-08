@@ -12163,7 +12163,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>%((A:INDICATED ALTITUDE:2, meter))%!5.0f!</GaugeString>
 				<HorizontalAlign>RIGHT</HorizontalAlign>
@@ -12177,7 +12177,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>#0080ff</FontColor>
+				<FontColor>#00ffff</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>M</GaugeString>
 				<HorizontalAlign>RIGHT</HorizontalAlign>
@@ -12191,7 +12191,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<FontHeight>10</FontHeight>
 				<GaugeString>
 				%((A:INDICATED ALTITUDE:2, feet) 100 / int abs 0 &gt;)%{if}%((A:INDICATED ALTITUDE:2, feet) 100 / int abs)%!3d!
@@ -12211,7 +12211,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12251,7 +12251,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12292,7 +12292,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12332,7 +12332,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12372,7 +12372,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12412,7 +12412,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -12452,7 +12452,7 @@
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
 				<FontHeight>8</FontHeight>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<BackgroundColor>#000000</BackgroundColor>
 				<Multiline>True</Multiline>
 				<LineSpacing>11</LineSpacing>
@@ -14432,7 +14432,7 @@
 				<Bright>True</Bright>
 				<FontFace>AirbusISIS</FontFace>
 				<Bold>True</Bold>
-				<FontColor>#34B027</FontColor>
+				<FontColor>#00ff00</FontColor>
 				<FontHeight>8</FontHeight>
 				<GaugeString>.%((A:AIRSPEED MACH, mach) 100 * )%!02d!</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
@@ -14449,7 +14449,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#0080ff</FontColor>
+						<FontColor>#00ffff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14467,7 +14467,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#0080ff</FontColor>
+						<FontColor>#00ffff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!/%((A:KOHLSMAN SETTING HG:2, inHg) 100.0 * near 100.0 / )%!2.2f</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14485,7 +14485,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#0080ff</FontColor>
+						<FontColor>#00ffff</FontColor>
 						<FontHeight>8</FontHeight>
 						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!/%((A:KOHLSMAN SETTING HG:2, inHg) 100.0 * near 100.0 / )%!2.2f</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
@@ -14506,7 +14506,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusISIS</FontFace>
 						<Bold>True</Bold>
-						<FontColor>#0080ff</FontColor>
+						<FontColor>#00ffff</FontColor>
 						<FontHeight>10</FontHeight>
 						<GaugeString>STD</GaugeString>
 						<HorizontalAlign>Left</HorizontalAlign>
