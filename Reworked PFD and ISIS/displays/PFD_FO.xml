@@ -1877,7 +1877,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.01 &lt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || </Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.01 &lt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
