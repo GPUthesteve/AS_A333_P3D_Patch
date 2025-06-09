@@ -318,7 +318,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
-						<FontColor>#00FB19</FontColor>
+						<FontColor>#00ff00</FontColor>
 						<BackgroundColor>#000000</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
@@ -381,7 +381,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
-						<FontColor>#00FB19</FontColor>
+						<FontColor>#00ff00</FontColor>
 						<BackgroundColor>#000000</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
@@ -1000,8 +1000,8 @@
 					<Polygon id="Trk Marker">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>0xdada16</LineColor>
-						<FillColor>0xdada16</FillColor>
+						<LineColor>0xffff00</LineColor>
+						<FillColor>0xffff00</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -1070,8 +1070,8 @@
 					<Polygon id="Trk Marker">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>0xdada16</LineColor>
-						<FillColor>0xdada16</FillColor>
+						<LineColor>0xffff00</LineColor>
+						<FillColor>0xffff00</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -1189,7 +1189,7 @@
 							<Polygon id="Horizon">
 								<Bright>True</Bright>
 								<LineWidth>3</LineWidth>
-								<LineColor>#E43DE4</LineColor>
+								<LineColor>#FF00FF</LineColor>
 								<FillColor>#000000</FillColor>
 								<Point>
 									<FloatPosition>0,0</FloatPosition>
@@ -1290,7 +1290,7 @@
 						<GaugeText id="text">
 							<Axis>50,-75</Axis>
 							<FontFace>AirbusPFD2</FontFace>
-							<FontColor>0x3C9CF0</FontColor>
+							<FontColor>0x0080ff</FontColor>
 							<FontHeight>14</FontHeight>
 							<BackgroundColor>#804000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1320,7 +1320,7 @@
 						<GaugeText id="text">
 							<Axis>50,-77</Axis>
 							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0x17E400</FontColor>
+							<FontColor>0x00ff00</FontColor>
 							<FontHeight>12</FontHeight>
 							<BackgroundColor>#804000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1365,7 +1365,7 @@
 						<GaugeText id="text">
 							<Axis>15,-55</Axis>
 							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0x3C9CF0</FontColor>
+							<FontColor>0x0080ff</FontColor>
 							<FontHeight>15</FontHeight>
 							<Transparent>TRUE</Transparent>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1627,7 +1627,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#02CF16</LineColor>
+							<LineColor>#00ff00</LineColor>
 							<Point>
 								<FloatPosition>0,-9</FloatPosition>
 							</Point>
@@ -1723,7 +1723,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#02CF16</LineColor>
+							<LineColor>#00ff00</LineColor>
 							<Point>
 								<FloatPosition>-38,-3</FloatPosition>
 							</Point>
@@ -1877,7 +1877,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.1 &lt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || </Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.01 &lt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || </Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
@@ -2378,7 +2378,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -2408,7 +2408,7 @@
 					<PolyLine>
 					<Bright>True</Bright>
 					<LineWidth>2</LineWidth>
-					<LineColor>#EFB02A</LineColor>
+					<LineColor>#ffff00</LineColor>
 					<Point>
 					<FloatPosition>0,0</FloatPosition>
 					</Point>
@@ -2806,7 +2806,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#EFB02A</LineColor>
+							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>0,-88</FloatPosition>
 							</Point>
@@ -2834,7 +2834,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#EFB02A</LineColor>
+							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>-7,-76</FloatPosition>
 							</Point>
@@ -2981,7 +2981,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>3</LineWidth>
-									<LineColor>#EFB02A</LineColor>
+									<LineColor>#ffff00</LineColor>
 									<Point>
 										<FloatPosition>0,1</FloatPosition>
 									</Point>
@@ -3136,7 +3136,7 @@
 							<GaugeText id="text">
 								<FontFace>AirbusPFD</FontFace>
 								<!-- <FontFace>ERAS LIGHT ITC</FontFace> -->
-								<FontColor>#02CF16</FontColor>
+								<FontColor>#00ff00</FontColor>
 								<FontHeight>10</FontHeight>
 								<HorizontalAlign>LEFT</HorizontalAlign>
 								<GaugeString>V/DEV</GaugeString>
@@ -3211,10 +3211,10 @@
 									<Bright>True</Bright>
 									<Width>14</Width>
 									<Height>10</Height>
-									<LineColor>#02CF16</LineColor><!--<LineColor>#E43DE4</LineColor>-->
+									<LineColor>#00ff00</LineColor><!--<LineColor>#FF00FF</LineColor>-->
 									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
-										if{ 0x16CF02 }
-										els{ 0xE43DE4 }
+										if{ 0x00ff00 }
+										els{ 0xFF00FF }
 									</LineColorScript>-->
 									<LineWidth>1</LineWidth>
 									<FillColor>#000000</FillColor>
@@ -3245,10 +3245,10 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#02CF16</LineColor><!--<LineColor>#E43DE4</LineColor>-->
+									<LineColor>#00ff00</LineColor><!--<LineColor>#FF00FF</LineColor>-->
 									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
-										if{ 0x16CF02 }
-										els{ 0xE43DE4 }
+										if{ 0x00ff00 }
+										els{ 0xFF00FF }
 									</LineColorScript>-->
 									<Point>
 										<FloatPosition>-1,4</FloatPosition>
@@ -3270,10 +3270,10 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#02CF16</LineColor><!--<LineColor>#E43DE4</LineColor>-->
+									<LineColor>#00ff00</LineColor><!--<LineColor>#FF00FF</LineColor>-->
 									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
-										if{ 0x16CF02 }
-										els{ 0xE43DE4 }
+										if{ 0x00ff00 }
+										els{ 0xFF00FF }
 									</LineColorScript>-->
 									<Point>
 										<FloatPosition>-1,4</FloatPosition>
@@ -3298,7 +3298,7 @@
 							<FontFace>AirbusPFD</FontFace>
 							<!-- <FontFace>ERAS LIGHT ITC</FontFace> -->
 							<FontColor>#F09C3C</FontColor><!--Amber-->
-							<!--<FontColor>#02CF16</FontColor>--><!--Green-->
+							<!--<FontColor>#00ff00</FontColor>--><!--Green-->
 							<FontHeight>10</FontHeight>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>V/DEV</GaugeString>
@@ -3316,7 +3316,7 @@
 							<FloatPosition>17,188</FloatPosition>
 							<GaugeText id="text">
 								<FontFace>AirbusPFD</FontFace>
-								<FontColor>#02CF16</FontColor>
+								<FontColor>#00ff00</FontColor>
 								<FontHeight>10</FontHeight>
 								<HorizontalAlign>CENTER</HorizontalAlign>
 								<GaugeString>L/DEV</GaugeString>
@@ -3390,7 +3390,7 @@
 									<Bright>True</Bright>
 									<Width>10</Width>
 									<Height>14</Height>
-									<LineColor>#02CF16</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<LineWidth>1</LineWidth>
 									<FillColor>#000000</FillColor>
 								</Rectangle>
@@ -3420,7 +3420,7 @@
 									<PolyLine>
 										<Bright>True</Bright>
 										<LineWidth>3</LineWidth>
-										<LineColor>#EFB02A</LineColor>
+										<LineColor>#ffff00</LineColor>
 										<Point>
 											<FloatPosition>0,-1</FloatPosition>
 										</Point>
@@ -3440,7 +3440,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#02CF16</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>0,-1</FloatPosition>
 									</Point>
@@ -3461,7 +3461,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#02CF16</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>4,-1</FloatPosition>
 									</Point>
@@ -3499,7 +3499,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>-4,0</FloatPosition>
 						</Point>
@@ -3516,7 +3516,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>14</FontHeight>
-						<FontColor>0xdada16</FontColor>
+						<FontColor>0xffff00</FontColor>
 						<AlternateColor id="Yellow MM">
 							<FontColor>#F09C3C</FontColor>
 						</AlternateColor>
@@ -3539,7 +3539,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>14</FontHeight>
-						<FontColor>0xdada16</FontColor>
+						<FontColor>0xffff00</FontColor>
 						<AlternateColor id="Yellow MM">
 							<FontColor>#F09C3C</FontColor>
 						</AlternateColor>
@@ -3562,7 +3562,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>12</FontHeight>
-						<FontColor>0xdada16</FontColor>
+						<FontColor>0xffff00</FontColor>
 						<GaugeString>%ILS%</GaugeString>
 					</GaugeText>
 				</Element>--> 
@@ -3622,7 +3622,7 @@
 						<Polyline id="Back">
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>0xdada16</LineColor>
+							<LineColor>0xffff00</LineColor>
 							<Point>
 								<FloatPosition>-1,-3</FloatPosition>
 							</Point>
@@ -3668,7 +3668,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<VerticalAlign>BOTTOM</VerticalAlign>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<BackgroundColor>#050508</BackgroundColor>
@@ -3701,7 +3701,7 @@
 						<Polyline id="Back">
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>0xdada16</LineColor>
+							<LineColor>0xffff00</LineColor>
 							<Point>
 								<FloatPosition>-1,-4</FloatPosition>
 							</Point>
@@ -3747,7 +3747,7 @@
 							<Bright>True</Bright>	
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>0xdada16</FontColor>		
+							<FontColor>0xffff00</FontColor>		
 							<VerticalAlign>CENTER</VerticalAlign>	
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<BackgroundColor>#000000</BackgroundColor>
@@ -3884,7 +3884,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>3</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>94,4</FloatPosition>
 						</Point>
@@ -3902,7 +3902,7 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#02CF16</LineColor>
+						<LineColor>#00ff00</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-5</FloatPosition>
@@ -3952,7 +3952,7 @@
 						<Polyline id="Back">
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>0,2</FloatPosition>
 							</Point>
@@ -4030,7 +4030,7 @@
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD</FontFace>
 								<FontHeight>12</FontHeight>
-								<FontColor>#E43DE4</FontColor>
+								<FontColor>#FF00FF</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>CENTER</HorizontalAlign>
 								<GaugeString>%((A:NAV1 OBS, degrees))%!03d!%</GaugeString>
@@ -4060,7 +4060,7 @@
 						<Polyline id="Back">
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>0,2</FloatPosition>
 							</Point>
@@ -4138,7 +4138,7 @@
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD</FontFace>
 								<FontHeight>12</FontHeight>
-								<FontColor>#E43DE4</FontColor>
+								<FontColor>#FF00FF</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>CENTER</HorizontalAlign>
 								<GaugeString>%((L:AB_AP_MCDU_RWYHDG, number))%!03d!%</GaugeString>
@@ -4211,7 +4211,7 @@
 					<Polygon id="Box">
 						<Bright>TRUE</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>0xdada16</LineColor>
+						<LineColor>0xffff00</LineColor>
 						<FillColor>#050508</FillColor>
 						<Point>
 							<FloatPosition>0,1</FloatPosition>
@@ -4236,7 +4236,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<Multiline>FALSE</Multiline>
@@ -4252,7 +4252,7 @@
 					<Polygon id="Box">
 						<Bright>TRUE</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>0xdada16</LineColor>
+						<LineColor>0xffff00</LineColor>
 						<FillColor>#050508</FillColor>
 						<Point>
 							<FloatPosition>0,1</FloatPosition>
@@ -4277,7 +4277,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<Multiline>FALSE</Multiline>
@@ -4295,7 +4295,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>11</FontHeight>
-						<FontColor>#EFB02A</FontColor>
+						<FontColor>#ffff00</FontColor>
 						<GaugeString>CHECK HDG</GaugeString>
 					</GaugeText>
 				</Element>
@@ -4412,7 +4412,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>0xdada16</LineColor>
+							<LineColor>0xffff00</LineColor>
 							<Point>
 								<FloatPosition>39,106</FloatPosition>
 							</Point>
@@ -4458,7 +4458,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<HorizontalAlign>RIGHT</HorizontalAlign>
 							<GaugeString>
@@ -4497,7 +4497,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>39,106</FloatPosition>
 							</Point>
@@ -4543,7 +4543,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#E43DE4</FontColor>
+							<FontColor>#FF00FF</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<HorizontalAlign>RIGHT</HorizontalAlign>
 							<GaugeString>%((L:AB_AP_SPEED_SelDisp, number)  9999 min 0 max)%!4d!%</GaugeString>
@@ -4575,7 +4575,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#E43DE4</FontColor>
+							<FontColor>#FF00FF</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<HorizontalAlign>RIGHT</HorizontalAlign>
 							<GaugeString>%((L:PFD_V2_Final, number))%!4d!%</GaugeString>
@@ -4602,7 +4602,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>39,106</FloatPosition>
 							</Point>
@@ -5586,7 +5586,7 @@
 						<FloatPosition>23,99</FloatPosition>
 						<GaugeText id="text">
 							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<FontHeight>12</FontHeight>
 							<VerticalAlign>TOP</VerticalAlign>
 							<GaugeString>\{tabs=0,14L,29L}\tlll\t1</GaugeString>
@@ -5711,7 +5711,7 @@
 					<FloatPosition>23,98</FloatPosition>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
-						<FontColor>#02CF16</FontColor>
+						<FontColor>#00ff00</FontColor>
 						<FontHeight>12</FontHeight>
 						<AlternateFont id="Text">
 							<FontFace>AirbusPFD</FontFace>
@@ -5751,7 +5751,7 @@
 					<FloatPosition>23,100</FloatPosition>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
-						<FontColor>#02CF16</FontColor>
+						<FontColor>#00ff00</FontColor>
 						<FontHeight>12</FontHeight>
 						<AlternateFont id="Text">
 							<FontFace>AirbusPFD</FontFace>
@@ -5868,7 +5868,7 @@
 					<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#02CF16</LineColor>
+							<LineColor>#00ff00</LineColor>
 							<Point>
 								<FloatPosition>1,9</FloatPosition>
 							</Point>
@@ -5906,7 +5906,7 @@
 					<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#02CF16</LineColor>
+							<LineColor>#00ff00</LineColor>
 							<Point>
 								<FloatPosition>1,11</FloatPosition>
 							</Point>
@@ -5946,7 +5946,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>3</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>56,107</FloatPosition>
 							</Point>
@@ -5984,7 +5984,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>3</LineWidth>
-							<LineColor>#E43DE4</LineColor><!--<LineColor>#FFFFFF</LineColor>-->
+							<LineColor>#FF00FF</LineColor><!--<LineColor>#FFFFFF</LineColor>-->
 							<Point>
 								<FloatPosition>56,107</FloatPosition>
 							</Point>
@@ -6027,7 +6027,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>3</LineWidth>
-							<LineColor>#E43DE4</LineColor>
+							<LineColor>#FF00FF</LineColor>
 							<Point>
 								<FloatPosition>38,107</FloatPosition>
 							</Point>
@@ -6068,7 +6068,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>3</LineWidth>
-							<LineColor>#E43DE4</LineColor><!--<LineColor>#FFFFFF</LineColor>-->
+							<LineColor>#FF00FF</LineColor><!--<LineColor>#FFFFFF</LineColor>-->
 							<Point>
 								<FloatPosition>38,107</FloatPosition>
 							</Point>
@@ -6110,8 +6110,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#EFB02A</LineColor>
-						<FillColor>#EFB02A</FillColor>
+						<LineColor>#ffff00</LineColor>
+						<FillColor>#ffff00</FillColor>
 						<Point>
 							<FloatPosition>30,107</FloatPosition>
 						</Point>
@@ -6140,8 +6140,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#EFB02A</LineColor>
-						<FillColor>#EFB02A</FillColor>
+						<LineColor>#ffff00</LineColor>
+						<FillColor>#ffff00</FillColor>
 						<Point>
 							<FloatPosition>0,106</FloatPosition>
 						</Point>
@@ -6165,8 +6165,8 @@
 					<Polygon id="Arrow">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#efb02a</LineColor>
-						<FillColor>#efb02a</FillColor>
+						<LineColor>#ffff00</LineColor>
+						<FillColor>#ffff00</FillColor>
 						<Point>
 							<FloatPosition>27,114</FloatPosition>
 						</Point>
@@ -6221,8 +6221,8 @@
 					<Polygon id="Arrow">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#EFB02A</LineColor>
-						<FillColor>#EFB02A</FillColor>
+						<LineColor>#ffff00</LineColor>
+						<FillColor>#ffff00</FillColor>
 						<Point>
 							<FloatPosition>27,99</FloatPosition>
 						</Point>
@@ -6497,7 +6497,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>3</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>8,101</FloatPosition>
 						</Point>
@@ -7216,10 +7216,10 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>13</FontHeight>
 						<FontColorScript>
-							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xE43DE4 }
+							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xFF00FF }
 							els{
 								(L:FMA_Vertmode_act, number) 6.5 == 7 10 (L:FMA_Vertmode_act, number) rng || (L:AB_TypeIdent, number) 50 &gt; &amp;&amp; if{ 0xffffff }
-								els{ 0xdada16 }
+								els{ 0xffff00 }
 							}
 						</FontColorScript>
 						<AlternateFont id="Text">
@@ -7259,10 +7259,10 @@
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
 						<LineColorScript>
-							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xE43DE4 }
+							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xFF00FF }
 							els{
 								(L:FMA_Vertmode_act, number) 6.5 == 7 10 (L:FMA_Vertmode_act, number) rng || (L:AB_TypeIdent, number) 50 &gt; &amp;&amp; if{ 0xffffff }
-								els{ 0xdada16 }
+								els{ 0xffff00 }
 							}
 						</LineColorScript>
 						<Point>
@@ -7323,10 +7323,10 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>13</FontHeight>
 						<FontColorScript>
-							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xE43DE4 }
+							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xFF00FF }
 							els{
 								(L:FMA_Vertmode_act, number) 6.5 == 7 10 (L:FMA_Vertmode_act, number) rng || (L:AB_TypeIdent, number) 50 &gt; &amp;&amp; if{ 0xffffff }
-								els{ 0xdada16 }
+								els{ 0xffff00 }
 							}
 						</FontColorScript>
 						<Transparent>False</Transparent>
@@ -7493,7 +7493,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x3C9CF0 } els{ 0x17E400 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7626,7 +7626,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x3C9CF0 } els{ 0x17E400 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7759,7 +7759,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x3C9CF0 } els{ 0x17E400 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -8025,7 +8025,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x3C9CF0 } els{ 0x17E400 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -8116,7 +8116,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>30,92</FloatPosition>
 						</Point>
@@ -8428,8 +8428,8 @@
 								<LineWidth>1</LineWidth>
 								<Bright>True</Bright>
 								<Radius>4</Radius>
-								<LineColor>#02CF16</LineColor>
-								<FillColor>#02CF16</FillColor>
+								<LineColor>#00ff00</LineColor>
+								<FillColor>#00ff00</FillColor>
 							</Circle>
 							<Shift><!--80 pix per 500 feet-->
 								<Expression>
@@ -8458,8 +8458,8 @@
 								<LineWidth>1</LineWidth>
 								<Bright>True</Bright>
 								<Radius>4</Radius>
-								<LineColor>#02CF16</LineColor>
-								<FillColor>#02CF16</FillColor>
+								<LineColor>#00ff00</LineColor>
+								<FillColor>#00ff00</FillColor>
 							</Circle>
 							<ClipRect id="Mask Half Dot Top">
 								<FloatPosition>0,0</FloatPosition>
@@ -8473,8 +8473,8 @@
 								<LineWidth>1</LineWidth>
 								<Bright>True</Bright>
 								<Radius>4</Radius>
-								<LineColor>#02CF16</LineColor>
-								<FillColor>#02CF16</FillColor>
+								<LineColor>#00ff00</LineColor>
+								<FillColor>#00ff00</FillColor>
 							</Circle>
 							<ClipRect id="Mask Half Dot Bottom">
 								<FloatPosition>0,4</FloatPosition>
@@ -8487,7 +8487,7 @@
 							</Visibility>
 							<FloatPosition>-12,-85</FloatPosition>
 							<GaugeText id="text">
-								<FontColor>#02CF16</FontColor>
+								<FontColor>#00ff00</FontColor>
 								<FontHeight>10</FontHeight>
 								<Transparent>TRUE</Transparent>
 								<FontFace>AirbusPFD2</FontFace>
@@ -8506,7 +8506,7 @@
 							</Visibility>
 							<FloatPosition>-12,85</FloatPosition>
 							<GaugeText id="text">
-								<FontColor>#02CF16</FontColor>
+								<FontColor>#00ff00</FontColor>
 								<FontHeight>10</FontHeight>
 								<Transparent>TRUE</Transparent>
 								<FontFace>AirbusPFD2</FontFace>
@@ -8530,10 +8530,10 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>13</FontHeight>
 						<FontColorScript>
-							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xE43DE4 }
+							(L:AP_AP_ALT_Mode99, number) 1 == (L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALT_Select, number) != &amp;&amp;	if{ 0xFF00FF }
 							els{
 								(L:FMA_Vertmode_act, number) 6.5 == 7 10 (L:FMA_Vertmode_act, number) rng || (L:AB_TypeIdent, number) 50 &gt; &amp;&amp; if{ 0xffffff }
-								els{ 0xdada16 }
+								els{ 0xffff00 }
 							}
 						</FontColorScript>
 						<VerticalAlign>CENTER</VerticalAlign>
@@ -8767,7 +8767,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>3</LineWidth>
-							<LineColor>#EFB02A</LineColor>
+							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>18,105</FloatPosition>
 							</Point>
@@ -9105,8 +9105,8 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x3C9CF0 }
-							els{ 0x16CF02 }
+							if{ 0x0080ff }
+							els{ 0x00ff00 }
 						</LineColorScript>
 						<FillColorScript>
 							(A:Vertical speed,feet per minute) -6000 &lt;
@@ -9120,8 +9120,8 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x3C9CF0 }
-							els{ 0x16CF02 }
+							if{ 0x0080ff }
+							els{ 0x00ff00 }
 						</FillColorScript>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
@@ -9275,8 +9275,8 @@
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; 
 
 							||
-							if{ 0x3C9CF0 }
-							els{ 0x17E400 }
+							if{ 0x0080ff }
+							els{ 0x00ff00 }
 						</FontColorScript>
 						<FontHeight>10</FontHeight>
 						<BackgroundColor>#050508</BackgroundColor>
@@ -10094,7 +10094,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>12</FontHeight>
-						<FontColor>#E43DE4</FontColor>
+						<FontColor>#FF00FF</FontColor>
 						<Multiline>True</Multiline>
 						<AlternateFont id="Frequency">
 							<FontFace>AirbusPFD2</FontFace>
@@ -10124,7 +10124,7 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusDisp2</FontFace>
 						<FontHeight>10</FontHeight>
-						<FontColor>0xdada16</FontColor>
+						<FontColor>0xffff00</FontColor>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>NM</GaugeString>
 					</GaugeText>
@@ -10160,7 +10160,7 @@
 						<Polygon id="Box">
 							<Bright>TRUE</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#EFB02A</LineColor>
+							<LineColor>#ffff00</LineColor>
 							<FillColor>#050508</FillColor>
 							<Point>
 								<FloatPosition>0,0</FloatPosition>
@@ -10185,7 +10185,7 @@
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD2</FontFace>
 								<FontHeight>13</FontHeight>
-								<FontColor>0xdada16</FontColor>
+								<FontColor>0xffff00</FontColor>
 								<HorizontalAlign>CENTER</HorizontalAlign>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<Multiline>FALSE</Multiline>
@@ -10219,7 +10219,7 @@
 								<HorizontalAlign>LEFT</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
 								<AlternateColor id="Blue Numbers">
-									<FontColor>0xdada16</FontColor>
+									<FontColor>0xffff00</FontColor>
 								</AlternateColor>
 								<GaugeString>QNH</GaugeString>
 							</GaugeText>
@@ -10235,7 +10235,7 @@
 								<HorizontalAlign>right</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
 								<AlternateColor id="Blue Numbers">
-									<FontColor>0xdada16</FontColor>
+									<FontColor>0xffff00</FontColor>
 								</AlternateColor>
 								<GaugeString>
 									%((L:PFD_Baro_Mode, number) 1 ==)%
@@ -10253,7 +10253,7 @@
 					<Polygon id="Box">
 						<Bright>TRUE</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#EFB02A</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<FillColor>#050508</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
@@ -10278,7 +10278,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#02CF16</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<AlternateColor id="Blue M">
 								<FontColor>#3CD9F8</FontColor>
 							</AlternateColor>
@@ -10298,7 +10298,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#E43DE4</FontColor>
+							<FontColor>#FF00FF</FontColor>
 							<GaugeString>%ILS%</GaugeString>
 						</GaugeText>
 					</Element>
@@ -10479,7 +10479,7 @@
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeightScript>13</FontHeightScript>
 							<Multiline>True</Multiline>
-							<FontColor>#16CF02</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<AlternateFont id="THR IDLE">
 								<FontFace>AirbusPFD</FontFace>
@@ -10493,7 +10493,7 @@
 								<FontHeight>14</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Flex Val">
-								<FontColor>0xdada16</FontColor>
+								<FontColor>0xffff00</FontColor>
 							</AlternateColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10545,7 +10545,7 @@
 							<Width>65</Width>
 							<Height>15</Height>
 							<FillColor>#000000</FillColor>
-							<LineColor>#EFB02A</LineColor>
+							<LineColor>#ffff00</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
 					</Element>
@@ -10670,7 +10670,7 @@
 								<FontFace>AirbusPFD</FontFace>
 								<FontHeightScript>12</FontHeightScript>
 								<Multiline>True</Multiline>
-								<FontColor>#16CF02</FontColor>
+								<FontColor>#00ff00</FontColor>
 								<BackgroundColor>#000000</BackgroundColor>
 								<Bold>FALSE</Bold>
 								<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10735,7 +10735,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#16CF02</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10893,7 +10893,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#16CF02</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10918,7 +10918,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10939,7 +10939,7 @@
 							<Size>70,14</Size>
 							<Bright>True</Bright>
 							<FontHeight>14</FontHeight>
-							<FontColor>#02CF16</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10960,7 +10960,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>#16CF02</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -11098,7 +11098,7 @@
 								<FontHeight>10</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Blue">
-								<FontColor>0xdada16</FontColor>
+								<FontColor>0xffff00</FontColor>
 							</AlternateColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>LEFT</HorizontalAlign>
@@ -11193,7 +11193,7 @@
 								(L:Throttle_ani_fix_L, number) 25 &gt; 
 								(L:Throttle_ani_fix_R, number) 25 &gt; || 
 								(L:AB_AP_ATHR2, number) 1 == &amp;&amp;
-								if{ 0xdada16 } els{ 0xc8c8c8 }
+								if{ 0xffff00 } els{ 0xc8c8c8 }
 							</FontColorScript>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -11369,7 +11369,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>#16CF02</FontColor>
+							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#050508</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -11437,7 +11437,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>0xdada16</FontColor>
+							<FontColor>0xffff00</FontColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>A/THR</GaugeString>
