@@ -1885,7 +1885,7 @@
 							<PolyLine id="Top Left">
 								<Bright>True</Bright>
 								<LineWidth>2</LineWidth>
-								<LineColor>#b3b3b3</LineColor>
+								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>15,0</FloatPosition>
 								</Point>
@@ -1908,7 +1908,7 @@
 							<PolyLine id="Bottom Left">
 								<Bright>True</Bright>
 								<LineWidth>2</LineWidth>
-								<LineColor>#b3b3b3</LineColor>
+								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>15,0</FloatPosition>
 								</Point>
@@ -1931,7 +1931,7 @@
 							<PolyLine id="Bottom Right">
 								<Bright>True</Bright>
 								<LineWidth>2</LineWidth>
-								<LineColor>#b3b3b3</LineColor>
+								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>-15,0</FloatPosition>
 								</Point>
@@ -1954,7 +1954,7 @@
 							<PolyLine id="Top Right">
 								<Bright>True</Bright>
 								<LineWidth>2</LineWidth>
-								<LineColor>#b3b3b3</LineColor>
+								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>-15,0</FloatPosition>
 								</Point>
@@ -1981,7 +1981,7 @@
 								<PolyLine id="Top Left">
 									<Bright>True</Bright>
 									<LineWidth>2</LineWidth>
-									<LineColor>#b3b3b3</LineColor>
+									<LineColor>#ffffff</LineColor>
 									<Point>
 										<FloatPosition>10,0</FloatPosition>
 									</Point>
@@ -2004,7 +2004,7 @@
 								<PolyLine id="Bottom Left">
 									<Bright>True</Bright>
 									<LineWidth>2</LineWidth>
-									<LineColor>#b3b3b3</LineColor>
+									<LineColor>#ffffff</LineColor>
 									<Point>
 										<FloatPosition>0,-10</FloatPosition>
 									</Point>
@@ -2027,7 +2027,7 @@
 								<PolyLine id="Bottom Right">
 									<Bright>True</Bright>
 									<LineWidth>2</LineWidth>
-									<LineColor>#b3b3b3</LineColor>
+									<LineColor>#ffffff</LineColor>
 									<Point>
 										<FloatPosition>-10,0</FloatPosition>
 									</Point>
@@ -2050,7 +2050,7 @@
 								<PolyLine id="Top Right">
 									<Bright>True</Bright>
 									<LineWidth>2</LineWidth>
-									<LineColor>#b3b3b3</LineColor>
+									<LineColor>#ffffff</LineColor>
 									<Point>
 										<FloatPosition>-10,0</FloatPosition>
 									</Point>
@@ -2128,7 +2128,7 @@
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
 							<LineColor>#41942D</LineColor>
-							<FillColor>#03FF1C</FillColor>
+							<FillColor>#00ff00</FillColor>
 							<Point>
 								<FloatPosition>-1,-42</FloatPosition>
 							</Point>
@@ -2167,7 +2167,7 @@
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
 							<LineColor>#41942D</LineColor>
-							<FillColor>#03FF1C</FillColor>
+							<FillColor>#00ff00</FillColor>
 							<Point>
 								<FloatPosition>-43,-1</FloatPosition>
 							</Point>
@@ -2377,7 +2377,7 @@
 					<FloatPosition>100,8</FloatPosition>
 					<PolyLine>
 						<Bright>True</Bright>
-						<LineWidth>2</LineWidth>
+						<LineWidth>1</LineWidth>
 						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
@@ -2441,7 +2441,7 @@
 							<FloatPosition>0,0</FloatPosition>
 						</Axis>
 						<LineWidth>1</LineWidth>
-						<LineColor>#b3b3b3</LineColor>
+						<LineColor>#ffffff</LineColor>
 						<StartAngle>302</StartAngle>
 						<EndAngle>238</EndAngle>
 					</Arc>
@@ -2452,7 +2452,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2488,7 +2488,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2524,7 +2524,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2560,7 +2560,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>0,-90</FloatPosition>
 							</Point>
@@ -2581,7 +2581,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2617,7 +2617,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2653,7 +2653,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#b3b3b3</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<Point>
 								<FloatPosition>-2,-91</FloatPosition>
 							</Point>
@@ -2714,7 +2714,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#03FF1C</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>0,0</FloatPosition>
 									</Point>
@@ -2728,7 +2728,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#03FF1C</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>-5,7</FloatPosition>
 									</Point>
@@ -2742,7 +2742,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#03FF1C</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>0,0</FloatPosition>
 									</Point>
@@ -2756,7 +2756,7 @@
 								<PolyLine>
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
-									<LineColor>#03FF1C</LineColor>
+									<LineColor>#00ff00</LineColor>
 									<Point>
 										<FloatPosition>5,7</FloatPosition>
 									</Point>
@@ -2805,7 +2805,7 @@
 						<FloatPosition>100,100</FloatPosition>
 						<PolyLine>
 							<Bright>True</Bright>
-							<LineWidth>2</LineWidth>
+							<LineWidth>1</LineWidth>
 							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>0,-88</FloatPosition>
@@ -2833,7 +2833,7 @@
 						<FloatPosition>100,100</FloatPosition>
 						<PolyLine>
 							<Bright>True</Bright>
-							<LineWidth>2</LineWidth>
+							<LineWidth>1</LineWidth>
 							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>-7,-76</FloatPosition>
