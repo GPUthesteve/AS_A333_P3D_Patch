@@ -2805,7 +2805,7 @@
 						<FloatPosition>100,100</FloatPosition>
 						<PolyLine>
 							<Bright>True</Bright>
-							<LineWidth>1</LineWidth>
+							<LineWidth>2</LineWidth>
 							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>0,-88</FloatPosition>
@@ -2833,7 +2833,7 @@
 						<FloatPosition>100,100</FloatPosition>
 						<PolyLine>
 							<Bright>True</Bright>
-							<LineWidth>1</LineWidth>
+							<LineWidth>2</LineWidth>
 							<LineColor>#ffff00</LineColor>
 							<Point>
 								<FloatPosition>-7,-76</FloatPosition>
