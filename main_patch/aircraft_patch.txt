@@ -180,12 +180,12 @@ fuel_flow_gain 				= 0.002
 rated_N2_rpm 				= 10611
 afterburner_available 			= 0
 reverser_available 			= 1
-static_thrust 				= 72000
+static_thrust 				= 71100
 inlet_area 				= 51.576526
 thrustspecificfuelconsumption		= 0.343
 
-[JET_ENGINE]	
-thrust_scalar 				=1.01
+[JET_ENGINE]
+thrust_scalar 				=1
 
 [AIRSPEED_INDICATORS]
 airspeed_indicator.0			= 1
