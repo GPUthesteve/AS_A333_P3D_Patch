@@ -168,7 +168,7 @@ flaps-position.3 = 10, 196 ; CONF 2
 
 [GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
-fuel_flow_scalar 			=1.3
+fuel_flow_scalar 			=1
 min_throttle_limit 			= -0.3
 max_contrail_temperature 		= -30
 Engine.0 				= 13.94, -31.06, -9.41
@@ -236,10 +236,9 @@ yaw_control_uses_trim			= 0.0
 [BRAKES]
 parking_brake 				= 1
 hydraulic_system_scalar 		= 1
-toe_brakes_scale 			= 1 
+toe_brakes_scale 			= .6 
 auto_brakes				= 0
-differential_braking_scale		= 1
-parking_brake_linked_to_toe_brakes = 0
+differential_braking_scale		= .6
 
 [CONTACT_POINTS]  
 
