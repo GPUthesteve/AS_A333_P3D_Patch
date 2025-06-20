@@ -30,7 +30,7 @@
 			<FontFace>AirbusISIS</FontFace>
 			<FontHeight>8</FontHeight>
 			<FontColor>#ffffff</FontColor>
-			<BackgroundColor>#0080ff</BackgroundColor>
+			<BackgroundColor>#0040ff</BackgroundColor>
 			<HorizontalAlign>CENTER</HorizontalAlign>
 			<Multiline>True</Multiline>
 			<Tabs>0,27L,42L,44L</Tabs>
@@ -103,7 +103,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#0080ff</BackgroundColor>
+				<BackgroundColor>#0040ff</BackgroundColor>
 				<GaugeString>*</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
 				<Size>80,31</Size>
@@ -119,7 +119,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#0080ff</BackgroundColor>
+				<BackgroundColor>#0040ff</BackgroundColor>
 				<GaugeString>l</GaugeString>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<Size>6,10</Size>
@@ -135,7 +135,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffffff</FontColor>
 				<FontHeight>43</FontHeight>
-				<BackgroundColor>#0080ff</BackgroundColor>
+				<BackgroundColor>#0040ff</BackgroundColor>
 				<GaugeString>r</GaugeString>
 				<HorizontalAlign>Center</HorizontalAlign>
 				<Size>6,10</Size>
@@ -151,7 +151,7 @@
 				<Bold>False</Bold>
 				<FontColor>#ffff00</FontColor>
 				<FontHeight>14</FontHeight>
-				<BackgroundColor>#0080ff</BackgroundColor>
+				<BackgroundColor>#0040ff</BackgroundColor>
 				<Transparent>TRUE</Transparent>
 				<GaugeString>#</GaugeString>
 				<HorizontalAlign>Left</HorizontalAlign>
