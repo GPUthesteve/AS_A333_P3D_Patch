@@ -506,7 +506,7 @@
 					<Polygon id="Down Chevron">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-108</FloatPosition>
@@ -566,7 +566,7 @@
 					<Polygon id="Up Chevron">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,90</FloatPosition>
@@ -632,7 +632,7 @@
 					<Polygon id="Tail Chevron 318">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-58</FloatPosition>
@@ -698,7 +698,7 @@
 					<Polygon id="Tail Chevron 319">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-53</FloatPosition>
@@ -764,7 +764,7 @@
 					<Polygon id="Tail Chevron 320">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-38</FloatPosition>
@@ -830,7 +830,7 @@
 					<Polygon id="Tail Chevron 321">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-33</FloatPosition>
@@ -899,7 +899,7 @@
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
+						<LineColor>#ff0000</LineColor>
 						<FillColor>#000000</FillColor>
 						<Point>
 							<FloatPosition>0,-33</FloatPosition>
@@ -1877,7 +1877,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.01 &gt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp; </Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0.015 &gt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp; </Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
@@ -4750,8 +4750,8 @@
 					<Polygon id="Polygon">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#F01115</LineColor>
-						<FillColor>#F01115</FillColor>
+						<LineColor>#ff0000</LineColor>
+						<FillColor>#ff0000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -7968,8 +7968,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#F01115</LineColor>
-						<FillColor>#F01115</FillColor>
+						<LineColor>#ff0000</LineColor>
+						<FillColor>#ff0000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
