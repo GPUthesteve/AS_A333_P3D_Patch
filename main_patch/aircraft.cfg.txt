@@ -16,7 +16,7 @@ max_indicated_speed			= 360
 [VIEWS]  
 eyepoint    				= 94.30, -2.00 , 3.42
 
-[WEIGHT_AND_BALANCE]
+[WEIGHT_AND_BALANCE]//MOD 51807, 052 Vairant
 max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
 empty_weight 				= 270675 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
 reference_datum_position 		= 0, 0, 0.0
@@ -168,7 +168,7 @@ flaps-position.3 = 10, 196 ; CONF 2
 [GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
 fuel_flow_scalar 			=1
-min_throttle_limit 			= -0.35
+min_throttle_limit 			= -0.36
 max_contrail_temperature 		= -30
 Engine.0 				= 13.94, -31.06, -9.41
 Engine.1 				= 13.94,  31.06, -9.41
@@ -256,7 +256,7 @@ point.11=2,  102.30,   0.00,  -1.000,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   
 point.12=2, -103.80,   0.00,   5.500,  200, 0, 0.00,  0.00, 0.0,   0.0,  0.0,   0.0,  0.0, 9,   0.0,   0.0
 
 max_number_of_points			= 13 //11
-static_cg_height			= 18 //17 original , 20.5 after gear correction
+static_cg_height			= 17 //17 original , 20.5 after gear correction
 static_pitch		 		= -0.6 //-0.8 original
 gear_system_type			= 1
 
@@ -1340,4 +1340,3 @@ ShowLensFlare = No
 AllowPbhAdjust = No
 PitchPanRate = 25
 HeadingPanRate = 25
-
