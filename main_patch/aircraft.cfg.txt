@@ -16,7 +16,7 @@ max_indicated_speed			= 360
 [VIEWS]  
 eyepoint    				= 94.30, -2.00 , 3.42
 
-[WEIGHT_AND_BALANCE]//MOD 51807, 052 Vairant
+[WEIGHT_AND_BALANCE]//WV022
 max_gross_weight 			= 513676 //F.W. 2019.08.19: Did set to MTOW at brake release! (513676 lbs = 233000 kg)
 empty_weight 				= 270675 //F.W. 2019.08.19 corrected to typical OEW (incl. unusable fuel) (280705 lbs = 127326 kg) for 330-343 (intl long)
 reference_datum_position 		= 0, 0, 0.0
