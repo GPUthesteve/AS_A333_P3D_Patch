@@ -14440,27 +14440,8 @@
 				<Transparent>True</Transparent>
 			</GaugeText>
 	</Element>
-	
-	<Element id="baro">
-		<Visibility>(L:AB_Stdb_Baro_STD, number) 0 == (L:AB_MPL_Baro_Unit, number) 0 == &amp;&amp; (L:AB_TypeIdent, number) 50 &lt; &amp;&amp;</Visibility>
-			<Element id="baro">
-				<FloatPosition>35.000,92.000</FloatPosition>
-					<GaugeText id="Airspeed 400">
-						<Bright>True</Bright>
-						<FontFace>AirbusISIS</FontFace>
-						<Bold>True</Bold>
-						<FontColor>#00ffff</FontColor>
-						<FontHeight>8</FontHeight>
-						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!</GaugeString>
-						<HorizontalAlign>Left</HorizontalAlign>
-						<Size>55,10</Size>
-						<Transparent>True</Transparent>
-					</GaugeText>
-			</Element>
-	</Element>
-	
-	<Element id="baro">
-		<Visibility>(L:AB_Stdb_Baro_STD, number) 0 == (L:AB_MPL_Baro_Unit, number) 1 == &amp;&amp; (L:AB_TypeIdent, number) 50 &lt; &amp;&amp;</Visibility>
+	<Element id="baroQNH">
+		<Visibility>(L:AB_Stdb_Baro_STD, number) 0 ==</Visibility>
 			<Element id="baro">
 				<FloatPosition>35.000,92.000</FloatPosition>
 					<GaugeText id="Airspeed 400">
@@ -14476,25 +14457,6 @@
 					</GaugeText>
 			</Element>
 	</Element>
-	
-	<Element id="baro">
-		<Visibility>(L:AB_Stdb_Baro_STD, number) 0 == (L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;</Visibility>
-			<Element id="baro">
-				<FloatPosition>35.000,92.000</FloatPosition>
-					<GaugeText id="Airspeed 400">
-						<Bright>True</Bright>
-						<FontFace>AirbusISIS</FontFace>
-						<Bold>True</Bold>
-						<FontColor>#00ffff</FontColor>
-						<FontHeight>8</FontHeight>
-						<GaugeString>%((A:KOHLSMAN SETTING MB:2, millibars) near)%!4d!/%((A:KOHLSMAN SETTING HG:2, inHg) 100.0 * near 100.0 / )%!2.2f</GaugeString>
-						<HorizontalAlign>Left</HorizontalAlign>
-						<Size>55,10</Size>
-						<Transparent>True</Transparent>
-					</GaugeText>
-			</Element>
-	</Element>
-	
 	<Element id="baro">
 		<Visibility>
 			(L:MP_CONN, number) 0 ==
