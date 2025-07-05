@@ -167,7 +167,7 @@
 			<FontFace>AirbusISIS</FontFace>
 			<FontHeight>8</FontHeight>
 			<FontColor>#ffffff</FontColor>
-			<BackgroundColor>#804000</BackgroundColor>
+			<BackgroundColor>#604000</BackgroundColor>
 			<HorizontalAlign>CENTER</HorizontalAlign>
 			<Multiline>True</Multiline>
 			<Tabs>0,27L,42L,44L</Tabs>
