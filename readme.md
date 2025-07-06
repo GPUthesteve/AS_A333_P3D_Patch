@@ -28,7 +28,7 @@ installation
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
 # PFD Rework
-Bring back "Ground Reference line" that was missing.
+Bring back "Ground Reference line" that was missing, Recoloring some elements, and more....
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `Panel_Fallback`, go in it, and you'll see bunch of other folders, look for `displays`
 2. replace 2 xml files (`pfd_cpt/fo.xml`) with ones you got from here.
