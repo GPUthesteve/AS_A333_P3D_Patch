@@ -2380,7 +2380,7 @@
 					<PolyLine>
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>0x000000</LineColor>
+						<LineColor>#ffff00</LineColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -2404,36 +2404,7 @@
 						</Point>
 					</PolyLine>
 				</Element>
-				
-				<!--<Element id="Yellow 0 Degree Roll Pointer">
-					<FloatPosition>100,8</FloatPosition>
-					<PolyLine>
-					<Bright>True</Bright>
-					<LineWidth>2</LineWidth>
-					<LineColor>#ffff00</LineColor>
-					<Point>
-					<FloatPosition>0,0</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>-7,-7</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>7,-7</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>0,0</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>7,-7</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>-7,-7</FloatPosition>
-					</Point>
-					<Point>
-					<FloatPosition>0,0</FloatPosition>
-					</Point>
-					</PolyLine>
-				</Element> -->
+
 				<Element id="White Top Border Arc Thin">
 					<FloatPosition>11,9</FloatPosition>
 					<Arc id="Top">
@@ -6428,10 +6399,10 @@
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>31,0</FloatPosition>
+							<FloatPosition>30,0</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>31,190</FloatPosition>
+							<FloatPosition>30,190</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>0,190</FloatPosition>
@@ -6461,7 +6432,7 @@
 					</Shift>
 					<ClipRect id="Mask landing elevation Tape">
 						<FloatPosition>5,-90</FloatPosition>
-						<Size>31,179</Size>
+						<Size>30,180</Size>
 					</ClipRect>
 				</Element>
 				<Element id="White Border">
