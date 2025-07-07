@@ -181,7 +181,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#00bfff</BackgroundColor>
+						<BackgroundColor>#0080ff</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
 						<Tabs>0,62L,69L,76L,106L,111L</Tabs>
@@ -1026,7 +1026,7 @@
 						<GaugeText id="text">
 							<Axis>50,-75</Axis>
 							<FontFace>AirbusPFD2</FontFace>
-							<FontColor>0x00bfff</FontColor>
+							<FontColor>0x0080ff</FontColor>
 							<FontHeight>14</FontHeight>
 							<BackgroundColor>#804000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1101,7 +1101,7 @@
 						<GaugeText id="text">
 							<Axis>15,-55</Axis>
 							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0x00bfff</FontColor>
+							<FontColor>0x0080ff</FontColor>
 							<FontHeight>15</FontHeight>
 							<Transparent>TRUE</Transparent>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1600,7 +1600,7 @@
 						<Height>70</Height>
 						<LineColor>#ffffff</LineColor>
 						<LineWidth>1</LineWidth>
-						<FillColor>#00bfff</FillColor>
+						<FillColor>#0080ff</FillColor>
 					</Rectangle>
 					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
 						<Axis>100,100</Axis>
@@ -2024,8 +2024,7 @@
 						</NonlinearityTable>
 					</Shift>
 				</Element>
-
-								<Element id="Fixed AC Symbol / Axis"><!--SP_Edit - black fill color in Center polygon, for TRK-FPA mode-->
+				<Element id="Fixed AC Symbol / Axis"><!--SP_Edit - black fill color in Center polygon, for TRK-FPA mode-->
 					<FloatPosition>100,100</FloatPosition>
 					<Element id="Center">
 						<Polygon id="Box">
@@ -2033,7 +2032,7 @@
 							<LineWidth>2</LineWidth>
 							<LineColor>#ffff00</LineColor>
 							<!--<FillColorScript>(L:AB_AP_HDGTRK, bool) if{ 0x010101 } els{ 0x000000 }</FillColorScript>-->
-							<FillColor>0x000000</FillColor>
+							<FillColor>#000000</FillColor>
 							<Point>
 								<FloatPosition>-3,-3</FloatPosition>
 							</Point>
@@ -2110,7 +2109,6 @@
 						</Polygon>
 					</Element>
 				</Element>
-				
 				<Element id="Yellow 0 Degree Roll Pointer">
 					<FloatPosition>100,8</FloatPosition>
 					<PolyLine>
@@ -2140,7 +2138,36 @@
 						</Point>
 					</PolyLine>
 				</Element>
-
+				
+				<!--<Element id="Yellow 0 Degree Roll Pointer">
+					<FloatPosition>100,8</FloatPosition>
+					<PolyLine>
+					<Bright>True</Bright>
+					<LineWidth>2</LineWidth>
+					<LineColor>#ffff00</LineColor>
+					<Point>
+					<FloatPosition>0,0</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>-7,-7</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>7,-7</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>0,0</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>7,-7</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>-7,-7</FloatPosition>
+					</Point>
+					<Point>
+					<FloatPosition>0,0</FloatPosition>
+					</Point>
+					</PolyLine>
+				</Element> -->
 				<Element id="White Top Border Arc Thin">
 					<FloatPosition>11,9</FloatPosition>
 					<Arc id="Top">
@@ -4351,7 +4378,7 @@
 					</Element>
 				</Element>
 				<Element id="Vmax Tape">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,-290</FloatPosition>
 					<Image id="Vmax_Tape_bmp">
 						<Name>Vmax_Tape.bmp</Name>
@@ -4382,7 +4409,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vls Tape">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,106</FloatPosition>
 					<Polyline id="Line">
 						<Bright>True</Bright>
@@ -4423,7 +4450,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="alpha_prot Tape">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,106</FloatPosition>
 					<Image id="Alpha_Prot_Tape_bmp">
 						<Name>Alpha_Prot_Tape.bmp</Name>
@@ -4454,7 +4481,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="alpha_max Tape">
-					<Visibility>(A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>41,106</FloatPosition>
 					<Polygon id="Polygon">
 						<Bright>True</Bright>
@@ -4816,7 +4843,7 @@
 						<Polyline id="White Border">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#FFFFFF</LineColor>
+							<LineColor>#f3f3f3</LineColor>
 							<Point>
 								<FloatPosition>2,17</FloatPosition>
 							</Point>
@@ -5383,7 +5410,7 @@
 					<Visibility>(A:FLAPS HANDLE INDEX,  number) 0 == (A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
-						<FontColor>0x00FF00</FontColor>
+						<FontColor>0x00ff00</FontColor>
 						<FontHeight>20</FontHeight>
 						<Bold>False</Bold>
 						<VerticalAlign>CENTER</VerticalAlign>
@@ -5496,7 +5523,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vfe_next_upper">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5534,7 +5561,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vfe_next_lower">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5572,7 +5599,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Max Op Speed">
-					<Visibility>(A:sim on ground, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
+					<Visibility>(A:SIM ON GROUND, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5610,7 +5637,7 @@
 					</ClipRect>
 				</Element>	
 				<Element id="Max Op Speed lower">
-					<Visibility>(A:sim on ground, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
+					<Visibility>(A:SIM ON GROUND, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -6107,7 +6134,7 @@
 						<LineColor>#808080</LineColor>
 						<FillColor>#808080</FillColor>
 						<Point>
-							<FloatPosition>30,12</FloatPosition>
+							<FloatPosition>32,12</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>58,12</FloatPosition>
@@ -6116,9 +6143,59 @@
 							<FloatPosition>58,191</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>30,191</FloatPosition>
+							<FloatPosition>32,191</FloatPosition>
 						</Point>
 					</Polygon>
+				</Element>
+				<Element id="landing elevation strip">
+					<Visibility>
+					(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == || (L:AB_MPL_Baro_STD, number) 0 == &amp;&amp;
+					</Visibility>
+					<FloatPosition>27,101</FloatPosition>
+					<Polygon id="Fill">
+						<Bright>True</Bright>
+						<LineWidth>1</LineWidth>
+						<LineColor>#804000</LineColor>
+						<FillColor>#804000</FillColor>
+						<Point>
+							<FloatPosition>0,0</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>31,0</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>31,190</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>0,190</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>0,0</FloatPosition>
+						</Point>
+					</Polygon>
+					<Shift>
+						<Expression>
+							<Script>(A:INDICATED ALTITUDE:1, feet) (L:SIM_DESTINATION_ALT, feet) - 14 - 600 min 600 /-/ max</Script>
+						</Expression>
+						<NonlinearityTable>
+							<NonlinearityEntry>
+								<ExpressionResult>-1000</ExpressionResult>
+								<FloatPosition>30,-59</FloatPosition>
+							</NonlinearityEntry>
+							<NonlinearityEntry>
+								<ExpressionResult>0</ExpressionResult>
+								<FloatPosition>30,101</FloatPosition>
+							</NonlinearityEntry>
+							<NonlinearityEntry>
+								<ExpressionResult>1000</ExpressionResult>
+								<FloatPosition>30,261</FloatPosition>
+							</NonlinearityEntry>
+						</NonlinearityTable>
+					</Shift>
+					<ClipRect id="Mask landing elevation Tape">
+						<FloatPosition>5,-90</FloatPosition>
+						<Size>31,179</Size>
+					</ClipRect>
 				</Element>
 				<Element id="White Border">
 					<FloatPosition>0,0</FloatPosition>
@@ -6127,9 +6204,9 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>0xFFFFFF</LineColor>
+							<LineColor>0xf3f3f3</LineColor>
 							<Point>
-								<FloatPosition>0,0</FloatPosition>
+								<FloatPosition>2,0</FloatPosition>
 							</Point>
 							<Point>
 								<FloatPosition>42,0</FloatPosition>
@@ -6141,9 +6218,9 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>0xFFFFFF</LineColor>
+							<LineColor>0xf3f3f3</LineColor>
 							<Point>
-								<FloatPosition>0,0</FloatPosition>
+								<FloatPosition>2,0</FloatPosition>
 							</Point>
 							<Point>
 								<FloatPosition>42,0</FloatPosition>
@@ -6532,7 +6609,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6570,7 +6647,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6608,7 +6685,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6646,7 +6723,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6684,7 +6761,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 *)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6722,7 +6799,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6760,7 +6837,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6798,7 +6875,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6836,7 +6913,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#808080</BackgroundColor>
+								<!--<BackgroundColor>#808080</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -7070,7 +7147,7 @@
 						<LineColor>#010101</LineColor>
 						<FillColor>#010101</FillColor>
 						<Point>
-							<FloatPosition>30,92</FloatPosition>
+							<FloatPosition>32,92</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>59,92</FloatPosition>
@@ -7079,12 +7156,62 @@
 							<FloatPosition>59,109</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>30,109</FloatPosition>
+							<FloatPosition>32,109</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>30,92</FloatPosition>
+							<FloatPosition>32,92</FloatPosition>
 						</Point>
 					</Polygon>
+				</Element>
+				<Element id="landing elevation stripbox">
+					<Visibility>
+					(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == || (L:AB_MPL_Baro_STD, number) 0 == &amp;&amp;
+					</Visibility>
+					<FloatPosition>27,101</FloatPosition>
+					<Polygon id="Fill">
+						<Bright>True</Bright>
+						<LineWidth>1</LineWidth>
+						<LineColor>#804000</LineColor>
+						<FillColor>#804000</FillColor>
+						<Point>
+							<FloatPosition>0,0</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>31,0</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>31,190</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>0,190</FloatPosition>
+						</Point>
+						<Point>
+							<FloatPosition>0,0</FloatPosition>
+						</Point>
+					</Polygon>
+					<Shift>
+						<Expression>
+							<Script>(A:Indicated Altitude:1, feet) (L:SIM_DESTINATION_ALT, feet) - 14 - 600 min 600 /-/ max</Script>
+						</Expression>
+						<NonlinearityTable>
+							<NonlinearityEntry>
+								<ExpressionResult>-1000</ExpressionResult>
+								<FloatPosition>30,-59</FloatPosition>
+							</NonlinearityEntry>
+							<NonlinearityEntry>
+								<ExpressionResult>0</ExpressionResult>
+								<FloatPosition>30,101</FloatPosition>
+							</NonlinearityEntry>
+							<NonlinearityEntry>
+								<ExpressionResult>1000</ExpressionResult>
+								<FloatPosition>30,261</FloatPosition>
+							</NonlinearityEntry>
+						</NonlinearityTable>
+					</Shift>
+					<ClipRect id="Mask landing elevation Tapebox">
+						<FloatPosition>5,-14</FloatPosition>
+						<Size>31,28</Size>
+					</ClipRect>
 				</Element>
 				<Element id="Altitude Box Left Rolling Numbers">
 					<FloatPosition>0,-1</FloatPosition>
@@ -7102,7 +7229,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x00bfff } els{ 0x00ff00 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7235,7 +7362,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x00bfff } els{ 0x00ff00 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7368,7 +7495,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x00bfff } els{ 0x00ff00 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7634,7 +7761,7 @@
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x00bfff } els{ 0x00ff00 }
+								if{ 0x0080ff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7691,7 +7818,7 @@
 						<LineWidth>2</LineWidth>
 						<LineColor>#808000</LineColor>
 						<Point>
-							<FloatPosition>26,92</FloatPosition>
+							<FloatPosition>30,92</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>59,92</FloatPosition>
@@ -7712,11 +7839,11 @@
 							<FloatPosition>59,110</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>26,110</FloatPosition>
+							<FloatPosition>30,110</FloatPosition>
 						</Point>
 					</PolyLine>
 					<ClipRect id="Mask">
-							<FloatPosition>30,85</FloatPosition>
+							<FloatPosition>32,85</FloatPosition>
 							<Size>50,31</Size>
 					</ClipRect>
 				</Element>
@@ -7727,7 +7854,7 @@
 						<LineWidth>2</LineWidth>
 						<LineColor>#ffff00</LineColor>
 						<Point>
-							<FloatPosition>28,92</FloatPosition>
+							<FloatPosition>30,92</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>59,92</FloatPosition>
@@ -7748,11 +7875,11 @@
 							<FloatPosition>59,110</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>28,110</FloatPosition>
+							<FloatPosition>30,110</FloatPosition>
 						</Point>
 					</PolyLine>
 					<ClipRect id="Mask">
-							<FloatPosition>30,85</FloatPosition>
+							<FloatPosition>32,85</FloatPosition>
 							<Size>50,31</Size>
 					</ClipRect>
 				</Element>
@@ -7778,7 +7905,7 @@
 					</Element>
 				</Element>				
 				<Element id="Altitude Pointers">
-					<FloatPosition>-2,0</FloatPosition>
+					<FloatPosition>1,0</FloatPosition>
 					<Element id="Shifting Pointer 0">
 						<FloatPosition>0,0</FloatPosition>
 						<PolyLine>
@@ -8714,7 +8841,7 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x00bfff }
+							if{ 0x0080ff }
 							els{ 0x00ff00 }
 						</LineColorScript>
 						<FillColorScript>
@@ -8729,7 +8856,7 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x00bfff }
+							if{ 0x0080ff }
 							els{ 0x00ff00 }
 						</FillColorScript>
 						<Point>
@@ -8884,7 +9011,7 @@
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; 
 
 							||
-							if{ 0x00bfff }
+							if{ 0x0080ff }
 							els{ 0x00ff00 }
 						</FontColorScript>
 						<FontHeight>10</FontHeight>
@@ -9004,8 +9131,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>0x00FF00</LineColor>
-						<FillColor>0x00FF00</FillColor>
+						<LineColor>0x00ff00</LineColor>
+						<FillColor>0x00ff00</FillColor>
 						<Point>
 							<FloatPosition>30,30</FloatPosition>
 						</Point>
@@ -9171,7 +9298,7 @@
 						<FontColorScript>
 							(A:Vertical speed,feet per minute) 1200 &lt;
 							if{ 'red' }
-							els{ '0x00FF00' }
+							els{ '0x00ff00' }
 						</FontColorScript>
 						<FontHeight>10</FontHeight>
 						<BackgroundColor>#010101</BackgroundColor>
@@ -9290,8 +9417,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>0x00FF00</LineColor>
-						<FillColor>0x00FF00</FillColor>
+						<LineColor>0x00ff00</LineColor>
+						<FillColor>0x00ff00</FillColor>
 						<Point>
 							<FloatPosition>30,181</FloatPosition>
 						</Point>
@@ -9457,7 +9584,7 @@
 						<FontColorScript>
 							(A:Vertical speed,feet per minute) -1200 &gt;
 							if{ 'red' }
-							els{ '0x00FF00' }
+							els{ '0x00ff00' }
 						</FontColorScript>
 						<FontHeight>10</FontHeight>
 						<BackgroundColor>#010101</BackgroundColor>
@@ -10196,7 +10323,7 @@
 							<Bright>TRUE</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xffff00</FontColor>
+							<FontColor>0xE6E600</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>LEFT</HorizontalAlign>
@@ -10212,7 +10339,7 @@
 							<Bright>TRUE</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xffff00</FontColor>
+							<FontColor>0xE6E600</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>LEFT</HorizontalAlign>
@@ -10228,7 +10355,7 @@
 							<Bright>TRUE</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>13</FontHeight>
-							<FontColor>0xffff00</FontColor>
+							<FontColor>0xE6E600</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>LEFT</HorizontalAlign>
@@ -10244,7 +10371,7 @@
 							<Bright>TRUE</Bright>
 							<FontFace>AirbusPFD</FontFace>             
 							<FontHeight>13</FontHeight>
-							<FontColor>0xffff00</FontColor>
+							<FontColor>0xE6E600</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>LEFT</HorizontalAlign>
@@ -10310,7 +10437,7 @@
 							<Bright>FALSE</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColorScript>0xffff00</FontColorScript>
+							<FontColorScript>0xE6E600</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10328,7 +10455,7 @@
 							<Bright>FALSE</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColorScript>0xffff00</FontColorScript>
+							<FontColorScript>0xE6E600</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -10381,7 +10508,7 @@
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>12</FontHeight>
-							<FontColor>#00ffff</FontColor>
+							<FontColor>#3AD4F3</FontColor>
 							<AlternateFont id="Frequency">
 								<FontFace>AirbusPFD2</FontFace>
 								<FontHeight>16</FontHeight>
@@ -10442,7 +10569,7 @@
 							<FontHeight>12</FontHeight>
 							<FontColorScript>
 								(L:PFD_VertMode5, bool) 1 ==
-								if{ 0xff80ff } els{ 0xffff00 }
+								if{ 0xff80ff } els{ 0xE6E600 }
 							</FontColorScript>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
