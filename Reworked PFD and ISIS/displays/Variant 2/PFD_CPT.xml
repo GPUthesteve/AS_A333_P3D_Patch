@@ -100,17 +100,17 @@
 				</Script>
 			</Update>
 			<Update>
-				<Script>
-				<!-- Destination Airport Elevation from SIM, not NAVDATA. Because (L:AB_AP_MCDU_RWYALT, number) is offering Treshold altitude from NAVDATA. Will not work on default flat airports in P3D.
-				AB_DEST_ICAO 1 to 4 deliver ASCII numbers for ICAO letters from FMGS.dll. Then sim value is then read in fs9gps gauge. That's the best solution for the <Element id="landing elevation strip"> -->
-					<!-- SET the Airport -->
-					'A      ' (L:AB_DEST_ICAO_1, number) chr scat (L:AB_DEST_ICAO_2, number) chr scat (L:AB_DEST_ICAO_3, number) chr scat (L:AB_DEST_ICAO_4, number) chr scat (>C:fs9gps:WaypointAirportICAO, string)
-					<!-- GET the Data -->
-					(C:fs9gps:WaypointAirportElevation, feet) (>L:SIM_DESTINATION_ALT, feet)
-				
-				</Script>
+			<Script>
+			<!-- Destination Airport Elevation from SIM, not NAVDATA. Because (L:AB_AP_MCDU_RWYALT, number) is offering Treshold altitude from NAVDATA. Will not work on default flat airports in P3D.
+			AB_DEST_ICAO 1 to 4 deliver ASCII numbers for ICAO letters from FMGS.dll. Then sim value is then read in fs9gps gauge. That's the best solution for the <Element id="landing elevation strip"> -->
+				<!-- SET the Airport -->
+				'A      ' (L:AB_DEST_ICAO_1, number) chr scat (L:AB_DEST_ICAO_2, number) chr scat (L:AB_DEST_ICAO_3, number) chr scat (L:AB_DEST_ICAO_4, number) chr scat (>C:fs9gps:WaypointAirportICAO, string)
+				<!-- GET the Data -->
+				(C:fs9gps:WaypointAirportElevation, feet) (>L:SIM_DESTINATION_ALT, feet)
+
+			</Script>
 			</Update>
-			
+
 			<!-- two L:vars to hold FLAPS HANDLE direction -->
 			<Update>
 				<Script>					
@@ -163,7 +163,7 @@
 			</Rectangle>
 		</Element>		
 		<Element id="Main">
-			<Visibility>(L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || (L:AB_MPL_PFD_FO_Power, number) 0 != &amp;&amp;</Visibility>
+			<Visibility>(L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || (L:AB_MPL_PFD_Power, number) 0 != &amp;&amp;</Visibility>
 			<Element id="Background - On">
 				<FloatPosition>0,0</FloatPosition>
 				<Rectangle id="Rectangle">
@@ -181,7 +181,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#0080ff</BackgroundColor>
+						<BackgroundColor>#00bfff</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
 						<Tabs>0,62L,69L,76L,106L,111L</Tabs>
@@ -280,8 +280,7 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>
-								(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
+							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
@@ -731,7 +730,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Blue Selected Trk Marker - Shifting Horizon"><!--SP_Edit - all added-->
-					<Visibility>(L:AB_AP_HDGmode_setDisp, number) -1 == (L:PFD_FO_Flight_Director, number) 0 == &amp;&amp; (L:AB_AP_HDGTRK, bool) 1 == &amp;&amp; (L:HDGavailScreen, bool) 1 == &amp;&amp;</Visibility>
+					<Visibility>(L:AB_AP_HDGmode_setDisp, number) -1 == (L:PFD_Flight_Director, number) 0 == &amp;&amp; (L:AB_AP_HDGTRK, bool) 1 == &amp;&amp; (L:HDGavailScreen, bool) 1 == &amp;&amp;</Visibility>
 					<!--Visible when FlDir is off and in TRK-FPA mode-->
 					<!--<Visibility>1</Visibility>-->
 					<Polygon id="Trk Marker">
@@ -801,7 +800,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Blue Selected Heading Marker - Shifting Horizon"><!--SP_Edit - all added-->
-					<Visibility>(L:AB_AP_HDGmode_setDisp, number) -1 == (L:PFD_FO_Flight_Director, number) 0 == &amp;&amp; (L:AB_AP_HDGTRK, bool) 0 == &amp;&amp; (L:HDGavailScreen, bool) 1 == &amp;&amp;</Visibility>
+					<Visibility>(L:AB_AP_HDGmode_setDisp, number) -1 == (L:PFD_Flight_Director, number) 0 == &amp;&amp; (L:AB_AP_HDGTRK, bool) 0 == &amp;&amp; (L:HDGavailScreen, bool) 1 == &amp;&amp;</Visibility>
 					<!--Visible when FlDir is off and in TRK-FPA mode-->
 					<!--<Visibility>1</Visibility>-->
 					<Polygon id="Trk Marker">
@@ -879,7 +878,7 @@
 							<Height>300</Height>
 							<Bright>True</Bright>
 							<FillColor>#804000</FillColor>
-							<LineColor>#c0c0c0</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
 						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
@@ -1027,7 +1026,7 @@
 						<GaugeText id="text">
 							<Axis>50,-75</Axis>
 							<FontFace>AirbusPFD2</FontFace>
-							<FontColor>0x0080ff</FontColor>
+							<FontColor>0x00bfff</FontColor>
 							<FontHeight>14</FontHeight>
 							<BackgroundColor>#804000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1102,7 +1101,7 @@
 						<GaugeText id="text">
 							<Axis>15,-55</Axis>
 							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0x0080ff</FontColor>
+							<FontColor>0x00bfff</FontColor>
 							<FontHeight>15</FontHeight>
 							<Transparent>TRUE</Transparent>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -1456,7 +1455,7 @@
 						</Shift>
 					</Element>
 					<Element id="TRK-FPA Flight Director">
-						<Visibility>(L:PFD_FO_Flight_Director, number) 2 ==</Visibility>
+						<Visibility>(L:PFD_Flight_Director, number) 2 ==</Visibility>
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
@@ -1601,7 +1600,7 @@
 						<Height>70</Height>
 						<LineColor>#ffffff</LineColor>
 						<LineWidth>1</LineWidth>
-						<FillColor>#0080ff</FillColor>
+						<FillColor>#00bfff</FillColor>
 					</Rectangle>
 					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
 						<Axis>100,100</Axis>
@@ -1614,7 +1613,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0 &gt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0 &gt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp; </Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
@@ -1856,7 +1855,7 @@
 					</Rectangle>					
 				</Element>
 				<Element id="Default FD"> <!--SP_Edit - touched top level visibility condition only -->
-					<Visibility>(L:PFD_FO_Flight_Director, number) 1 ==</Visibility>
+					<Visibility>(L:PFD_Flight_Director, number) 1 ==</Visibility>
 					<!--<Visibility>(L:AB_MPL_FD, number) 1 ==</Visibility>-->
 					<Element id="Vertical Bar">
 						<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
@@ -1864,7 +1863,7 @@
 						<Polygon id="PolyLine">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#41942D</LineColor>
+							<LineColor>#010101</LineColor>
 							<FillColor>#00ff00</FillColor>
 							<Point>
 								<FloatPosition>-1,-42</FloatPosition>
@@ -1903,7 +1902,7 @@
 						<Polygon id="PolyLine">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#41942D</LineColor>
+							<LineColor>#010101</LineColor>
 							<FillColor>#00ff00</FillColor>
 							<Point>
 								<FloatPosition>-43,-1</FloatPosition>
@@ -1963,7 +1962,7 @@
 						<PolyLine id="Bar">
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
-							<LineColor>#13B102</LineColor>
+							<LineColor>#00ff00</LineColor>
 							<Point>
 								<FloatPosition>0,0</FloatPosition>
 							</Point>
@@ -2026,7 +2025,7 @@
 					</Shift>
 				</Element>
 
-					<Element id="Fixed AC Symbol / Axis"><!--SP_Edit - black fill color in Center polygon, for TRK-FPA mode-->
+								<Element id="Fixed AC Symbol / Axis"><!--SP_Edit - black fill color in Center polygon, for TRK-FPA mode-->
 					<FloatPosition>100,100</FloatPosition>
 					<Element id="Center">
 						<Polygon id="Box">
@@ -2111,7 +2110,7 @@
 						</Polygon>
 					</Element>
 				</Element>
-
+				
 				<Element id="Yellow 0 Degree Roll Pointer">
 					<FloatPosition>100,8</FloatPosition>
 					<PolyLine>
@@ -2399,7 +2398,7 @@
 						<PolyLine>
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>0xc0c0c0</LineColor>
+							<LineColor>0xffffff</LineColor>
 							<Point>
 								<FloatPosition>0,-89</FloatPosition>
 							</Point>
@@ -2596,11 +2595,11 @@
 						<FloatPosition>0,-3</FloatPosition>
 						<Element id="Localizer Scale Circles">
 							<Visibility>
-								(L:AB_MPL_FO_ILS, bool) 1 ==
+								(L:AB_MPL_ILS, bool) 1 ==
 								(L:PFD_CDI_SIGNAL, bool) 0 ==
 								(L:PFD_GSI_SIGNAL, bool) 0 ==
 								&amp;&amp; &amp;&amp;
-								(L:AB_MPL_FO_ILS, bool) 1 ==
+								(L:AB_MPL_ILS, bool) 1 ==
 								(L:PFD_CDI_SIGNAL, bool) 1 == &amp;&amp;
 								||
 							</Visibility>
@@ -2648,7 +2647,7 @@
 						<Element id="Localizer Marker Diamond">
 							<Visibility>
 								(A:NAV1 CDI, number) 127 / abs 1.00 &lt;
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_CDI_SIGNAL, bool) 1 == &amp;&amp;
 							</Visibility>
 							<FloatPosition>99,199</FloatPosition>
@@ -2679,11 +2678,11 @@
 						<Element id="Localizer Yellow 0 Line">
 							<Element id="Localizer Yellow 0 Line">
 								<Visibility>
-									(L:AB_MPL_FO_ILS, bool) 1 ==
+									(L:AB_MPL_ILS, bool) 1 ==
 									(L:PFD_CDI_SIGNAL, bool) 0 ==
 									(L:PFD_GSI_SIGNAL, bool) 0 ==
 									&amp;&amp; &amp;&amp;
-									(L:AB_MPL_FO_ILS, bool) 1 ==
+									(L:AB_MPL_ILS, bool) 1 ==
 									(L:PFD_CDI_SIGNAL, bool) 1 == &amp;&amp;
 									||
 								</Visibility>
@@ -2708,7 +2707,7 @@
 						<Element id="Localizer Marker Diamond Left Half">
 							<Visibility>
 								(A:NAV1 CDI, number) 127 / -1.00 &lt;=
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_CDI_SIGNAL, bool) 1 == &amp;&amp;
 							</Visibility>
 							<FloatPosition>30,199</FloatPosition>
@@ -2720,7 +2719,7 @@
 						<Element id="Localizer Marker Diamond Right Half">
 							<Visibility>
 								(A:NAV1 CDI, number) 127 / 1.00 &gt;=
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_CDI_SIGNAL, bool) 1 == &amp;&amp;
 							</Visibility>
 							<FloatPosition>158,199</FloatPosition>
@@ -2734,8 +2733,7 @@
 						<Element id="Glideslope Scale Circles">
 							<Visibility>
 							(L:PFD_VDEV_GSScaleCond, bool) 1 ==
-							
-							(L:AB_MPL_FO_ILS, bool) 1 == (L:PFD_VDEV_DisplayTypeVis, number) 2 == &amp;&amp; ||
+							(L:AB_MPL_ILS, bool) 1 == (L:PFD_VDEV_DisplayTypeVis, number) 2 == &amp;&amp; ||
 							</Visibility>
 							<Element id="Glideslope circle T2">
 								<FloatPosition>186,38</FloatPosition>
@@ -2781,7 +2779,7 @@
 						<Element id="Glideslope Marker Diamond">
 							<Visibility>
 								(A:NAV1 GLIDE SLOPE ERROR,degrees) abs 0.8 &lt;
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_GSI_SIGNAL, bool) 1 == &amp;&amp;
 								(L:PFD_VDEV_GSScaleCond, bool) 1 == &amp;&amp;
 							</Visibility>
@@ -2813,7 +2811,7 @@
 						<Element id="Glideslope Marker Diamond Top Half">
 							<Visibility>
 								(A:NAV1 GLIDE SLOPE ERROR,degrees) -0.8 &lt;=
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_GSI_SIGNAL, bool) 1 == &amp;&amp;
 								(L:PFD_VDEV_GSScaleCond, bool) 1 == &amp;&amp;
 							</Visibility>
@@ -2826,7 +2824,7 @@
 						<Element id="Glideslope Marker Diamond Bottom Half">
 							<Visibility>
 								(A:NAV1 GLIDE SLOPE ERROR,degrees) 0.8 &gt;=
-								(L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp;
+								(L:AB_MPL_ILS, bool) 1 == &amp;&amp;
 								(L:PFD_GSI_SIGNAL, bool) 1 == &amp;&amp;
 								(L:PFD_VDEV_GSScaleCond, bool) 1 == &amp;&amp;
 							</Visibility>
@@ -2841,7 +2839,7 @@
 				<Element id="NPA Components - VDEV"><!--SP_Edit - all added-->
 					<!--Test--><!--<Visibility>1</Visibility>-->
 					<Element id="VDEV Scale Active">
-						<Visibility>(L:PFD_VDEV_DisplayTypeVis, number) 2 == (L:AB_MPL_FO_ILS, bool) 0 == &amp;&amp;</Visibility><!--See FCOM 1.31.40,p.28--><!--<Visibility>1</Visibility>-->
+						<Visibility>(L:PFD_VDEV_DisplayTypeVis, number) 2 == (L:AB_MPL_ILS, bool) 0 == &amp;&amp;</Visibility><!--See FCOM 1.31.40,p.28--><!--<Visibility>1</Visibility>-->
 						<Element id="VDEV Text">
 							<FloatPosition>158,18</FloatPosition>
 							<GaugeText id="text">
@@ -2923,7 +2921,7 @@
 									<Width>14</Width>
 									<Height>10</Height>
 									<LineColor>#00ff00</LineColor><!--<LineColor>#ff80ff</LineColor>-->
-									<!--<LineColorScript>(A:INDICATED ALTITUDE:3, feet) 2500 &lt; 
+									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
 										if{ 0x00ff00 }
 										els{ 0xff80ff }
 									</LineColorScript>-->
@@ -2932,7 +2930,7 @@
 								</Rectangle>
 								<Shift><!--100 ft deviation per dot, per FCOM 1.31.40, p22-->
 									<Expression>
-										<Script>(L:AP_VDEV_DIF, number) 200 min -200 max</Script><!--<Script>(A:INDICATED ALTITUDE:3, feet) 2500 - 100 / 20 min -20 max</Script>--><!--<Script>0</Script>-->
+										<Script>(L:AP_VDEV_DIF, number) 200 min -200 max</Script><!--<Script>(A:INDICATED ALTITUDE:1, feet) 2500 - 100 / 20 min -20 max</Script>--><!--<Script>0</Script>-->
 									</Expression>
 									<NonlinearityTable><!--30pix per 100ft-->
 										<NonlinearityEntry>
@@ -2957,7 +2955,7 @@
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
 									<LineColor>#00ff00</LineColor><!--<LineColor>#ff80ff</LineColor>-->
-									<!--<LineColorScript>(A:INDICATED ALTITUDE:3, feet) 2500 &lt; 
+									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
 										if{ 0x00ff00 }
 										els{ 0xff80ff }
 									</LineColorScript>-->
@@ -2982,7 +2980,7 @@
 									<Bright>True</Bright>
 									<LineWidth>1</LineWidth>
 									<LineColor>#00ff00</LineColor><!--<LineColor>#ff80ff</LineColor>-->
-									<!--<LineColorScript>(A:INDICATED ALTITUDE:3, feet) 2500 &lt; 
+									<!--<LineColorScript>(A:INDICATED ALTITUDE:1, feet) 2500 &lt; 
 										if{ 0x00ff00 }
 										els{ 0xff80ff }
 									</LineColorScript>-->
@@ -3021,7 +3019,7 @@
 				<Element id="NPA Components - LDEV">					
 					<Element id="LDEV Scale Active">
 						<Visibility>
-						(L:PFD_LDEVdisplay, bool) 1 == (L:AB_MPL_FO_ILS, bool) 0 == &amp;&amp;
+						(L:PFD_LDEVdisplay, bool) 1 == (L:AB_MPL_ILS, bool) 0 == &amp;&amp;
 						</Visibility>
 						<Element id="LDEV Text">
 							<FloatPosition>17,188</FloatPosition>
@@ -3191,7 +3189,7 @@
 					</Element>
 					<Element id="LDEV Flashing Text"><!--when all LDEV conditions met, but LS button pressed-->
 						<Visibility>
-						(L:PFD_LDEVdisplay, bool) 1 == (L:AB_MPL_FO_ILS, bool) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp;
+						(L:PFD_LDEVdisplay, bool) 1 == (L:AB_MPL_ILS, bool) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp;
 						</Visibility>
 						<FloatPosition>17,188</FloatPosition>
 						<GaugeText id="text">
@@ -3204,7 +3202,7 @@
 							<Bright>True</Bright>	
 						</GaugeText>
 					</Element>
-				</Element>			
+				</Element>				
 				<!-- <Element id="GS Yellow Middle Line">
 					<FloatPosition>185,100</FloatPosition>
 					<PolyLine>
@@ -3657,7 +3655,7 @@
 				</Element>
 				
 				<Element id="ILS Pointer and Numbers">
-					<Visibility>(L:AB_MPL_FO_ILS, bool) 1 ==</Visibility>
+					<Visibility>(L:AB_MPL_ILS, bool) 1 ==</Visibility>
 					<Element id="Purple ILS Pointer">
 						<FloatPosition>94,22</FloatPosition>
 						<Polyline id="Back">
@@ -3765,7 +3763,7 @@
 					</Element>
 				</Element>
 				<Element id="FINAL Leg Course">
-					<Visibility>(L:PFD_VDEV_DisplayTypeVis, number) 2 == (L:AB_MPL_FO_ILS, bool) 0 == &amp;&amp;</Visibility>
+					<Visibility>(L:PFD_VDEV_DisplayTypeVis, number) 2 == (L:AB_MPL_ILS, bool) 0 == &amp;&amp;</Visibility>
 					<Element id="Purple FINAL Leg Course Pointer">
 						<FloatPosition>94,22</FloatPosition>
 						<Polyline id="Back">
@@ -3883,7 +3881,7 @@
 					<FontColor>#ffffff</FontColor>
 					<Multiline>True</Multiline>
 					<GaugeString>%Trk%((L:AB_AP_HDGTRK, number))%!d!%   FD%((L:AB_MPL_FD, number))%!d!%  Bnk%((L:FDComBankReq2, number))%!4.1f!%\n
-					%Phs%((L:MCDU_FLT_PHS, number))%!2d!%  Apr%((L:MCDUAppType, number))%!2d!%  STk%((L:Autopilot_TRK_set, number))%!3d!%% VSc%((L:PFD_VDEV_DisplayTypeVis, number))%!d!%  G%((L:PFD_VDEV_GSScaleCond, bool))%!d!%</GaugeString>
+					%Phs%((L:MCDU_FLT_PHS, number))%!2d!%  Apr%((L:MCDUAppType, number))%!2d!%  STk%(@SelectedTrk)%!3d!%% VSc%(@VDEV_DisplayTypeVis)%!d!%  G%(@VDEV_GSScaleCond)%!d!%</GaugeString>
 					</GaugeText>
 				</Element>-->
 				<Element id="TRUE Flag 32S">
@@ -4456,7 +4454,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="alpha_max Tape">
-					<Visibility>(A:sim on ground, bool) 0 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
 					<FloatPosition>41,106</FloatPosition>
 					<Polygon id="Polygon">
 						<Bright>True</Bright>
@@ -4502,7 +4500,7 @@
 						<FloatPosition>-7,-89</FloatPosition>
 						<Size>21,178</Size>
 					</ClipRect>
-				</Element>				
+				</Element>
 				<Element id="Grey Back">
 					<FloatPosition>0,0</FloatPosition>
 					<Polygon id="Back">
@@ -5289,7 +5287,7 @@
 							<Size>49,199</Size>
 						</ClipRect>
 					</Element>					
-				</Element>				
+				</Element>	
 				<Element id="V1 -   Blue Marker, Text">
 					<Visibility>(L:PFD_V1_Final, number) 0 != (L:TOMode, number) 1 == &amp;&amp;</Visibility>
 					<Element id="V1 Marker">
@@ -5330,7 +5328,7 @@
 					</Element>
 					<Element id="V1 Text">
 						<Visibility>(L:PFD_V1_Final, number) (L:IAS_SM, number) - abs 40 &gt;=</Visibility>
-						<FloatPosition>36,21</FloatPosition>								
+						<FloatPosition>36,21</FloatPosition>						
 						<GaugeText id="Text">
 						<Size>42,14</Size>
 							<Bright>True</Bright>
@@ -5348,7 +5346,7 @@
 					<FloatPosition>39,102</FloatPosition>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
-						<FontColor>0xf3f318</FontColor>
+						<FontColor>0xffff00</FontColor>
 						<FontHeight>17</FontHeight>
 						<Bold>False</Bold>
 						<VerticalAlign>CENTER</VerticalAlign>
@@ -5510,7 +5508,7 @@
 							<Point>
 								<FloatPosition>8,9</FloatPosition>
 							</Point>
-					</PolyLine>				
+					</PolyLine>					
 					<Shift>
 						<Expression>
 							<Script>(L:IAS_SM, number) (L:VFE_Next_autocalc, number) -</Script>
@@ -5586,7 +5584,7 @@
 							<Point>
 								<FloatPosition>6,9</FloatPosition>
 							</Point>
-					</PolyLine>			
+					</PolyLine>
 					<Shift>
 						<Expression>
 							<Script>(L:IAS_SM, number) (L:PFD_Max_Op_Speed, number) -</Script>
@@ -5610,7 +5608,7 @@
 						<FloatPosition>0,-79</FloatPosition>
 						<Size>38,176</Size>
 					</ClipRect>
-				</Element>				
+				</Element>	
 				<Element id="Max Op Speed lower">
 					<Visibility>(A:sim on ground, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
 					<FloatPosition>23,98</FloatPosition>
@@ -5648,7 +5646,7 @@
 						<FloatPosition>0,-79</FloatPosition>
 						<Size>38,176</Size>
 					</ClipRect>
-				</Element>				
+				</Element>							
 				<Element id="Markers - Dash Type">
 					<Visibility>(L:Mngd_Aspd_Mrkrs_VisA, bool)</Visibility>
 					<!--<Visibility>0</Visibility>-->
@@ -6501,7 +6499,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+								<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -6536,11 +6534,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 20 +)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6574,11 +6572,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 15 +)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 +)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6612,11 +6610,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 10 +)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 +)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6650,11 +6648,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 5 +)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 +)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6688,11 +6686,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 *)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 *)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6726,11 +6724,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 5 /-/ + abs)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6764,11 +6762,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 10 /-/ + abs)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6802,11 +6800,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 15 /-/ + abs)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6840,11 +6838,11 @@
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								<BackgroundColor>#808080</BackgroundColor>
 								<Transparent>TRUE</Transparent>
-								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 20 /-/ + abs)%!03d!%</GaugeString>
+								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
 							<Shift>
 								<Expression>
-									<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+									<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 								</Expression>
 								<NonlinearityTable>
 									<NonlinearityEntry>
@@ -6869,7 +6867,7 @@
 					</Element>
 				</Element>
 				<Element id="Altitude  Bug Text - Borders">
-					<Visibility>(A:INDICATED ALTITUDE:3, feet) (L:AB_AP_ALT_Selected_LOG, number) - abs 570 &gt;=</Visibility>
+					<Visibility>(A:INDICATED ALTITUDE:1, feet) (L:AB_AP_ALT_Selected_LOG, number) - abs 570 &gt;=</Visibility>
 					<FloatPosition>30,0</FloatPosition>
 					<GaugeText id="Alt Num">
 						<Size>40,13</Size>
@@ -6892,14 +6890,14 @@
 						<BackgroundColor>#000000</BackgroundColor>
 						<Transparent>TRUE</Transparent>
 						<GaugeString>
-							%((L:AB_MPL_Baro_FO_STD, number) 0 ==)
+							%((L:AB_MPL_Baro_STD, number) 0 ==)
 							%{if}%((L:AB_AP_ALT_Selected_LOG, number))%!5d!
 							%{else}%\{fnt1}%FL%\{fnt}%((L:AB_AP_ALT_Selected_LOG, number) 100 /)%!3d!%
 						</GaugeString>
 					</GaugeText>
 					<Shift>
 						<Expression>
-							<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:3, feet) - 525 min 525 /-/ max</Script>
+							<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:1, feet) - 525 min 525 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
@@ -6914,7 +6912,7 @@
 					</Shift>
 				</Element>
 				<Element id="Altitude AP Marker">
-					<Visibility>(A:INDICATED ALTITUDE:3, feet) (L:AB_AP_ALT_Selected_LOG, number)  - abs 570 &lt;</Visibility>
+					<Visibility>(A:INDICATED ALTITUDE:1, feet) (L:AB_AP_ALT_Selected_LOG, number)  - abs 570 &lt;</Visibility>
 					<FloatPosition>0,0</FloatPosition>
 					<PolyLine>
 						<Bright>True</Bright>
@@ -6953,7 +6951,7 @@
 					</PolyLine>
 					<Shift>
 						<Expression>
-							<Script>(A:INDICATED ALTITUDE:3, feet) (L:AB_AP_ALT_Selected_LOG, number)  - 600 min 600 /-/ max</Script>
+							<Script>(A:INDICATED ALTITUDE:1, feet) (L:AB_AP_ALT_Selected_LOG, number)  - 600 min 600 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
@@ -6976,7 +6974,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Altitude Bug Text - On Screen">
-					<Visibility>(A:INDICATED ALTITUDE:3, feet) (L:AB_AP_ALT_Selected_LOG, number)  - abs 570 &gt;= !</Visibility>
+					<Visibility>(A:INDICATED ALTITUDE:1, feet) (L:AB_AP_ALT_Selected_LOG, number)  - abs 570 &gt;= !</Visibility>
 					<FloatPosition>31,95</FloatPosition>
 					<GaugeText id="Alt Bug Num">
 						<Size>45,14</Size>
@@ -6996,13 +6994,13 @@
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<GaugeString>
-							%((L:AB_MPL_Baro_FO_STD, number) 0 == )%{if}%((L:AB_AP_ALT_Selected_LOG, number))%!5d!%{end}
-							%((L:AB_MPL_Baro_FO_STD, number) 1 == )%{if}%\{ladj=L}%((L:AB_AP_ALT_Selected_LOG, number) 100 / )%!d!%{end}
+							%((L:AB_MPL_Baro_STD, number) 0 == )%{if}%((L:AB_AP_ALT_Selected_LOG, number))%!5d!%{end}
+							%((L:AB_MPL_Baro_STD, number) 1 == )%{if}%\{ladj=L}%((L:AB_AP_ALT_Selected_LOG, number) 100 / )%!d!%{end}
 						</GaugeString>
 					</GaugeText>
 					<Shift>
 						<Expression>
-							<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:3, feet) - 600 min 600 /-/ max</Script>
+							<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:1, feet) - 600 min 600 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
@@ -7043,7 +7041,7 @@
 					</Polygon>
 					<Shift>
 						<Expression>
-							<Script>(A:Indicated Altitude:3, feet) (L:MCDU_APP_MDA, number) - 600 min 600 /-/ max</Script>
+							<Script>(A:Indicated Altitude:1, feet) (L:MCDU_APP_MDA, number) - 600 min 600 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
@@ -7098,13 +7096,13 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>16</FontHeight>
 							<FontColorScript>
-								(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) &lt; 
+								(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) &lt; 
 								(L:MCDU_APP_MDA, number) 0 != &amp;&amp;
 								
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x0080ff } els{ 0x00ff00 }
+								if{ 0x00bfff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7128,7 +7126,7 @@
 						</GaugeText>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 1000 %</Script>
+								<Script>(A:INDICATED ALTITUDE:1, feet) 1000 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7223,7 +7221,7 @@
 						</ClipRect>
 					</Element>
 					<Element id="Rolling Numbers 1,000's feet">
-						<Visibility>(A:INDICATED ALTITUDE:3, feet) 980 &gt;=</Visibility>
+						<Visibility>(A:INDICATED ALTITUDE:1, feet) 980 &gt;=</Visibility>
 						<FloatPosition>41,-29</FloatPosition>
 						<GaugeText id="Rolling 1,000's">
 							<Size>9,260</Size>
@@ -7231,13 +7229,13 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>16</FontHeight>
 							<FontColorScript>
-								(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) &lt; 
+								(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) &lt; 
 								(L:MCDU_APP_MDA, number) 0 != &amp;&amp;
 								
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x0080ff } els{ 0x00ff00 }
+								if{ 0x00bfff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7261,7 +7259,7 @@
 						</GaugeText>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 10000 % int</Script>
+								<Script>(A:INDICATED ALTITUDE:1, feet) 10000 % int</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7356,7 +7354,7 @@
 						</ClipRect>
 					</Element>
 					<Element id="Rolling Numbers 10,000's feet">
-						<Visibility>(A:INDICATED ALTITUDE:3, feet) 9995 &gt;=</Visibility>
+						<Visibility>(A:INDICATED ALTITUDE:1, feet) 9995 &gt;=</Visibility>
 						<FloatPosition>32,-29</FloatPosition>
 						<GaugeText id="Rolling 10,000's">
 							<Size>9,260</Size>
@@ -7364,13 +7362,13 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>16</FontHeight>
 							<FontColorScript>
-								(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) &lt; 
+								(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) &lt; 
 								(L:MCDU_APP_MDA, number) 0 != &amp;&amp;
 								
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x0080ff } els{ 0x00ff00 }
+								if{ 0x00bfff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7394,7 +7392,7 @@
 						</GaugeText>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 10000 /</Script>
+								<Script>(A:INDICATED ALTITUDE:1, feet) 10000 /</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7517,7 +7515,7 @@
 					</Polygon>
 					<Shift>
 						<Expression>
-							<Script>(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) - 600 min 600 /-/ max</Script>
+							<Script>(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) - 600 min 600 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
@@ -7630,13 +7628,13 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColorScript>
-								(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) &lt; 
+								(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) &lt; 
 								(L:MCDU_APP_MDA, number) 0 != &amp;&amp;
 								
 								(L:MCDU_FLT_PHS, number) 4 == 
 								(L:MCDU_FLT_PHS, number) 5 == || &amp;&amp;
 								
-								if{ 0x0080ff } els{ 0x00ff00 }
+								if{ 0x00bfff } els{ 0x00ff00 }
 							</FontColorScript>
 							<BackgroundColor>#000000</BackgroundColor>
 							<Multiline>True</Multiline>
@@ -7661,7 +7659,7 @@
 						</GaugeText>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 100 % (A:Vertical speed,feet per minute) 200 / int 10 min -</Script>
+								<Script>(A:INDICATED ALTITUDE:1, feet) 100 % (A:Vertical speed,feet per minute) 200 / int 10 min -</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7729,7 +7727,7 @@
 						<LineWidth>2</LineWidth>
 						<LineColor>#ffff00</LineColor>
 						<Point>
-							<FloatPosition>26,92</FloatPosition>
+							<FloatPosition>28,92</FloatPosition>
 						</Point>
 						<Point>
 							<FloatPosition>59,92</FloatPosition>
@@ -7750,7 +7748,7 @@
 							<FloatPosition>59,110</FloatPosition>
 						</Point>
 						<Point>
-							<FloatPosition>26,110</FloatPosition>
+							<FloatPosition>28,110</FloatPosition>
 						</Point>
 					</PolyLine>
 					<ClipRect id="Mask">
@@ -7761,7 +7759,7 @@
 				<Element id="NEG indication">
 					<FloatPosition>32,78</FloatPosition>
 					<Visibility>
-					(A:INDICATED ALTITUDE:3, feet) 0 &lt;
+					(A:INDICATED ALTITUDE:1, feet) 0 &lt;
 					</Visibility>
 					<Element id="NEG Text">
 						<GaugeText id="NEGTEXT">
@@ -7805,7 +7803,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 500 %</Script>
+								<Script>(A:Indicated Altitude:1, feet) 500 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7847,7 +7845,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 500 %</Script>
+								<Script>(A:Indicated Altitude:1, feet) 500 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7889,7 +7887,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 500 %</Script>
+								<Script>(A:Indicated Altitude:1, feet) 500 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7931,7 +7929,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 500 %</Script>
+								<Script>(A:Indicated Altitude:1, feet) 500 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -7973,7 +7971,7 @@
 						</PolyLine>
 						<Shift>
 							<Expression>
-								<Script>(A:INDICATED ALTITUDE:3, feet) 500 %</Script>
+								<Script>(A:Indicated Altitude:1, feet) 500 %</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -8094,8 +8092,7 @@
 						</Element>
 						<Element id="VDEV Text Top"><!--only A330/A340 and NEO-->
 							<Visibility>
-							(L:AP_VDEV_DIF, number) -500 &lt;
-							(L:AB_TypeIdent, number) 51 &gt;= (L:AB_NEO_features,number) 1 == || &amp;&amp;
+							(L:AP_VDEV_DIF, number) -500 &lt; (L:AB_TypeIdent, number) 51 &gt;= &amp;&amp;
 							</Visibility>
 							<FloatPosition>-12,-85</FloatPosition>
 							<GaugeText id="text">
@@ -8156,7 +8153,7 @@
 					</GaugeText>
 					<!-- <Shift>
 						<Expression>
-						<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:3, feet) - 525 min 525 /-/ max</Script>
+						<Script>(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE:1, feet) - 525 min 525 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 						<NonlinearityEntry>
@@ -8717,7 +8714,7 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x0080ff }
+							if{ 0x00bfff }
 							els{ 0x00ff00 }
 						</LineColorScript>
 						<FillColorScript>
@@ -8732,7 +8729,7 @@
 							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
 							|| ||
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x0080ff }
+							if{ 0x00bfff }
 							els{ 0x00ff00 }
 						</FillColorScript>
 						<Point>
@@ -8887,7 +8884,7 @@
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; 
 
 							||
-							if{ 0x0080ff }
+							if{ 0x00bfff }
 							els{ 0x00ff00 }
 						</FontColorScript>
 						<FontHeight>10</FontHeight>
@@ -9239,7 +9236,7 @@
 			</Element>
 			<Element id="Vertical Speed Section TCAS RA decent">
 				<FloatPosition>292,67</FloatPosition>
-				<Visibility>(L:AB_TCAS_DES, number) 1 ==</Visibility>					
+				<Visibility>(L:AB_TCAS_DES, number) 1 ==</Visibility>	
 				<Element id="Grey Back Polygon">
 					<FloatPosition>0,0</FloatPosition>
 					<Polygon id="Back">
@@ -9699,7 +9696,7 @@
 					</GaugeText>
 				</Element>
 				<Element id="ILS_Navaid Text Info">
-					<Visibility>(L:AB_MPL_FO_ILS, bool) 1 ==</Visibility>
+					<Visibility>(L:AB_MPL_ILS, bool) 1 ==</Visibility>
 					<FloatPosition>4,9</FloatPosition>
 					<GaugeText id="Text">
 						<Size>58,75</Size>
@@ -9717,7 +9714,7 @@
 							<FontHeight>10</FontHeight>
 						</AlternateFont>
 						<AlternateColor id="Frequency2">
-							<FontColor>#FF45FF</FontColor>
+							<FontColor>#ff80ff</FontColor>
 						</AlternateColor>
 						<Tabs>0,29C,44R,58R</Tabs>
 						<GaugeString>
@@ -9729,7 +9726,7 @@
 					</GaugeText>
 				</Element>
 				<Element id="NM Text">
-					<Visibility>(L:AB_MPL_FO_ILS, bool) 1 == (A:NAV1 DME, nmiles) 0 &gt; &amp;&amp;</Visibility>
+					<Visibility>(L:AB_MPL_ILS, bool) 1 == (A:NAV1 DME, nmiles) 0 &gt; &amp;&amp;</Visibility>
 					<FloatPosition>36,56</FloatPosition>
 					<GaugeText id="NM Text">
 						<Size>15,10</Size>
@@ -9748,21 +9745,21 @@
 					<Element id="STD Text">
 						<FloatPosition>19,18</FloatPosition>
 						<Visibility>	
-							(L:AB_MPL_Baro_FO_STD, number) 1 ==
+							(L:AB_MPL_Baro_STD, number) 1 ==
 							(L:MCDU_Trans_alt, number) 0 != &amp;&amp; 
 							
-							(A:INDICATED ALTITUDE:3, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &lt;
+							(A:INDICATED ALTITUDE:1, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &lt;
 							(L:Blink_state, bool) 1 == &amp;&amp; 
 							
-							(A:INDICATED ALTITUDE:3, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &gt;= || &amp;&amp;
+							(A:INDICATED ALTITUDE:1, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &gt;= || &amp;&amp;
 							(L:MCDU_FLT_PHS, number) 5 == 
 							(L:MCDU_FLT_PHS, number) 4 == || &amp;&amp;
 							
-							(L:AB_MPL_Baro_FO_STD, number) 1 ==	
+							(L:AB_MPL_Baro_STD, number) 1 ==	
 							(L:MCDU_FLT_PHS, number) 4 != &amp;&amp; 
 							(L:MCDU_FLT_PHS, number) 5 != &amp;&amp; || 
 							
-							(L:AB_MPL_Baro_FO_STD, number) 1 ==	
+							(L:AB_MPL_Baro_STD, number) 1 ==	
 							(L:MCDU_Trans_alt, number) 0 == &amp;&amp;
 							(A:Radio height, feet) 14 - 2500 &gt; 
 							(L:Blink_state, bool) 1 == || &amp;&amp; 
@@ -9808,26 +9805,26 @@
 					<Element id="Baro Readout Text">
 						<FloatPosition>6,20</FloatPosition>
 						<Visibility>						
-							(L:AB_MPL_Baro_FO_STD, number) 0 ==
-							(A:INDICATED ALTITUDE:3, feet) 100 / near 100 *  (L:MCDU_Trans_alt, number) &gt;
+							(L:AB_MPL_Baro_STD, number) 0 ==
+							(A:INDICATED ALTITUDE:1, feet) 100 / near 100 *  (L:MCDU_Trans_alt, number) &gt;
 							(L:Blink_state, bool) 1 == &amp;&amp; 
 							
-							(A:INDICATED ALTITUDE:3, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &lt;= || &amp;&amp;
+							(A:INDICATED ALTITUDE:1, feet) 100 / near 100 * (L:MCDU_Trans_alt, number) &lt;= || &amp;&amp;
 							(L:MCDU_FLT_PHS, number) 2 == 
 							(L:MCDU_FLT_PHS, number) 6 == || &amp;&amp;
 							
-							(L:AB_MPL_Baro_FO_STD, number) 0 == 
+							(L:AB_MPL_Baro_STD, number) 0 == 
 							(L:MCDU_FLT_PHS, number) 2 != &amp;&amp;
 							(L:MCDU_FLT_PHS, number) 6 != &amp;&amp; || 
 						</Visibility>
 						<Element id="QNH Text">
 							<FloatPosition>-4,0</FloatPosition>
-							<GaugeText id="Text">
+								<GaugeText id="Text">
 								<Size>100,12</Size>
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD2</FontFace>
 								<FontHeight>11</FontHeight>
-								<FontColor>#f6f6f6</FontColor>
+								<FontColor>#ffffff</FontColor>
 								<HorizontalAlign>LEFT</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
 								<AlternateColor id="Blue Numbers">
@@ -9843,16 +9840,16 @@
 								<Bright>True</Bright>
 								<FontFace>AirbusDisp</FontFace>
 								<FontHeight>11</FontHeight>
-								<FontColor>#f6f6f6</FontColor>
+								<FontColor>#ffffff</FontColor>
 								<HorizontalAlign>right</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
 								<AlternateColor id="Blue Numbers">
 									<FontColor>0xffff00</FontColor>
 								</AlternateColor>
 								<GaugeString>
-									%((L:PFD_FO_Baro_Mode, number) 1 ==)%
-									%{if}%\{clr2}%((A:KOHLSMAN SETTING MB:3, millibars))%!4d!
-									%{else}%\{clr2}%((A:KOHLSMAN SETTING HG:3, inHg))%!4.2f!
+									%((L:PFD_Baro_Mode, number) 1 ==)%
+									%{if}%\{clr2}%((A:KOHLSMAN SETTING MB, millibars))%!4d!
+									%{else}%\{clr2}%((A:KOHLSMAN SETTING HG, inHg))%!4.2f!
 									%{end}%
 								</GaugeString>
 							</GaugeText>
@@ -9892,18 +9889,18 @@
 							<FontHeight>13</FontHeight>
 							<FontColor>#00ff00</FontColor>
 							<AlternateColor id="Blue M">
-								<FontColor>#3CD9F8</FontColor>
+								<FontColor>#00ffff</FontColor>
 							</AlternateColor>
 							<HorizontalAlign>RIGHT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<Multiline>FALSE</Multiline>
-							<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 0.3048 * 10 / near 10 * )%!3d!%\{clr2}:M</GaugeString>
+							<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 0.3048 * 10 / near 10 * )%!3d!%\{clr2}:M</GaugeString>
 						</GaugeText>
 					</Element>
 				</Element>
 				<Element id="selected approach">
 					<FloatPosition>-46,-8</FloatPosition>
-					<Visibility>(L:AB_MPL_FO_ILS, bool) 1 == (L:MCDUAppType, number) 1 == &amp;&amp; (L:AB_TypeIdent, number) 51 &lt; &amp;&amp;</Visibility>
+					<Visibility>(L:AB_MPL_ILS, bool) 1 == (L:MCDUAppType, number) 1 == &amp;&amp; (L:AB_TypeIdent, number) 51 &lt; &amp;&amp;</Visibility>
 					<Element id="ILS Text">
 						<GaugeText id="ILS TEXT">
 							<Size>58,75</Size>
@@ -9918,7 +9915,7 @@
 				<Element id="LS Message A32S">
 					<FloatPosition>-35,7</FloatPosition>
 					<Visibility>
-					(L:AB_MPL_FO_ILS, bool) 0 == (L:AB_AP_LOC2, number) 1 == &amp;&amp; (L:MCDUAppType, number) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp; (L:AB_TypeIdent, number) 51 &lt; &amp;&amp;
+					(L:AB_MPL_ILS, bool) 0 == (L:AB_AP_LOC2, number) 1 == &amp;&amp; (L:MCDUAppType, number) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp; (L:AB_TypeIdent, number) 51 &lt; &amp;&amp;
 					</Visibility>
 					<Element id="LS msgText">
 						<GaugeText id="LSmsgTEXT">
@@ -9934,7 +9931,7 @@
 				<Element id="ILS Message A330">
 					<FloatPosition>-35,7</FloatPosition>
 					<Visibility>
-					(L:AB_MPL_FO_ILS, bool) 0 == (L:AB_AP_LOC2, number) 1 == &amp;&amp; (L:MCDUAppType, number) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp; (L:AB_TypeIdent, number) 51 &gt;= &amp;&amp;
+					(L:AB_MPL_ILS, bool) 0 == (L:AB_AP_LOC2, number) 1 == &amp;&amp; (L:MCDUAppType, number) 1 == &amp;&amp; (P:LOCAL TIME, seconds) 0.5 % 0.25 &lt; &amp;&amp; (L:AB_TypeIdent, number) 51 &gt;= &amp;&amp;
 					</Visibility>
 					<Element id="ILS msgText">
 						<GaugeText id="ILSmsgTEXT">
@@ -10620,7 +10617,7 @@
 						<FloatPosition>76,38</FloatPosition>
 						<Visibility>
 						(L:MCDU_APP_MDA, number) 0 !=
-						(A:INDICATED ALTITUDE:3, feet) (L:MCDU_APP_MDA, number) 50 - &lt;= &amp;&amp;
+						(A:INDICATED ALTITUDE:1, feet) (L:MCDU_APP_MDA, number) 50 - &lt;= &amp;&amp;
 						(L:AB_AP_AP1, number) 1 == 
 						(L:AB_AP_AP2, number) 1 == || &amp;&amp;
 						(L:AB_AUTOLAND, bool) 0 == &amp;&amp; 
@@ -11122,7 +11119,7 @@
 			</ClipRect>
 		</Element>
 		<Element id="Boot">
-		<Visibility>(L:AB_PFD_FO_ShowBootScreen, number) 1 ==</Visibility>
+		<Visibility>(L:AB_PFD_CPT_ShowBootScreen, number) 1 ==</Visibility>
 				<Element id="boot">
 					<FloatPosition>0.000,0.000</FloatPosition>
 					<Element id="Background - Boot">
@@ -11163,7 +11160,7 @@
 		</Element>	
 		<Element id="DIM - Level 0">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 0 ==</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 0 ==</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11176,7 +11173,7 @@
 		</Element>
 		<Element id="DIM - Level 1">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 1 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 1 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11189,7 +11186,7 @@
 		</Element>
 		<Element id="DIM - Level 2">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 2 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 2 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11202,7 +11199,7 @@
 		</Element>
 		<Element id="DIM - Level 3">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 3 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 3 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11215,7 +11212,7 @@
 		</Element>
 		<Element id="DIM - Level 4">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 4 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 4 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11228,7 +11225,7 @@
 		</Element>
 		<Element id="DIM - Level 5">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 5 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 5 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11241,7 +11238,7 @@
 		</Element>
 		<Element id="DIM - Level 6">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 6 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 6 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11254,7 +11251,7 @@
 		</Element>
 		<Element id="DIM - Level 7">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 7 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 7 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11267,7 +11264,7 @@
 		</Element>
 		<Element id="DIM - Level 8">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 8 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 8 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11280,7 +11277,7 @@
 		</Element>
 		<Element id="DIM - Level 9">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 9 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 9 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11293,7 +11290,7 @@
 		</Element>
 		<Element id="DIM - Level 10">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 10 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 10 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11306,7 +11303,7 @@
 		</Element>
 		<Element id="DIM - Level 11">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 11 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 11 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11319,7 +11316,7 @@
 		</Element>
 		<Element id="DIM - Level 12">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 12 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 12 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11332,7 +11329,7 @@
 		</Element>
 		<Element id="DIM - Level 13">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 13 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 13 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11345,7 +11342,7 @@
 		</Element>
 		<Element id="DIM - Level 14">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 14 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 14 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11358,7 +11355,7 @@
 		</Element>
 		<Element id="DIM - Level 15">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 15 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 15 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11371,7 +11368,7 @@
 		</Element>
 		<Element id="DIM - Level 16">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 16 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 16 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11384,7 +11381,7 @@
 		</Element>
 		<Element id="DIM - Level 17">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 17 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 17 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11397,7 +11394,7 @@
 		</Element>
 		<Element id="DIM - Level 18">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 18 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 18 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11410,7 +11407,7 @@
 		</Element>
 		<Element id="DIM - Level 19">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 19 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 19 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11423,7 +11420,7 @@
 		</Element>
 		<Element id="DIM - Level 20">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 20 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 20 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11437,7 +11434,7 @@
 		
 		<Element id="Brightness - Level 18">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 18 &lt;= (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 18 &lt;= (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11450,7 +11447,7 @@
 		</Element>
 		<Element id="Brightness - Level 19">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 19 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 19 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11463,7 +11460,7 @@
 		</Element>
 		<Element id="Brightness - Level 20">
 			<FloatPosition>0,0</FloatPosition>
-			<Visibility>(L:AB_MPL_PFD_FO_Power, number) 20 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
+			<Visibility>(L:AB_MPL_PFD_Power, number) 20 == (L:AB_BUS_AC_ESS_Avail, number) 1 == (L:PowerIsCutDueToGENTransfer, number) 1 == || &amp;&amp;</Visibility>
 			<Rectangle id="Rectangle">
 				<Bright>True</Bright>
 				<Width>340</Width>
@@ -11481,7 +11478,7 @@
                 <Size>335,330</Size>
                 <CursorType>Hand</CursorType>
                 <MouseClick id="MouseClickDown">
-                    <Script>10023 (&gt;K:PANEL_ID_TOGGLE)</Script>
+                    <Script>10022 (&gt;K:PANEL_ID_TOGGLE)</Script>
                 </MouseClick>
             </MouseArea>
 	</SimGauge.Gauge>
