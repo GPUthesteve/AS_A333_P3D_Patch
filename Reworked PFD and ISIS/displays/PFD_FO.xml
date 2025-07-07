@@ -280,7 +280,8 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
+							<Script>
+								(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
@@ -6385,56 +6386,6 @@
 						</Point>
 					</Polygon>
 				</Element>
-				<Element id="landing elevation strip">
-					<Visibility>
-					(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == || (L:AB_MPL_Baro_FO_STD, number) 0 == &amp;&amp;
-					</Visibility>
-					<FloatPosition>27,101</FloatPosition>
-					<Polygon id="Fill">
-						<Bright>True</Bright>
-						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
-						<Point>
-							<FloatPosition>0,0</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>30,0</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>30,190</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,190</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,0</FloatPosition>
-						</Point>
-					</Polygon>
-					<Shift>
-						<Expression>
-							<Script>(A:INDICATED ALTITUDE:3, feet) (L:SIM_DESTINATION_ALT, feet) - 14 - 600 min 600 /-/ max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>-1000</ExpressionResult>
-								<FloatPosition>30,-59</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>30,101</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>1000</ExpressionResult>
-								<FloatPosition>30,261</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<ClipRect id="Mask landing elevation Tape">
-						<FloatPosition>5,-90</FloatPosition>
-						<Size>30,180</Size>
-					</ClipRect>
-				</Element>
 				<Element id="White Border">
 					<FloatPosition>0,0</FloatPosition>
 					<Element id="White Border Top">
@@ -6444,7 +6395,7 @@
 							<LineWidth>1</LineWidth>
 							<LineColor>0xFFFFFF</LineColor>
 							<Point>
-								<FloatPosition>2,0</FloatPosition>
+								<FloatPosition>0,0</FloatPosition>
 							</Point>
 							<Point>
 								<FloatPosition>42,0</FloatPosition>
@@ -6458,7 +6409,7 @@
 							<LineWidth>1</LineWidth>
 							<LineColor>0xFFFFFF</LineColor>
 							<Point>
-								<FloatPosition>2,0</FloatPosition>
+								<FloatPosition>0,0</FloatPosition>
 							</Point>
 							<Point>
 								<FloatPosition>42,0</FloatPosition>
@@ -7400,56 +7351,6 @@
 							<FloatPosition>30,92</FloatPosition>
 						</Point>
 					</Polygon>
-				</Element>
-				<Element id="landing elevation stripbox">
-					<Visibility>
-					(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == || (L:AB_MPL_Baro_FO_STD, number) 0 == &amp;&amp;
-					</Visibility>
-					<FloatPosition>27,101</FloatPosition>
-					<Polygon id="Fill">
-						<Bright>True</Bright>
-						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
-						<Point>
-							<FloatPosition>0,0</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>31,0</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>31,190</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,190</FloatPosition>
-						</Point>
-						<Point>
-							<FloatPosition>0,0</FloatPosition>
-						</Point>
-					</Polygon>
-					<Shift>
-						<Expression>
-							<Script>(A:Indicated Altitude:3, feet) (L:SIM_DESTINATION_ALT, feet) - 14 - 600 min 600 /-/ max</Script>
-						</Expression>
-						<NonlinearityTable>
-							<NonlinearityEntry>
-								<ExpressionResult>-1000</ExpressionResult>
-								<FloatPosition>30,-59</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>0</ExpressionResult>
-								<FloatPosition>30,101</FloatPosition>
-							</NonlinearityEntry>
-							<NonlinearityEntry>
-								<ExpressionResult>1000</ExpressionResult>
-								<FloatPosition>30,261</FloatPosition>
-							</NonlinearityEntry>
-						</NonlinearityTable>
-					</Shift>
-					<ClipRect id="Mask landing elevation Tapebox">
-						<FloatPosition>5,-14</FloatPosition>
-						<Size>31,28</Size>
-					</ClipRect>
 				</Element>
 				<Element id="Altitude Box Left Rolling Numbers">
 					<FloatPosition>0,-1</FloatPosition>
