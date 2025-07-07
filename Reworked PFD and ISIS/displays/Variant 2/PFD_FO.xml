@@ -248,7 +248,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Pitch Ladder Bottom">
-					<Visibility>(A:SIM ON GROUND, bool) 0 == (L:AB_TypeIdent, number) 50 &gt; ||</Visibility>
+					<Visibility></Visibility>
 					<GaugeText id="Pitch Ladder Bottom">
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD2</FontFace>
@@ -5382,7 +5382,7 @@
 				</Element>
 				<Element id="Green_Dot">
 					<FloatPosition>36,102</FloatPosition>
-					<Visibility>(A:FLAPS HANDLE INDEX,  number) 0 == (A:SIM ON GROUND, bool) 0 == &amp;&amp; (L:PFD_AirTapesOn, bool) 1 == &amp;&amp;</Visibility>
+					<Visibility>(A:FLAPS HANDLE INDEX,  number) 0 == (A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
 						<FontColor>0x00FF00</FontColor>
