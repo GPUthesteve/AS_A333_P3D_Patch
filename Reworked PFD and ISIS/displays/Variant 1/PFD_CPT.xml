@@ -2060,22 +2060,22 @@
 								<FloatPosition>-75,-3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-43,-3</FloatPosition>
+								<FloatPosition>-40,-3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-43,14</FloatPosition>
+								<FloatPosition>-40,12</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-48,14</FloatPosition>
+								<FloatPosition>-46,12</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-48,3</FloatPosition>
+								<FloatPosition>-46,3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-74,3</FloatPosition>
+								<FloatPosition>-75,3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>-74,-3</FloatPosition>
+								<FloatPosition>-75,-3</FloatPosition>
 							</Point>
 						</Polygon>
 					</Element>
@@ -2084,21 +2084,21 @@
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
 							<LineColor>#ffff00</LineColor>
-							<FillColor>#060606</FillColor>
+							<FillColor>#010101</FillColor>
 							<Point>
 								<FloatPosition>75,-3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>43,-3</FloatPosition>
+								<FloatPosition>40,-3</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>43,14</FloatPosition>
+								<FloatPosition>40,12</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>48,14</FloatPosition>
+								<FloatPosition>46,12</FloatPosition>
 							</Point>
 							<Point>
-								<FloatPosition>48,3</FloatPosition>
+								<FloatPosition>46,3</FloatPosition>
 							</Point>
 							<Point>
 								<FloatPosition>75,3</FloatPosition>
