@@ -4378,7 +4378,7 @@
 					</Element>
 				</Element>
 				<Element id="Vmax Tape">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,-290</FloatPosition>
 					<Image id="Vmax_Tape_bmp">
 						<Name>Vmax_Tape.bmp</Name>
@@ -4409,7 +4409,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vls Tape">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,106</FloatPosition>
 					<Polyline id="Line">
 						<Bright>True</Bright>
@@ -4450,7 +4450,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="alpha_prot Tape">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>39,106</FloatPosition>
 					<Image id="Alpha_Prot_Tape_bmp">
 						<Name>Alpha_Prot_Tape.bmp</Name>
@@ -4481,7 +4481,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="alpha_max Tape">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 == (A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>41,106</FloatPosition>
 					<Polygon id="Polygon">
 						<Bright>True</Bright>
@@ -5407,7 +5407,7 @@
 				</Element>
 				<Element id="Green_Dot">
 					<FloatPosition>36,102</FloatPosition>
-					<Visibility>(A:FLAPS HANDLE INDEX,  number) 0 == (A:SIM ON GROUND, bool) 0 == &amp;&amp; (L:PFD_AirTapesOn, bool) 1 == &amp;&amp;</Visibility>
+					<Visibility>(A:FLAPS HANDLE INDEX,  number) 0 == (A:SIM ON GROUND, bool) 0 == &amp;&amp;</Visibility>
 					<GaugeText id="text">
 						<FontFace>AirbusPFD</FontFace>
 						<FontColor>0x00ff00</FontColor>
@@ -5523,7 +5523,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vfe_next_upper">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5561,7 +5561,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Vfe_next_lower">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 ==</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 0 ==</Visibility>
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5599,7 +5599,7 @@
 					</ClipRect>
 				</Element>
 				<Element id="Max Op Speed">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
+					<Visibility>(A:SIM ON GROUND, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -5637,7 +5637,7 @@
 					</ClipRect>
 				</Element>	
 				<Element id="Max Op Speed lower">
-					<Visibility>(L:PFD_AirTapesOn, bool) 1 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
+					<Visibility>(A:SIM ON GROUND, bool) 0 == (A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;</Visibility>	
 					<FloatPosition>23,98</FloatPosition>
 					<PolyLine>
 							<Bright>True</Bright>
@@ -7066,7 +7066,7 @@
 							}
 						</FontColorScript>
 						<Transparent>False</Transparent>
-						<BackgroundColor>010101</BackgroundColor>
+						<BackgroundColor>#010101</BackgroundColor>
 						<VerticalAlign>TOP</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<VerticalAlign>CENTER</VerticalAlign>
