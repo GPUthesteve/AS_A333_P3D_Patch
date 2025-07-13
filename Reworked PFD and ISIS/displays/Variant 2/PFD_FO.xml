@@ -8831,8 +8831,7 @@
 					<Polygon id="Needle">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
-						<LineColor>#010101</LineColor>
-						<FillColorScript>
+						<LineColorScript>
 							(A:Vertical speed,feet per minute) -6000 &lt;
 							(A:Vertical speed,feet per minute) -2000 &lt; (L:PFD_Radalt, number) 2500 &lt; &amp;&amp;
 							(A:Vertical speed,feet per minute) -1200 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
@@ -8846,7 +8845,7 @@
 							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
 							if{ 0x0080ff }
 							els{ 0x00ff00 }
-						</FillColorScript>
+						</LineColorScript>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
