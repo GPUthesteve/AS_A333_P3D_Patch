@@ -1,0 +1,2420 @@
+<Gauge Name="Sound" Version="1.10">
+	<Update Frequency="16"/>
+	
+<Element>
+  <Select>
+    <Value>
+
+<!-- Aircraft System -->
+
+(L:Load2, bool)	1 ==
+(L:Pause_code, bool) 0 == &amp;&amp;
+if{
+			
+	<!-- Gear Wind -->	
+    <!-- moved to ECAM-Dll
+		(A:Airspeed indicated, knots) 20 &gt;
+		(A:GEAR LEFT POSITION, percent) 0 &gt; &amp;&amp;
+		(A:GEAR RIGHT POSITION, percent) 0 &gt; &amp;&amp;
+		if{
+			2 (&gt;L:ASC_GearWind,number)
+			(L:Vol_GearWind_fac, number) 5000 - (&gt;L:ASC_GearWind_VOL)
+		}
+					
+		els{
+			3 (&gt;L:ASC_GearWind,number)
+		}
+ -->
+
+	<!-- Spoilers -->	    
+		(A:Airspeed indicated, knots) 20 &gt;
+		if{
+			2 (&gt;L:ASC_Spoilers,number)
+			(L:Vol_Spoilers_fac, number) (&gt;L:ASC_Spoilers_VOL)
+		}
+					
+		els{
+			3 (&gt;L:ASC_Spoilers,number)
+		}
+				
+	<!-- Cockpit Windows -->
+		(L:Sidewindow_pos_CP, bool) 25 &gt;
+		(L:Sidewindow_pos_FO, bool) 25 &gt; ||
+		if{
+			2 (&gt;L:ASC_WindowOpen,number)
+		}
+			
+		(L:Sidewindow_pos_CP, number) 0 ==
+		(L:Sidewindow_pos_FO, number) 0 == &amp;&amp;
+		if{
+			3 (&gt;L:ASC_WindowOpen,number)
+		}
+					
+	<!-- Wheel Brakes -->
+		(A:SIM ON GROUND,bool) 1 ==
+		(A:GROUND VELOCITY,knots) 15 &gt; &amp;&amp;
+		(A:BRAKE LEFT POSITION,number) 0.2 &gt;=
+		(A:BRAKE RIGHT POSITION,number) 0.2 &gt;= || &amp;&amp;
+		if{
+			1 (&gt;L:ASC_Brakes,number)
+			(L:Vol_Brakes_fac, number) (&gt;L:ASC_Brakes_VOL)
+			(L:Freq_Brakes_fac, number) (&gt;L:ASC_Brakes_FREQ)
+		}
+					
+	<!-- Batteries -->	
+    	
+		(L:DC_ESS_Avail, number) 1 ==
+		if{
+			(L:Vol_Batteries_fac, number) (&gt;L:ASC_Batteries_VOL)
+			2 (&gt;L:ASC_Batteries, number)
+		}
+		els{
+			3 (&gt;L:ASC_Batteries,number)
+		}
+					
+	<!-- Cooling -->
+
+	<!-- F.W. 2018.06.21 sound logic for instrument cooling provided by packs shifted to ECAM-Dll due to new BLEED logic: -->
+					
+	<!-- Avionics -->
+
+		<!-- Start -->	
+		<!--
+		(L:APU_avail, bool) 1 ==
+		(L:EXT_On, number) 1 ==	||
+		(L:AC1_Conf, number) 1 ==
+		(L:AB_PDS_Eng1Master, number) 1 == 
+		(L:AB_PDS_Eng2Master, number) 1 == || &amp;&amp; ||
+		(L:ASC_AvionicsOn_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_AvionicsOn, number)
+			(L:Vol_Avionics_fac, number) (&gt;L:ASC_AvionicsOn_VOL)
+			1 (&gt; L:ASC_AvionicsOn_played, bool)
+		}
+-->
+		<!-- Active -->
+		<!--
+		(L:ASC_AvionicsOn_played, bool) 1 ==
+		(L:ASC_Avionics_timer, number) 101 &lt; &amp;&amp;
+		if{
+			(L:ASC_Avionics_timer, number) 1 + (&gt; L:ASC_Avionics_timer, number)
+		}
+				
+		(L:ASC_Avionics_timer, number) 101 &gt;=
+		if{
+			2 (&gt; L:ASC_Avionics, number)
+			(L:Vol_Avionics_fac, number) (&gt;L:ASC_Avionics_VOL)
+			3 (&gt; L:ASC_AvionicsOn, number)
+			0 (&gt; L:ASC_AvionicsOff_played, bool)
+		}
+-->
+		<!-- Shutdown -->					
+	<!--	(L:APU_avail, bool) 0 ==
+		(L:EXT_On, number) 0 == &amp;&amp;
+		(L:AC1_Conf, number) 0 == &amp;&amp;
+		(L:ASC_AvionicsOff_played, bool) 0 == &amp;&amp;
+		if{
+
+			1 (&gt; L:ASC_AvionicsOff, number)
+			(L:Vol_Avionics_fac, number) (&gt;L:ASC_AvionicsOff_VOL)
+			3 (&gt; L:ASC_Avionics, number)
+			0 (&gt; L:ASC_AvionicsOn_played, bool)
+			0 (&gt; L:ASC_Avionics_timer, number)
+			1 (&gt; L:ASC_AvionicsOff_played, bool)
+		}
+-->
+	<!-- APU -->
+	<!-- F.W. 2018.06.20 triggered now from ECAM.dll -->
+		<!-- Start -->
+		(L:AB_APU_STARTINGUP, number) 1 ==
+		(L:ASC_APUOn_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_APU_Start, number)
+			-750 (&gt; L:ASC_APU_Start_VOL)
+			1 (&gt; L:ASC_APUOn_played, bool)
+			0 (&gt; L:ASC_APUOff_played, bool)
+			3 (&gt; L:ASC_APU, number)
+			3 (&gt; L:ASC_APU_Shut, number)
+		}
+
+		<!-- Run -->
+		(L:AB_APU_RUNNING, number) 1 ==
+		if{
+			2 (&gt; L:ASC_APU, number)
+			-750 (&gt; L:ASC_APU_VOL)
+			3 (&gt; L:ASC_APU_Start, number)
+			0 (&gt; L:ASC_APUOn_played, bool)
+			0 (&gt; L:ASC_APUOff_played, bool)
+			3 (&gt; L:ASC_APU_Shut, number)
+		}
+
+		<!-- Shutdown -->
+		(L:AB_APU_SPOOLINGDOWN, number) 1 ==
+		(L:ASC_APUOff_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_APU_Shut, number)
+			-750 (&gt; L:ASC_APU_Shut_VOL)
+			3 (&gt; L:ASC_APU, number)
+			3 (&gt; L:ASC_APU_Start, number)
+			1 (&gt; L:ASC_APUOff_played, bool)
+			0 (&gt; L:ASC_APUOn_played, bool)
+		}
+
+		
+		(L:AB_APU_STARTINGUP, number) 0 ==
+		(L:AB_APU_RUNNING, number) 0 == &amp;&amp;
+		(L:AB_APU_SPOOLINGDOWN, number) 0 == &amp;&amp;
+		(L:AB_OVH_APU_MASTER, number) 1 == &amp;&amp;
+		if{
+			3 (&gt; L:ASC_APU_Shut, number)
+			3 (&gt; L:ASC_APU, number)
+			3 (&gt; L:ASC_APU_Start, number)
+			0 (&gt; L:ASC_APUOff_played, bool)
+			0 (&gt; L:ASC_APUOn_played, bool)
+		}
+			
+	<!-- Gear Lever -->	
+		(A:GEAR HANDLE POSITION, bool) (L:ASC_Gear_pos, bool) !=
+		if{
+			1 (&gt; L:ASC_Gear, bool)
+		}
+		
+		(A:GEAR HANDLE POSITION, bool) (&gt; L:ASC_Gear_pos, bool)
+
+	<!-- Flaps Lever -->	
+		(L:FLAPS_LVR, number) (L:FLAPS_LVR, number) 1 - 0 max 1 min - (L:ASC_Flaps_index, number) - 0 !=
+		if{
+			1 (&gt; L:ASC_FlapsLever, bool)
+		}
+					
+		(L:FLAPS_LVR, number) (L:FLAPS_LVR, number) 1 - 0 max 1 min - (&gt; L:ASC_Flaps_index, number)
+					
+	<!-- Spoiler Lever -->
+		(L:AB_LOAD_STARTUP, bool) 1 ==
+		if{	
+			(L:Spoiler_lv_Anim, number) 0 ==
+			(L:ASC_Spoilers_armed, number) 0 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_SpoilerLever, bool)
+				1 (&gt; L:ASC_Spoilers_armed, number)
+			}
+						
+			(L:Spoiler_lv_Anim, number) 0 !=
+			(L:ASC_Spoilers_armed, number) 1 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_SpoilerLever, bool)
+				0 (&gt; L:ASC_Spoilers_armed, number)
+			}
+		}
+					
+	<!-- Side Window -->	
+	<!-- play window sound only if moved over full range -->
+<!--  sound moved to ab_anims
+		(L:Sidewindow_open_CP, bool) 1 ==
+		(L:Sidewindow_pos_CP, number) 25 &lt; &amp;&amp;
+		(L:WindowsOpen_played_CP, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsOpen, bool)
+			1 (&gt; L:WindowsOpen_played_CP, bool)
+		}
+
+		(L:Sidewindow_open_CP, bool) 1 ==
+		(L:Sidewindow_pos_CP, number) 50 == &amp;&amp;
+		(L:WindowsOpen_played_CP, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsOpen_played_CP, bool)
+		}
+
+		(L:Sidewindow_close_CP, bool) 1 ==
+		(L:Sidewindow_pos_CP, number) 25 &gt; &amp;&amp;
+		(L:WindowsClosed_played_CP, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsClosed, bool)
+			1 (&gt; L:WindowsClosed_played_CP, bool)
+		}
+
+		(L:Sidewindow_close_CP, bool) 1 ==
+		(L:Sidewindow_pos_CP, number) 0 == &amp;&amp;
+		(L:WindowsClosed_played_CP, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsClosed_played_CP, bool)
+		}
+					
+		(L:Sidewindow_open_FO, bool) 1 ==
+		(L:Sidewindow_pos_FO, number) 25 &lt; &amp;&amp;
+		(L:WindowsOpen_played_FO, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsOpen, bool)
+			1 (&gt; L:WindowsOpen_played_FO, bool)
+		}
+
+		(L:Sidewindow_open_FO, bool) 1 ==
+		(L:Sidewindow_pos_FO, number) 50 == &amp;&amp;
+		(L:WindowsOpen_played_FO, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsOpen_played_FO, bool)
+		}
+
+		(L:Sidewindow_close_FO, bool) 1 ==
+		(L:Sidewindow_pos_FO, number) 25 &gt; &amp;&amp;
+		(L:WindowsClosed_played_FO, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsClosed, bool)
+			1 (&gt; L:WindowsClosed_played_FO, bool)
+		}
+
+		(L:Sidewindow_close_FO, bool) 1 ==
+		(L:Sidewindow_pos_FO, number) 0 == &amp;&amp;
+		(L:WindowsClosed_played_FO, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:WindowsClosed_played_FO, bool)
+		}
+				-->
+				
+	<!-- Table -->	
+
+		<!-- Cpt Side -->
+		(L:Table1_open, bool) 1 ==
+		(L:TabelOut_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:TabelOut, bool)
+			1 (&gt; L:TabelOut_played, bool)
+			0 (&gt; L:TabelIn_played, bool)
+		}
+
+		(L:Table1_close, bool) 1 ==
+		(L:TabelIn_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:TableIn, bool)
+			1 (&gt; L:TabelIn_played, bool)
+			0 (&gt; L:TabelOut_played, bool)
+		}
+
+		<!-- FO Side -->
+		(L:Table2_open, bool) 1 ==
+		(L:Tabel2Out_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Tabelout, bool)
+			0 (&gt; L:Tabel2In_played, bool)
+			1 (&gt; L:Tabel2Out_played, bool)
+		}
+
+		(L:Table2_close, bool) 1 ==
+		(L:Tabel2In_played, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:TableIn, bool)
+			0 (&gt; L:Tabel2Out_played, bool)
+			1 (&gt; L:Tabel2In_played, bool)
+		}
+					
+	<!-- Throttle Lever -->	
+					
+		<!--Record Change-->
+		(L:Throttle_ani_fix_L, number) (L:ThrottleDetend_CheckL, number) !=
+		if{
+			1 (&gt; L:Throttle_ChngeDetectedL, bool)
+			(L:ThrottleDetend_CheckL, number) (>L:ThrottleDetend_PrevCheckL, number)
+			(L:Throttle_ani_fix_L, number) (>L:ThrottleDetend_CheckL, number)
+		}
+				
+		(L:Throttle_ani_fix_R, number) (L:ThrottleDetend_CheckR, number) !=
+		if{
+			1 (&gt; L:Throttle_ChngeDetectedR, bool)
+			(L:ThrottleDetend_CheckR, number) (>L:ThrottleDetend_PrevCheckR, number)
+			(L:Throttle_ani_fix_R, number) (>L:ThrottleDetend_CheckR, number)
+		}
+					
+		<!-- Left -->
+		(L:Throttle_ChngeDetectedL, bool) 1 ==
+		if{
+			0 (&gt; L:Throttle_ChngeDetectedL, bool)
+				
+			<!--Into IDLE-->
+			(L:Throttle_ani_fix_L, number) 0 ==
+			if{
+				1 (&gt; L:ThrottleDetend_Idle, bool)
+			}
+						
+			<!--Into Climb -->
+			(L:Throttle_ani_fix_L, number) 25 ==
+			(L:ThrottleDetend_PrevCheckL, number) 75 ==
+			(L:ThrottleDetend_PrevCheckL, number) 20 == || &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+			}
+						
+			<!--Into Flex/MCT -->
+			(L:Throttle_ani_fix_L, number) 75 ==
+			(L:ThrottleDetend_PrevCheckL, number) 25 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+			}
+						
+			<!--Into TOGA-->
+			(L:Throttle_ani_fix_L, number) 100 ==
+			(L:ThrottleDetend_PrevCheckL, number) 75 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_Toga, bool)
+			}
+						
+			<!--Out of TOGA-->
+			(L:Throttle_ani_fix_L, number) 75 ==
+			(L:ThrottleDetend_PrevCheckL, number) 100 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+				1 (&gt; L:ThrottleDetend_TogaRel, bool)
+			}
+		}
+					
+		<!-- Right -->
+		(L:Throttle_ChngeDetectedR, bool) 1 ==
+		if{
+			0 (&gt; L:Throttle_ChngeDetectedR, bool)
+			
+			<!--Into IDLE-->
+			(L:Throttle_ani_fix_R, number) 0 ==
+			if{
+				1 (&gt; L:ThrottleDetend_Idle, bool)
+			}
+						
+			<!--Into Climb -->
+			(L:Throttle_ani_fix_R, number) 25 ==
+			(L:ThrottleDetend_PrevCheckR, number) 20 ==
+			(L:ThrottleDetend_PrevCheckR, number) 75 == || &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+			}
+						
+			<!--Into Flex/MCT -->
+			(L:Throttle_ani_fix_R, number) 75 ==
+			(L:ThrottleDetend_PrevCheckR, number) 25 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+			}
+						
+			<!--Into TOGA-->
+			(L:Throttle_ani_fix_R, number) 100 ==
+			(L:ThrottleDetend_PrevCheckR, number) 75 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_Toga, bool)
+			}
+						
+			<!--Out of TOGA-->
+			(L:Throttle_ani_fix_R, number) 75 ==
+			(L:ThrottleDetend_PrevCheckR, number) 100 == &amp;&amp;
+			if{
+				1 (&gt; L:ThrottleDetend_ClbFlx, bool)
+				1 (&gt; L:ThrottleDetend_TogaRel, bool)
+			}
+						
+		}
+					
+		<!-- Reverser Lever -->
+
+			<!--Reverser Lock-->
+			(A:TURB ENG REVERSE NOZZLE PERCENT:1, percent) 1 &gt;
+			(L:Throttle_Reverser_idle, bool) 1 == &amp;&amp;
+			(L:Throttle_Detend_RevOn_played, bool) 0 == &amp;&amp;
+			if{ 
+				1 (&gt;L:ThrottleDetend_RevOn, number)
+				0 (&gt;L:Throttle_Reverser_idle, bool)
+				0 (&gt;L:Throttle_Detend_RevOff_played, bool)
+				1 (&gt;L:Throttle_Detend_RevOn_played, bool)
+			}
+					
+			(A:TURB ENG REVERSE NOZZLE PERCENT:1, percent) 1 &lt; 
+			if{
+				1 (&gt;L:Throttle_Reverser_idle, bool)
+			}
+					
+			(A:TURB ENG REVERSE NOZZLE PERCENT:1, percent) 57 &lt;
+			(L:Throttle_Detend_RevOff_played, bool) 0 == &amp;&amp;
+			(L:Throttle_Reverser_activ, bool) 1 == &amp;&amp;
+			if{
+				1 (&gt;L:ThrottleDetend_RevOff, number)
+				0 (&gt;L:Throttle_Reverser_activ, bool)
+				0 (&gt;L:Throttle_Detend_RevOn_played, bool)
+				2 (&gt;L:Throttle_Detend_RevOff_played, bool)
+			}
+					
+			(A:TURB ENG REVERSE NOZZLE PERCENT:1, percent) 57 &gt;=
+			if{
+				1 (&gt;L:Throttle_Reverser_activ, bool)
+			}
+					
+			<!--Reverser Unlock-->
+			(L:Throttle_Detend_RevOff_played, bool) 2 ==
+			if{
+				(L:ThrottleDetend_Count,number) 1 + (&gt;L:ThrottleDetend_Count,number)
+				(L:Throttle_ani_fix_L, number) 0 &gt;
+				(L:Throttle_ani_fix_R, number) 0 &gt;
+				if{
+					1 (&gt; L:Throttle_Detend_RevUnlock_play, bool)
+				}
+						
+				(L:Throttle_Detend_RevUnlock_play, bool) 1 ==
+				(L:ThrottleDetend_Count,number) 10 &gt; &amp;&amp;
+				if{
+					0 (&gt; L:Throttle_Detend_RevUnlock_play, bool)
+					0 (&gt; L:ThrottleDetend_Count, number)
+					1 (&gt; L:Throttle_Detend_RevOff_played, bool)
+					1 (&gt; L:ThrottleDetend_RevUnlock, bool)
+				}
+			}
+					
+	(L:DC_ESS_Avail, number) 1 ==
+	if{
+				
+	<!-- Master Warning -->
+		(L:AB_MPL_Master_Warning_sound, bool) 1 ==
+		(L:Load2, bool) 1 == &amp;&amp;
+		(L:DC_ESS_Avail, number) 1 == &amp;&amp;
+		if{
+			2 (&gt; L:ASC_M_WARNING, number)
+		}
+
+		els{
+			3 (&gt; L:ASC_M_WARNING, number)
+		}
+						
+	<!-- Master Caution -->	
+		(L:AB_MPL_Master_Caution_Light, bool) 1 ==
+		(L:AB_MPL_Master_Warning_sound, bool) 0 == &amp;&amp;
+		(L:ASC_M_CAUTION_hasbeenplayed, bool) 0 == &amp;&amp;
+		(L:Load2, bool) 1 == &amp;&amp;
+		(L:DC_ESS_Avail, number) 1 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_M_CAUTION, bool)
+			1 (&gt; L:ASC_M_CAUTION_hasbeenplayed, bool)
+		}
+						
+	<!-- Autopilot Off -->
+		(L:AB_AP_AP1, number) 1 ==
+		(L:AB_AP_AP2, number) 1 == ||
+		(L:AB_AP_Disc1, number) 1.0 != &amp;&amp;
+		(L:AB_AP_Disc1, number) 1.5 != &amp;&amp;
+		if{
+			1 (&gt; L:ASC_AP_Off_playinit, bool)
+		}
+						
+		(L:AB_AP_AP1, number) 0 ==
+		(L:AB_AP_AP2, number) 0 == &amp;&amp;
+		(L:ASC_AP_Off_playinit, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_AP_Off, bool)
+			0 (&gt; L:ASC_AP_Off_playinit, bool)
+		}
+
+	<!-- Autothrust Off -->
+		(L:AB_AP_ATHR, number) 1 ==
+		if{
+			1 (&gt; L:ASC_ATHR_Off_playinit, bool)
+		}
+		
+		(A:Radio height, feet) 14 - 50 &lt;
+		if{
+			0 (&gt; L:ASC_ATHR_Off_playinit, bool)
+		}		
+		
+		(L:AB_AP_ATHR, number) 0 ==
+		(L:ASC_ATHR_Off_playinit, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt; L:ASC_ATHR_Off, bool)
+			0 (&gt; L:ASC_ATHR_Off_playinit, bool)
+		}
+						
+	<!-- ILS Mode Degradation -->
+						
+		<!-- AP Mode -->
+		(L:Flightmode, number) 6 ==
+		(L:Flightmode, number) 7 == ||
+		(L:FMA_SINGLE_DUAL, number) 2 == &amp;&amp;
+		(L:ILSModeDeg_SINGLE_DUALMode_State_saved1, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg_SINGLE_DUALMode_State1,bool)
+			1 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved1, bool)
+		}
+						
+		(L:ILSModeDeg_SINGLE_DUALMode_State_saved1, bool) 1 ==
+		(A:PLANE ALT ABOVE GROUND, feet) 50 &gt; &amp;&amp;
+		(L:FMA_SINGLE_DUAL, number) 1 &lt;= &amp;&amp;
+		(L:ASC_ILSModeDeg_SINGLE_DUALMode_State1, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg, number)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved1, bool)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool)
+		}						
+						
+		(L:Flightmode, number) 6 ==
+		(L:Flightmode, number) 7 == ||
+		(A:PLANE ALT ABOVE GROUND, feet) 50 &gt; &amp;&amp;
+		(L:FMA_SINGLE_DUAL, number) 1 == &amp;&amp;
+		(L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg_SINGLE_DUALMode_State2, bool)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_active, bool)
+			0 (&gt;L:ILSModeDeg_Timer, number)
+			1 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool)
+		}
+						
+		(L:Flightmode, number) 6 ==
+		(L:Flightmode, number) 7 == ||
+		(A:PLANE ALT ABOVE GROUND, feet) 50 &gt; &amp;&amp;
+		(L:FMA_SINGLE_DUAL, number) 1 &lt; &amp;&amp;
+		(L:AB_AP_AP1, number) 0 == &amp;&amp;
+		(L:AB_AP_AP2, number) 0 == &amp;&amp;
+		(L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool) 1 == &amp;&amp;
+		if{
+			(L:ILSModeDeg_Timer, number) 1 + (&gt;L:ILSModeDeg_Timer, number)
+		}
+						
+		(L:ILSModeDeg_Timer, number) 50 &gt;
+		(L:AB_MPL_Master_Warning_sound, bool) 0 == &amp;&amp;
+		(L:ILSModeDeg_SINGLE_DUALMode_active, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg, number)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool)
+			1 (&gt;L:ILSModeDeg_SINGLE_DUALMode_active, bool)
+		}
+						
+		<!-- AT Disc -->
+		(L:Flightmode, number) 6 ==
+		(L:AB_AP_ATHR, number) 1 == &amp;&amp;
+		(L:FMA_SINGLE_DUAL, number) 0 != 
+		(L:FMA_CAT3, number) 0 != || &amp;&amp;
+		(L:ILSModeDeg_AutoThrust_State_saved, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg_AutoThrust_State, bool)
+			0 (&gt;L:ILSModeDeg_AutoThrust_active, bool)
+			0 (&gt;L:ILSModeDeg_Timer2, number)
+			1 (&gt;L:ILSModeDeg_AutoThrust_State_saved, bool)
+		}
+						
+		(L:Flightmode, number) 6 ==
+		(L:AB_AP_ATHR, number) 0 == &amp;&amp;
+		(L:FMA_SINGLE_DUAL, number) 0 != 
+		(L:FMA_CAT3, number) 0 != || &amp;&amp;
+		(L:ILSModeDeg_AutoThrust_State_saved, bool) 1 == &amp;&amp;
+		if{
+			(L:ILSModeDeg_Timer2, number) 1 + (&gt;L:ILSModeDeg_Timer2, number)
+		}
+						
+		(L:ILSModeDeg_Timer2, number) 25 &gt;
+		(L:ILSModeDeg_AutoThrust_active, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ILSModeDeg, number)
+			0 (&gt;L:ILSModeDeg_AutoThrust_State_saved, bool)
+			1 (&gt;L:ILSModeDeg_AutoThrust_active, bool)
+		}
+						
+		<!-- Reset -->
+		(L:Flightmode_reset, bool) 1 ==
+		if{
+			0 (&gt;L:ASC_ILSModeDeg_SINGLE_DUALMode_State1,bool)
+			0 (&gt;L:ASC_ILSModeDeg_SINGLE_DUALMode_State2, bool)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved1, bool)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_State_saved2, bool)
+			0 (&gt;L:ILSModeDeg_SINGLE_DUALMode_active, bool)
+			0 (&gt;L:ILSModeDeg_Timer, number)
+			0 (&gt;L:ILSModeDeg_Timer2, number)
+			0 (&gt;L:ASC_ILSModeDeg_AutoThrust_State, bool)
+			0 (&gt;L:ILSModeDeg_AutoThrust_active, bool)
+			0 (&gt;L:ILSModeDeg_AutoThrust_State_saved, bool)
+		}
+
+		<!-- No Smoking and Seat Belt Sign -->		
+		(A:GEAR CENTER POSITION, percent) 98 &gt;
+		(A:FLAPS HANDLE INDEX, number) 0 &gt; ||
+		(L:AB_OVH_SEATBELT, number) 1 == &amp;&amp;
+		(L:AB_OVH_SEATBELT, number) 2 == ||
+		(L:Seatbelt_state, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Seatbelt_state, bool)
+			1 (&gt; L:ASC_NOSMOKE-SEATBELTS, bool)
+		}
+
+		(A:GEAR CENTER POSITION, percent) 98 &lt;
+		(A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;
+
+		(L:AB_OVH_SEATBELT, number) 1 == &amp;&amp;
+		(L:AB_OVH_SEATBELT, number) 0 == ||
+		(L:Seatbelt_state, bool) 1 == &amp;&amp;
+		if{
+			0 (&gt; L:Seatbelt_state, bool)
+			1 (&gt; L:ASC_NOSMOKE-SEATBELTS, bool)
+		}
+
+		<!-- "NO PED" sign (former NO SMOKING) -->
+		(A:GEAR CENTER POSITION, percent) 98 &gt;
+		(A:FLAPS HANDLE INDEX, number) 0 &gt; ||
+		(L:AB_OVH_NO_SMOKING, number) 1 == &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 2 == ||
+		(L:Nosmoke_state, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Nosmoke_state, bool)
+			1 (&gt; L:ASC_NOSMOKE-SEATBELTS, bool)
+		}						
+
+		(A:GEAR CENTER POSITION, percent) 98 &lt;
+		(A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;
+
+		(L:AB_OVH_NO_SMOKING, number) 1 == &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 0 == ||
+		(L:Nosmoke_state, bool) 1 == &amp;&amp;
+		if{
+			0 (&gt; L:Nosmoke_state, bool)
+			1 (&gt; L:ASC_NOSMOKE-SEATBELTS, bool)
+		}
+	}
+					
+	<!-- GPWS -->
+		(L:Load2, bool) 1 ==
+		(L:DC_ESS_Avail, number) 1 == &amp;&amp;
+		if{
+			(L:AB_GPWS_MAIN_BUTTON, bool) 0 ==
+			(L:AB_FBW_STEEP_ON, bool) 1 ==
+			(A:RADIO HEIGHT, feet) 14.4 - 130 &gt;= &amp;&amp; 
+			(L:AB_FBW_STEEP_ON, bool) 0 == ||  &amp;&amp; 
+			if{
+				(L:GPWS_TMR, number) 1 + (&gt; L:GPWS_TMR, number)
+				(L:GPWS_TMR, number) 60 &gt;=
+				if{
+					0 (&gt; L:GPWS_TMR, number)
+				}
+
+				(L:AB_OVH_GPWS_SYS, bool) 1 == 
+				(A:RADIO HEIGHT, feet) 14.4 - 10 &gt; &amp;&amp;
+				(A:RADIO HEIGHT, feet) 14.4 - 2450 &lt;= &amp;&amp;
+				if{
+					6000  2450 / (A:RADIO HEIGHT, feet) * -1 * (&gt; L:GPWS_PULLUP, number)
+					(A:Vertical speed,feet per minute) 1000 + (L:GPWS_PULLUP, number) &lt;
+					(L:GPWS_TMR, number) 8 &lt;= &amp;&amp;
+					if{
+						1 (&gt; L:ASC_GPWS_PULLUP, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_PULLUP_VOL)
+						1 (&gt; L:GPWS_SINKRATE_Bypass, bool)
+						1 (&gt; L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool)
+					}
+					els{
+						0 (&gt; L:GPWS_SINKRATE_Bypass, bool)
+						0 (&gt; L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool)
+					}
+						
+					4000  2450 / (A:RADIO HEIGHT, feet) * -1 * (L:AB_FBW_STEEP_ON_S, bool) 400 * - (&gt; L:GPWS_SINK, number)
+					(A:Vertical speed,feet per minute) 1000 + (L:GPWS_SINK, number) &lt;
+					(L:GPWS_SINKRATE_Bypass, bool) 0 == &amp;&amp;
+					(L:GPWS_TMR, number) 8 &lt;= &amp;&amp;
+					if{
+						1 (&gt; L:ASC_GPWS_SINKRATE, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_SINKRATE_VOL)
+						1 (&gt; L:AB_GPWS_SINKRATE_GPWS_LIGHT_set, bool)
+					}
+					els{
+						0 (&gt; L:AB_GPWS_SINKRATE_GPWS_LIGHT_set, bool)
+					}
+								
+					(L:Flightmode, number) 5 ==
+					(A:Vertical speed,feet per minute) -1 &lt; &amp;&amp;
+					(L:GPWS_TMR, number) 12 &gt;= &amp;&amp;
+					(L:GPWS_TMR, number) 20 &lt;= &amp;&amp;
+					if{
+						1 (&gt; L:ASC_GPWS_DONTSINK, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_DONTSINK_VOL)
+						1 (&gt; L:AB_GPWS_DONTSINK_GPWS_LIGHT_set, bool)
+					}
+					els{
+						0 (&gt; L:AB_GPWS_DONTSINK_GPWS_LIGHT_set, bool)
+					}
+				}
+							
+				(L:AB_OVH_GPWS_SYS, bool) 1 == 
+				(L:AB_OVH_GPWS_GSMODE, bool) 1 == &amp;&amp;
+				(A:RADIO HEIGHT, feet) 14.4 - 30 &gt; &amp;&amp;
+				(A:RADIO HEIGHT, feet) 14.4 - 1000 &lt;= &amp;&amp;
+				(A:NAV GSI:1, number) -80.00 &lt; &amp;&amp;
+				(L:GPWS_TMR, number) 24 &gt;= &amp;&amp;
+				(L:GPWS_TMR, number) 32 &lt;= &amp;&amp;
+				(L:AB_AP_LOC2, number) 1 == &amp;&amp;
+				if{	
+					1 (&gt; L:ASC_GPWS_GLIDESLOPE, bool)
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_GLIDESLOPE_VOL)
+					1 (&gt; L:AB_GPWS_GLIDESLOPE_GPWS_LIGHT_set, bool)
+				}
+				els{
+					0 (&gt; L:AB_GPWS_GLIDESLOPE_GPWS_LIGHT_set, bool)
+				}
+							
+				(L:AB_OVH_GPWS_SYS, bool) 1 == 
+				(L:Flightmode, number) 7 &gt;= &amp;&amp;
+				(A:RADIO HEIGHT, feet) 14.4 - 30 &gt; &amp;&amp;
+				(A:GEAR HANDLE POSITION, bool) 0 == &amp;&amp;
+				(L:GPWS_TMR, number) 36 &gt;= &amp;&amp;
+				(L:GPWS_TMR, number) 44 &lt;= &amp;&amp;
+				if{
+					(A:AIRSPEED INDICATED, knots) 190 &lt;=
+					(A:RADIO HEIGHT, feet) 14.4 - 500 &lt; &amp;&amp;
+					(A:VERTICAL SPEED, Feet per second) -0.2 &lt;= &amp;&amp;
+					if{
+						1 (&gt; L:ASC_GPWS_TOOLOWGEAR, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_TOOLOWGEAR_VOL)
+						1 (&gt; L:AB_GPWS_TOOLOWGEAR_GPWS_LIGHT_set, bool)
+					}
+					els{
+						0 (&gt; L:AB_GPWS_TOOLOWGEAR_GPWS_LIGHT_set, bool)
+					}
+				}
+							
+				(L:AB_OVH_GPWS_SYS, bool) 1 == 
+				(L:Flightmode, number) 7 &gt;= &amp;&amp;
+				(A:RADIO HEIGHT, feet) 14.4 - 30 &gt; &amp;&amp;
+				(A:GEAR HANDLE POSITION, bool) 1 == &amp;&amp;
+				(L:GPWS_TMR, number) 48 &gt;= &amp;&amp;
+				(L:GPWS_TMR, number) 56 &lt;= &amp;&amp;
+				if{
+					(A:AIRSPEED INDICATED, knots) 159 &lt;=
+					(A:RADIO HEIGHT, feet) 14.4 - 245 &lt; &amp;&amp;
+					
+					(A:FLAPS HANDLE INDEX, number) 4 &lt; 
+					(L:AB_OVH_GPWS_FLAPMODE, bool) 1 == &amp;&amp;
+					(L:AB_OVH_GPWS_LDGFLAP3, bool) 0 == &amp;&amp;
+								
+					(A:FLAPS HANDLE INDEX, number) 3 &lt; 
+					(L:AB_OVH_GPWS_FLAPMODE, bool) 1 == &amp;&amp;
+					(L:AB_OVH_GPWS_LDGFLAP3, bool) 1 == &amp;&amp; || &amp;&amp;
+					if{
+						1 (&gt; L:ASC_GPWS_TOOLOWFLAPS, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_TOOLOWFLAPS_VOL)
+						1 (&gt; L:AB_GPWS_TOOLOWFLAPS_GPWS_LIGHT_set, bool)
+					}
+					els{
+						0 (&gt; L:AB_GPWS_TOOLOWFLAPS_GPWS_LIGHT_set, bool)
+					}
+				}
+			}
+						
+			(L:AB_GPWS_MAIN_BUTTON, bool) 0 ==
+			if{
+				(L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool) 1 == 
+				(L:AB_GPWS_SINKRATE_GPWS_LIGHT_set, bool) 1 == ||
+				(L:AB_GPWS_DONTSINK_GPWS_LIGHT_set, bool) 1 == ||
+				(L:AB_GPWS_GLIDESLOPE_GPWS_LIGHT_set, bool) 1 == ||
+				(L:AB_GPWS_TOOLOWGEAR_GPWS_LIGHT_set, bool) 1 == ||
+				(L:AB_GPWS_TOOLOWFLAPS_GPWS_LIGHT_set, bool) 1 == ||
+				if{
+					1 (&gt; L:AB_GPWS_MAIN_BUTTON_GPWS_LIGHT, bool)
+				}
+
+				(L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool) 0 == 
+				(L:AB_GPWS_SINKRATE_GPWS_LIGHT_set, bool) 0 == &amp;&amp;
+				(L:AB_GPWS_DONTSINK_GPWS_LIGHT_set, bool) 0 == &amp;&amp;
+				(L:AB_GPWS_GLIDESLOPE_GPWS_LIGHT_set, bool) 0 == &amp;&amp;
+				(L:AB_GPWS_TOOLOWGEAR_GPWS_LIGHT_set, bool) 0 == &amp;&amp;
+				(L:AB_GPWS_TOOLOWFLAPS_GPWS_LIGHT_set, bool) 0 == &amp;&amp;
+				if{
+					0 (&gt; L:AB_GPWS_MAIN_BUTTON_GPWS_LIGHT, bool)
+				}
+
+				(L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool) 1 == 
+				if{
+					1 (&gt; L:AB_GPWS_MAIN_BUTTON_PULLUP_LIGHT, bool)
+				}
+
+				(L:AB_GPWS_PULLUP_GPWS_LIGHT_set, bool) 0 == 
+				if{
+					0 (&gt; L:AB_GPWS_MAIN_BUTTON_PULLUP_LIGHT, bool)
+				}
+			}
+						
+			(L:DC_ESS_Avail, number) 1 ==
+			(L:AB_GPWS_MAIN_BUTTON, bool) 1 == &amp;&amp;
+			if{
+				(L:GPWS_TMR2, number) 1 + (&gt; L:GPWS_TMR2, number)
+				(L:GPWS_TMR2, number) 60 ==
+				if{
+					0 (&gt; L:GPWS_TMR2, number)
+					0 (&gt; L:AB_GPWS_MAIN_BUTTON, bool)
+				}
+
+				(L:GPWS_TMR2, number) 5 ==
+				if{
+					1 (&gt; L:ASC_GPWS_GLIDESLOPE, bool)
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_GLIDESLOPE_VOL)
+				}
+
+				(L:GPWS_TMR2, number) 32 ==
+				if{
+					1 (&gt; L:ASC_GPWS_PULLUP, bool)
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_PULLUP_VOL)
+				}
+
+				(L:GPWS_TMR2, number) 55 ==
+				if{
+					1 (&gt; L:ASC_GPWS_TERRAINAHEADPULLUP, bool)
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_GPWS_TERRAINAHEADPULLUP_VOL)
+				}
+			}
+
+			(L:GPWS_TMR2, number) 1 &gt;=
+			if{
+				1 (&gt;L:AB_OVH_GPWS_TERR_LIGHT_FAULT, bool)
+				1 (&gt;L:AB_OVH_GPWS_SYS_LIGHT_FAULT, bool)
+				1 (&gt; L:AB_GPWS_MAIN_BUTTON_GPWS_LIGHT, bool)
+				1 (&gt; L:AB_GPWS_MAIN_BUTTON_PULLUP_LIGHT, bool)
+			}
+
+			(L:GPWS_TMR2, number) 56 &gt; 
+			if{
+				0 (&gt; L:AB_GPWS_MAIN_BUTTON_GPWS_LIGHT, bool)
+				0 (&gt; L:AB_GPWS_MAIN_BUTTON_PULLUP_LIGHT, bool)
+				0 (&gt;L:AB_OVH_GPWS_TERR_LIGHT_FAULT, bool)
+				0 (&gt;L:AB_OVH_GPWS_SYS_LIGHT_FAULT, bool)
+			}
+			<!-- FWC V1 -->	
+			(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
+			(L:IAS_SM, number) (L:MCDU_V1, number) 3 - &gt;= &amp;&amp;
+			(L:V1Called,number) 0 == &amp;&amp;
+			if{
+			1 (&gt;L:ASC_PnF_V1,number)
+			1 (&gt;L:V1Called,number)
+			(L:Vol_GPWS_fac, number) (&gt;L:ASC_PnF_V1_VOL)
+			}	
+			(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == ||
+			(L:V1Called,number) 1 == &amp;&amp;
+			if{
+				0 (&gt;L:V1Called,number) <!--Resets at flightmode 7 or 8? should be 9 0r 0 but who knows, aerosoft-->
+			}
+			<!-- Low speed sound -->		
+			(L:IAS_SM, number) (L:IAS_AccelSM, number) 0 max + (L:VLS_autocalc,number) &lt;=
+			(L:FBW_TOGALK, bool) 0 == &amp;&amp;
+			(L:Throttle_ani_fix_L, number) 100 != &amp;&amp;
+			(L:Throttle_ani_fix_R, number) 100 != &amp;&amp;
+			(A:RADIO HEIGHT, feet) 14.4 - 2000 &lt; &amp;&amp;
+			(A:RADIO HEIGHT, feet) 14.4 - 100 &gt; &amp;&amp;
+			(A:FLAPS HANDLE INDEX, number) 2 &gt; &amp;&amp;
+			if{
+				1 (&gt; L:FBW_SpeedSpeed, bool)
+				(L:Vol_GPWS_fac, number) (&gt;L:FBW_SpeedSpeed_VOL)
+			}
+
+		}
+					
+		(L:DC_ESS_Avail, number) 0 ==
+		if{
+			0 (&gt;L:AB_GPWS_MAIN_BUTTON, bool)
+		}
+		
+	<!-- Altitude callouts-->
+		(A:VERTICAL SPEED, Feet per second) -0.2 &lt;=
+		if{
+	
+			<!-- F.W. 2018.04.20: Altitude callouts for 2500, 1000, 500, 400, 300 and 200, 50, 40, 30 and 20 have been moved to ECAM-DLL -->
+	
+	
+							
+			(A:Radio Height,feet) 14.4 - 10 / near 10 * 10 ==
+			(L:AB_AUTOLAND, bool) 1 == &amp;&amp;
+			if{
+				(L:CALLCALLED010, number) 0 ==
+				(L:Throttle_ani_fix_L, number) 0 ==
+				(L:Throttle_ani_fix_R, number) 0 == || &amp;&amp;
+				if{
+					1 (&gt; L:ASC_AIRBUSX_010, bool)
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_010_VOL)
+					1 (&gt; L:CALLCALLED010, number)
+				}
+			}
+			els{
+				0 (&gt;L:CALLCALLED010, number)
+			}
+							
+		<!-- RETARD DECISION -->
+			(L:Throttle_ani_fix_L, number) 0 !=
+			(L:Throttle_ani_fix_R, number) 0 != ||
+			
+			(L:RETARD_ONCE, bool) 0 == ||
+							
+			(A:Radio Height,feet) 14.4 - 10 / near 10 * 20 &lt;=
+			(L:AB_AP_AP1, number) 0 == &amp;&amp;
+			(L:AB_AP_AP2, number) 0 == &amp;&amp;
+							
+			(A:Radio Height,feet) 14.4 - 10 / near 10 * 10 &lt;=
+			(L:AB_AUTOLAND, bool) 1 == &amp;&amp; 
+			(L:AB_AP_AP1, number) 1 == 
+			(L:AB_AP_AP2, number) 1 == || &amp;&amp; || &amp;&amp;
+					
+			(L:MEMO_01, bool) 0 == &amp;&amp;		
+			(A:SIM ON GROUND, bool) 0 == &amp;&amp;
+			if{
+				(L:Timeout548, seconds) 0 ==
+				if{
+					(P:ABSOLUTE TIME, seconds) 0.5 + (>L:Timeout548, seconds)
+				}
+								
+				(P:ABSOLUTE TIME, seconds) (L:Timeout548, seconds) &gt;
+				if{					
+					(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_RETARD_VOL)
+					1 (&gt; L:ASC_AIRBUSX_RETARD, bool)
+					1 (&gt; L:RETARD_ONCE, bool)
+				}																
+			}
+			els{
+				(A:Radio Height,feet) 14.4 - 0.2 * int 5 * 5 ==
+				if{
+					(L:CALLCALLED005, number) 0 ==
+					(L:Throttle_ani_fix_L, number) 0 ==
+					(L:Throttle_ani_fix_R, number) 0 == || &amp;&amp;
+					if{
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_005_VOL)
+						1 (&gt; L:ASC_AIRBUSX_005, bool)
+						1 (&gt; L:CALLCALLED005, number)
+					}
+				}
+				els{
+					0 (&gt; L:CALLCALLED005, number)
+				}
+			}
+							
+			(A:SIM ON GROUND, bool) 1 ==
+			(L:IAS_SM, number) 80 &lt;= &amp;&amp;
+			(A:Radio Height,feet) 14.4 - 10 / near 10 * 20 &gt; ||
+			if{							
+				0 (&gt; L:RETARD_ONCE, bool) 
+				0 (&gt; L:Timeout548, seconds)
+			}
+							
+		<!-- Enh 100 Above -->
+			(L:AB_Enh_GPWS,bool) 1 ==
+					
+			(A:RADIO HEIGHT, feet) 120 - (L:MCDU_APP_DH, number) &lt;
+			(L:MCDU_APP_DH, number) 0 != &amp;&amp;
+							
+			(A:INDICATED ALTITUDE, feet) (L:MCDU_APP_MDA, number) 100 + &lt;
+			(L:MCDU_APP_MDA, number) 0 != &amp;&amp; || &amp;&amp;
+						
+			(L:100Above_hasbeenplayed, bool) 0 == &amp;&amp;
+			(A:VERTICAL SPEED, Feet per second) -0.2 &lt;= &amp;&amp;
+						
+			(L:MCDU_FLT_PHS, number) 6 != &amp;&amp;
+			(L:ASC_AIRBUSX_2500, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_1000, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_500, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_400, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_300, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_200, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_100, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_070, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_060, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_050, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_040, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_030, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_020, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_010, bool) 0 == &amp;&amp;
+			if{
+				(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_100Above_VOL)
+				1 (&gt; L:ASC_AIRBUSX_100Above, bool)
+				1 (&gt; L:100Above_hasbeenplayed, bool)
+			}
+							
+			(L:AB_FBW_STEEP_ON, bool) 1 ==
+			if{
+				(A:Radio Height,feet) 14.4 - 120 &lt;=
+				(A:Radio Height,feet) 14.4 - 115 &gt;= &amp;&amp;
+				if{
+					(L:CALLCALLEDSBY_120, number) 0 ==
+					if{
+						1 (&gt; L:ASC_STANDBY, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_STANDBY_VOL)
+						1 (&gt; L:CALLCALLEDSBY_120, number)
+					}
+				}
+				els{
+					0 (&gt; L:CALLCALLEDSBY_120, number)
+				}
+								
+				(A:Radio Height,feet) 14.4 - 95 &lt;= 
+				(A:Radio Height,feet) 14.4 - 90 &gt;= &amp;&amp;
+				if{
+					(L:CALLCALLEDSBY_90, number) 0 ==
+					if{
+						1 (&gt; L:ASC_STANDBY, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_STANDBY_VOL)
+						1 (&gt; L:CALLCALLEDSBY_90, number)
+					}
+				}
+				els{
+					0 (&gt; L:CALLCALLEDSBY_90, number)
+				}
+				
+				(A:Radio Height,feet) 14.4 - 65 &lt;= 
+				(A:Radio Height,feet) 14.4 - 60 &gt;= &amp;&amp;
+				if{
+					(L:CALLCALLEDFLARE, number) 0 ==
+					if{
+						1 (&gt; L:ASC_FLARE, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_FLARE_VOL)
+						1 (&gt; L:CALLCALLEDFLARE, number)
+					}
+				}
+				els{
+					0 (&gt; L:CALLCALLEDFLARE, number)
+				}
+			}
+			els{					
+				(A:Radio Height,feet) 24.4 + 100 / near 100 * 100 ==
+				if{
+					(L:CALLCALLED100, number) 1 !=
+					if{
+						1 (&gt; L:ASC_AIRBUSX_100, bool)
+						(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_100_VOL)
+						1 (&gt; L:CALLCALLED100, number)
+					}
+				}
+				els{
+					0 (&gt; L:CALLCALLED100, number)
+				}
+				
+				(L:AB_Enh_GPWS,bool) 1 ==
+				if{
+					(A:Radio Height,feet) 14.4 - 10 / near 10 * 70 ==
+					if{
+						(L:CALLCALLED070, number) 0 ==
+						if{
+							1 (&gt; L:ASC_AIRBUSX_070, bool)
+							(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_070_VOL)
+							1 (&gt; L:CALLCALLED070, number)
+						}
+					}
+					els{
+							0 (&gt; L:CALLCALLED070, number)
+					}
+							
+					(A:Radio Height,feet) 14.4 - 10 / near 10 * 60 ==
+					if{
+						(L:CALLCALLED060, number) 0 ==
+						if{
+							1 (&gt; L:ASC_AIRBUSX_060, bool)
+							(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_060_VOL)
+							1 (&gt; L:CALLCALLED060, number)
+						}
+					}
+					els{
+							0 (&gt; L:CALLCALLED060, number)
+					}
+				}				
+			
+			}
+							
+		<!-- Minimums Callout -->
+						
+			(A:RADIO HEIGHT, feet) 20 - (L:MCDU_APP_DH, number) &lt;
+			(L:MCDU_APP_DH, number) 0 != &amp;&amp;
+							
+			(A:INDICATED ALTITUDE, feet) (L:MCDU_APP_MDA, number) &lt;
+			(L:MCDU_APP_MDA, number) 0 != &amp;&amp; ||
+							
+			(L:ASC_Minimums_hasbeenplayed, bool) 0 == &amp;&amp;
+			(A:VERTICAL SPEED, Feet per second) -0.2 &lt;= &amp;&amp;
+							
+			(L:ASC_AIRBUSX_2500, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_1000, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_500, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_400, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_300, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_200, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_100, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_070, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_060, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_050, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_040, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_030, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_020, bool) 0 == &amp;&amp;
+			(L:ASC_AIRBUSX_010, bool) 0 == &amp;&amp;
+			(A:SIM ON GROUND, bool) 0 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_Minimums_hasbeenplayed, bool)
+				(L:Vol_GPWS_fac, number) (&gt;L:ASC_AIRBUSX_MINIMUM_VOL)
+				1 (&gt; L:ASC_AIRBUSX_MINIMUM, bool)
+			}
+							
+			(L:MCDU_FLT_PHS, number) 6 ==	
+			(A:SIM ON GROUND, bool) 1 == 
+			(A:GROUND VELOCITY, knots) 10 &lt; &amp;&amp; ||
+			if{
+				0 (&gt; L:ASC_Minimums_hasbeenplayed, bool)
+				0 (&gt; L:100Above_hasbeenplayed, bool)
+			}
+							
+		}
+						
+	<!-- Alt Alert -->
+		(L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALTCHORD_hist, number) ==
+		if{
+			(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE, feet) - abs 750 &lt;
+			(L:ASC_Altalert_state, number) 0 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_Altalert_state, number)
+							
+				(L:AB_AP_AP1, number) 0 ==
+				(L:AB_AP_AP2, number) 0 == &amp;&amp;
+				if{
+					1 (&gt; L:ASC_AIRBUSX_ALT_ALERT, bool)
+				}
+			}
+							
+			(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE, feet) - abs 250 &lt;
+			(L:ASC_Altalert_state, number) 1 == &amp;&amp;
+			if{
+				2 (&gt; L:ASC_Altalert_state, number)
+			}
+						
+			(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE, feet) - abs 250 &lt;
+			(L:ASC_Altalert_state, number) 2 == 
+			(L:ASC_Altalert_state, number) 3 == || &amp;&amp;
+			if{
+				0 (&gt; L:ASC_AIRBUSX_ALT_ALERT, number) 
+				2 (&gt; L:ASC_Altalert_state, number)
+			}
+							
+			(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE, feet) - abs 750 &gt;
+			(L:ASC_Altalert_state, number) 1 == &amp;&amp;
+			if{
+				3 (&gt; L:ASC_Altalert_state, number) 
+				1 (&gt; L:ASC_AIRBUSX_ALT_ALERT, bool) 
+			}
+							
+			(L:AB_AP_ALT_Selected_LOG, number) (A:INDICATED ALTITUDE, feet) - abs 250 &gt;							
+			(L:ASC_Altalert_state, number) 2 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_AIRBUSX_ALT_ALERT, bool) 
+			}
+		}
+						
+		(L:AB_AP_ALT_Selected_LOG, number) (L:AB_AP_ALTCHORD_hist, number) !=
+		if{
+			(L:AB_AP_ALT_Selected_LOG, number) (&gt; L:AB_AP_ALTCHORD_hist, number)
+			0 (&gt; L:ASC_Altalert_state, number) 
+			0 (&gt; L:ASC_AIRBUSX_ALT_ALERT, bool) 
+			0 (&gt; L:AB_AP_FWCALT, number)
+		}
+						
+		(A:Gear Handle Position,bool) 1 ==
+		(L:AB_AP_NAV_GS, bool) 0 != ||
+		(A:FLAPS HANDLE INDEX, number) 0 &gt; ||
+		(L:AB_MPL_Master_Warning, number) 1 == ||
+		if{
+			0 (&gt; L:ASC_Altalert_state, number) 
+			0 (&gt; L:ASC_AIRBUSX_ALT_ALERT, bool) 
+			0 (&gt; L:AB_AP_FWCALT, number)	
+		}
+	
+<!-- Cabin Crew -->	
+
+	<!-- Init Cold and Dark -->
+		(L:Flightmode, number) 1 == 
+		(L:AB_DOOR_PAX_LEFT_FWD1, number) 99 &gt; 
+		(L:AB_DOOR_PAX_LEFT_FWD2, number) 99 &gt; || &amp;&amp;
+		if{
+			(L:CC_CabinSecure_Init, bool) 0 ==
+			if{
+				1 (&gt;L:AB_SND_CAB_reset, bool)
+				1 (&gt;L:CC_CabinSecure_Init, bool)							
+			}
+		}
+
+	<!-- Cabin Secure -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 1 == &amp;&amp;
+		(L:CC_CabinSecure_Init, bool) 1 == &amp;&amp;
+		(L:AB_DOOR_PAX_LEFT_FWD1, number) 0 == &amp;&amp;
+		(L:AB_DOOR_PAX_LEFT_FWD2, number) 0 == &amp;&amp;
+		(L:AB_DOOR_PAX_LEFT_AFT, number) 0 == &amp;&amp;
+		(L:AB_DOOR_PAX_RIGHT_FWD1, number) 0 == &amp;&amp;
+		(L:AB_DOOR_PAX_RIGHT_FWD2, number) 0 == &amp;&amp;
+		(L:AB_DOOR_PAX_RIGHT_AFT, number) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:CC_CabinSecure,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_CabinSecure, bool) ! 
+			if{
+				1 (&gt;L:TimerCC_CabinSecure,bool)
+				(P:Local Time,seconds) 4 + (&gt;L:CC_CabinSecure,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_CabinSecure,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:CC_CabinSecure,seconds) > &amp;&amp;
+		if{
+			(L:CC_CabinSecure_Lock, bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_CabinSecure,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_CabinSecure_VOL)
+				0 (&gt;L:CC_CabinSecure_Init, bool)
+				1 (&gt;L:CC_CabinSecure_Lock, bool)
+			}
+		}
+						
+	<!-- Welcome on Board -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 2 == &amp;&amp;
+		(L:ASC_filetoload, number) 1 ==
+		(L:ASC_filetoload, number) 2 == || &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 0 == &amp;&amp;
+		(A:FLAPS HANDLE INDEX, number) 0 == &amp;&amp;
+		(A:ENG1 N1 RPM, percent) 10 &gt;
+		(A:ENG2 N1 RPM, percent) 10 &gt; || &amp;&amp;
+		(L:AB_PDS_Eng1Master, number) 1 ==
+		(L:AB_PDS_Eng2Master, number) 1 == || &amp;&amp;
+		(P:Local Time,seconds) (L:Welcome,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_Welcome, bool) ! 
+			if{
+				(P:Local Time,seconds) 5 + (&gt;L:Welcome,seconds)
+				1 (&gt;L:TimerCC_Welcome,bool)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_Welcome,bool) 1 == &amp;&amp;
+		(L:TimerCC_Safety,bool) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:Welcome,seconds) > &amp;&amp; 
+		if{
+			(L:CC_Welcome_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Welcome,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Welcome_VOL)
+				1 (&gt;L:CC_Welcome_Lock,bool)
+			}
+		}
+						
+	<!-- Safety Instruction -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 2 == &amp;&amp;
+		(L:AB_CL_Taxiing,bool) 0 == &amp;&amp;
+		(L:Var19) 0 == &amp;&amp;
+		(A:ENG1 N1 RPM, percent) 50 &lt; &amp;&amp;
+		(A:ENG2 N1 RPM, percent) 50 &lt; &amp;&amp;
+		(A:FLAPS HANDLE INDEX, number) 1 &gt;= &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Nose_Sw, number) 1 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_RwyTO_Sw, number) 1 == &amp;&amp;
+		(A:GROUND VELOCITY, knots) 10 &gt; &amp;&amp;
+		(P:Local Time,seconds) (L:Safety,seconds) > &amp;&amp; 
+		if{
+			(L:TimerCC_Safety, bool) ! 
+			if{
+				1 (&gt;L:TimerCC_Safety,bool)
+				(P:Local Time,seconds) 3 + (&gt;L:Safety,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_Safety,bool) 1 == &amp;&amp;
+		(L:TimerCC_PrepareTO,bool) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:Safety,seconds) > &amp;&amp;
+		if{
+			(L:CC_Safety_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Safety,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Safety_VOL)
+				1 (&gt;L:CC_Safety_Lock,bool)
+			}
+		}
+						
+	<!-- Prepare for Takeoff -->
+		(L:AB_SND_CAB,bool) 1 == 
+		(L:Flightmode, number) 2 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Nose_Sw, number) 2 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, number) 1 == &amp;&amp;
+		(A:FLAPS HANDLE INDEX, number) 1 &gt;= &amp;&amp;
+		(A:GROUND VELOCITY, knots) 80 &lt; &amp;&amp;
+		(P:Local Time,seconds) (L:Prepare,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_PrepareTO, bool) ! 
+			if{
+				1 (&gt;L:TimerCC_PrepareTO,bool)
+				(P:Local Time,seconds) 6 + (&gt;L:PrepareTO,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_PrepareTO,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:PrepareTO,seconds) > &amp;&amp;
+		if{
+			(L:CC_PrepareTO_Lock,bool) 0 ==
+			if{
+				(E:TIME OF DAY,enum) 1 &lt;=
+				if{
+					1 (&gt;L:ASC_CC_Prep_TO_Day,number)
+					(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Prep_TO_Day_VOL)
+				}
+								
+				(E:TIME OF DAY,enum) 2 &gt;=
+				if{
+					1 (&gt;L:ASC_CC_Prep_TO_Night,number)
+					(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Prep_TO_Night_VOL)
+				}
+								
+				3 (&gt;L:ASC_CC_Safety,number)
+				1 (&gt;L:CC_PrepareTO_Lock,bool)
+			}
+		}
+						
+	<!-- Climb Device CC Information-->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:FLAPS_LVR_hist, number) 0 == &amp;&amp;
+		(L:MCDU_FLT_PHS, number) 2 == &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 1 == &amp;&amp;
+		if{ 
+			(L:CC_ClimbDevice_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Climb_Device,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Climb_Device_VOL)
+				1 (&gt;L:CC_ClimbDevice_Lock,bool)
+			}
+		}
+
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:MCDU_FLT_PHS, number) 2 == &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 0 == &amp;&amp;
+		if{ 
+			(L:CC_ClimbDevice_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Climb_Device,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Climb_Device_VOL)
+				1 (&gt;L:CC_ClimbDevice_Lock,bool)
+			}
+		}
+
+	<!-- Descent Device CC Information-->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:FLAPS_LVR_hist, number) 1 &gt;= &amp;&amp;
+		(L:MCDU_FLT_PHS, number) 5 &gt;= &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 1 == &amp;&amp;
+		if{
+			(L:CC_DescentDevice_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Des_Device,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Des_Device_VOL)
+				1 (&gt;L:CC_DescentDevice_Lock,bool)
+			}
+		}
+		
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:MCDU_FLT_PHS, number) 4 &gt;= &amp;&amp;
+		(L:AB_OVH_NO_SMOKING, number) 2 == &amp;&amp;
+		if{ 
+			(L:CC_ClimbDevice_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Climb_Device,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Climb_Device_VOL)
+				1 (&gt;L:CC_ClimbDevice_Lock,bool)
+			}
+		}
+	
+	<!-- Climb Seat Belts CC Information-->
+		(L:AB_SND_CAB,bool) 1 ==
+		(A:Radio height, feet) s1 8500 &lt; &amp;&amp;
+		l1 8400 &gt;= &amp;&amp;
+		(L:AB_OVH_SEATBELT, number) 2 == &amp;&amp;
+		(L:Flightmode2,number) 1 == &amp;&amp;
+		if{
+			(L:CC_ClimbSeatBelt_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Climb_SeatBelts,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Climb_SeatBelts_VOL)
+				1 (&gt;L:Descent_SeatBelts_Lock,bool)
+				1 (&gt;L:CC_ClimbSeatBelt_Lock,bool)
+			}
+		}
+						
+	<!-- Climb Seat Belts Off Information-->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_OVH_SEATBELT, number) 0 == &amp;&amp;
+		(L:MCDU_FLT_PHS, number) 2 == &amp;&amp;
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:Seatbeltsoff,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_SeatBelts_Off, bool) !
+			if{
+				1 (&gt;L:TimerCC_SeatBelts_Off,bool)
+				(P:Local Time,seconds) 10 + (&gt;L:Seatbeltsoff,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_SeatBelts_Off,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:Seatbeltsoff,seconds) > &amp;&amp;
+		if{
+			(L:CC_SeatBelts_Off_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_SeatBelts_OFF,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_SeatBelts_OFF_VOL)
+				0 (&gt;L:TimerCC_SeatBelts_On,bool)
+				0 (&gt;L:CC_SeatBelts_On_Lock,bool)
+				1 (&gt;L:CC_SeatBelts_Off_Lock,bool)
+			}
+		}
+						
+	<!-- Descent Seat Belts On Information-->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_OVH_SEATBELT, number) 2 == &amp;&amp;
+		(L:MCDU_FLT_PHS, number) 4 == &amp;&amp;
+		(L:CC_SeatBelts_Off_Lock,bool) 1 == &amp;&amp;
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:SeatBeltsOn,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_SeatBelts_On, bool) !
+			if{
+				1 (&gt;L:TimerCC_SeatBelts_On,bool)
+				(P:Local Time,seconds) 5 + (&gt;L:SeatBeltsOn,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_SeatBelts_On,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:SeatBeltsOn,seconds) > &amp;&amp;
+		if{
+			(L:CC_SeatBelts_On_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Des_SeatBelts,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Des_SeatBelts_VOL)
+				0 (&gt;L:TimerCC_SeatBelts_Off,bool)
+				0 (&gt;L:CC_SeatBelts_Off_Lock,bool)
+				1 (&gt;L:CC_SeatBelts_On_Lock,bool)
+			}
+		} 
+						
+	<!-- Serves Coffee for Flightcrew -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:CoffeeFC,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_CoffeeFC, bool) !
+			if{
+				1 (&gt;L:TimerCC_CoffeeFC,bool)
+				(P:Local Time,seconds) 600 + (&gt;L:CoffeeFC,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(L:TimerCC_CoffeeFC,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:CoffeeFC,seconds) > &amp;&amp;
+		if{
+			(L:CC_CoffeeFC_Lock, bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_FC_Coofee,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_FC_Coofee_VOL)
+				1 (&gt;L:CC_CoffeeFC_Lock, bool)
+			}
+		} 
+						
+	<!-- Serves Drinks -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:Drinks,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_Drinks, bool) !
+			if{
+				1 (&gt;L:TimerCC_Drinks,bool)
+				(P:Local Time,seconds) 900 + (&gt;L:Drinks,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(L:TimerCC_Drinks,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:Drinks,seconds) > &amp;&amp;
+		if{
+			(L:CC_Drinks_Lock, bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_CAB_Drinks,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_CAB_Drinks_VOL)
+				1 (&gt;L:CC_Drinks_Lock, bool)
+			}
+		} 
+						
+	<!-- Play Movie -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:PlayMovie,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_PlayMovie, bool) !
+			if{
+				1 (&gt;L:TimerCC_PlayMovie,bool)
+				(P:Local Time,seconds) 3600 + (&gt;L:PlayMovie,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(L:TimerCC_PlayMovie,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:PlayMovie,seconds) > &amp;&amp;
+		if{
+			(L:CC_PlayMovie_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_CAB_Movie,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_CAB_Movie_VOL)
+				1 (&gt;L:CC_PlayMovie_Lock,bool)
+			}
+		} 
+						
+	<!-- Serves Sandwiches -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(L:DESDist2,number) 200 - &lt; &amp;&amp;
+		(P:Local Time,seconds) (L:Sandwich,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_Sandwich, bool) !
+			if{
+				1 (&gt;L:TimerCC_Sandwich,bool)
+				(P:Local Time,seconds) 1800 + (&gt;L:Sandwich,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:AB_CruiseLvl, bool) 1 == &amp;&amp;
+		(L:TimerCC_Sandwich,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:Sandwich,seconds) > &amp;&amp;
+		if{
+			(L:CC_Sandwich_Lock, bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_CAB_Sandwiches,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_CAB_Sandwiches_VOL)
+				1 (&gt;L:CC_Sandwich_Lock, bool)
+			}
+		} 
+						
+
+	<!-- Before Land -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 6 == &amp;&amp;
+		(L:Var20) 2 == &amp;&amp;
+		(P:Local Time,seconds) (L:BeforeLand,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_BeforeLand, bool) !
+			if{
+				1 (&gt;L:TimerCC_BeforeLand,bool)
+				(P:Local Time,seconds) 8 + (&gt;L:BeforeLand,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_BeforeLand,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:BeforeLand,seconds) > &amp;&amp;
+		if{
+			(L:CC_BeforeLand_Lock,bool) 0 ==
+			if{
+				(E:TIME OF DAY,enum) 1 &lt;=
+				if{
+					1 (&gt;L:ASC_CC_Landing_Day,number)
+					(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Landing_Day_VOL)
+				}
+								
+				(E:TIME OF DAY,enum) 2 &gt;=
+				if{
+					1 (&gt;L:ASC_CC_Landing_Night,number)
+					(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Landing_Night_VOL)
+				}
+							
+				0 (&gt;L:TimerCC_AbortLND,bool)
+				0 (&gt;L:CC_AbortLND_Lock,bool)
+				1 (&gt;L:TOAbort1_SoundCC,bool)
+				1 (&gt;L:CC_BeforeLand_Lock,bool)
+			}
+		}
+						
+	<!-- Landing Abort -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 6 ==
+		(L:Flightmode, number) 7 == || &amp;&amp;
+		(L:AB_PROC_GoAroundCmpl,number) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:CCAbortLND,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_AbortLND, bool) !
+			if{
+				1 (&gt;L:TimerCC_AbortLND,bool)
+				(P:Local Time,seconds) 19 + (&gt;L:CCAbortLND,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_AbortLND,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:CCAbortLND,seconds) > &amp;&amp;
+		if{
+			(L:CC_AbortLND_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Landing_Abort,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Landing_Abort_VOL)
+				0 (&gt;L:TimerCC_AbortLND,bool)
+				0 (&gt;L:TimerCC_BeforeLand,bool)
+				0 (&gt;L:CC_BeforeLand_Lock,bool)
+				1 (&gt;L:CC_AbortLND_Lock,bool)
+			}
+		} 
+						
+	<!-- After Land Destination -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 9 == &amp;&amp;
+		(A:GROUND VELOCITY, knots) 30 &lt; &amp;&amp;
+		(P:Local Time,seconds) (L:AfterLand,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_AfterLand, bool) !
+			if{
+				1 (&gt;L:TimerCC_AfterLand,bool)
+				(P:Local Time,seconds) 3 + (&gt;L:AfterLand,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_AfterLand,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:AfterLand,seconds) > &amp;&amp;
+		if{
+			(L:CC_AfterLand_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_After_Landing_Dest,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_After_Landing_Dest_VOL)
+				0 (&gt;L:TimerCC_Unboarding,bool)
+				0 (&gt;L:CC_Unboarding_Lock,bool)
+				0 (&gt;L:TimerCC_AllPassLeft,bool)
+				0 (&gt;L:CC_AllPassLeft_Lock,bool)
+				1 (&gt;L:CC_AfterLand_Lock,bool)
+			}
+		} 
+						
+	<!-- Wait for Stop -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 9 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 0 == &amp;&amp;
+		(A:SIM ON GROUND,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:AfterLand_Wait,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_AfterLand_Wait, bool) !
+			if{
+				1 (&gt;L:TimerCC_AfterLand_Wait,bool)
+				(P:Local Time,seconds) 25 + (&gt;L:AfterLand_Wait,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_AfterLand_Wait,bool) 1 == &amp;&amp;
+		(L:AB_CL_afterLandingCmpl,number) 1 != &amp;&amp;
+		(P:Local Time,seconds) (L:AfterLand_Wait,seconds) > &amp;&amp;
+		if{
+			(L:CC_AfterLand_Wait_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_After_Landing_Wait,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_After_Landing_Wait_VOL)
+				1 (&gt;L:CC_AfterLand_Wait_Lock,bool)
+			}
+		}
+
+	<!-- Unboarding -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 10 == &amp;&amp;
+		(L:Wheelchocks, bool) 1 ==
+		(A:BRAKE PARKING INDICATOR,bool) 1 == || &amp;&amp;
+		(L:AB_DOOR_PAX_LEFT_FWD1, number) 80 &gt;
+		(L:AB_DOOR_PAX_LEFT_FWD2, number) 80 &gt; || &amp;&amp;		
+		(P:Local Time,seconds) (L:Unboarding,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_Unboarding, bool) !
+			if{
+				(P:Local Time,seconds) 5 + (&gt;L:Unboarding,seconds)
+				1 (&gt;L:TimerCC_Unboarding,bool)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_Unboarding,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:Unboarding,seconds) > &amp;&amp;
+		if{
+			(L:CC_Unboarding_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_Unboarding,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_Unboarding_VOL)
+				1 (&gt;L:CC_Unboarding_Lock,bool)
+			}
+		}
+						
+	<!-- All Pass Left -->
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:Flightmode, number) 10 == &amp;&amp;
+		(L:Wheelchocks, bool) 1 ==
+		(A:BRAKE PARKING INDICATOR,bool) 1 == || &amp;&amp;
+		(L:AB_DOOR_PAX_LEFT_FWD1, number) 80 &gt;
+		(L:AB_DOOR_PAX_LEFT_FWD2, number) 80 &gt; || &amp;&amp;		
+		(P:Local Time,seconds) (L:AllPassLeft,seconds) > &amp;&amp;
+		if{
+			(L:TimerCC_AllPassLeft, bool) !
+			if{
+				1 (&gt;L:TimerCC_AllPassLeft,bool)
+				(P:Local Time,seconds) 250 + (&gt;L:AllPassLeft,seconds)
+			}
+		}
+						
+		(L:AB_SND_CAB,bool) 1 ==
+		(L:TimerCC_AllPassLeft,bool) 1 == &amp;&amp;
+		(L:AB_CL_ParkingCmpl,number) 1 != &amp;&amp;
+		(P:Local Time,seconds) (L:AllPassLeft,seconds) > &amp;&amp;
+		if{
+			(L:CC_AllPassLeft_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_CC_AllPassLeft,number)
+				(L:Vol_CabinCrew_fac, number) (&gt;L:ASC_CC_AllPassLeft_VOL)
+				1 (&gt;L:CC_AllPassLeft_Lock,bool)
+			}
+		}
+}	
+						
+</Value>
+</Select>
+</Element>
+						
+<Element>
+  <Select>
+    <Value>
+
+<!-- ATC -->
+
+	(L:Load2, bool)	1 ==						
+	(L:Pause_code, bool) 0 == &amp;&amp;
+	(L:Pause_code2, bool) 0 == &amp;&amp;
+	if{
+
+	<!-- ATC Avail -->
+		(L:AB_SND_ATC,bool) 1 ==
+		(L:Load2, bool) 1 == &amp;&amp;
+		(L:DC_ESS_Avail, number) 1 == &amp;&amp;
+		(L:AB_PDS_RADIO_CPT_POWER, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt;L:Snd_ATC_Avail,bool)
+		}
+							
+		(L:AB_SND_ATC,bool) 0 ==
+		(L:DC_ESS_Avail, number) 0 == ||
+		(L:AB_PDS_RADIO_CPT_POWER, bool) 0 == ||
+		if{
+			0 (&gt;L:Snd_ATC_Avail,bool)
+		}
+							
+	<!-- Channel Generator -->
+		(L:Snd_ATC_Channel,number) 4 &lt; 
+		if{
+			(L:Snd_ATC_Channel,number) 0.5 + (&gt;L:Snd_ATC_Channel,number)
+		}
+							
+		(L:Snd_ATC_Channel,number) 3 &gt;
+		if{
+			0 (&gt;L:Snd_ATC_Channel,number)
+		}
+							
+	<!-- Swap Channel Delay -->
+		(L:ATC_Channel_Played,bool) 1 ==
+		(P:Local Time,seconds) (L:ATC_Swap_Channel_Delay,seconds) > &amp;&amp;
+		if{
+			(L:Timer_ATC_Swap_Channel,bool) !
+			if{
+				1 (&gt;L:Timer_ATC_Swap_Channel,bool)
+				(P:Local Time,seconds) 655 + (&gt;L:ATC_Swap_Channel_Delay,seconds)
+				0 (&gt;L:ATC_Swap_Channel,bool)
+			}
+		}
+							
+		(L:ATC_Channel_Played,bool) 1 ==
+		(P:Local Time,seconds) (L:ATC_Swap_Channel_Delay,seconds) > &amp;&amp;
+		if{
+			(L:ATC_Swap_Channel,bool) 0 ==
+			if{
+				0 (&gt;L:ATC_Channel_Played,bool)
+				1 (&gt;L:ATC_Swap_Channel,bool)
+				0 (&gt;L:Timer_ATC_Swap_Channel,bool)
+			}
+		} 
+							
+	<!-- Ground -->
+
+		<!-- On -->
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 1 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 0 ==
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, bool) 0 == || &amp;&amp;
+		if{
+			1 (&gt;L:ATC_Ground_Avail,bool)
+		}
+							
+		(L:ATC_Ground_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 1 == &amp;&amp;
+		(L:ATC_Ground_Played,bool) 0 ==
+		(L:ATC_Ground_isPlayed,number) 1 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Ground1,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Ground1_VOL)
+			1 (&gt;L:ATC_Ground_Played,bool)
+			1 (&gt;L:ATC_Ground_isPlayed,number)
+		}
+							
+		(L:ATC_Ground_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 2 == &amp;&amp;
+		(L:ATC_Ground_Played,bool) 0 ==
+		(L:ATC_Ground_isPlayed,number) 2 == || &amp;&amp;  
+		if{
+			1 (&gt;L:ASC_ATC_Ground2,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Ground2_VOL)
+			1 (&gt;L:ATC_Ground_Played,bool)
+			2 (&gt;L:ATC_Ground_isPlayed,number)
+		}
+							
+		(L:ATC_Ground_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 3 == &amp;&amp;
+		(L:ATC_Ground_Played,bool) 0 ==
+		(L:ATC_Ground_isPlayed,number) 3 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Ground3,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Ground3_VOL)
+			1 (&gt;L:ATC_Ground_Played,bool)
+			3 (&gt;L:ATC_Ground_isPlayed,number)
+		}
+							
+		<!-- Off -->
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:SIM ON GROUND,bool) 0 == ||
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 1 ==
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, bool) 1 == &amp;&amp; || 
+		(L:ATC_Ground_Played,bool) 1 == &amp;&amp;
+		if{
+			0 (&gt;L:ATC_Ground_Avail,bool)
+			3 (&gt;L:ASC_ATC_Ground1,number)
+			3 (&gt;L:ASC_ATC_Ground2,number)
+			3 (&gt;L:ASC_ATC_Ground3,number)
+			0 (&gt;L:ATC_Ground_Played,bool)
+			0 (&gt;L:Timer_ATC_Swap_Channel,bool)
+			0 (&gt;L:ATC_Ground_isPlayed,number)
+		}
+							
+	<!-- Tower -->
+			
+		<!-- On -->
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 1 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 1 ==
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, bool) 1 == || &amp;&amp;
+						
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(L:FMA_Latmode_act,number) 5 ==
+		(L:FMA_Latmode_arm,number) 5 == ||
+		(L:FMA_Vertmode_act, number) 7 == || &amp;&amp; ||
+		if{
+			1 (&gt;L:ATC_Tower_Avail,bool)
+		}
+							
+		(L:ATC_Tower_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 1 == &amp;&amp;
+		(L:ATC_Tower_Played,bool) 0 ==
+		(L:ATC_Tower_isPlayed,number) 1 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Tower1,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Tower1_VOL)
+			1 (&gt;L:ATC_Tower_Played,bool)
+			1 (&gt;L:ATC_Tower_isPlayed,number)
+		}
+							
+		(L:ATC_Tower_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 2 == &amp;&amp;
+		(L:ATC_Tower_Played,bool) 0 ==
+		(L:ATC_Tower_isPlayed,number) 2 == || &amp;&amp;  
+		if{
+			1 (&gt;L:ASC_ATC_Tower2,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Tower2_VOL)
+			1 (&gt;L:ATC_Tower_Played,bool)
+			2 (&gt;L:ATC_Tower_isPlayed,number)
+		}
+							
+		(L:ATC_Tower_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 3 == &amp;&amp;
+		(L:ATC_Tower_Played,bool) 0 ==
+		(L:ATC_Tower_isPlayed,number) 3 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Tower3,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Tower3_VOL)
+			1 (&gt;L:ATC_Tower_Played,bool)
+			3 (&gt;L:ATC_Tower_isPlayed,number)
+		}
+							
+		<!-- Off -->
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw,bool) 0 ==  
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, bool) 0 == || 
+		(A:SIM ON GROUND,bool) 1 == &amp;&amp;
+		(L:ATC_Tower_Played,bool) 1 == &amp;&amp;
+			
+		(A:GEAR CENTER POSITION, percent) 50 &lt;=  
+		(L:Flightmode2,number) 1 == &amp;&amp;
+		(L:AB_AP_AP1, number) 1 ==
+		(L:AB_AP_AP2, number) 1 == || &amp;&amp;
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp; ||
+		(L:Snd_ATC_Avail,bool) 0 == ||
+		(L:ATC_Tower_Played,bool) 1 == &amp;&amp;
+		if{
+			0 (&gt;L:ATC_Tower_Avail,bool)
+			3 (&gt;L:ASC_ATC_Tower1,number)
+			3 (&gt;L:ASC_ATC_Tower2,number)
+			3 (&gt;L:ASC_ATC_Tower3,number)
+			0 (&gt;L:ATC_Tower_Played,bool)
+			0 (&gt;L:Timer_ATC_Swap_Channel,bool)
+			0 (&gt;L:ATC_Tower_isPlayed,number)
+		}
+						
+	<!-- Departure -->
+
+		<!-- On -->
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(A:GEAR CENTER POSITION, percent) 50 &lt;= &amp;&amp;
+		(A:INDICATED ALTITUDE, feet) 18000 &lt; &amp;&amp;
+		(L:Flightmode2,number) 1 == &amp;&amp;
+		(L:AB_AP_AP1, number) 1 ==
+		(L:AB_AP_AP2, number) 1 == || &amp;&amp;
+		if{
+			1 (&gt;L:ASC_ATC_Departure,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Departure_VOL)
+			1 (&gt;L:ATC_Departure_Played,bool)
+		}
+							
+		<!-- Off -->
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:GEAR CENTER POSITION, percent) 50 &gt; ||
+		(L:ATC_Departure_Played,bool) 1 == &amp;&amp;
+		if{
+			3 (&gt;L:ASC_ATC_Departure,number)
+			0 (&gt;L:ATC_Departure_Played,bool)
+		}
+							
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:INDICATED ALTITUDE, feet) 18050 &lt;
+		(L:Flightmode2,number) 3 == &amp;&amp; ||
+		(L:ATC_Departure_Played,bool) 1 == &amp;&amp;
+		if{
+			3 (&gt;L:ASC_ATC_Departure,number)
+			0 (&gt;L:ATC_Departure_Played,bool)
+		}
+							
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:INDICATED ALTITUDE, feet) 18050 &gt; ||
+		(L:ATC_Departure_Played,bool) 1 == &amp;&amp;
+		if{
+			3 (&gt;L:ASC_ATC_Departure,number)
+			0 (&gt;L:ATC_Departure_Played,bool)
+		}
+							
+	<!-- Center -->
+
+		<!-- On -->
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(A:INDICATED ALTITUDE, feet) 18050 &gt; &amp;&amp;
+		if{
+			1 (&gt;L:ATC_Center_Avail,bool)
+		}
+						
+		(L:ATC_Center_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 1 == &amp;&amp;
+		(L:ATC_Center_Played,bool) 0 ==
+		(L:ATC_Center_isPlayed,number) 1 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Center1,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Center1_VOL)
+			1 (&gt;L:ATC_Center_Played,bool)
+			1 (&gt;L:ATC_Center_isPlayed,number)
+		}
+							
+		(L:ATC_Center_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 2 == &amp;&amp;
+		(L:ATC_Center_Played,bool) 0 ==
+		(L:ATC_Center_isPlayed,number) 2 == || &amp;&amp;  
+		if{
+			1 (&gt;L:ASC_ATC_Center2,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Center2_VOL)
+			1 (&gt;L:ATC_Center_Played,bool)
+			2 (&gt;L:ATC_Center_isPlayed,number)
+		}
+							
+		(L:ATC_Center_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 3 == &amp;&amp;
+		(L:ATC_Center_Played,bool) 0 ==
+		(L:ATC_Center_isPlayed,number) 3 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Center3,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Center3_VOL)
+			1 (&gt;L:ATC_Center_Played,bool)
+			3 (&gt;L:ATC_Center_isPlayed,number)
+		}
+							
+		<!-- Off -->
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:INDICATED ALTITUDE, feet) 18050 &lt; ||
+		(L:ATC_Center_Played,bool) 1 == &amp;&amp;
+		if{
+			0 (&gt;L:ATC_Center_Avail,bool)
+			3 (&gt;L:ASC_ATC_Center1,number)
+			3 (&gt;L:ASC_ATC_Center2,number)
+			3 (&gt;L:ASC_ATC_Center3,number)
+			0 (&gt;L:ATC_Center_Played,bool)
+			0 (&gt;L:Timer_ATC_Swap_Channel,bool)
+			0 (&gt;L:ATC_Center_isPlayed,number)
+		}
+						
+	<!-- Approach -->
+
+		<!-- On -->
+		(L:Snd_ATC_Avail,bool) 1 ==
+		(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+		(A:INDICATED ALTITUDE, feet) 18050 &lt; &amp;&amp;
+		(L:FMA_Latmode_act,number) 4.5 != &amp;&amp;
+		(L:FMA_Latmode_act,number) 5 != &amp;&amp;
+		(L:FMA_Latmode_arm,number) 5 != &amp;&amp;
+		(L:FMA_Vertmode_act, number) 6.5 != &amp;&amp;
+		(L:FMA_Vertmode_act, number) 7 != &amp;&amp;
+		(L:FMA_Vertmode_act, number) 8 != &amp;&amp;
+		(L:FMA_Vertmode_act, number) 9 != &amp;&amp;
+		(L:Flightmode2,number) 3 == &amp;&amp;
+		if{
+			1 (&gt;L:ATC_Approach_Avail,bool)
+		}
+							
+		(L:ATC_Approach_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 1 == &amp;&amp;
+		(L:ATC_Approach_Played,bool) 0 ==
+		(L:ATC_Approach_isPlayed,number) 1 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Approach1,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Approach1_VOL)
+			1 (&gt;L:ATC_Approach_Played,bool)
+			1 (&gt;L:ATC_Approach_isPlayed,number)
+		}
+			
+		(L:ATC_Approach_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 2 == &amp;&amp;
+		(L:ATC_Approach_Played,bool) 0 ==
+		(L:ATC_Approach_isPlayed,number) 2 == || &amp;&amp;  
+		if{
+			1 (&gt;L:ASC_ATC_Approach2,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Approach2_VOL)
+			1 (&gt;L:ATC_Approach_Played,bool)
+			2 (&gt;L:ATC_Approach_isPlayed,number)
+		}
+							
+		(L:ATC_Approach_Avail,bool) 1 == 
+		(L:Snd_ATC_Channel,number) 3 == &amp;&amp;
+		(L:ATC_Approach_Played,bool) 0 ==
+		(L:ATC_Approach_isPlayed,number) 3 == || &amp;&amp; 
+		if{
+			1 (&gt;L:ASC_ATC_Approach3,number)
+			(L:Vol_ATC_fac, number) (&gt;L:ASC_ATC_Approach3_VOL)
+			1 (&gt;L:ATC_Approach_Played,bool)
+			3 (&gt;L:ATC_Approach_isPlayed,number)
+		}
+							
+		<!-- Off -->
+		(L:Snd_ATC_Avail,bool) 0 ==
+		(A:INDICATED ALTITUDE, feet) 18050 &lt;
+		(A:AUTOPILOT APPROACH HOLD, bool) 1 == &amp;&amp; ||
+		(L:FMA_Latmode_act,number) 4.5 == ||
+		(L:FMA_Latmode_act,number) 5 == ||
+		(L:FMA_Latmode_arm,number) 5 == ||
+		(L:FMA_Vertmode_act, number) 7 == ||
+		(A:SIM ON GROUND,bool) 1 == ||
+		(L:Flightmode2,number) 1 == ||
+		(L:ATC_Approach_Played,bool) 1 == &amp;&amp;
+		if{
+			0 (&gt;L:ATC_Approach_Avail,bool)
+			3 (&gt;L:ASC_ATC_Approach1,number)
+			3 (&gt;L:ASC_ATC_Approach2,number)
+			3 (&gt;L:ASC_ATC_Approach3,number)
+			0 (&gt;L:ATC_Approach_Played,bool)
+			0 (&gt;L:Timer_ATC_Swap_Channel,bool)
+			0 (&gt;L:ATC_Approach_isPlayed,number)
+		}
+	}
+
+<!-- Flight Crew -->					
+	(L:Pause_code, bool) 0 ==
+	(L:Pause_code2, bool) 0 == &amp;&amp;
+	(L:AB_SND_FC,bool) 1 == &amp;&amp;
+	(L:FD_SND_Paused,bool) 0 == &amp;&amp;
+	if{
+
+	<!-- Page Turn 1 -->
+		(L:FC_PageTurn1,number) 6200 &lt;
+		if{
+			(L:FC_PageTurn1,number) 1 + (&gt;L:FC_PageTurn1,number)
+		}
+					
+		(L:FC_PageTurn1,number) 6200 &gt;=
+		if{
+			1 (&gt;L:ASC_FD_PageTurn1,number)
+			0 (&gt;L:FC_PageTurn1,number)
+		}
+
+	<!-- Page Turn 2 -->
+		(L:FC_PageTurn2,number) 9500 &lt;
+		if{
+			(L:FC_PageTurn2,number) 1 + (&gt;L:FC_PageTurn2,number)
+		}
+							
+		(L:FC_PageTurn2,number) 9500 &gt;=
+		if{
+			1 (&gt;L:ASC_FD_PageTurn2,number)
+			0 (&gt;L:FC_PageTurn2,number)
+		}							
+							
+	<!-- Page Turn 3 -->
+		(L:FC_PageTurn3,number) 20500 &lt;
+		if{
+			(L:FC_PageTurn3,number) 1 + (&gt;L:FC_PageTurn3,number)
+		}
+						
+		(L:FC_PageTurn3,number) 20500 &gt;=
+		if{
+			1 (&gt;L:ASC_FD_PageTurn3,number)
+			0 (&gt;L:FC_PageTurn3,number)
+		}
+
+	<!-- Cough -->
+		(L:FC_Cough,number) 11500 &lt;
+		if{
+			(L:FC_Cough,number) 1 + (&gt;L:FC_Cough,number)
+		}
+							
+		(L:FC_Cough,number) 11500 &gt;=
+		if{
+			1 (&gt;L:ASC_FD_Cough,number)
+			0 (&gt;L:FC_Cough,number)
+		}							
+
+	<!-- Sneezing -->
+		(L:FC_Sneezing,number) 20000 &lt;
+		if{
+			(L:FC_Sneezing,number) 1 + (&gt;L:FC_Sneezing,number)
+		}
+							
+		(L:FC_Sneezing,number) 20000 &gt;=
+		if{
+			1 (&gt;L:ASC_FD_Sneezing,number)
+			0 (&gt;L:FC_Sneezing,number)
+		} 
+						
+	<!-- AdirsKnob -->
+		(L:FC_AdirsKnob,number) 3500 &lt;
+		if{
+			(L:FC_AdirsKnob,number) 1 + (&gt;L:FC_AdirsKnob,number)
+		}
+						
+		(L:FC_AdirsKnob,number) 3500 &gt;=
+		if{
+			1 (&gt;L:AdirsKnobRotate,number)
+			0 (&gt;L:FC_AdirsKnob,number)
+		} 
+							
+	<!-- Knobclick -->
+		(L:FC_Knobclick,number) 2500 &lt;
+		if{
+			(L:FC_Knobclick,number) 1 + (&gt;L:FC_Knobclick,number)
+		}
+							
+		(L:FC_Knobclick,number) 2500 &gt;=
+		if{
+			1 (&gt;L:ASC_Knobclick,number)
+			0 (&gt;L:FC_Knobclick,number)
+		} 
+							
+	<!-- KnobRotate -->
+		(L:FC_KnobRotate,number) 4100 &lt;
+		if{
+			(L:FC_KnobRotate,number) 1 + (&gt;L:FC_KnobRotate,number)
+		}
+							
+		(L:FC_KnobRotate,number) 4100 &gt;=
+		if{
+			1 (&gt;L:ASC_KnobRotate,number)
+			0 (&gt;L:FC_KnobRotate,number)
+		} 
+							
+	<!-- Seat Servo -->
+		(L:AB_SND_FC,bool) 1 ==
+		(L:FD_SND_Paused,bool) 0 == &amp;&amp;
+		(L:Flightmode, number) 2 == &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Strobe_Sw, number) 1 &gt;= &amp;&amp;
+		(L:AB_VC_OVH_ExtLight_Landing_Sw, bool) 1 == &amp;&amp;
+		(L:AB_Checklist_Active,bool) 0 == &amp;&amp;
+		(P:Local Time,seconds) (L:SeatServo,seconds) > &amp;&amp;
+		if{
+			(L:Timer_SeatServo, bool) !
+			if{
+				1 (&gt;L:Timer_SeatServo,bool)
+				(P:Local Time,seconds) 3 + (&gt;L:SeatServo,seconds)
+			}
+		}
+							
+		(L:AB_SND_FC,bool) 1 ==
+		(L:FD_SND_Paused,bool) 0 == &amp;&amp;
+		(L:Timer_SeatServo,bool) 1 == &amp;&amp;
+		(P:Local Time,seconds) (L:SeatServo,seconds) > &amp;&amp;
+		if{
+			(L:SeatServo_Lock,bool) 0 ==
+			if{
+				1 (&gt;L:ASC_SeatServo,number)
+				1 (&gt;L:SeatServo_Lock,bool)
+			}
+		}
+	}	
+						
+    </Value>
+  </Select>
+</Element>
+						
+<Element>
+  <Select>
+    <Value>
+
+<!-- Volume Control Factors -->
+	<!-- (L:ASC_Vol_Batteries, number) 100 - 100 * 2.1 / (&gt;L:Vol_Batteries_fac, number) -->
+	<!-- (L:ASC_Vol_Avionics, number) 100 - 100 * 1.9 / (&gt;L:Vol_Avionics_fac, number) -->
+	(L:ASC_Vol_Batteries, number) 0.01 * 0.8 * (&gt;L:Vol_Batteries_fac, number)  <!-- reduce to some 25% as it seem to me to noisy at 100% -->
+	(L:ASC_Vol_Avionics, number) 0.01 * (&gt;L:Vol_Avionics_fac, number)
+	(L:ASC_Vol_Cooling, number) 0.01 * (&gt;L:Vol_Cooling_fac, number)
+	(L:ASC_Vol_GPWS, number) 100 - 100 * 1.4 / (&gt;L:Vol_GPWS_fac, number)
+	(L:ASC_Vol_Checklist_PF, number) 100 - 100 * 2.3 / (&gt;L:Vol_Checklist_PF_fac, number)
+	(L:ASC_Vol_Checklist_PnF, number) 100 - 100 * 2.3 / (&gt;L:Vol_Checklist_PnF_fac, number)
+	(L:ASC_Vol_ATC, number) 100 - 100 * 2.6 / (&gt;L:Vol_ATC_fac, number)
+	(L:ASC_Vol_CabinCrew, number) 100 - 100 * 2.6 / (&gt;L:Vol_CabinCrew_fac, number)
+	(L:ASC_Vol_GroundCrew, number) 100 - 100 * 2.6 / (&gt;L:Vol_GroundCrew_fac, number)
+
+	(L:AB_EXT_SPOILER1_L, number)
+	(L:AB_EXT_SPOILER2_L, number) +
+	(L:AB_EXT_SPOILER3_L, number) +
+	(L:AB_EXT_SPOILER4_L, number) +
+	(L:AB_EXT_SPOILER5_L, number) +
+	(L:AB_EXT_SPOILER6_L, number) +
+	(L:AB_EXT_SPOILER1_R, number) +
+	(L:AB_EXT_SPOILER2_R, number) +
+	(L:AB_EXT_SPOILER3_R, number) +
+	(L:AB_EXT_SPOILER4_R, number) +
+	(L:AB_EXT_SPOILER5_R, number) +
+	(L:AB_EXT_SPOILER6_R, number) + 12 / 114 - 25 * 2000 - (L:IAS_SM, number) 8 * + 0 min -9999 max (&gt;L:Vol_Spoilers_fac, number)
+
+	(A:GEAR CENTER POSITION, percent)
+	(A:GEAR LEFT POSITION, percent) +
+	(A:GEAR RIGHT POSITION, percent) + 3 / 100 - 30 * 2500 - (L:IAS_SM, number) 15 * + 0 min -9999 max (&gt;L:Vol_GearWind_fac, number)
+
+	<!-- Wheel Brakes -->
+	(A:BRAKE RIGHT POSITION,number)
+	(A:BRAKE LEFT POSITION,number) + 2 / 5000 * 5000 - (&gt;L:Vol_Brakes_fac, number)
+	(A:LEFT WHEEL RPM, rpm) 20 * 32000 + (&gt;L:Freq_Brakes_fac, number)
+						
+<!-- Aircraft in stab Cruise Level -->
+	(L:Flightmode2,number) 2 ==
+	(L:Seatbelt_state, bool) 0 == &amp;&amp;
+	(A:INDICATED ALTITUDE, feet) 28000 &gt; &amp;&amp;
+	if{
+		1 (&gt;L:AB_CruiseLvl, bool)
+	}
+			
+	(L:Flightmode2,number) 2 !=
+	(L:Seatbelt_state, bool) 1 == ||
+	if{
+		0 (&gt;L:AB_CruiseLvl, bool)
+	}
+		
+<!-- CC Reset  -->
+	(L:AB_SND_CAB_reset, bool) 1 ==
+	if{
+		0 (&gt;L:Var200)
+		0 (&gt;L:TimerCC_CabinSecure,bool)
+		0 (&gt;L:CC_CabinSecure_Lock, bool)
+		0 (&gt;L:TimerCC_Welcome,bool)
+		0 (&gt;L:CC_Welcome_Lock,bool)
+		0 (&gt;L:TimerCC_Safety,bool)
+		0 (&gt;L:CC_Safety_Lock,bool)
+		0 (&gt;L:TimerCC_PrepareTO,bool)
+		0 (&gt;L:CC_PrepareTO_Lock,bool)
+		0 (&gt;L:CC_ClimbDevice_Lock,bool)
+		0 (&gt;L:Descent_SeatBelts_Lock,bool)
+		0 (&gt;L:CC_ClimbSeatBelt_Lock,bool)
+		0 (&gt;L:TimerCC_SeatBelts_Off,bool)
+		0 (&gt;L:TimerCC_SeatBelts_On,bool)
+		0 (&gt;L:CC_SeatBelts_On_Lock,bool)
+		0 (&gt;L:CC_SeatBelts_Off_Lock,bool)
+		0 (&gt;L:TimerCC_CoffeeFC,bool)
+		0 (&gt;L:CC_CoffeeFC_Lock, bool)
+		0 (&gt;L:TimerCC_Drinks,bool)
+		0 (&gt;L:CC_Drinks_Lock, bool)
+		0 (&gt;L:TimerCC_PlayMovie,bool)
+		0 (&gt;L:CC_PlayMovie_Lock,bool)
+		0 (&gt;L:TimerCC_Sandwich,bool)
+		0 (&gt;L:CC_Sandwich_Lock, bool)
+		0 (&gt;L:TimerCC_SandwichFC,bool)
+		0 (&gt;L:CC_SandwichFC_Lock, bool)
+		0 (&gt;L:CC_DescentDevice_Lock,bool)
+		0 (&gt;L:TimerCC_BeforeLand,bool)
+		0 (&gt;L:CC_BeforeLand_Lock,bool)
+		0 (&gt;L:TOAbort1_SoundCC,bool)
+		0 (&gt;L:TimerCC_AbortLND,bool)
+		0 (&gt;L:CC_AbortLND_Lock,bool)
+		0 (&gt;L:TimerCC_AfterLand,bool)
+		0 (&gt;L:CC_AfterLand_Lock,bool)
+		0 (&gt;L:TimerCC_AfterLand_Wait,bool)
+		0 (&gt;L:CC_AfterLand_Wait_Lock,bool)
+		0 (&gt;L:TimerCC_AllPassLeft,bool)
+		0 (&gt;L:CC_AllPassLeft_Lock,bool)
+		0 (&gt;L:AB_SND_CAB_reset, bool)
+	}		
+					
+	<!-- Sounds Stop ColdDark Loaded -->
+	(L:Pause_code, bool) 1 ==
+	(L:Pause_code2, bool) 1 == ||
+	if{
+		3 (&gt;L:ASC_Spoilers,number)
+		3 (&gt;L:ASC_SpoilersDn,number)
+		3 (&gt;L:ASC_SpoilersUp,number)
+		3 (&gt;L:ELEV_TRIM_UP, number)
+		3 (&gt;L:ELEV_TRIM_DN, number)
+		3 (&gt;L:ASC_WindowOpen,number)
+		3 (&gt;L:ASC_Brakes,number)
+		3 (&gt;L:ASC_Batteries,number)
+		3 (&gt; L:ASC_Avionics, number)
+		0 (&gt; L:ASC_AvionicsOff, bool)
+		0 (&gt; L:ASC_AvionicsOn, bool)
+		3 (&gt;L:ASC_Reverser_Off,number)
+		3 (&gt;L:ASC_Reverser_On,number)
+		3 (&gt; L:ASC_Cooling, number)
+		0 (&gt; L:ASC_CoolingOff, bool)
+		0 (&gt; L:ASC_CoolingOn, bool)
+
+		3 (&gt;L:ASC_ATC_Ground1,number)
+		3 (&gt;L:ASC_ATC_Ground2,number)
+		3 (&gt;L:ASC_ATC_Ground3,number)
+		3 (&gt;L:ASC_ATC_Center1,number)
+		3 (&gt;L:ASC_ATC_Center2,number)
+		3 (&gt;L:ASC_ATC_Center3,number)
+		3 (&gt;L:ASC_ATC_Tower1,number)
+		3 (&gt;L:ASC_ATC_Tower2,number)
+		3 (&gt;L:ASC_ATC_Tower3,number)
+		3 (&gt;L:ASC_ATC_Departure,number)
+		0 (&gt;L:ATC_Departure_Played,bool)
+		3 (&gt;L:ASC_ATC_Approach1,number)
+		3 (&gt;L:ASC_ATC_Approach2,number)
+		3 (&gt;L:ASC_ATC_Approach3,number)
+	}		
+				
+    </Value>
+  </Select>
+</Element>
+	
+<Keys>
+	<!-- Pause Active -->
+		<On Event="PAUSE_TOGGLE"> (L:Pause_code2, bool) 0 == (L:Pause_code, bool) 0 == &amp;&amp; if{ 1 (&gt;L:Pause_code2, bool) }
+		els{ (L:Pause_code2, bool) 1 == if{ 0 (&gt;L:Pause_code2, bool) } } </On>
+		
+</Keys>
+	
+</Gauge>

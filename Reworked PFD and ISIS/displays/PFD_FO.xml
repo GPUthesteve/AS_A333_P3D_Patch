@@ -5316,7 +5316,7 @@
 						</ClipRect>
 					</Element>					
 				</Element>				
-				<Element id="V1 -   Blue Marker, Text">
+				<Element id="V1 - Blue Marker, Text">
 					<Visibility>(L:PFD_V1_Final, number) 0 != (L:TOMode, number) 1 == &amp;&amp;</Visibility>
 					<Element id="V1 Marker">
 						<Visibility>(L:PFD_V1_Final, number) (L:IAS_SM, number) - abs 40 &lt;</Visibility>
@@ -8846,21 +8846,6 @@
 							if{ 0x0080ff }
 							els{ 0x00ff00 }
 						</LineColorScript>
-						<FillColorScript>
-							(A:Vertical speed,feet per minute) -6000 &lt;
-							(A:Vertical speed,feet per minute) -2000 &lt; (L:PFD_Radalt, number) 2500 &lt; &amp;&amp;
-							(A:Vertical speed,feet per minute) -1200 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
-							|| ||
-							(L:AB_FBW_STEEP_ON_S, bool) 0 == &amp;&amp;
-							
-							(A:Vertical speed,feet per minute) -6000 &lt;
-							(A:Vertical speed,feet per minute) -2000 &lt; (L:PFD_Radalt, number) 2500 &lt; &amp;&amp;
-							(A:Vertical speed,feet per minute) -1700 &lt; (L:PFD_Radalt, number) 1000 &lt; &amp;&amp;
-							|| ||
-							(L:AB_FBW_STEEP_ON_S, bool) 1 == &amp;&amp; ||
-							if{ 0x0080ff }
-							els{ 0x00ff00 }
-						</FillColorScript>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -11186,7 +11171,7 @@
 							<FloatPosition>0,0</FloatPosition>
 							<PolyLine>
 								<Bright>True</Bright>
-								<LineWidth>2</LineWidth>
+								<LineWidth>1</LineWidth>
 								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>73,0</FloatPosition>
@@ -11201,7 +11186,7 @@
 							<Visibility>(L:PFD_LandFMA, bool) 0 ==</Visibility>
 							<PolyLine>
 								<Bright>True</Bright>
-								<LineWidth>2</LineWidth>
+								<LineWidth>1</LineWidth>
 								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>143,0</FloatPosition>
@@ -11215,7 +11200,7 @@
 							<FloatPosition>0,0</FloatPosition>
 							<PolyLine>
 								<Bright>True</Bright>
-								<LineWidth>2</LineWidth>
+								<LineWidth>1</LineWidth>
 								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>220,0</FloatPosition>
@@ -11229,7 +11214,7 @@
 							<FloatPosition>0,0</FloatPosition>
 							<PolyLine>
 								<Bright>True</Bright>
-								<LineWidth>2</LineWidth>
+								<LineWidth>1</LineWidth>
 								<LineColor>#ffffff</LineColor>
 								<Point>
 									<FloatPosition>284,0</FloatPosition>
