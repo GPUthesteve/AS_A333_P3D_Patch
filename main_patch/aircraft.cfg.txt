@@ -40,7 +40,6 @@ LeftMain				= 10.66, -24.15, -8.00, 11095, 0		// LEFT INNER tank, 11095 US gallo
 RightMain				= 10.66,  24.15, -8.00, 11095, 0		// RIGHT INNER tank, 11095 US gallons (32970kg)usable fuel,  Y-ARM 7.365m  (24.15ft) when compl. filled,temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
 LeftAux					= -12.575, -66.04, -8.00, 964,   0		// LEFT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
 RightAux				= -12.575,  66.04, -8.00, 964,   0		// RIGHT OUTER tank, 964 US gallons (2865kg) usable fuel,  Y-ARM 20.142m  (66.04ft) when compl. filled,Temporarily set to 25% RC, position relative to datum ref point only estimatad so far 
-center1					= 0.0,   0.00, -8.00, 10980,  0		// CENTER TANK, not implemented in A330-300, but spare for possible A330-200 or A330-300E
 center2					= -90.55,   0.00, 8.00, 1646,  0	// TRIM TANK! 1646 US gallons (4891kg) usable fuel
 
 [AIRPLANE_GEOMETRY]
