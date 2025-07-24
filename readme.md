@@ -39,7 +39,7 @@ installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a folder named `texture_FallbackVC`,
 2. go in that folder then put these new textures you got from here.
 
-#Fake "Howl/Spool" sound removal
+# Fake "Howl/Spool" sound removal
 This spool sound reportedly crash some simulators, especially with P3Dv5, disable this would fix the crash.
 installation 
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
@@ -49,7 +49,6 @@ installation
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
 
-# ขี้เกียจแปลละ ลบละกัน
 
 
 	
