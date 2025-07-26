@@ -1046,11 +1046,6 @@
 							<Transparent>True</Transparent>
 						</MaskImage>
 					</Element>
-					<!-- <Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation> -->
 					<Element id="Radalt Numbers small">
 						<Visibility>(L:PFD_Radalt, number) 2500 &lt; (L:PFD_Radalt_Fnt, number) 0 == &amp;&amp;</Visibility>
 						<GaugeText id="text">
@@ -1069,45 +1064,6 @@
 								%( 0 3 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) int 3- 0 max )%!1d!%{end}
 							</GaugeString>
 							<Size>100,20</Size>
-							<Bright>True</Bright>
-						</GaugeText>
-						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
-							<Axis>100,100</Axis>
-							<Transparent>True</Transparent>
-						</MaskImage>
-					</Element>
-					<!-- <Rotation>
-						<Expression>
-							<Script>(A:PLANE BANK DEGREES, radians) </Script>
-						</Expression>
-					</Rotation> -->
-					<Element id="DH text">
-						<Visibility>
-						<!-- SET THE TIMER 9 SECOND /A32S or 3 SECOND /A330 REFERENCE ONLY ONCE IF IN DH RANGE, IF OUT OF RANGE OF DH, RESET TO ZERO -->
-						(L:MCDU_FLT_PHS, number) 5 == (L:MCDU_APP_DH_ENT, bool) 1 == &amp;&amp; (A:Radio height, feet) 14 - (L:MCDU_APP_DH, number) &lt; and if{ (L:APP_DH_TIMER, number) 0 == if{ (P:Absolute time, seconds) 3 + (>L:APP_DH_TIMER, number) } }
-						els{ 0 (>L:APP_DH_TIMER, number) }
-
-						<!-- NOW USE THE "APP_DH_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
-						(L:APP_DH_TIMER, number) 0 != if{
-
-						<!-- THE SOLID STATE AFTER 9 SECONDS -->
-						(P:Absolute time, seconds) (L:APP_DH_TIMER, number) &gt;  if{ 1 }
-						<!-- THE BLINKING STATE BEFORE THE 9 SECOND LIMIT -->
-						els{ (P:Absolute time, seconds) 0.5 % 0.25 1 * &gt;  ! }
-
-						<!-- THE VAR IS ZERO -->
-						} els{ 0 }
-						</Visibility>
-						<GaugeText id="text">
-							<Axis>15,-55</Axis>
-							<FontFace>AirbusPFD</FontFace>
-							<FontColor>0x0080ff</FontColor>
-							<FontHeight>15</FontHeight>
-							<Transparent>TRUE</Transparent>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>
-							</GaugeString>
-							<Size>30,20</Size>
 							<Bright>True</Bright>
 						</GaugeText>
 						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
@@ -10204,14 +10160,14 @@
 							<BackgroundColor>#010101</BackgroundColor>
 							<AlternateFont id="THR IDLE">
 								<FontFace>AirbusPFD</FontFace>
-								<FontHeight>12</FontHeight>
+								<FontHeight>13</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="White">
 								<FontColor>0xffffff</FontColor>
 							</AlternateColor>
 							<AlternateFont id="Flex Val">
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>14</FontHeight>
+								<FontHeight>13</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Flex Val">
 								<FontColor>0xffff00</FontColor>
@@ -10230,7 +10186,7 @@
 								%((L:FMA_THRmode, number) 8 == )%{if}\{clr2}%MAN%\n\{lsp=16}TOGA%{end}
 								%((L:FMA_THRmode, number) 9 == )%{if}%A.FLOOR%{end}
 								%((L:FMA_THRmode, number) 9.5 == )%{if}%TOGA LK%{end}
-								%((L:FMA_THRmode, number) 10 == )%{if}%SPEED%{end}%
+								%((L:FMA_THRmode, number) 10 == )%{if}%SPEED%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
@@ -10379,74 +10335,6 @@
 							<GaugeString>%SET MANAGED SPD%\{fnt1}</GaugeString>
 						</GaugeText>
 					</Element>					
-				</Element>	
-				<Element id="NEO FEATURES">
-				 <Visibility>(L:AB_NEO_features,number) 1 ==</Visibility>
-					<Element id="C1L1 BRK LO/MED/MAX">
-						<Element id="C1L1 Text">
-							<FloatPosition>6,4</FloatPosition>
-							<GaugeText id="Line 1">
-								<Size>62,32</Size>
-								<Bright>True</Bright>
-								<FontFace>AirbusPFD</FontFace>
-								<FontHeightScript>12</FontHeightScript>
-								<Multiline>True</Multiline>
-								<FontColor>#00ff00</FontColor>
-								<BackgroundColor>#000000</BackgroundColor>
-								<Bold>FALSE</Bold>
-								<HorizontalAlign>CENTER</HorizontalAlign>
-								<GaugeString>
-								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 0 == &amp;&amp; )%{if}%BRK MAX%{end}
-								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 2 == &amp;&amp; )%{if}%BRK LO%{end}
-								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 3 == &amp;&amp; )%{if}%BRK MED%{end}%
-								</GaugeString>
-							</GaugeText>
-						</Element>
-						<Element id="C1L1 Box - White Single">
-							<FloatPosition>5,3</FloatPosition>
-							<Visibility>(L:ABrkactiv, number) 1 ==</Visibility>
-							<Rectangle id="Rectangle">
-								<Bright>True</Bright>
-								<Width>65</Width>
-								<Height>15</Height>
-								<FillColor>#000000</FillColor>
-								<LineColor>#ffffff</LineColor>
-								<LineWidth>1</LineWidth>
-							</Rectangle>
-						</Element>
-					</Element>
-					<Element id="C1L2 BRK LO/MED">
-						<FloatPosition>2,20</FloatPosition>
-						<GaugeText id="Line 2">
-							<Size>68,14</Size>
-							<Bright>FALSE</Bright>
-							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
-							<FontColorScript>0xE6E600</FontColorScript>
-							<BackgroundColor>#000000</BackgroundColor>
-							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>
-							%((L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 2 == &amp;&amp; )%{if}%BRK LO%{end}
-							%((L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 3 == &amp;&amp; )%{if}%BRK MED%{end}%
-							</GaugeString>
-						</GaugeText>
-					</Element>
-					<Element id="C1L3 BRK MAX">
-						<FloatPosition>2,37</FloatPosition>
-						<Visibility>(L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 0 == &amp;&amp;</Visibility>
-						<GaugeText id="Line 3">
-							<Size>68,14</Size>
-							<Bright>FALSE</Bright>
-							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
-							<FontColorScript>0xE6E600</FontColorScript>
-							<BackgroundColor>#000000</BackgroundColor>
-							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>BRK MAX</GaugeString>
-						</GaugeText>
-					</Element>
 				</Element>			
 				<Element id="Column 2">
 					<Element id="C2L1 Text">
@@ -10464,13 +10352,13 @@
 								%((L:FMA_Vertmode_act, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_act, number) 1 == )%{if}%SRS%{end}
 								%((L:FMA_Vertmode_act, number) 2 == )%{if}%CLB%{end}
-								%((L:FMA_Vertmode_act, number) 2.5 == )%{if}%OP CLB%{end}
+								%((L:FMA_Vertmode_act, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_act, number) 2.75 == )%{if}%EXP CLB%{end}
 								%((L:FMA_Vertmode_act, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_act, number) 3.5 == )%{if}%OP  DES%{end}
 								%((L:FMA_Vertmode_act, number) 4 == )%{if}%\{ladj=L}%V/S%{end}
 								%((L:FMA_Vertmode_act, number) 4.5 == )%{if}%\{ladj=L}%FPA%{end}
-								%((L:FMA_Vertmode_act, number) 5 == )%{if}% ALT%{end}
+								%((L:FMA_Vertmode_act, number) 5 == )%{if}%ALT%{end}
 								%((L:FMA_Vertmode_act, number) 5.25 == )%{if}%ALT CST%{end}
 								%((L:FMA_Vertmode_act, number) 5.5 == (L:AB_TypeIdent, number) 51 &lt; &amp;&amp; )%{if}%ALT*%{end}
 								%((L:FMA_Vertmode_act, number) 5.5 == (L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp; (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; )%{if}%ALT*%{end}
@@ -10492,8 +10380,8 @@
 							<Size>55,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD2</FontFace>
-							<FontHeight>12</FontHeight>
-							<FontColor>#3AD4F3</FontColor>
+							<FontHeight>13</FontHeight>
+							<FontColor>#00ffff</FontColor>
 							<AlternateFont id="Frequency">
 								<FontFace>AirbusPFD2</FontFace>
 								<FontHeight>16</FontHeight>
@@ -10515,30 +10403,29 @@
 							<Size>62,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>10</FontHeight>
 							<FontColor>#00ffff</FontColor>
 							<AlternateFont id="Frequency">
 								<FontFace>AirbusPFD</FontFace>
-								<FontHeight>10</FontHeight>
+								<FontHeight>12</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Magenta">
 								<FontColor>#ff80ff</FontColor>
 							</AlternateColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>LEFT</HorizontalAlign>
-							<Tabs>0,5L,38L</Tabs>
+							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 1 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_arm, number) 4 == )%{if}%VS%{end}
-								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%\tALT CRZ%{end}
+								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%ALT CRZ%{end}
 								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%\{fnt1}%         FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{fnt1}ALT  FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}%\{fnt1}ALT  %\{clr1}FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%ALT%\tG/S%{end}
-								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}ALT%\{clr}\tG/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%  ALT G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%  ALT G/S%{end}
 								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%     LAND%{end}
 								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%     FLARE%{end}				
 							</GaugeString>
@@ -10558,12 +10445,10 @@
 							</FontColorScript>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>LEFT</HorizontalAlign>
-							<Tabs>0,5L,38L</Tabs>
+							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
-								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
-								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%\tOP CLB%{end}
+								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT%{end}
 							</GaugeString>
 						</GaugeText>
@@ -10579,9 +10464,9 @@
 							<FontColor>#00ffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>LEFT</HorizontalAlign>
-							<Tabs>0,5L,38L</Tabs>
+							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
+								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT CRZ%{end}
 							</GaugeString>
 						</GaugeText>
@@ -10590,18 +10475,16 @@
 						<Visibility> (L:FMA_Vertmode_arm, number) 7 == </Visibility>
 						<FloatPosition>76,20</FloatPosition>
 						<GaugeText id="Line 2">
-							<Size>62,14</Size>
+							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>12</FontHeight>
 							<FontColor>#00ffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>LEFT</HorizontalAlign>
-							<Tabs>0,5L,38L</Tabs>
+							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
-								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%\t\tG/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%G/S%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
@@ -10626,7 +10509,7 @@
 								%((L:FMA_Latmode_act, number) 3 == )%{if}%HDG%{end}
 								%((L:FMA_Latmode_act, number) 3.5 == )%{if}%TRK%{end}
 								%((L:FMA_Latmode_act, number) 4 == )%{if}%NAV%{end}
-								%((L:FMA_Latmode_act, number) 4.5 == )%{if}%LOC   *%{end}
+								%((L:FMA_Latmode_act, number) 4.5 == )%{if}%LOC *%{end}
 								%((L:FMA_Latmode_act, number) 4.75 == )%{if}%APP NAV%{end}
 								%((L:FMA_Latmode_act, number) 5 == )%{if}%LOC%{end}
 							</GaugeString>
@@ -10653,24 +10536,6 @@
 							</GaugeString>
 						</GaugeText>
 					</Element>
-					<!-- F.W. 2018.07.05
-					<Element id="C3L3 Text">
-						<FloatPosition>146,35</FloatPosition>
-						<GaugeText id="Line 3">
-							<Size>70,14</Size>
-							<Bright>True</Bright>
-							<FontHeight>14</FontHeight>
-							<FontColor>#00ff00</FontColor>
-							<BackgroundColor>#010101</BackgroundColor>
-							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString> -->
-								<!--none-->
-								<!--
-							</GaugeString>
-						</GaugeText>
-					</Element>
-				-->
 				</Element>
 				<Element id="Column 2 and 3">
 					<Element id="C2,3L1 Land or Flare Text">
@@ -10712,7 +10577,7 @@
 							<Size>140,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>13</FontHeight>
 							<FontColor>#ffffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
@@ -10739,7 +10604,7 @@
 							<Size>140,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>9</FontHeight>
+							<FontHeight>10</FontHeight>
 							<FontColor>#ff8000</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
@@ -10800,7 +10665,7 @@
 							<BackgroundColor>#010101</BackgroundColor>
 							<AlternateFont id="Val">
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>10</FontHeight>
+								<FontHeight>12</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Blue">
 								<FontColor>0xffff00</FontColor>
@@ -11066,19 +10931,42 @@
 					(L:AP_VDEV_DIF, number) -100 &gt; &amp;&amp;
 					(L:FMA_THRmode, number) 4 == (L:FMA_THRmode, number) 5 == || &amp;&amp;
 					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
-					</Visibility>			
+					</Visibility>	
+					<Element id="C1 Cover">
+						<FloatPosition>6,4</FloatPosition>
+						<Rectangle id="Rectangle">
+							<Bright>True</Bright>
+							<Width>57</Width>
+							<Height>15</Height>
+							<FillColor>#010101</FillColor>
+							<LineColor>#010101</LineColor>
+							<LineWidth>1</LineWidth>
+						</Rectangle>
+					</Element>	
+					<Element id="C1L1 Box - White Single">
+						<FloatPosition>3,3</FloatPosition>
+						<Visibility>(L:FMA_THR_Mode_Box_start,bool) 1 ==</Visibility>
+						<Rectangle id="Rectangle">
+							<Bright>True</Bright>
+							<Width>67</Width>
+							<Height>15</Height>
+							<FillColor>#000000</FillColor>
+							<LineColor>#ffffff</LineColor>
+							<LineWidth>1</LineWidth>
+						</Rectangle>
+					</Element>		
 					<Element id="C1L1 Text">
 						<FloatPosition>6,4</FloatPosition>
 						<GaugeText id="Line 1">
 							<Size>62,12</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>13</FontHeight>
 							<FontColor>#00ff00</FontColor>
-							<BackgroundColor>#010101</BackgroundColor>
+							<BackgroundColor>#020202</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>THR DES</GaugeString>
+							<GaugeString>THR  DES</GaugeString>
 						</GaugeText>
 					</Element>					
 				</Element>
@@ -11094,9 +10982,9 @@
 							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>10</FontHeight>
 							<FontColor>#00ffff</FontColor>
-							<BackgroundColor>#010101</BackgroundColor>
+							<BackgroundColor>#020202</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>%((L:FMA_Vertmode_arm, number) 2 == )%{if}%OP CLB%{end}</GaugeString>
