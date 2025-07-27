@@ -10403,7 +10403,7 @@
 							<Size>62,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>10</FontHeight>
+							<FontHeight>12</FontHeight>
 							<FontColor>#00ffff</FontColor>
 							<AlternateFont id="Frequency">
 								<FontFace>AirbusPFD</FontFace>
@@ -10425,14 +10425,14 @@
 								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{fnt1}ALT  FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}%\{fnt1}ALT  %\{clr1}FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%  ALT G/S%{end}
-								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%  ALT G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}  ALT%\{clr} G/S%{end}
 								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%     LAND%{end}
 								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%     FLARE%{end}				
 							</GaugeString>
 						</GaugeText>
 					</Element>
 					<Element id="C2L2 Text2">
-						<Visibility> (L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || </Visibility>
+						<Visibility> (L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; </Visibility>
 						<FloatPosition>76,20</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>64,14</Size>
@@ -10447,6 +10447,7 @@
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
+								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT%{end}
@@ -10484,6 +10485,7 @@
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
+								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%G/S%{end}
 							</GaugeString>
 						</GaugeText>
