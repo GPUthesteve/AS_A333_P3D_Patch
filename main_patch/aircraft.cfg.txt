@@ -1,3 +1,11 @@
+//Repaints (fltsim.x) comes under this
+
+
+
+
+
+
+//end of repaints
 
 [GENERAL]
 atc_type				= AIRBUS
