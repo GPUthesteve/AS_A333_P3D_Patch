@@ -10409,7 +10409,7 @@
 							<FontColor>#00ffff</FontColor>
 							<AlternateFont id="Frequency">
 								<FontFace>AirbusPFD</FontFace>
-								<FontHeight>12</FontHeight>
+								<FontHeight>11</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Magenta">
 								<FontColor>#ff80ff</FontColor>
@@ -10423,11 +10423,11 @@
 								%((L:FMA_Vertmode_arm, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_arm, number) 4 == )%{if}%VS%{end}
 								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%ALT CRZ%{end}
-								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%\{fnt1}%         FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{fnt1}ALT  FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}%\{fnt1}ALT  %\{clr1}FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%  ALT G/S%{end}
-								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}  ALT%\{clr} G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%FINAL%{end}
+								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{fnt2}ALT FINAL%{end}
+								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}%\{fnt2}ALT %\{clr1}FINAL%{end}
+								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%   ALT G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}   ALT%\{clr} G/S%{end}
 								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%     LAND%{end}
 								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%     FLARE%{end}				
 							</GaugeString>
@@ -10664,12 +10664,12 @@
 							<Size>58,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>9</FontHeight>
+							<FontHeight>12</FontHeight>
 							<FontColor>#ffffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<AlternateFont id="Val">
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>12</FontHeight>
+								<FontHeight>10</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Blue">
 								<FontColor>0xffff00</FontColor>
@@ -10678,8 +10678,8 @@
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>
 								\{tabs=0,58R}
-								%((L:FMA_MDA_DH, number) 2 == (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%BARO%\t\{fnt1}%\{clr2}%((L:MCDU_APP_MDA, number))%!6d!
-								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 != &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%RADIO%\t\{fnt1}%\{clr2}%((L:MCDU_APP_DH, number))%!4d!
+								%((L:FMA_MDA_DH, number) 2 == (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDA%\t\{fnt1}%\{clr2}%((L:MCDU_APP_MDA, number))%!6d!
+								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 != &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDH%\t\{fnt1}%\{clr2}%((L:MCDU_APP_DH, number))%!4d!
 								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 == &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%     NO  DH
 								%{end}%{end}%{end}%
 							</GaugeString>
