@@ -10158,32 +10158,24 @@
 							<Multiline>True</Multiline>
 							<FontColor>#00ff00</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
-							<AlternateFont id="THR IDLE">
-								<FontFace>AirbusPFD</FontFace>
-								<FontHeight>13</FontHeight>
-							</AlternateFont>
 							<AlternateColor id="White">
 								<FontColor>0xffffff</FontColor>
 							</AlternateColor>
-							<AlternateFont id="Flex Val">
-								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>13</FontHeight>
-							</AlternateFont>
 							<AlternateColor id="Flex Val">
 								<FontColor>0xffff00</FontColor>
 							</AlternateColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
-								%((L:FMA_THRmode, number) 1 == )%{if}\{fnt1}%THR  IDLE%{end}
+								%((L:FMA_THRmode, number) 1 == )%{if}THR  IDLE%{end}
 								%((L:FMA_THRmode, number) 1.5 == )%{if}%THR  DES%{end}
 								%((L:FMA_THRmode, number) 2 == )%{if}%THR  LVR%{end}
 								%((L:FMA_THRmode, number) 3 == )%{if}%THR  CLB%{end}
 								%((L:FMA_THRmode, number) 4 == )%{if}%SPEED%{end}
 								%((L:FMA_THRmode, number) 5 == )%{if}%MACH%{end}
-								%((L:FMA_THRmode, number) 6 == )%{if}\{clr2}%MAN%\n\{lsp=16}MCT%{end}
-								%((L:FMA_THRmode, number) 7 == )%{if}\{clr2}%MAN%\n\{lsp=16}\{ladj=L}FLX%\{fnt2}\{clr3}% +%((L:FADEC_FLXTEMP, number))%!d!%{end}
-								%((L:FMA_THRmode, number) 8 == )%{if}\{clr2}%MAN%\n\{lsp=16}TOGA%{end}
+								%((L:FMA_THRmode, number) 6 == )%{if}\{clr2}%MAN%\nMCT%{end}
+								%((L:FMA_THRmode, number) 7 == )%{if}\{clr2}%MAN%\nFLX%\{clr3}%  +%((L:FADEC_FLXTEMP, number))%!d!%{end}
+								%((L:FMA_THRmode, number) 8 == )%{if}\{clr2}%MAN%\nTOGA%{end}
 								%((L:FMA_THRmode, number) 9 == )%{if}%A.FLOOR%{end}
 								%((L:FMA_THRmode, number) 9.5 == )%{if}%TOGA LK%{end}
 								%((L:FMA_THRmode, number) 10 == )%{if}%SPEED%{end}
