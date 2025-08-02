@@ -10173,9 +10173,9 @@
 								%((L:FMA_THRmode, number) 3 == )%{if}%THR  CLB%{end}
 								%((L:FMA_THRmode, number) 4 == )%{if}%SPEED%{end}
 								%((L:FMA_THRmode, number) 5 == )%{if}%MACH%{end}
-								%((L:FMA_THRmode, number) 6 == )%{if}\{clr2}%MAN%\nMCT%{end}
-								%((L:FMA_THRmode, number) 7 == )%{if}\{clr2}%MAN%\nFLX%\{clr3}%  +%((L:FADEC_FLXTEMP, number))%!d!%{end}
-								%((L:FMA_THRmode, number) 8 == )%{if}\{clr2}%MAN%\nTOGA%{end}
+								%((L:FMA_THRmode, number) 6 == )%{if}\{clr2}%MAN%\n\{lsp=16}MCT%{end}
+								%((L:FMA_THRmode, number) 7 == )%{if}\{clr2}%MAN%\n\{lsp=16}FLX%\{clr3}%  +%((L:FADEC_FLXTEMP, number))%!d!%{end}
+								%((L:FMA_THRmode, number) 8 == )%{if}\{clr2}%MAN%\n\{lsp=16}TOGA%{end}
 								%((L:FMA_THRmode, number) 9 == )%{if}%A.FLOOR%{end}
 								%((L:FMA_THRmode, number) 9.5 == )%{if}%TOGA LK%{end}
 								%((L:FMA_THRmode, number) 10 == )%{if}%SPEED%{end}
