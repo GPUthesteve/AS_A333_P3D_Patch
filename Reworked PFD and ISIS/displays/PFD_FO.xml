@@ -10661,7 +10661,7 @@
 							<BackgroundColor>#010101</BackgroundColor>
 							<AlternateFont id="Val">
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>10</FontHeight>
+								<FontHeight>11</FontHeight>
 							</AlternateFont>
 							<AlternateColor id="Blue">
 								<FontColor>0xffff00</FontColor>
@@ -10672,7 +10672,7 @@
 								\{tabs=0,58R}
 								%((L:FMA_MDA_DH, number) 2 == (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDA%\t\{fnt1}%\{clr2}%((L:MCDU_APP_MDA, number))%!6d!
 								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 != &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDH%\t\{fnt1}%\{clr2}%((L:MCDU_APP_DH, number))%!4d!
-								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 == &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%     NO  DH
+								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 == &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%\{ladj=C}NO  DH
 								%{end}%{end}%{end}%
 							</GaugeString>
 						</GaugeText>
