@@ -45,6 +45,16 @@ installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
 2. replace `asc.cfg` with the one you gotfrom here
 
+# Reworked Fonts
+yes, as it sounds
+installation
+1. navigate to `C:\Windows\Fonts` then delete these 4 fonts 
+	`AirbusDisp Regular`
+	`AirbusDisp2 Regular`
+	`AirbusPFD Regular`
+	`AirbusPFD2 Regular`
+2. then put these 4 fonts given from this repo (I know it is replace, but it cannot be done that way, it needs to be deleted first and replace)
+
 
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
