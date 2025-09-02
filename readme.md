@@ -1,4 +1,4 @@
-# Read Me --English ver.--
+p# Read Me --English ver.--
 
 # Aerosoft A330 FDE Patch, sound improvements and PFD Rework
 
@@ -47,12 +47,7 @@ installation
 
 <<<<<<< HEAD
 # Reworked Fonts
-yes, as it sounds
-installation
-simply reinstall given fonts.
-
-=======
->>>>>>> parent of 2bd71fe (reworked display fonts)
+yes, as it sounds. simply reinstall fonts by given ones
 
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
