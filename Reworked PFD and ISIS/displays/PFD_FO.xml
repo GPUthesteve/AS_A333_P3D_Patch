@@ -268,9 +268,11 @@
 							\t\t\t\t_____\n\n\n\n\n\n\n\n\n
 							\t\t\t_________\n\n\n\n\n\n\n\n\n\n
 							\t\t\t\t_____\n\n\n\n\n\n\n\n\n
-							\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n\n\n\n\n\n\n\n
 							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-							\t\{md}20\{up}   __________________   \{md}20\{up}\n
+			\t\{md}20\{up}    __________________   \{md}20\{up}\n
+							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\{md}30\{up}    __________________   \{md}30\{up}\n
 							%
 						</GaugeString>
 					</GaugeText>
@@ -1050,7 +1052,7 @@
 						<Visibility>(L:PFD_Radalt, number) 2500 &lt; (L:PFD_Radalt_Fnt, number) 0 == &amp;&amp;</Visibility>
 						<GaugeText id="text">
 							<Axis>50,-77</Axis>
-							<FontFace>AirbusPFD</FontFace>
+							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x00ff00</FontColor>
 							<FontHeight>12</FontHeight>
 							<BackgroundColor>#804000</BackgroundColor>
@@ -9801,7 +9803,7 @@
 					<GaugeText id="NM Text">
 						<Size>15,10</Size>
 						<Bright>True</Bright>
-						<FontFace>AirbusDisp2</FontFace>
+						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
 						<FontColor>0xffff00</FontColor>
 						<HorizontalAlign>LEFT</HorizontalAlign>
@@ -9908,7 +9910,7 @@
 							<GaugeText id="Text">
 								<Size>100,12</Size>
 								<Bright>True</Bright>
-								<FontFace>AirbusDisp</FontFace>
+								<FontFace>AirbusPFD2</FontFace>
 								<FontHeight>11</FontHeight>
 								<FontColor>#ffffff</FontColor>
 								<HorizontalAlign>right</HorizontalAlign>
