@@ -47,6 +47,7 @@ installation
 
 # Reworked Display Font
 <img width="620" height="999" alt="image" src="https://github.com/user-attachments/assets/2d16b00d-3dcc-4d23-bc60-d93bb43ddc1a" />
+
 yes, as it sounds. I use flybywire's airbus display font for replacement. works well
 simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
