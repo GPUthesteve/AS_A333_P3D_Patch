@@ -45,8 +45,9 @@ installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
 2. replace `asc.cfg` with the one you gotfrom here
 
-# Reworked Fonts
-yes, as it sounds. simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
+# Reworked Display Font
+yes, as it sounds. I use flybywire's airbus display font for replacement. works well
+simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
