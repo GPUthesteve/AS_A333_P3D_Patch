@@ -1,6 +1,6 @@
 Read Me --English ver.--
 
-# Aerosoft A330 FDE Patch, sound improvements and PFD Rework
+# Aerosoft A330 FDE Patch, sound improvements and QOL Rework
 
 # FDE Improvements :
 in this section, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file to be used with your `"aircraft.cfg`
