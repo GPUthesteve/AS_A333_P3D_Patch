@@ -17,8 +17,6 @@ installation :
 Internal V-speed calculator will broke, please refer to proper A330 Manual or this crude table
 ![image](https://github.com/user-attachments/assets/1e101b44-cf43-4cf5-81a6-a158e6a4cf71)
 
-
-
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
 Reworked aural by using A330/A340 RA from the net.
@@ -28,6 +26,8 @@ installation
 2. replace that folder with given `sound_asc` (copy-paste the folder, replace contents if asked, of course). 
 
 # PFD Rework
+<img width="908" height="852" alt="image" src="https://github.com/user-attachments/assets/dbc21790-1033-4979-84e6-7c8ee7d8ee95" />
+
 Bring back "Ground Reference line" that was missing, Recoloring some elements, and more....
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `Panel_Fallback`, go in it, and you'll see bunch of other folders, look for `displays`
@@ -46,6 +46,7 @@ installation
 2. replace `asc.cfg` with the one you gotfrom here
 
 # Reworked Display Font
+<img width="620" height="999" alt="image" src="https://github.com/user-attachments/assets/2d16b00d-3dcc-4d23-bc60-d93bb43ddc1a" />
 yes, as it sounds. I use flybywire's airbus display font for replacement. works well
 simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
