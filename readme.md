@@ -1,4 +1,4 @@
-p# Read Me --English ver.--
+Read Me --English ver.--
 
 # Aerosoft A330 FDE Patch, sound improvements and PFD Rework
 
@@ -45,9 +45,8 @@ installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
 2. replace `asc.cfg` with the one you gotfrom here
 
-<<<<<<< HEAD
 # Reworked Fonts
-yes, as it sounds. simply reinstall fonts by given ones
+yes, as it sounds. simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
 # Bug Reports
 simply raise an issue like you'd do on normal github opensource repo.
