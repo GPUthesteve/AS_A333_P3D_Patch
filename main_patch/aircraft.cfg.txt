@@ -182,7 +182,7 @@ Engine.1 				= 13.94,  31.06, -9.41
 starter_type				= 1// added for test 2017_04_12 F.W.
 
 [TURBINEENGINEDATA]
-fuel_flow_gain 				= 0.001
+fuel_flow_gain 				= 0.00087
 rated_N2_rpm 				= 10611
 afterburner_available 			= 0
 reverser_available 			= 1
