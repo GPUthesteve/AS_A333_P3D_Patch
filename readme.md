@@ -14,8 +14,13 @@ installation :
 	2.2 then, you take `[fltsim]` section, aka liveries, back to your `"patched"` config from your backup (to restore your liveries. of course!)
 3. now replace your `"A330-343.air"` with given one, back up on your discretion, I suggest don't since old fde flies like shit.
 
-Internal V-speed calculator will broke, please refer to proper A330 Manual or this crude table
-![image](https://github.com/user-attachments/assets/1e101b44-cf43-4cf5-81a6-a158e6a4cf71)
+Internal V-speed calculator will broke, please refer to proper A330 Manual or these crude table
+<img width="2181" height="2181" alt="image" src="https://github.com/user-attachments/assets/1d655dc2-aa8d-4604-8871-c25608d7a359" />
+<img width="2181" height="2181" alt="image" src="https://github.com/user-attachments/assets/0034de79-5d11-4067-8b95-c1b0adfdf3fc" />
+<img width="2181" height="2181" alt="image" src="https://github.com/user-attachments/assets/17b5f0ee-0895-4c96-9c23-28f0d5653a7f" />
+
+
+
 
 # Sound Enhancement
 aside FDE patch, I also ship you sound enhancement.
