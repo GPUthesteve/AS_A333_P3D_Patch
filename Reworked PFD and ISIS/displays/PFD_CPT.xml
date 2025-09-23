@@ -13,8 +13,8 @@
 							(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
 							if{
-							0 (>L:SPDALTBAROavailScreen,enum) 
-							0 (>L:SPDALTBAROavailTime,enum) }
+							0 (&gt;L:SPDALTBAROavailScreen,enum) 
+							0 (&gt;L:SPDALTBAROavailTime,enum) }
 			
 			 <!-- Start timer and increment when AlignSet -->
 				
@@ -22,13 +22,13 @@
 							(L:AB_OVH_IRS2_KNOB, number) 1 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 1 == &amp;&amp;
 							if{
-								(L:SPDALTBAROavailTime,enum) ++ (>L:SPDALTBAROavailTime,enum) }
+								(L:SPDALTBAROavailTime,enum) ++ (&gt;L:SPDALTBAROavailTime,enum) }
 						
 			 <!-- Stop timer after 5 seconds -->
 				
 							(L:SPDALTBAROavailTime,enum) 200 > 
 							if{
-								1 (>L:SPDALTBAROavailScreen,enum) }
+								1 (&gt;L:SPDALTBAROavailScreen,enum) }
 						
 			</Script>
 		</Update>
@@ -41,8 +41,8 @@
 							(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
 							if{
-							0 (>L:VSavailScreen,enum) 
-							0 (>L:VSavailTime,enum) }
+							0 (&gt;L:VSavailScreen,enum) 
+							0 (&gt;L:VSavailTime,enum) }
 			
 			 <!-- Start timer and increment when AlignSet -->
 				
@@ -50,13 +50,13 @@
 							(L:AB_OVH_IRS2_KNOB, number) 1 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 1 == &amp;&amp;
 							if{
-								(L:VSavailTime,enum) ++ (>L:VSavailTime,enum) }
+								(L:VSavailTime,enum) ++ (&gt;L:VSavailTime,enum) }
 						
 			 <!-- Stop timer after 10 seconds -->
 				
 							(L:VSavailTime,enum) 400 > 
 							if{
-								1 (>L:VSavailScreen,enum) }
+								1 (&gt;L:VSavailScreen,enum) }
 						
 			</Script>
 			</Update>
@@ -69,8 +69,8 @@
 							(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
 							if{
-							0 (>L:ATTavailScreen,enum) 
-							0 (>L:ATTavailTime,enum) }
+							0 (&gt;L:ATTavailScreen,enum) 
+							0 (&gt;L:ATTavailTime,enum) }
 			
 			 <!-- Start timer and increment when AlignSet -->
 				
@@ -78,13 +78,13 @@
 							(L:AB_OVH_IRS2_KNOB, number) 1 == &amp;&amp;
 							(L:AB_OVH_IRS3_KNOB, number) 1 == &amp;&amp;
 							if{
-								(L:ATTavailTime,enum) ++ (>L:ATTavailTime,enum) }
+								(L:ATTavailTime,enum) ++ (&gt;L:ATTavailTime,enum) }
 						
 			 <!-- Stop timer after 15 seconds -->
 				
 							(L:ATTavailTime,enum) 600 > 
 							if{
-								1 (>L:ATTavailScreen,enum) }
+								1 (&gt;L:ATTavailScreen,enum) }
 						
 			</Script>
 			</Update>
@@ -93,9 +93,9 @@
 				<!-- Activate NEO features -->
 				(A:Title, string) lc 'neo' sstr -1 !=
 								if{
-								1 (>L:AB_NEO_features,number) }
+								1 (&gt;L:AB_NEO_features,number) }
 								els{
-								0 (>L:AB_NEO_features,number) }
+								0 (&gt;L:AB_NEO_features,number) }
 				
 				</Script>
 			</Update>
@@ -106,7 +106,7 @@
 				<!-- SET the Airport -->
 				'A      ' (L:AB_DEST_ICAO_1, number) chr scat (L:AB_DEST_ICAO_2, number) chr scat (L:AB_DEST_ICAO_3, number) chr scat (L:AB_DEST_ICAO_4, number) chr scat (>C:fs9gps:WaypointAirportICAO, string)
 				<!-- GET the Data -->
-				(C:fs9gps:WaypointAirportElevation, feet) (>L:SIM_DESTINATION_ALT, feet)
+				(C:fs9gps:WaypointAirportElevation, feet) (&gt;L:SIM_DESTINATION_ALT, feet)
 
 			</Script>
 			</Update>
@@ -116,17 +116,17 @@
 				<Script>					
 					<!-- INI TO CURRENT POSITION -->
 					(G:Var1) 0 == if{
-						(A:FLAPS HANDLE INDEX,  number) (>L:FLAPS HANDLE INDEX old, number)
+						(A:FLAPS HANDLE INDEX,  number) (&gt;L:FLAPS HANDLE INDEX old, number)
 						1 (>G:Var1)
 					}
 					
 					(A:FLAPS HANDLE INDEX,  number) (L:FLAPS HANDLE INDEX old, number) != if{
 						(A:FLAPS HANDLE INDEX,  number) (L:FLAPS HANDLE INDEX old, number) &gt; if{
-							1 (>L:FLAPS extend, bool) 0 (>L:FLAPS retract, bool)
+							1 (&gt;L:FLAPS extend, bool) 0 (&gt;L:FLAPS retract, bool)
 						} els{
-							0 (>L:FLAPS extend, bool) 1 (>L:FLAPS retract, bool)  
+							0 (&gt;L:FLAPS extend, bool) 1 (&gt;L:FLAPS retract, bool)  
 						}
-						(A:FLAPS HANDLE INDEX,  number) (>L:FLAPS HANDLE INDEX old, number)
+						(A:FLAPS HANDLE INDEX,  number) (&gt;L:FLAPS HANDLE INDEX old, number)
 					}
 				</Script>
 			</Update>
@@ -134,7 +134,7 @@
 			<!-- <Update>
 				<Script>
 					(G:Var1) 0 == if{
-						(A:FLAPS HANDLE INDEX, number) (>L:FLAPS HANDLE INDEX old, number)
+						(A:FLAPS HANDLE INDEX, number) (&gt;L:FLAPS HANDLE INDEX old, number)
 						1 (>G:Var1)
 					}
 					
@@ -144,8 +144,8 @@
 						} els{
 							2  
 						}
-						(>L:FLAP direction, number)
-						(A:FLAPS HANDLE INDEX, number) (>L:FLAPS HANDLE INDEX old, number)
+						(&gt;L:FLAP direction, number)
+						(A:FLAPS HANDLE INDEX, number) (&gt;L:FLAPS HANDLE INDEX old, number)
 					}
 				</Script>
 			</Update> -->
@@ -195,17 +195,17 @@
 							\t\{md}50\{up}  ______________________________  \{md}50\{up}\n
 							\{lsp=38}\n\{lsp}
 							\t\t\{md}30\{up}  ________________________  \{md}30\{up}\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n
-											\t\t\t\t_________\n\n\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n
+							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n\n\n
 							\t\t\t\{md}20\{up}  __________________  \{md}20\{up}\n\n\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n\n\n
-											\t\t\t\t_________\n\n\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n\n\n
 							\t\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n\n\n
-											\t\t\t\t_________\n\n\n\n\n\n\n
-											\t\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t\t_____\n\n\n\n\n\n\n
 							%
 						</GaugeString>
 					</GaugeText>
@@ -254,7 +254,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>10</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#804000</BackgroundColor>
+						<BackgroundColor>#802000</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
 						<Tabs>0,71L,76L,106L,111L</Tabs>
@@ -264,15 +264,15 @@
 						<Size>235,220</Size>
 						<Axis>117.5,-1</Axis>
 						<GaugeString>
-							%\{lsp=15}\n\{lsp}\{up}\{fnt1}
-							\t\t\t\t_____\n\n\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n
-							\t\t\t\t_____\n\n\n\n\n\n\n\n\n
+							%\{lsp=12}\n\{lsp}\{up}\{fnt1}
+							\t\t\t\t_____\n\n\n\n\n\n\n
+							\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t_____\n\n\n\n\n\n\n
 			\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-			\t\{md}20\{up}    __________________   \{md}20\{up}\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-			\t\{md}30\{up}    __________________   \{md}30\{up}\n
+							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md}20\{up}  __________________  \{md}20\{up}\n\n\n\n\n\n\n\n\n\n\n\n
+							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md}30\{up}  __________________  \{md}30\{up}\n\n\n\n\n\n\n\n\n\n\n\n
 							%
 						</GaugeString>
 					</GaugeText>
@@ -282,14 +282,15 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
+							<Script>
+								(A:PLANE PITCH DEGREES, radians) rddg 30 min -10 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
 								
 								(A:PLANE PITCH DEGREES, radians) -10 &lt;
 								if{
-									(A:PLANE PITCH DEGREES, radians) rddg 0.53 * 
+									(A:PLANE PITCH DEGREES, radians) rddg 0.5 * 
 								}
 							</Script>
 						</Expression>
@@ -395,7 +396,7 @@
 						<Axis>117.5,213</Axis>
 						<GaugeString>
 							%
-							\{lsp=135}\n\{lsp}\{lsp=55}\n\n\n\n\n\n\n\n\n\n
+							\{lsp=135}\n\{lsp}\{lsp=53}\n\n\n\n\n\n\n\n\n
 							\t__\t__\n\{lsp}
 							\{lsp=3}
 							\t__\t__\n\{lsp}
@@ -461,7 +462,7 @@
 						<Axis>117.5,213</Axis>
 						<GaugeString>
 							%
-							\{lsp=137}\n\{lsp}\{lsp=55}\n\n\n\n\n\n\n\n\n\n
+							\{lsp=137}\n\{lsp}\{lsp=53}\n\n\n\n\n\n\n\n\n
 							\tx\tx\n\{lsp}							
 							%
 						</GaugeString>
@@ -472,7 +473,8 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
+							<Script>
+								(A:PLANE PITCH DEGREES, radians) rddg 30 min -10 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
@@ -700,7 +702,7 @@
 						<Bright>True</Bright>
 						<Width>250</Width>
 						<Height>350</Height>
-						<FillColor>#804000</FillColor>
+						<FillColor>#802000</FillColor>
 					</Rectangle>
 					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
 						<Axis>100,100</Axis>
@@ -879,7 +881,7 @@
 							<Width>300</Width>
 							<Height>300</Height>
 							<Bright>True</Bright>
-							<FillColor>#804000</FillColor>
+							<FillColor>#802000</FillColor>
 							<LineColor>#ffffff</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
@@ -889,7 +891,9 @@
 						</MaskImage>
 						<Shift id="Shift Vertical">
 							<Expression>
-								<Script>(A:PLANE PITCH DEGREES, radians) rddg (L:PFD_Radalt, number) 9.1 / - 15 min -19.5 max</Script>
+								<Script>
+									(A:PLANE PITCH DEGREES, radians) rddg (L:PFD_Radalt, number) 9.1 / - 15 min -19.5 max
+								</Script>
 							</Expression>
 							<NonlinearityTable>
 								<NonlinearityEntry>
@@ -1030,7 +1034,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x0080ff</FontColor>
 							<FontHeight>14</FontHeight>
-							<BackgroundColor>#804000</BackgroundColor>
+							<BackgroundColor>#802000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!d!%{end}
@@ -1055,7 +1059,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x00ff00</FontColor>
 							<FontHeight>12</FontHeight>
-							<BackgroundColor>#804000</BackgroundColor>
+							<BackgroundColor>#802000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!4d!%{end}
@@ -1571,7 +1575,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) 0 &gt; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp; </Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg -0.05 &gt;= (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
@@ -3279,8 +3283,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -3473,7 +3477,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>12</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<Tabs>0C,30C,60C,90C,120C,150C,180C,210C,240C,270C,300C,330C,360C,390C,420C,450C,480C,510C,540C,570C</Tabs>
 						<AlternateFont id="SmallHdgNums">
 							<FontFace>AirbusPFD2</FontFace>
@@ -4013,7 +4017,7 @@
 							<Bright>True</Bright>
 							<Width>154</Width>
 							<Height>23</Height>
-							<FillColor>#7c7c7c</FillColor>
+							<FillColor>#666666</FillColor>
 						</Rectangle>
 					</Element>
 					<Element id="Red Border">
@@ -4023,8 +4027,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -4063,8 +4067,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -4084,7 +4088,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>HDG</GaugeString>
@@ -4491,8 +4495,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#7c7c7c</LineColor>
-						<FillColor>#7c7c7c</FillColor>
+						<LineColor>#666666</LineColor>
+						<FillColor>#666666</FillColor>
 						<Point>
 							<FloatPosition>3,18</FloatPosition>
 						</Point>
@@ -4834,7 +4838,7 @@
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 * 40 +)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4873,7 +4877,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 * 20 +)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4911,7 +4915,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 *)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4949,7 +4953,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 80 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -4987,7 +4991,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 60 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5025,7 +5029,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 40 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5063,7 +5067,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 100 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5101,7 +5105,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) (L:IAS_SM, number) (L:IAS_SM, number) 100 % - )%!3d!%</GaugeString>
 							</GaugeText>
@@ -5139,7 +5143,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 1 /-/ + 100 * 80 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5177,7 +5181,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#7c7c7c</BackgroundColor>
+								<BackgroundColor>#666666</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 1 /-/ + 100 * 60 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5246,7 +5250,7 @@
 							<Bright>True</Bright>
 							<Width>37</Width>
 							<Height>200</Height>
-							<FillColor>#7c7c7c</FillColor>
+							<FillColor>#666666</FillColor>
 						</Rectangle>									
 						<Shift>
 							<Expression>
@@ -5984,8 +5988,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#7c7c7c</LineColor>
-							<FillColor>#7c7c7c</FillColor>
+							<LineColor>#666666</LineColor>
+							<FillColor>#666666</FillColor>
 							<Point>
 								<FloatPosition>3,18</FloatPosition>
 							</Point>
@@ -6007,8 +6011,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -6054,8 +6058,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -6075,7 +6079,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>SPD</GaugeString>
@@ -6089,8 +6093,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#7c7c7c</LineColor>
-						<FillColor>#7c7c7c</FillColor>
+						<LineColor>#666666</LineColor>
+						<FillColor>#666666</FillColor>
 						<Point>
 							<FloatPosition>32,12</FloatPosition>
 						</Point>
@@ -6113,8 +6117,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
+						<LineColor>#802000</LineColor>
+						<FillColor>#802000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -6567,7 +6571,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6605,7 +6609,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6643,7 +6647,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6681,7 +6685,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6719,7 +6723,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 *)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6757,7 +6761,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 5 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6795,7 +6799,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 10 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6833,7 +6837,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 15 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6871,7 +6875,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#7c7c7c</BackgroundColor>-->
+								<!--<BackgroundColor>#666666</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:1, feet) 1000 / int 10 * 20 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -7129,8 +7133,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
+						<LineColor>#802000</LineColor>
+						<FillColor>#802000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -8271,8 +8275,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#7c7c7c</LineColor>
-							<FillColor>#7c7c7c</FillColor>
+							<LineColor>#666666</LineColor>
+							<FillColor>#666666</FillColor>
 							<Point>
 								<FloatPosition>32,12</FloatPosition>
 							</Point>
@@ -8292,8 +8296,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#7c7c7c</LineColor>
-							<FillColor>#7c7c7c</FillColor>
+							<LineColor>#666666</LineColor>
+							<FillColor>#666666</FillColor>
 							<Point>
 								<FloatPosition>32,110</FloatPosition>
 							</Point>
@@ -8315,8 +8319,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -8395,8 +8399,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -8429,8 +8433,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#7c7c7c</LineColor>
-						<FillColor>#7c7c7c</FillColor>
+						<LineColor>#666666</LineColor>
+						<FillColor>#666666</FillColor>
 						<Point>
 							<FloatPosition>18,0</FloatPosition>
 						</Point>
@@ -8537,7 +8541,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8570,7 +8574,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8637,7 +8641,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8670,7 +8674,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8737,7 +8741,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8770,7 +8774,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#7c7c7c</BackgroundColor>
+							<BackgroundColor>#666666</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -9026,8 +9030,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#7c7c7c</LineColor>
-						<FillColor>#7c7c7c</FillColor>
+						<LineColor>#666666</LineColor>
+						<FillColor>#666666</FillColor>
 						<Point>
 							<FloatPosition>30,0</FloatPosition>
 						</Point>
@@ -9312,8 +9316,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#7c7c7c</LineColor>
-						<FillColor>#7c7c7c</FillColor>
+						<LineColor>#666666</LineColor>
+						<FillColor>#666666</FillColor>
 						<Point>
 							<FloatPosition>30,0</FloatPosition>
 						</Point>
@@ -9608,8 +9612,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#7c7c7c</LineColor>
-							<FillColor>#7c7c7c</FillColor>
+							<LineColor>#666666</LineColor>
+							<FillColor>#666666</FillColor>
 							<Point>
 								<FloatPosition>18,0</FloatPosition>
 							</Point>
@@ -9641,8 +9645,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -9662,7 +9666,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>V</GaugeString>
@@ -9675,8 +9679,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -9696,7 +9700,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>/</GaugeString>
@@ -9709,8 +9713,8 @@
 						(L:AB_OVH_IRS1_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS2_KNOB, number) 0 == &amp;&amp;
 						(L:AB_OVH_IRS3_KNOB, number) 0 == &amp;&amp;
-						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (>L:ALIGN_BLINK_TIMER, number) } }
-						els{ 0 (>L:ALIGN_BLINK_TIMER, number) }
+						if{ (L:ALIGN_BLINK_TIMER, number) 0 == if{ (P:Absolute time, seconds) 9 + (&gt;L:ALIGN_BLINK_TIMER, number) } }
+						els{ 0 (&gt;L:ALIGN_BLINK_TIMER, number) }
 
 						<!-- NOW USE THE "ALIGN_BLINK_TIMER" VAR AS THE ACTUAL TRIGGER FOR THE 2 STATES -->
 						(L:ALIGN_BLINK_TIMER, number) 0 != if{
@@ -9730,7 +9734,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#7c7c7c</BackgroundColor>
+						<BackgroundColor>#666666</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>S</GaugeString>
@@ -9747,22 +9751,9 @@
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD</FontFace>
 						<FontHeight>15</FontHeight>
-						<FontColor>#00E417</FontColor>
+						<FontColor>#00ff00</FontColor>
 						<HorizontalAlign>RIGHT</HorizontalAlign>
 						<GaugeString>%((L:Mach_SM, number) 1 &lt;)%{if}%.%((L:Mach_SM, number) 1 % 1000 *)%!03d%{else}%((L:Mach_SM, number) 0 max 9.99 min)%!5.3f%</GaugeString>
-					</GaugeText>
-				</Element>
-				<Element id="NEO DECEL">
-					<Visibility>(L:ABrkactiv, number) 1 == (L:AB_NEO_features,number) 1 == &amp;&amp;</Visibility>
-					<FloatPosition>4,2</FloatPosition>
-					<GaugeText id="Text">
-						<Size>42,16</Size>
-						<Bright>True</Bright>
-						<FontFace>AirbusPFD</FontFace>
-						<FontHeight>13</FontHeight>
-						<FontColor>#00E417</FontColor>
-						<HorizontalAlign>RIGHT</HorizontalAlign>
-						<GaugeString>DECEL</GaugeString>
 					</GaugeText>
 				</Element>
 				<Element id="ILS_Navaid Text Info">
@@ -9893,7 +9884,7 @@
 								<Size>100,12</Size>
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>11</FontHeight>
+								<FontHeight>12</FontHeight>
 								<FontColor>#ffffff</FontColor>
 								<HorizontalAlign>LEFT</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
@@ -9909,7 +9900,7 @@
 								<Size>100,12</Size>
 								<Bright>True</Bright>
 								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>11</FontHeight>
+								<FontHeight>12</FontHeight>
 								<FontColor>#ffffff</FontColor>
 								<HorizontalAlign>right</HorizontalAlign>
 								<Multiline>FALSE</Multiline>
@@ -10354,7 +10345,6 @@
 								%((L:FMA_Vertmode_act, number) 4.5 == )%{if}%\{ladj=L}%FPA%{end}
 								%((L:FMA_Vertmode_act, number) 5 == )%{if}%ALT%{end}
 								%((L:FMA_Vertmode_act, number) 5.25 == )%{if}%ALT CST%{end}
-								%((L:FMA_Vertmode_act, number) 5.5 == (L:AB_TypeIdent, number) 51 &lt; &amp;&amp; )%{if}%ALT*%{end}
 								%((L:FMA_Vertmode_act, number) 5.5 == (L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp; (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; )%{if}%ALT*%{end}
 								%((L:FMA_Vertmode_act, number) 5.5 == (L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp; (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) == &amp;&amp; )%{if}%ALT CRZ*%{end}
 								%((L:FMA_Vertmode_act, number) 5.75 == )%{if}%ALT CST*%{end}
@@ -10367,7 +10357,6 @@
 							</GaugeString>
 						</GaugeText>
 					</Element>
-					
 					<Element id="C2L1 Text2">
 						<FloatPosition>83,4</FloatPosition>
 						<GaugeText id="Line 1">
@@ -10391,18 +10380,14 @@
 						</GaugeText>
 					</Element>
 					<Element id="C2L2 Text">
-						<Visibility> (L:FMA_Vertmode_arm, number) 5 != (L:FMA_Vertmode_arm, number) 7 != &amp;&amp; (L:FMA_Vertmode_arm, number) 2 != &amp;&amp;</Visibility>
-						<FloatPosition>76,20</FloatPosition>
+						<Visibility>(L:FMA_Vertmode_arm, number) 5 !=(L:FMA_Vertmode_arm, number) 2 != &amp;&amp;</Visibility>
+						<FloatPosition>82,22</FloatPosition>
 						<GaugeText id="Line 2">
-							<Size>62,14</Size>
+							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>11</FontHeight>
 							<FontColor>#00ffff</FontColor>
-							<AlternateFont id="Frequency">
-								<FontFace>AirbusPFD</FontFace>
-								<FontHeight>10</FontHeight>
-							</AlternateFont>
 							<AlternateColor id="Magenta">
 								<FontColor>#ff80ff</FontColor>
 							</AlternateColor>
@@ -10414,25 +10399,26 @@
 								%((L:FMA_Vertmode_arm, number) 1 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_arm, number) 4 == )%{if}%VS%{end}
-								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%ALT CRZ%{end}
-								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{fnt2}ALT FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}%\{fnt2}ALT %\{clr1}FINAL%{end}
-								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%   ALT G/S%{end}
-								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}   ALT%\{clr} G/S%{end}
-								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%     LAND%{end}
-								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%     FLARE%{end}				
+								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%ALT  CRZ%{end}
+								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%\{ladj=R}FINAL %{end}
+								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{ladj=L}ALT  FINAL%{end}
+								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}\{ladj=L}ALT%\{clr1}  FINAL%{end}
+								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%\{ladj=R}G/S %{end}
+								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%\{ladj=L} ALT  G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}\{ladj=L} ALT\{clr1}  G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%LAND%{end}
+								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%FLARE%{end}					
 							</GaugeString>
 						</GaugeText>
 					</Element>
 					<Element id="C2L2 Text2">
-						<Visibility> (L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; </Visibility>
-						<FloatPosition>76,20</FloatPosition>
+						<Visibility>(L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; </Visibility>
+						<FloatPosition>82,22</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>11</FontHeight>
 							<FontColorScript>
 								(L:PFD_VertMode5, bool) 1 ==
 								if{ 0xff80ff } els{ 0xE6E600 }
@@ -10444,43 +10430,25 @@
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L} ALT%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
 					<Element id="C2L2 Text3">
 						<Visibility>(L:FMA_Vertmode_arm, number) 5 == (L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp; (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) == &amp;&amp; (L:PFD_VertMode5, bool) 0 == &amp;&amp;</Visibility>
-						<FloatPosition>76,20</FloatPosition>
+						<FloatPosition>82,22</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>11</FontHeight>
 							<FontColor>#00ffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT CRZ%{end}
-							</GaugeString>
-						</GaugeText>
-					</Element>
-					<Element id="C2L2 Text4">
-						<Visibility> (L:FMA_Vertmode_arm, number) 7 == </Visibility>
-						<FloatPosition>76,20</FloatPosition>
-						<GaugeText id="Line 2">
-							<Size>64,14</Size>
-							<Bright>True</Bright>
-							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
-							<FontColor>#00ffff</FontColor>
-							<BackgroundColor>#010101</BackgroundColor>
-							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>
-								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L} ALT  CRZ%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
@@ -10512,22 +10480,22 @@
 						</GaugeText>
 					</Element>
 					<Element id="C3L2 Text">
-						<FloatPosition>146,20</FloatPosition>
+						<FloatPosition>145,22</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>70,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>11</FontHeight>
 							<FontColor>0xffff00</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Latmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Latmode_arm, number) 2 == )%{if}%RWY TRK%{end}
+								%((L:FMA_Latmode_arm, number) 2 == )%{if}%RWY  TRK%{end}
 								%((L:FMA_Latmode_arm, number) 3 == )%{if}%HDG%{end}
 								%((L:FMA_Latmode_arm, number) 4 == )%{if}%NAV%{end}
-								%((L:FMA_Latmode_arm, number) 4.75 == )%{if}%APP NAV%{end}
+								%((L:FMA_Latmode_arm, number) 4.75 == )%{if}%APP  NAV%{end}
 								%((L:FMA_Latmode_arm, number) 5 == )%{if}%LOC%{end}
 							</GaugeString>
 						</GaugeText>
@@ -10562,7 +10530,7 @@
 							<Width>85</Width>
 							<Height>15</Height>
 							<FillColor>#000000</FillColor>
-							<LineColor>#b8b8b8</LineColor>
+							<LineColor>#ffffff</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
 					</Element>
@@ -10632,12 +10600,12 @@
 						</GaugeText>
 					</Element>
 					<Element id="C4L2 Text">
-						<FloatPosition>224,21</FloatPosition>
+						<FloatPosition>224,20</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>56,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>13</FontHeight>
 							<FontColor>#ffffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
@@ -10659,10 +10627,6 @@
 							<FontHeight>12</FontHeight>
 							<FontColor>#ffffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
-							<AlternateFont id="Val">
-								<FontFace>AirbusPFD2</FontFace>
-								<FontHeight>11</FontHeight>
-							</AlternateFont>
 							<AlternateColor id="Blue">
 								<FontColor>0xffff00</FontColor>
 							</AlternateColor>
@@ -10670,9 +10634,9 @@
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>
 								\{tabs=0,58R}
-								%((L:FMA_MDA_DH, number) 2 == (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDA%\t\{fnt1}%\{clr2}%((L:MCDU_APP_MDA, number))%!6d!
-								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 != &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%DH%\t\{fnt1}%\{clr2}%((L:MCDU_APP_DH, number))%!4d!
-								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 == &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%\{ladj=C}NO  DH
+								%((L:FMA_MDA_DH, number) 2 == (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%MDA%\t\{clr2}%((L:MCDU_APP_MDA, number))%!6d!
+								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 != &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%DH%\t\{clr2}%((L:MCDU_APP_DH, number))%!4d!
+								%{else}%((L:FMA_MDA_DH, number) 1 == (L:MCDU_APP_DH, number) -1 == &amp;&amp; (L:MCDU_WPT_DEST_Dist, number) 250 &lt;= &amp;&amp;)%{if}%\{ladj=C}%NO  DH
 								%{end}%{end}%{end}%
 							</GaugeString>
 						</GaugeText>
@@ -10984,17 +10948,17 @@
 						</Rectangle>
 					</Element>				
 					<Element id="C2L2 Text">
-						<FloatPosition>76,20</FloatPosition>
+						<FloatPosition>82,22</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>64,14</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>12</FontHeight>
+							<FontHeight>11</FontHeight>
 							<FontColor>#00ffff</FontColor>
 							<BackgroundColor>#020202</BackgroundColor>
 							<Bold>FALSE</Bold>
 							<HorizontalAlign>CENTER</HorizontalAlign>
-							<GaugeString>%((L:FMA_Vertmode_arm, number) 2 == )%{if}%OP CLB%{end}</GaugeString>
+							<GaugeString>%((L:FMA_Vertmode_arm, number) 2 == )%{if}%OP  CLB%{end}</GaugeString>
 						</GaugeText>
 					</Element>
 				</Element>
