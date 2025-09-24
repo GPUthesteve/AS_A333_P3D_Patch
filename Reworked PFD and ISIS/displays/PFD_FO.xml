@@ -269,7 +269,7 @@
 							\t\t\t_________\n\n\n\n\n\n\n
 							\t\t\t\t_____\n\n\n\n\n\n\n
 			\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n
+							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n
 			\t\t\{md}20\{up}  __________________  \{md}20\{up}\n\n\n\n\n\n\n\n\n\n\n\n
 							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n
 			\t\t\{md}30\{up}  __________________  \{md}30\{up}\n\n\n\n\n\n\n\n\n\n\n\n
@@ -396,7 +396,7 @@
 						<Axis>117.5,213</Axis>
 						<GaugeString>
 							%
-							\{lsp=135}\n\{lsp}\{lsp=53}\n\n\n\n\n\n\n\n\n
+							\{lsp=135}\n\{lsp}\{lsp=53}\n\n\n\n\n\n\n\n
 							\t__\t__\n\{lsp}
 							\{lsp=3}
 							\t__\t__\n\{lsp}
@@ -1576,7 +1576,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg -0.01 &gt;= (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg 0 &gt;= (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
