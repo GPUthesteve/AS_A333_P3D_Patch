@@ -5,7 +5,8 @@ Read Me --English ver.--
 # FDE Improvements :
 in this section, I give you `"A330-343.air"` airfile and `"aircraft_patch.txt"` source patch config file to be used with your `"aircraft.cfg`
 - Fuel Consumption. Simply put, it burns fuel like what it should
-- Flight Model and Flight Characteristics, it should behave like every other bus, at least. 
+- Flight Model and Flight Characteristics, it should behave like every other bus, at least.
+- Realistic engine spool for Trent 700, the 'MEASTO' thingy
 
 installation :
 1. backup your original aircraft.cfg (by copypasta it and name it something else like aircraft_orig.cfg)
