@@ -35,18 +35,21 @@ installation
 <img width="908" height="852" alt="image" src="https://github.com/user-attachments/assets/dbc21790-1033-4979-84e6-7c8ee7d8ee95" />
 
 Bring back "Ground Reference line" that was missing, Recoloring some elements, and more....
+
 installation
 1. navigate to `SimObjects\Airplanes\Aerosoft A330 Professional Base`, you'd see a folder named `Panel_Fallback`, go in it, and you'll see bunch of other folders, look for `displays`
 2. replace 2 xml files (`pfd_cpt/fo.xml`) with ones you got from here.
 
 # Potato VC Textures
 2k downscaled VC textures for better vram usage/moar fps.
+
 installation
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a folder named `texture_FallbackVC`,
 2. go in that folder then put these new textures you got from here.
 
-# Fake "Howl/Spool" sound removal
+# ASC "Howl/Spool" sound removal
 This spool sound reportedly crash some simulators, especially with P3Dv5, disable this would fix the crash.
+
 installation 
 1. Navigate to `SimObjects\Airplanes\Aerosoft A333 RR Professional`, you will see a panel folder (named `panel` as you might know), go in it
 2. replace `asc.cfg` with the one you gotfrom here
@@ -54,10 +57,12 @@ installation
 # Reworked Display Font
 <img width="620" height="999" alt="image" src="https://github.com/user-attachments/assets/2d16b00d-3dcc-4d23-bc60-d93bb43ddc1a" />
 
-yes, as it sounds. I use flybywire's airbus display font for replacement. works well
+yes, as it sounds. I use flybywire's airbus display font for replacement. 
+
 simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
 # Bug Reports
+
 simply raise an issue like you'd do on normal github opensource repo.
 
 
