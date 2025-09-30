@@ -883,13 +883,12 @@ if{
 			if{
 				0 (&gt;L:V1Called,number) <!--Resets at flightmode 7 or 8? should be 9 0r 0 but who knows, aerosoft-->
 			}
-			<!-- Low speed sound -->		
+			<!-- FWC Low speed sound -->		
 			(L:IAS_SM, number) (L:IAS_AccelSM, number) 0 max + (L:VLS_autocalc,number) &lt;=
 			(L:FBW_TOGALK, bool) 0 == &amp;&amp;
 			(L:Throttle_ani_fix_L, number) 100 != &amp;&amp;
 			(L:Throttle_ani_fix_R, number) 100 != &amp;&amp;
-			(A:RADIO HEIGHT, feet) 14.4 - 2000 &lt; &amp;&amp;
-			(A:RADIO HEIGHT, feet) 14.4 - 100 &gt; &amp;&amp;
+			(A:RADIO HEIGHT, feet) near 2000 &lt; (A:RADIO HEIGHT, feet) near 100 &gt; &amp;&amp; &amp;&amp;
 			(A:FLAPS HANDLE INDEX, number) 2 &gt; &amp;&amp;
 			if{
 				1 (&gt; L:FBW_SpeedSpeed, bool)
