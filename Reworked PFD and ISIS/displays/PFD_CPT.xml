@@ -634,7 +634,7 @@
 					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
 					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
 					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp; ||					
+					(A:Radio height, feet) near 400 &lt; &amp;&amp; ||					
 					</Visibility>
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
