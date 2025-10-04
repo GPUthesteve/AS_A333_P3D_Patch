@@ -635,7 +635,7 @@
 					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
 					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
 					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) 14 - 400 &lt; &amp;&amp; ||					
+					(A:Radio height, feet) near 400 &lt; &amp;&amp; ||					
 					</Visibility>
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
@@ -1576,7 +1576,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Control Indicator Elements">
-					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg 0 &gt;= (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp; &amp;&amp;</Visibility>
+					<Visibility>(A:SIM ON GROUND, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg 0 &gt;= &amp;&amp; (A:GENERAL ENG COMBUSTION:1, bool) 1 == (A:GENERAL ENG COMBUSTION:2, bool) 1 == || &amp;&amp;</Visibility>
 					<Element id="Control Limit Square">
 						<FloatPosition>100,100</FloatPosition>
 						<Element id="Top Left">
