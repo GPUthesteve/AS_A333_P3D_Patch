@@ -869,26 +869,27 @@ if{
 				0 (&gt;L:AB_OVH_GPWS_TERR_LIGHT_FAULT, bool)
 				0 (&gt;L:AB_OVH_GPWS_SYS_LIGHT_FAULT, bool)
 			}
+			
 			<!-- FWC V1 -->	
 			(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
 			(L:IAS_SM, number) (L:MCDU_V1, number) 3 - &gt;= &amp;&amp;
 			(L:V1Called,number) 0 == &amp;&amp;
 			if{
-			1 (&gt;L:ASC_PnF_V1,number)
-			1 (&gt;L:V1Called,number)
-			(L:Vol_GPWS_fac, number) (&gt;L:ASC_PnF_V1_VOL)
+				1 (&gt;L:ASC_PnF_V1,number)
+				1 (&gt;L:V1Called,number)
+				(L:Vol_GPWS_fac, number) (&gt;L:ASC_PnF_V1_VOL)
 			}	
-			(L:Flightmode, number) 7 == (L:Flightmode, number) 8 == ||
+			(L:Flightmode, number) 7 &gt;
 			(L:V1Called,number) 1 == &amp;&amp;
 			if{
-				0 (&gt;L:V1Called,number) <!--Resets at flightmode 7 or 8? should be 9 0r 0 but who knows, aerosoft-->
+				0 (&gt;L:V1Called,number)
 			}
 			<!-- FWC Low speed sound -->		
 			(L:IAS_SM, number) (L:IAS_AccelSM, number) 0 max + (L:VLS_autocalc,number) &lt;=
 			(L:FBW_TOGALK, bool) 0 == &amp;&amp;
 			(L:Throttle_ani_fix_L, number) 100 != &amp;&amp;
 			(L:Throttle_ani_fix_R, number) 100 != &amp;&amp;
-			(A:RADIO HEIGHT, feet) near 2000 &lt; (A:RADIO HEIGHT, feet) near 100 &gt; &amp;&amp; &amp;&amp;
+			(L:PFD_Radalt, number) 100 2000 rng &amp;&amp;
 			(A:FLAPS HANDLE INDEX, number) 2 &gt; &amp;&amp;
 			if{
 				1 (&gt; L:FBW_SpeedSpeed, bool)

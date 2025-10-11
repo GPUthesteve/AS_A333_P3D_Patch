@@ -179,12 +179,12 @@
 					<GaugeText id="Pitch Ladder Top">
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD2</FontFace>
-						<FontHeight>10</FontHeight>
+						<FontHeight>11</FontHeight>
 						<FontColor>#ffffff</FontColor>
 						<BackgroundColor>#0080ff</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
-						<Tabs>0,62L,69L,76L,106L,111L</Tabs>
+						<Tabs>0,62L,69L,76L,105L,111L</Tabs>
 						<LineSpacing>1</LineSpacing>
 						<Bold>FALSE</Bold>
 						<Size>235,219</Size>
@@ -192,19 +192,19 @@
 						<GaugeString>
 							%
 							\{lsp=83}\n\{lsp}
-							\t\{md}50\{up}  ______________________________  \{md}50\{up}\n
+							\t\{md}50\{up} ______________________________ \{md}50\{up}\n
 							\{lsp=38}\n\{lsp}
 							\t\t\{md}30\{up}  ________________________  \{md}30\{up}\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n
-							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t__________\n\n\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n\n\n
-							\t\t\t\{md}20\{up}  __________________  \{md}20\{up}\n\n\n\n\n\n\n
+							\t\t\t\{md} 20\{up} _______________ \{md}20\{up}\n\n\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n\n\n
-							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t__________\n\n\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n\n\n
-							\t\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n
+							\t\t\t\{md} 10\{up} _______________ \{md}10\{up}\n\n\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n\n\n
-							\t\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t\t__________\n\n\n\n\n\n\n
 							\t\t\t\t\t_____\n\n\n\n\n\n\n
 							%
 						</GaugeString>
@@ -252,12 +252,12 @@
 					<GaugeText id="Pitch Ladder Bottom">
 						<Bright>True</Bright>
 						<FontFace>AirbusPFD2</FontFace>
-						<FontHeight>10</FontHeight>
+						<FontHeight>11</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#802000</BackgroundColor>
+						<BackgroundColor>#803000</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
-						<Tabs>0,71L,76L,106L,111L</Tabs>
+						<Tabs>0,71L,76L,105L,111L</Tabs>
 						<LineSpacing>1</LineSpacing>
 						<Bold>TRUE</Bold>
 						<FontWeight>2</FontWeight>
@@ -266,13 +266,13 @@
 						<GaugeString>
 							%\{lsp=12}\n\{lsp}\{up}\{fnt1}
 							\t\t\t\t_____\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n
+							\t\t\t__________\n\n\n\n\n\n\n
 							\t\t\t\t_____\n\n\n\n\n\n\n
-			\t\t\{md}10\{up}  __________________  \{md}10\{up}\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n
-			\t\t\{md}20\{up}  __________________  \{md}20\{up}\n\n\n\n\n\n\n\n\n\n\n\n
-							\t\t\t_________\n\n\n\n\n\n\n\n\n\n\n\n
-			\t\t\{md}30\{up}  __________________  \{md}30\{up}\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md} 10\{up} _______________ \{md}10\{up}\n\n\n\n\n\n\n\n\n\n
+							\t\t\t__________\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md} 20\{up} _______________ \{md}20\{up}\n\n\n\n\n\n\n\n\n\n\n\n
+							\t\t\t__________\n\n\n\n\n\n\n\n\n\n\n\n
+			\t\t\{md} 30\{up} _______________ \{md}30\{up}\n\n\n\n\n\n\n\n\n\n\n\n
 							%
 						</GaugeString>
 					</GaugeText>
@@ -396,7 +396,7 @@
 						<Axis>117.5,213</Axis>
 						<GaugeString>
 							%
-							\{lsp=135}\n\{lsp}\{lsp=53}\n\n\n\n\n\n\n\n
+							\{lsp=135}\n\{lsp}\{lsp=55}\n\n\n\n\n\n\n\n
 							\t__\t__\n\{lsp}
 							\{lsp=3}
 							\t__\t__\n\{lsp}
@@ -632,10 +632,8 @@
 					(L:Flightmode, number) 4 == ( L:Flightmode, number) 5 == || 
 					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
 					(A:SIM ON GROUND, bool) 1 == &amp;&amp;					
-					(L:MCDU_FLT_PHS, number) 4 == (L:MCDU_FLT_PHS, number) 5 == || 
-					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
 					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) near 400 &lt; &amp;&amp; ||					
+					(A:Radio height, feet) near 400 &lt; &amp;&amp;					
 					</Visibility>
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
@@ -703,7 +701,7 @@
 						<Bright>True</Bright>
 						<Width>250</Width>
 						<Height>350</Height>
-						<FillColor>#802000</FillColor>
+						<FillColor>#803000</FillColor>
 					</Rectangle>
 					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
 						<Axis>100,100</Axis>
@@ -882,7 +880,7 @@
 							<Width>300</Width>
 							<Height>300</Height>
 							<Bright>True</Bright>
-							<FillColor>#802000</FillColor>
+							<FillColor>#803000</FillColor>
 							<LineColor>#ffffff</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
@@ -1035,7 +1033,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x0080ff</FontColor>
 							<FontHeight>14</FontHeight>
-							<BackgroundColor>#802000</BackgroundColor>
+							<BackgroundColor>#803000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!d!%{end}
@@ -1060,7 +1058,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x00ff00</FontColor>
 							<FontHeight>12</FontHeight>
-							<BackgroundColor>#802000</BackgroundColor>
+							<BackgroundColor>#803000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!4d!%{end}
@@ -3478,7 +3476,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>12</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<Tabs>0C,30C,60C,90C,120C,150C,180C,210C,240C,270C,300C,330C,360C,390C,420C,450C,480C,510C,540C,570C</Tabs>
 						<AlternateFont id="SmallHdgNums">
 							<FontFace>AirbusPFD2</FontFace>
@@ -4018,7 +4016,7 @@
 							<Bright>True</Bright>
 							<Width>154</Width>
 							<Height>23</Height>
-							<FillColor>#666666</FillColor>
+							<FillColor>#606060</FillColor>
 						</Rectangle>
 					</Element>
 					<Element id="Red Border">
@@ -4089,7 +4087,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>HDG</GaugeString>
@@ -4496,8 +4494,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#666666</LineColor>
-						<FillColor>#666666</FillColor>
+						<LineColor>#606060</LineColor>
+						<FillColor>#606060</FillColor>
 						<Point>
 							<FloatPosition>3,18</FloatPosition>
 						</Point>
@@ -4839,7 +4837,7 @@
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
 								
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 * 40 +)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4878,7 +4876,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 * 20 +)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4916,7 +4914,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 1 + 100 *)%!3d!%</GaugeString>
 							</GaugeText>
@@ -4954,7 +4952,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 80 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -4992,7 +4990,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 60 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5030,7 +5028,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 / int 100 * 40 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5068,7 +5066,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 100 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5106,7 +5104,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) (L:IAS_SM, number) (L:IAS_SM, number) 100 % - )%!3d!%</GaugeString>
 							</GaugeText>
@@ -5144,7 +5142,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 1 /-/ + 100 * 80 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5182,7 +5180,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>CENTER</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<BackgroundColor>#666666</BackgroundColor>
+								<BackgroundColor>#606060</BackgroundColor>
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((L:IAS_SM, number) 100 &lt;)%{if}% %{else}%((L:IAS_SM, number) 100 / int 1 /-/ + 100 * 60 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -5251,7 +5249,7 @@
 							<Bright>True</Bright>
 							<Width>37</Width>
 							<Height>200</Height>
-							<FillColor>#666666</FillColor>
+							<FillColor>#606060</FillColor>
 						</Rectangle>									
 						<Shift>
 							<Expression>
@@ -5989,8 +5987,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#666666</LineColor>
-							<FillColor>#666666</FillColor>
+							<LineColor>#606060</LineColor>
+							<FillColor>#606060</FillColor>
 							<Point>
 								<FloatPosition>3,18</FloatPosition>
 							</Point>
@@ -6080,7 +6078,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>SPD</GaugeString>
@@ -6094,8 +6092,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#666666</LineColor>
-						<FillColor>#666666</FillColor>
+						<LineColor>#606060</LineColor>
+						<FillColor>#606060</FillColor>
 						<Point>
 							<FloatPosition>32,12</FloatPosition>
 						</Point>
@@ -6118,8 +6116,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#802000</LineColor>
-						<FillColor>#802000</FillColor>
+						<LineColor>#803000</LineColor>
+						<FillColor>#803000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -6572,7 +6570,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 20 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6610,7 +6608,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 15 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6648,7 +6646,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 10 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6686,7 +6684,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 5 +)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6724,7 +6722,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 *)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6762,7 +6760,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 5 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6800,7 +6798,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 10 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6838,7 +6836,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 15 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -6876,7 +6874,7 @@
 								<FontColor>#ffffff</FontColor>
 								<VerticalAlign>BOTTOM</VerticalAlign>
 								<HorizontalAlign>RIGHT</HorizontalAlign>
-								<!--<BackgroundColor>#666666</BackgroundColor>-->
+								<!--<BackgroundColor>#606060</BackgroundColor>-->
 								<Transparent>TRUE</Transparent>
 								<GaugeString>%((A:INDICATED ALTITUDE:3, feet) 1000 / int 10 * 20 /-/ + abs)%!03d!%</GaugeString>
 							</GaugeText>
@@ -7134,8 +7132,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#802000</LineColor>
-						<FillColor>#802000</FillColor>
+						<LineColor>#803000</LineColor>
+						<FillColor>#803000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -8277,8 +8275,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#666666</LineColor>
-							<FillColor>#666666</FillColor>
+							<LineColor>#606060</LineColor>
+							<FillColor>#606060</FillColor>
 							<Point>
 								<FloatPosition>32,12</FloatPosition>
 							</Point>
@@ -8298,8 +8296,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#666666</LineColor>
-							<FillColor>#666666</FillColor>
+							<LineColor>#606060</LineColor>
+							<FillColor>#606060</FillColor>
 							<Point>
 								<FloatPosition>32,110</FloatPosition>
 							</Point>
@@ -8435,8 +8433,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#666666</LineColor>
-						<FillColor>#666666</FillColor>
+						<LineColor>#606060</LineColor>
+						<FillColor>#606060</FillColor>
 						<Point>
 							<FloatPosition>18,0</FloatPosition>
 						</Point>
@@ -8543,7 +8541,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8576,7 +8574,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8643,7 +8641,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8676,7 +8674,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8743,7 +8741,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -8776,7 +8774,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontHeight>11</FontHeight>
 							<FontColor>#ffffff</FontColor>
-							<BackgroundColor>#666666</BackgroundColor>
+							<BackgroundColor>#606060</BackgroundColor>
 							<Multiline>True</Multiline>
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -9032,8 +9030,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#666666</LineColor>
-						<FillColor>#666666</FillColor>
+						<LineColor>#606060</LineColor>
+						<FillColor>#606060</FillColor>
 						<Point>
 							<FloatPosition>30,0</FloatPosition>
 						</Point>
@@ -9318,8 +9316,8 @@
 					<Polygon id="Back">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#666666</LineColor>
-						<FillColor>#666666</FillColor>
+						<LineColor>#606060</LineColor>
+						<FillColor>#606060</FillColor>
 						<Point>
 							<FloatPosition>30,0</FloatPosition>
 						</Point>
@@ -9614,8 +9612,8 @@
 						<Polygon id="Back">
 							<Bright>True</Bright>
 							<LineWidth>1</LineWidth>
-							<LineColor>#666666</LineColor>
-							<FillColor>#666666</FillColor>
+							<LineColor>#606060</LineColor>
+							<FillColor>#606060</FillColor>
 							<Point>
 								<FloatPosition>18,0</FloatPosition>
 							</Point>
@@ -9668,7 +9666,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>V</GaugeString>
@@ -9702,7 +9700,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>/</GaugeString>
@@ -9736,7 +9734,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>15</FontHeight>
 						<FontColor>#ff0000</FontColor>
-						<BackgroundColor>#666666</BackgroundColor>
+						<BackgroundColor>#606060</BackgroundColor>
 						<VerticalAlign>CENTER</VerticalAlign>
 						<HorizontalAlign>LEFT</HorizontalAlign>
 						<GaugeString>S</GaugeString>
@@ -10406,8 +10404,8 @@
 								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{ladj=L}ALT  FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}\{ladj=L}ALT%\{clr1}  FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 7 == )%{if}%\{ladj=R}G/S %{end}
-								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%\{ladj=L} ALT  G/S%{end}
-								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}\{ladj=L} ALT\{clr1}  G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.5 == )%{if}%\{ladj=L}ALT   G/S%{end}
+								%((L:FMA_Vertmode_arm, number) 7.75 == )%{if}%\{clr2}\{ladj=L}ALT\{clr1}   G/S%{end}
 								%((L:FMA_Vertmode_arm, number) 8 == )%{if}%LAND%{end}
 								%((L:FMA_Vertmode_arm, number) 9 == )%{if}%FLARE%{end}					
 							</GaugeString>
@@ -10432,7 +10430,7 @@
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L} ALT%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
@@ -11108,7 +11106,7 @@
 						<GaugeText id="Text">
 							<Size>200,50</Size>
 							<Bright>True</Bright>
-							<FontFace>ECAMa</FontFace>
+							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>16</FontHeight>
 							<FontColor>#00ff00</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -11121,7 +11119,7 @@
 						<GaugeText id="Text">
 							<Size>200,50</Size>
 							<Bright>True</Bright>
-							<FontFace>ECAMa</FontFace>
+							<FontFace>AirbusPFD</FontFace>
 							<FontHeight>16</FontHeight>
 							<FontColor>#00ff00</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
@@ -11441,7 +11439,7 @@
 				<FillColor>#7C8AAF</FillColor>
 				<LineColor>#b8b8b8</LineColor>
 				<LineWidth>0</LineWidth>
-				<Transparency>0.85</Transparency>
+				<Transparency>0.8</Transparency>
 			</Rectangle>
 		</Element>
 
