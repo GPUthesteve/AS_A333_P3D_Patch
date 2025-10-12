@@ -1,0 +1,38 @@
+<Gauge Name="spoiler inhibitor logic" Version="1.0">
+<Element>
+<Select>
+<Value>
+    <!-- Only A321 inhibits at CONF 3 up-->
+    (L:AB_TypeIdent, number) 21 == 
+    (L:AB_TypeIdent, number) 22 == ||
+    (L:AB_TypeIdent, number) 31 == || 
+    (L:AB_TypeIdent, number) 32 == ||
+    (L:AB_TypeIdent, number) 51 == || 
+    (L:AB_TypeIdent, number) 52 == ||
+    if{
+        1 (&gt;L:inhibitconf,number)
+    }
+    (L:AB_TypeIdent, number) 41 ==
+    (L:AB_TypeIdent, number) 42 == ||
+    if{
+        2 (&gt;L:inhibitconf,number)
+    }
+    (A:sim on ground,bool) 0 ==
+    (L:FMA_THRmode, number) 9 == || <!-- A.FLOOR-->
+    (L:Throttle_ani_fix_L, number) 75 &gt;= (L:Throttle_ani_fix_R, number) 75 &gt;= || || <!--MCT detent-->
+    if{
+        (A:flaps handle index,number) 4 &gt;=
+        (L:inhibitconf,number) 2 == &amp;&amp;
+        if{
+            0 (&gt;K:SPOILERS_SET) <!--inhibits-->
+        }
+        (A:flaps handle index,number) 5 ==
+        (L:inhibitconf,number) 1 == &amp;&amp;
+        if{
+            0 (&gt;K:SPOILERS_SET) <!--inhibits-->
+        }
+    }
+</Value>
+</Select>
+</Element>
+</Gauge>
