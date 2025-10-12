@@ -26,6 +26,21 @@ if{
 		}
  -->
 
+		<!-- Autopilot Sidestick lock-->
+		(L:AB_AP_AP1, number) 1 == (L:AB_AP_AP2, number) 0 ==  &amp;&amp; <!-- AP1-->
+		(L:AB_AP_AP1, number) 0 == (L:AB_AP_AP2, number) 1 ==  &amp;&amp; || <!-- AP2-->
+		(L:AB_AP_AP1, number) 1 == (L:AB_AP_AP2, number) 1 ==  &amp;&amp; || <!-- AP1+2-->
+		(L:sticklocked,number) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:asc_ap_sticklock, number)
+			1 (&gt;L:sticklocked, number)
+		}
+		<!-- Autopilot Sidestick unlock-->
+		(L:AB_AP_AP1, number) 0 == (L:AB_AP_AP2, number) 0 == &amp;&amp; <!--Both disconnect-->
+		(L:sticklocked,number) 1 == &amp;&amp;
+		if{
+			0 (&gt;L:sticklocked, number)
+		}
 	<!-- Spoilers -->	    
 		(A:Airspeed indicated, knots) 20 &gt;
 		if{
@@ -1284,7 +1299,7 @@ if{
 						
 	<!-- Safety Instruction -->
 		(L:AB_SND_CAB,bool) 1 ==
-		(L:Flightmode, number) 2 == &amp;&amp;
+		(L:Flightmode, number) 2 &lt;= &amp;&amp;
 		(L:AB_CL_Taxiing,bool) 0 == &amp;&amp;
 		(L:Var19) 0 == &amp;&amp;
 		(A:ENG1 N1 RPM, percent) 50 &lt; &amp;&amp;
