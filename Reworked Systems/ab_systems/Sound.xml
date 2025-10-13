@@ -25,7 +25,19 @@ if{
 			3 (&gt;L:ASC_GearWind,number)
 		}
  -->
-
+		<!-- Ground sensor toggle-->
+		(A:sim on ground, bool) 1 == 
+		(L:sensortoggle,number) 0 == &amp;&amp;
+		if{
+			1 (&gt;L:asc_groundsensor, number)
+			1 (&gt;L:sensortoggle,number)
+		}
+		(A:sim on ground, bool) 0 ==
+		(L:sensortoggle,number) 1 == &amp;&amp;
+		if{
+			1 (&gt;L:asc_groundsensor, number)
+			0 (&gt;L:sensortoggle,number)
+		}
 		<!-- Autopilot Sidestick lock-->
 		(L:AB_AP_AP1, number) 1 == (L:AB_AP_AP2, number) 0 ==  &amp;&amp; <!-- AP1-->
 		(L:AB_AP_AP1, number) 0 == (L:AB_AP_AP2, number) 1 ==  &amp;&amp; || <!-- AP2-->
@@ -211,14 +223,14 @@ if{
 			(L:Spoiler_lv_Anim, number) 0 ==
 			(L:ASC_Spoilers_armed, number) 0 == &amp;&amp;
 			if{
-				1 (&gt; L:ASC_SpoilerLever, bool)
+				1 (&gt; L:ASC_SpoilerLever_arm, bool)
 				1 (&gt; L:ASC_Spoilers_armed, number)
 			}
 						
 			(L:Spoiler_lv_Anim, number) 0 !=
 			(L:ASC_Spoilers_armed, number) 1 == &amp;&amp;
 			if{
-				1 (&gt; L:ASC_SpoilerLever, bool)
+				1 (&gt; L:ASC_SpoilerLever_disarm, bool)
 				0 (&gt; L:ASC_Spoilers_armed, number)
 			}
 		}
@@ -688,6 +700,7 @@ if{
 		(L:DC_ESS_Avail, number) 1 == &amp;&amp;
 		if{
 			(L:AB_GPWS_MAIN_BUTTON, bool) 0 ==
+			
 			(L:AB_FBW_STEEP_ON, bool) 1 ==
 			(A:RADIO HEIGHT, feet) 14.4 - 130 &gt;= &amp;&amp; 
 			(L:AB_FBW_STEEP_ON, bool) 0 == ||  &amp;&amp; 
@@ -884,36 +897,34 @@ if{
 				0 (&gt; L:AB_GPWS_MAIN_BUTTON_PULLUP_LIGHT, bool)
 				0 (&gt;L:AB_OVH_GPWS_TERR_LIGHT_FAULT, bool)
 				0 (&gt;L:AB_OVH_GPWS_SYS_LIGHT_FAULT, bool)
-			}
-			
-			<!-- FWC V1 -->	
-			(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
-			(L:IAS_SM, number) (L:MCDU_V1, number) 3 - &gt;= &amp;&amp;
-			(L:V1Called,number) 0 == &amp;&amp;
-			if{
-				1 (&gt;L:ASC_PnF_V1,number)
-				1 (&gt;L:V1Called,number)
-				(L:Vol_GPWS_fac, number) (&gt;L:ASC_PnF_V1_VOL)
-			}	
-			(L:Flightmode, number) 7 &gt;
-			(L:V1Called,number) 1 == &amp;&amp;
-			if{
-				0 (&gt;L:V1Called,number)
-			}
-			<!-- FWC Low speed sound -->		
+			}		
+			<!-- fwc Low speed sound -->		
 			(L:IAS_SM, number) (L:IAS_AccelSM, number) 0 max + (L:VLS_autocalc,number) &lt;=
 			(L:FBW_TOGALK, bool) 0 == &amp;&amp;
 			(L:Throttle_ani_fix_L, number) 100 != &amp;&amp;
 			(L:Throttle_ani_fix_R, number) 100 != &amp;&amp;
-			(L:PFD_Radalt, number) 100 2000 rng &amp;&amp;
-			(A:FLAPS HANDLE INDEX, number) 2 &gt; &amp;&amp;
+			100 2000 (L:PFD_Radalt, number) rng &amp;&amp;
+			(A:FLAPS HANDLE INDEX, number) 2 &gt; &amp;&amp; 
 			if{
 				1 (&gt; L:FBW_SpeedSpeed, bool)
 				(L:Vol_GPWS_fac, number) (&gt;L:FBW_SpeedSpeed_VOL)
 			}
-
+			<!-- FWC V1 -->	
+			(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
+			(L:IAS_SM, number) (L:MCDU_V1, number) 3 - &gt;= &amp;&amp;
+			(L:V1Called, number) 0 == &amp;&amp; 
+			if{
+				1 (&gt;L:ASC_PnF_V1, number)
+				1 (&gt;L:V1Called, number)
+				(L:Vol_GPWS_fac, number) (&gt;L:ASC_PnF_V1_VOL)
+			}
+			(L:Flightmode, number) 7 &gt;
+			(L:V1Called,number) 1 == &amp;&amp; 
+			if{
+				0 (&gt;L:V1Called,number)
+			} 
 		}
-			
+					
 		(L:DC_ESS_Avail, number) 0 ==
 		if{
 			0 (&gt;L:AB_GPWS_MAIN_BUTTON, bool)
@@ -922,7 +933,11 @@ if{
 	<!-- Altitude callouts-->
 		(A:VERTICAL SPEED, Feet per second) -0.2 &lt;=
 		if{
-			<!-- F.W. 2018.04.20: Altitude callouts for 2500, 1000, 500, 400, 300 and 200, 50, 40, 30 and 20 have been moved to ECAM-DLL -->			
+	
+			<!-- F.W. 2018.04.20: Altitude callouts for 2500, 1000, 500, 400, 300 and 200, 50, 40, 30 and 20 have been moved to ECAM-DLL -->
+	
+	
+							
 			(A:Radio Height,feet) 14.4 - 10 / near 10 * 10 ==
 			(L:AB_AUTOLAND, bool) 1 == &amp;&amp;
 			if{
@@ -936,7 +951,7 @@ if{
 				}
 			}
 			els{
-				0 (&gt;L:CALLCALLED010, number)
+				0 (&gt; L:CALLCALLED010, number)
 			}
 							
 		<!-- RETARD DECISION -->
@@ -1115,6 +1130,26 @@ if{
 				}				
 			
 			}
+		<!-- Retard Callout -->
+		<!--	(A:VERTICAL SPEED, Feet per second) -0.2 &lt;=
+			(L:Throttle_ani_var_L, number) 5 &gt; &amp;&amp;
+			(L:Throttle_ani_var_R, number) 5 &gt; &amp;&amp;
+			(L:Retard_hasbeenplayed, bool) 0 == &amp;&amp;
+			(A:RADIO HEIGHT, feet) 25 &lt; 
+			(A:RADIO HEIGHT, feet) 15 &gt; &amp;&amp;
+			(L:AB_AUTOLAND, bool) 1 == &amp;&amp;
+			(A:RADIO HEIGHT, feet) 35 &lt; 
+			(A:RADIO HEIGHT, feet) 15 &gt; &amp;&amp;
+			(L:AB_AUTOLAND, bool) 0 == &amp;&amp; || &amp;&amp;
+			(A:SIM ON GROUND,bool) 0 == &amp;&amp;
+			if{
+				1 (&gt; L:ASC_AIRBUSX_RETARD, bool)
+				(L:AB_AUTOLAND, bool) 1 ==
+				if{
+					1 (&gt; L:Autoland_retard, bool)
+					1 (&gt; L:Retard_hasbeenplayed, bool)
+				}
+			} -->
 							
 		<!-- Minimums Callout -->
 						
@@ -1300,7 +1335,7 @@ if{
 						
 	<!-- Safety Instruction -->
 		(L:AB_SND_CAB,bool) 1 ==
-		(L:Flightmode, number) 2 &lt;= &amp;&amp;
+		(L:Flightmode, number) 2 == &amp;&amp;
 		(L:AB_CL_Taxiing,bool) 0 == &amp;&amp;
 		(L:Var19) 0 == &amp;&amp;
 		(A:ENG1 N1 RPM, percent) 50 &lt; &amp;&amp;
@@ -1398,11 +1433,9 @@ if{
 
 	<!-- Descent Device CC Information-->
 		(L:AB_SND_CAB,bool) 1 ==
-		(A:INDICATED ALTITUDE,feet) 9000 &lt; &amp;&amp;
-		(A:INDICATED ALTITUDE,feet) 8500 &gt; &amp;&amp;
+		(L:FLAPS_LVR_hist, number) 1 &gt;= &amp;&amp;
 		(L:MCDU_FLT_PHS, number) 5 &gt;= &amp;&amp;
 		(L:AB_OVH_NO_SMOKING, number) 1 == &amp;&amp;
-		(L:FLAPS_LVR_hist, number) 1 &gt;= ||
 		if{
 			(L:CC_DescentDevice_Lock,bool) 0 ==
 			if{

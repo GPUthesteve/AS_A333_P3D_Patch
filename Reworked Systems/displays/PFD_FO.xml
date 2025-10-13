@@ -32,6 +32,36 @@
 						
 			</Script>
 		</Update>
+			<Update> <!-- Pitch chevron visiblity calculation-->
+			<script>
+					(A:GROUND VELOCITY, knots) 45 &gt;
+					if{
+						(L:Flightmode, number) 6 ==
+						if{
+							(L:PFD_Radalt, number) near 400 &lt;
+							if{ 
+								1 (&gt;L:strikechev_vis,number)
+							}
+							els{
+								0 (&gt;L:strikechev_vis,number)
+							}
+						}
+						(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
+						if{
+							(L:PFD_Radalt, number) near 20 &lt;	
+							if{
+								1 (&gt;L:strikechev_vis,number)
+							}
+							els{
+								0 (&gt;L:strikechev_vis,number)
+							}
+						}
+					}
+					els{
+						0 (&gt;L:strikechev_vis,number)
+					}
+			</script>
+			</Update>
 		<Update>
 			<Script>
 			<!-- Align VS SCREEN -->
@@ -628,13 +658,7 @@
 					</Rotation>
 				</Element>
 				<Element id="Strike Pitch Chevron 333">
-					<Visibility>
-					(L:Flightmode, number) 4 == ( L:Flightmode, number) 5 == || 
-					(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
-					(A:SIM ON GROUND, bool) 1 == &amp;&amp;					
-					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
-					(A:Radio height, feet) near 400 &lt; &amp;&amp;					
-					</Visibility>
+					<Visibility>(L:strikechev_vis,number) 1 ==</Visibility>
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
@@ -9756,6 +9780,19 @@
 						<GaugeString>%((L:Mach_SM, number) 1 &lt;)%{if}%.%((L:Mach_SM, number) 1 % 1000 *)%!03d%{else}%((L:Mach_SM, number) 0 max 9.99 min)%!5.3f%</GaugeString>
 					</GaugeText>
 				</Element>
+				<Element id="DECEL">
+					<Visibility>(L:ABrkactiv, number) 1 == (L:AB_NEO_features,number) 1 == &amp;&amp;</Visibility>
+					<FloatPosition>4,2</FloatPosition>
+					<GaugeText id="Text">
+						<Size>42,16</Size>
+						<Bright>True</Bright>
+						<FontFace>AirbusPFD</FontFace>
+						<FontHeight>13</FontHeight>
+						<FontColor>#00ff00</FontColor>
+						<HorizontalAlign>LEFT</HorizontalAlign>
+						<GaugeString>DECEL</GaugeString>
+					</GaugeText>
+				</Element>
 				<Element id="ILS_Navaid Text Info">
 					<Visibility>(L:AB_MPL_FO_ILS, bool) 1 ==</Visibility>
 					<FloatPosition>4,9</FloatPosition>
@@ -10320,6 +10357,74 @@
 							<GaugeString>%SET MANAGED SPD%\{fnt1}</GaugeString>
 						</GaugeText>
 					</Element>					
+				</Element>		
+				<Element id="Autobrake on PFD Pin Program">
+				 <Visibility>(L:AB_NEO_features,number) 1 ==</Visibility>
+					<Element id="C1L1 BRK LO/MED/MAX">
+						<Element id="C1L1 Text">
+							<FloatPosition>6,4</FloatPosition>
+							<GaugeText id="Line 1">
+								<Size>62,32</Size>
+								<Bright>True</Bright>
+								<FontFace>AirbusPFD</FontFace>
+								<FontHeightScript>13</FontHeightScript>
+								<Multiline>True</Multiline>
+								<FontColor>#00ff00</FontColor>
+								<BackgroundColor>#000000</BackgroundColor>
+								<Bold>FALSE</Bold>
+								<HorizontalAlign>CENTER</HorizontalAlign>
+								<GaugeString>
+								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 0 == &amp;&amp; )%{if}%BRK MAX%{end}
+								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 2 == &amp;&amp; )%{if}%BRK LO%{end}
+								%((L:ABrkactiv, number) 1 == (L:Autobrake_position, number) 3 == &amp;&amp; )%{if}%BRK MED%{end}%
+								</GaugeString>
+							</GaugeText>
+						</Element>
+						<Element id="C1L1 Box - White Single">
+							<FloatPosition>5,3</FloatPosition>
+							<Visibility>(L:ABrkactiv, number) 1 ==</Visibility>
+							<Rectangle id="Rectangle">
+								<Bright>True</Bright>
+								<Width>65</Width>
+								<Height>15</Height>
+								<FillColor>#000000</FillColor>
+								<LineColor>#ffffff</LineColor>
+								<LineWidth>1</LineWidth>
+							</Rectangle>
+						</Element>
+					</Element>
+					<Element id="C1L2 BRK LO/MED">
+						<FloatPosition>2,20</FloatPosition>
+						<GaugeText id="Line 2">
+							<Size>68,14</Size>
+							<Bright>FALSE</Bright>
+							<FontFace>AirbusPFD</FontFace>
+							<FontHeight>13</FontHeight>
+							<FontColorScript>0xffff00</FontColorScript>
+							<BackgroundColor>#000000</BackgroundColor>
+							<Bold>FALSE</Bold>
+							<HorizontalAlign>CENTER</HorizontalAlign>
+							<GaugeString>
+							%((L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 2 == &amp;&amp; )%{if}%BRK LO%{end}
+							%((L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 3 == &amp;&amp; )%{if}%BRK MED%{end}%
+							</GaugeString>
+						</GaugeText>
+					</Element>
+					<Element id="C1L3 BRK MAX">
+						<FloatPosition>2,37</FloatPosition>
+						<Visibility>(L:ABrkactiv, number) 0 == (L:Autobrake_position, number) 0 == &amp;&amp;</Visibility>
+						<GaugeText id="Line 3">
+							<Size>68,14</Size>
+							<Bright>FALSE</Bright>
+							<FontFace>AirbusPFD</FontFace>
+							<FontHeight>13</FontHeight>
+							<FontColorScript>0xffff00</FontColorScript>
+							<BackgroundColor>#000000</BackgroundColor>
+							<Bold>FALSE</Bold>
+							<HorizontalAlign>CENTER</HorizontalAlign>
+							<GaugeString>BRK MAX</GaugeString>
+						</GaugeText>
+					</Element>
 				</Element>			
 				<Element id="Column 2">
 					<Element id="C2L1 Text">
@@ -11107,7 +11212,7 @@
 							<Size>200,50</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>15</FontHeight>
+							<FontHeight>14</FontHeight>
 							<FontColor>#00ff00</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<HorizontalAlign>CENTER</HorizontalAlign>
@@ -11120,7 +11225,7 @@
 							<Size>200,50</Size>
 							<Bright>True</Bright>
 							<FontFace>AirbusPFD</FontFace>
-							<FontHeight>15</FontHeight>
+							<FontHeight>14</FontHeight>
 							<FontColor>#00ff00</FontColor>
 							<VerticalAlign>CENTER</VerticalAlign>
 							<HorizontalAlign>CENTER</HorizontalAlign>

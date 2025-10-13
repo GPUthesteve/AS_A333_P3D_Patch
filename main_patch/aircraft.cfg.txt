@@ -139,6 +139,7 @@ span-outboard = 0.75
 extending-time = 20 
 damaging-speed = 240 
 blowout-speed = 260 
+drag_scalar = 0.5
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 8, 215  ; CONF 1+F
 flaps-position.3 = 14, 196 ; CONF 2
@@ -153,12 +154,13 @@ extending-time = 10
 damaging-speed = 260
 blowout-speed = 270
 lift_scalar = 0.1
-drag_scalar = 0.8
+drag_scalar = 0.3
 pitch_scalar = 0.1
 flaps-position.0 =  0      ; CONF 0
 flaps-position.1 = 16, 240 ; CONF 1
 flaps-position.3 = 20, 196 ; CONF 2
 flaps-position.4 = 23, 190 ; CONF 3
+
 [FLAPS.4] //aileron droop & correct lift 1/2
 type = 1 
 system_type = 1 
@@ -168,7 +170,7 @@ damaging-speed = 240
 blowout-speed = 260 
 drag_scalar = 0.1
 pitch_scalar = 0.1
-lift_scalar = 0.75
+lift_scalar= 0.75
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 5, 215  ; CONF 1+F
 flaps-position.3 = 10, 196 ; CONF 2
@@ -182,10 +184,9 @@ damaging-speed = 240
 blowout-speed = 260 
 drag_scalar = 0
 pitch_scalar = 0
-lift_scalar=-0.6
+lift_scalar=-1
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.4 = 10, 186 ; CONF 3
-
 
 [GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
 engine_type 				= 1
