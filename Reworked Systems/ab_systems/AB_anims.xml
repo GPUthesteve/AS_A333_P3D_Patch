@@ -372,7 +372,8 @@ if{
 
 
 	<!-- New Spoiler inhibitor-->
-	(A:sim on ground, bool) 0 == if{
+	(A:sim on ground, bool) 0 == 
+	if{
 			(L:FMA_THRmode, number) 9 == || <!-- A.FLOOR-->
     		(L:Throttle_ani_fix_L, number) 75 &gt;= (L:Throttle_ani_fix_R, number) 75 &gt;= || || <!--MCT detent-->
     		(A:flaps handle index,number) 5 == || <!--CONF F-->
