@@ -33,6 +33,11 @@
 			</Script>
 		</Update>
 		<Update>
+			<script>
+				
+			</script>
+		</Update>
+		<Update>
 			<Script>
 			<!-- Align VS SCREEN -->
 			<!-- Initialize all variables when IRS are OFF -->
@@ -938,115 +943,6 @@
 							</Expression>
 						</Rotation>
 					</Element>
-				</Element>
-				<Element id="Rising runway">
-					<Element id="Rising runway">
-						<Visibility>
-						(L:PFD_CDI_SIGNAL, bool) 1 ==
-						(L:PFD_Yaw_Bar_Mode, bool) 0 == &amp;&amp;
-						(L:HDGavailScreen, bool) 1 == &amp;&amp;
-						(L:AB_TypeIdent, number) 51 == (L:AB_TypeIdent, number) 52 == || &amp;&amp;
-						(A:Radio height, feet) 14 - 200 &lt;= &amp;&amp;
-						</Visibility>
-						<Element>
-							<FloatPosition>100,100</FloatPosition>
-							<Polygon id="Horizon">
-								<Bright>True</Bright>
-								<LineWidth>3</LineWidth>
-								<LineColor>#ff80ff</LineColor>
-								<FillColor>#000000</FillColor>
-								<Point>
-									<FloatPosition>0,0</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>15,0</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>18,15</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>3,15</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>3,20</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>-3,20</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>-3,15</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>3,15</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>-19,15</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>-15,0</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>0,0</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>0,10</FloatPosition>
-								</Point>
-								<Point>
-									<FloatPosition>0,0</FloatPosition>
-								</Point>
-								<Axis id="Axis">
-									<FloatPosition>0,0</FloatPosition>
-								</Axis>
-							</Polygon>
-						</Element>
-						<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">							
-							<Axis>100,100</Axis>
-							<Transparent>True</Transparent>
-						</MaskImage>
-						<Shift id="Shift Vertical">
-							<Expression>
-								<Script>(A:PLANE PITCH DEGREES, radians) rddg (L:PFD_Radalt, number) 9.1 / - 20 min -24.5 max</Script>
-							</Expression>
-							<NonlinearityTable>
-								<NonlinearityEntry>
-									<ExpressionResult>40</ExpressionResult>
-									<FloatPosition>0,-144</FloatPosition>
-								</NonlinearityEntry>
-								<NonlinearityEntry>
-									<ExpressionResult>0</ExpressionResult>
-									<FloatPosition>0,1</FloatPosition>
-								</NonlinearityEntry>
-								<NonlinearityEntry>
-									<ExpressionResult>-40</ExpressionResult>
-									<FloatPosition>0,120</FloatPosition>
-								</NonlinearityEntry>
-							</NonlinearityTable>
-						</Shift>
-						<Shift id="Shift Horizontal">
-								<Expression>
-									<Script>(A:NAV1 CDI, number) 127 / 1.00 min -1.00 max</Script>
-								</Expression>
-								<NonlinearityTable>
-									<NonlinearityEntry>
-										<ExpressionResult>-1</ExpressionResult>
-										<FloatPosition>-61,0</FloatPosition>
-									</NonlinearityEntry>
-									<NonlinearityEntry>
-										<ExpressionResult>0</ExpressionResult>
-										<FloatPosition>0,0</FloatPosition>
-									</NonlinearityEntry>
-									<NonlinearityEntry>
-										<ExpressionResult>1</ExpressionResult>
-										<FloatPosition>61,0</FloatPosition>
-									</NonlinearityEntry>
-								</NonlinearityTable>
-							</Shift>
-						<Rotation>
-							<Expression>
-								<Script>(A:PLANE BANK DEGREES, radians) </Script>
-							</Expression>
-						</Rotation>
-					</Element>					
 				</Element>
 				<Element id="Radalt">
 					<Element id="Radalt Numbers">
@@ -10502,7 +10398,7 @@
 								%((L:FMA_Vertmode_arm, number) 1 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_arm, number) 4 == )%{if}%VS%{end}
-								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%ALT  CRZ%{end}
+								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%\{ladj=L}ALT  CRZ%{end}
 								%((L:FMA_Vertmode_arm, number) 6.5 == )%{if}%\{ladj=R}FINAL %{end}
 								%((L:FMA_Vertmode_arm, number) 6.70 == )%{if}%\{ladj=L}ALT  FINAL%{end}
 								%((L:FMA_Vertmode_arm, number) 6.75 == )%{if}%\{clr2}\{ladj=L}ALT%\{clr1}  FINAL%{end}
@@ -10515,7 +10411,7 @@
 						</GaugeText>
 					</Element>
 					<Element id="C2L2 Text2">
-						<Visibility>(L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || (L:AB_AP_ALT_Select, number) (L:MCDU_cruisealt, number) != &amp;&amp; </Visibility>
+						<Visibility>(L:FMA_Vertmode_arm, number) 5 == (L:FMA_Vertmode_arm, number) 2 == || </Visibility>
 						<FloatPosition>82,22</FloatPosition>
 						<GaugeText id="Line 2">
 							<Size>64,14</Size>
@@ -10551,7 +10447,7 @@
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L} ALT  CRZ%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT  CRZ%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
