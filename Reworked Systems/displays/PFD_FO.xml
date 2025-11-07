@@ -10424,7 +10424,7 @@
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%\{ladj=L}CLB%{end}
+								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT%{end}
 							</GaugeString>
