@@ -10393,6 +10393,7 @@
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 1 == )%{if}% %{end}
+								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 3 == )%{if}%DES%{end}
 								%((L:FMA_Vertmode_arm, number) 4 == )%{if}%VS%{end}
 								%((L:FMA_Vertmode_arm, number) 6 == )%{if}%\{ladj=L}ALT   CRZ%{end}
@@ -10425,7 +10426,6 @@
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
 								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
-								%((L:FMA_Vertmode_arm, number) 2.5 == )%{if}%OP  CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT%{end}
 							</GaugeString>
 						</GaugeText>

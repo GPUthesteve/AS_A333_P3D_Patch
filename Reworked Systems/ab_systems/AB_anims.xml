@@ -1,20 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<SimBase.Document
-        Type="AceXML"
-        version="1,0"
-        id="AB_Anim">
-<Descr>AceXML Document</Descr>
-<Filename>AB_Anim.xml</Filename>
-<SimGauge.Gauge id="Gauge">
-<FloatPosition>0.000,0.000</FloatPosition>
-<Update_When_Hidden>True</Update_When_Hidden>
-<Update id="AB_Anim">
-<Frequency>18</Frequency>
-<Script>
+﻿<Gauge Name="AB_anims" Version="1.0">
+  <Update Hidden="Yes">
 
 (L:Pause_code, bool) 0 ==
 if{
-<!--  Wiper anim L -->
+	<!--  Wiper anim L -->
 	(L:AB_wiperL, enum) 2 == (L:Wiperstart_fastL, enum) 0 == &amp;&amp; 
 	if{
 		1 (&gt; L:Wiperstart_fastL, enum)
@@ -64,7 +53,7 @@ if{
 		}
 	}
 	
-<!--  Wiper anim R -->
+	<!--  Wiper anim R -->
 	(L:AB_wiperR, enum) 2 == (L:Wiperstart_fastR, enum) 0 == &amp;&amp; 
 	if{
 		1 (&gt; L:Wiperstart_fastR, enum)
@@ -114,7 +103,7 @@ if{
 		}
 	}
 				
-<!--  AB_STDBYCompass_anim -->
+	<!--  AB_STDBYCompass_anim -->
 	(L:AB_STDBYCompass_anim_set, bool) 1 == (L:AB_STDBYCompass_anim, number) 99 &lt;= &amp;&amp;
 	if{
 		(L:AB_STDBYCompass_anim, number) 10 + (&gt; L:AB_STDBYCompass_anim, number)
@@ -124,7 +113,7 @@ if{
 		(L:AB_STDBYCompass_anim, number) 10 - (&gt; L:AB_STDBYCompass_anim, number)
 	}
 
-<!--  Sidewindow CP  -->
+	<!--  Sidewindow CP  -->
 	(A:GROUND VELOCITY, knots) 40 &gt;
 	(L:Sidewindow_pos_CP, number) 0 &gt; &amp;&amp;
 	if{	
@@ -211,7 +200,7 @@ if{
 
 	
 	
-<!--  Sidewindow FO -->
+	<!--  Sidewindow FO -->
 	(A:GROUND VELOCITY, knots) 40 &gt;
 	(L:Sidewindow_pos_FO, number) 0 &gt; &amp;&amp;
 	if{	
@@ -301,9 +290,9 @@ if{
 
 	
 	
-<!-- Cabin doors -->
+	<!-- Cabin doors -->
 	
-<!--  Jumpseat -->
+	<!--  Jumpseat -->
 	(L:Jumpseat_open, bool) 1 == (L:Jumpseat_pos, number) 10 &lt; &amp;&amp;
 	if{
 		(L:Jumpseat_pos, number) 0.3 + (&gt; L:Jumpseat_pos, number)
@@ -330,8 +319,8 @@ if{
 		1 (&gt; L:ASC_OBSERVER_SEAT_RET, bool) 
 	}
 
-<!--  Sunshade1 -->
-(L:Sunshade1_open, bool) 1 == (L:Sunshade1_pos, number) 100 &lt; &amp;&amp;
+	<!--  Sunshade1 -->
+	(L:Sunshade1_open, bool) 1 == (L:Sunshade1_pos, number) 100 &lt; &amp;&amp;
 	if{
 		(L:Sunshade1_pos, number) 3 + (&gt; L:Sunshade1_pos, number)
 	}
@@ -348,7 +337,7 @@ if{
 		0 (&gt; L:Sunshade1_close, bool) 
 	}
 
-<!--  Sunshade2 -->
+	<!--  Sunshade2 -->
 	(L:Sunshade2_open, bool) 1 == (L:Sunshade2_pos, number) 100 &lt; &amp;&amp;
 	if{
 		(L:Sunshade2_pos, number) 3 + (&gt; L:Sunshade2_pos, number)
@@ -368,7 +357,7 @@ if{
 
 
 
-<!-- Spoiler Logic removed here due to C++ code transfer -->
+	<!-- Spoiler Logic removed here due to C++ code transfer -->
 
 
 	<!-- New Spoiler inhibitor-->
@@ -407,7 +396,7 @@ if{
 		}
 	}
 	
-<!-- ECAM Lower Engine oil qty -->
+	<!-- ECAM Lower Engine oil qty -->
 	(L:EngL_Oil_qty, number) (L:EngL_Oil_qty_target, number) &lt;
 	if{
 		(L:EngL_Oil_qty, number) 0.1 + (&gt; L:EngL_Oil_qty, number)
@@ -428,7 +417,7 @@ if{
 	}
 	(L:EngR_Oil_qty_target, number) 0.00001 - (&gt; L:EngR_Oil_qty_target, number)
 
-<!-- Flap 1 mode -->
+	<!-- Flap 1 mode -->
 	(L:Flaps_handle_index_hist, number) 0 ==
 	(A:FLAPS HANDLE INDEX, number) 1 == &amp;&amp;
 	(A:AIRSPEED INDICATED, knots) 100 &lt;= &amp;&amp;
@@ -473,7 +462,7 @@ if{
 	}		
 }
 
-<!-- Wheelchocks -->
+	<!-- Wheelchocks -->
 	
 	(L:MCDU_Wheelchocks, bool) 1 ==
 	(A:SIM ON GROUND, bool) 1 == &amp;&amp;
@@ -494,7 +483,7 @@ if{
 		0 (&gt; L:Wheelchocks_Set, bool)
 	}
 
-<!-- Cones -->
+	<!-- Cones -->
 
 	(L:MCDU_cones, bool) 1 == 
 	(A:BRAKE PARKING POSITION, bool) 1 == 
@@ -510,7 +499,7 @@ if{
 		0 (&gt; L:Cones, bool)
 	}
 
-<!-- Ext Power -->
+	<!-- Ext Power -->
 
 	(L:MCDU_EXTPOWERCART, bool) 1 ==
 	(A:BRAKE PARKING POSITION, bool) 1 == 
@@ -558,7 +547,7 @@ if{
 	}
 
 
-<!-- Rudder limiter -->	
+	<!-- Rudder limiter -->	
 	240 (A:AIRSPEED TRUE, knots) 140 - - 2.4 / (&gt; L:Rudderspeed, number)
 	3.333 (L:Rudderspeed, number) 0.266 * 0.034 + * 165.83 * (&gt; L:Ruddermax, number)
 	(A:AIRSPEED TRUE, knots) 140 &lt;
@@ -571,7 +560,7 @@ if{
 		1879 (&gt; L:Ruddermax, number)
 	}
 		
-<!-- Downtrim limiter -->		
+	<!-- Downtrim limiter -->		
 	(A:ELEVATOR TRIM PCT, percent) -29 &lt;
 	if{
 		4743 (&gt; K:AXIS_ELEV_TRIM_SET)
@@ -776,7 +765,5 @@ if{
 		(L:Landlight_Distance, number) 33.360 / 1 max (&gt;L:AB_TAXILIGHT_SCALE_4, number) }
 	}
 
-</Script>
-</Update>
-</SimGauge.Gauge>
-</SimBase.Document>
+  </Update>
+</Gauge>
