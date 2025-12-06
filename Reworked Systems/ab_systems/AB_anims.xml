@@ -460,7 +460,6 @@ if{
 	if{
 		(&gt; K:PANEL_LIGHTS_TOGGLE)
 	}		
-}
 
 	<!-- Wheelchocks -->
 	
@@ -764,6 +763,6 @@ if{
 		(L:Landlight_Distance, number) 33.360 / 1 max (&gt;L:AB_TAXILIGHT_SCALE_3, number)
 		(L:Landlight_Distance, number) 33.360 / 1 max (&gt;L:AB_TAXILIGHT_SCALE_4, number) }
 	}
-
+}
   </Update>
 </Gauge>
