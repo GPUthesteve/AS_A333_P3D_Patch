@@ -10428,7 +10428,7 @@
 							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%    CLB%{end}
+								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%     CLB%{end}
 								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT%{end}
 							</GaugeString>
 						</GaugeText>
