@@ -289,7 +289,7 @@
 						<FontFace>AirbusPFD2</FontFace>
 						<FontHeight>11</FontHeight>
 						<FontColor>#ffffff</FontColor>
-						<BackgroundColor>#804000</BackgroundColor>
+						<BackgroundColor>#803000</BackgroundColor>
 						<HorizontalAlign>CENTER</HorizontalAlign>
 						<Multiline>True</Multiline>
 						<Tabs>0,71L,76L,105L,111L</Tabs>
@@ -729,7 +729,7 @@
 						<Bright>True</Bright>
 						<Width>250</Width>
 						<Height>350</Height>
-						<FillColor>#804000</FillColor>
+						<FillColor>#803000</FillColor>
 					</Rectangle>
 					<MaskImage id="Mask_attitude.bmp" Name="Mask_attitude.bmp">
 						<Axis>100,100</Axis>
@@ -908,7 +908,7 @@
 							<Width>300</Width>
 							<Height>300</Height>
 							<Bright>True</Bright>
-							<FillColor>#804000</FillColor>
+							<FillColor>#803000</FillColor>
 							<LineColor>#ffffff</LineColor>
 							<LineWidth>1</LineWidth>
 						</Rectangle>
@@ -952,7 +952,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x0080ff</FontColor>
 							<FontHeight>14</FontHeight>
-							<BackgroundColor>#804000</BackgroundColor>
+							<BackgroundColor>#803000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!d!%{end}
@@ -977,7 +977,7 @@
 							<FontFace>AirbusPFD2</FontFace>
 							<FontColor>0x00ff00</FontColor>
 							<FontHeight>12</FontHeight>
-							<BackgroundColor>#804000</BackgroundColor>
+							<BackgroundColor>#803000</BackgroundColor>
 							<HorizontalAlign>CENTER</HorizontalAlign>
 							<GaugeString>
 								%(1000 2500 (L:PFD_Radalt, number) rng)%{if}%((L:PFD_Radalt, number) 0.1 * int 10 *)%!4d!%{end}
@@ -6035,8 +6035,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
+						<LineColor>#803000</LineColor>
+						<FillColor>#803000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -7051,8 +7051,8 @@
 					<Polygon id="Fill">
 						<Bright>True</Bright>
 						<LineWidth>1</LineWidth>
-						<LineColor>#804000</LineColor>
-						<FillColor>#804000</FillColor>
+						<LineColor>#803000</LineColor>
+						<FillColor>#803000</FillColor>
 						<Point>
 							<FloatPosition>0,0</FloatPosition>
 						</Point>
@@ -10425,11 +10425,11 @@
 							</FontColorScript>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
+							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%CLB%{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT%{end}
+								%((L:FMA_Vertmode_arm, number) 2 == )%{if}%    CLB%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
@@ -10444,10 +10444,10 @@
 							<FontColor>#00ffff</FontColor>
 							<BackgroundColor>#010101</BackgroundColor>
 							<Bold>FALSE</Bold>
-							<HorizontalAlign>CENTER</HorizontalAlign>
+							<HorizontalAlign>LEFT</HorizontalAlign>
 							<GaugeString>
 								%((L:FMA_Vertmode_arm, number) 0 == )%{if}% %{end}
-								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%\{ladj=L}ALT   CRZ%{end}
+								%((L:FMA_Vertmode_arm, number) 5 == )%{if}%ALT   CRZ%{end}
 							</GaugeString>
 						</GaugeText>
 					</Element>
