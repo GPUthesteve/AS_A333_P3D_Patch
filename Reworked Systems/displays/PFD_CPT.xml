@@ -33,11 +33,6 @@
 			</Script>
 		</Update>
 		<Update>
-			<script>
-				
-			</script>
-		</Update>
-		<Update>
 			<Script>
 			<!-- Align VS SCREEN -->
 			<!-- Initialize all variables when IRS are OFF -->
