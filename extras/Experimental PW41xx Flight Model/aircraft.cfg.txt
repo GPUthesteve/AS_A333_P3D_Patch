@@ -188,10 +188,10 @@ lift_scalar=-1
 flaps-position.0 = 0	   ; CONF 0
 flaps-position.4 = 10, 186 ; CONF 3
 
-[GENERALENGINEDATA] //RB211-772B-60 "Trent 772B-60"
+[GENERALENGINEDATA]//PW4170A 
 engine_type 				= 1
-fuel_flow_scalar 			= 1
-min_throttle_limit 			= -0.4
+fuel_flow_scalar 			=1
+min_throttle_limit 			= -0.45
 max_contrail_temperature 		= -30
 Engine.0 				= 13.94, -31.06, -9.41
 Engine.1 				= 13.94,  31.06, -9.41
@@ -199,12 +199,12 @@ starter_type				= 1// added for test 2017_04_12 F.W.
 
 [TURBINEENGINEDATA]
 fuel_flow_gain 				= 0.001
-rated_N2_rpm 				= 10611
-afterburner_available 			= 0
+rated_N2_rpm 				= 10450
+afterburner_available 		= 0
 reverser_available 			= 1
-static_thrust 				= 71100
-inlet_area 				= 52
-thrustspecificfuelconsumption		= 0.343
+static_thrust 				= 70000
+inlet_area 					= 52
+thrustspecificfuelconsumption		= 0.333 
 
 [JET_ENGINE]	
 thrust_scalar 				=1
