@@ -191,7 +191,7 @@ flaps-position.4 = 10, 186 ; CONF 3
 [GENERALENGINEDATA]//PW4170A 
 engine_type 				= 1
 fuel_flow_scalar 			=1
-min_throttle_limit 			= -0.45
+min_throttle_limit 			= -0.4
 max_contrail_temperature 		= -30
 Engine.0 				= 13.94, -31.06, -9.41
 Engine.1 				= 13.94,  31.06, -9.41
