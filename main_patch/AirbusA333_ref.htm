@@ -252,10 +252,22 @@ if(isContaminated){
   return; // exit early, skip flex logic
 }
 
+	
+    // Effective runway length with wind adjustment 
+	function windRunwayAdjustment(runwayLength, windKnots){
+  const table = {
+    2000: 9, 2250: 10, 2500: 11, 2750: 12, 3000: 12,
+    3250: 13, 3500: 13, 3750: 14, 4000: 14
+  };
+  const keys = Object.keys(table).map(Number).sort((a,b)=>a-b);
+  const [low, high] = bracket(runwayLength, keys);
+  const adjPerKnot = interpolate(runwayLength, low, table[low], high, table[high]);
+  return windKnots * adjPerKnot;
+}
+    const windAdj = windRunwayAdjustment(rw, windComp);
+	const effectiveRunway = rw + windAdj;
+	banners += '<div class="caution-banner">Wind component: '+windComp+' kt → runway adjusted by '+Math.round(windAdj)+' m → effective '+Math.round(effectiveRunway)+' m</div>';
 
-    // Effective runway length with wind adjustment (~10 m per knot)
-    const effectiveRunway = rw + (windComp*10);
-    banners += '<div class="caution-banner">Wind component: '+windComp+' kt → effective runway '+effectiveRunway+' m</div>';
 
     // Temperature handling
     let temp;
