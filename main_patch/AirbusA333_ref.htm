@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>✈️ A330 Speed & Trim Calculator</title>
+  <title>✈️ A330 Takeoff Speed & Trim Calculator</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body{font-family:Arial,Helvetica,sans-serif;margin:20px;background:#f6f8fb;color:#0b2545}
@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <h1>✈️ A330 Speed & Trim Calculator</h1>
+  <h1>✈️ A330 Takeoff Speed & Trim Calculator</h1>
 
   <div class="panel">
     <label for="config">Configuration</label>
@@ -197,53 +197,60 @@
       document.getElementById("result").style.display="none";
       return;
     }
-  // Runway condition check
-  const condition = document.getElementById("condition").value;
-  if(condition !== "dry"){
-    banners += '<div class="error-banner">Runway '+condition+' — FLEX takeoff not permitted. Using TOGA thrust.</div>';
-    
-    // Still compute speeds with TOGA assumption
-    const [tLow,tHigh] = bracket(0, dataset.temps); // assume ISA for TOGA baseline
-    const [rLow,rHigh] = bracket(rw, dataset.runways);
+// Runway condition check — anything not 'dry' is treated as contaminated
+const condition = document.getElementById("condition").value;
+const isContaminated = (condition !== "dry");
 
-    const A = parseSpeeds(dataset.values[String(tLow)][String(rLow)]);
-    const B = parseSpeeds(dataset.values[String(tLow)][String(rHigh)]);
-    const C = parseSpeeds(dataset.values[String(tHigh)][String(rLow)]);
-    const D = parseSpeeds(dataset.values[String(tHigh)][String(rHigh)]);
+if(isContaminated){
+  banners += '<div class="error-banner">Runway '+condition+' — treated as CONTAMINATED. FLEX not permitted. Using TOGA thrust.</div>';
 
-    const speeds = [];
-    for(let i=0;i<3;i++){
-      const v_rLow = interpolate(0, tLow, A[i], tHigh, C[i]);
-      const v_rHigh = interpolate(0, tLow, B[i], tHigh, D[i]);
-      const v_final = interpolate(rw, rLow, v_rLow, rHigh, v_rHigh);
-      speeds.push(Math.round(v_final));
-    }
-    const V1 = speeds[0], VR = speeds[1], V2 = speeds[2];
-    const trim = computeTrim(cg);
+  // Compute speeds with TOGA assumption (baseline ISA temp)
+  const [tLow,tHigh] = bracket(0, dataset.temps);
+  const [rLow,rHigh] = bracket(rw, dataset.runways);
 
-    const minV2Res = getMinV2(cfg, weight);
-    if(minV2Res.minV2!==null){
-      if(V2 >= minV2Res.minV2){
-        banners += '<div class="ok-banner">Computed V2 '+V2+' ≥ min V2 '+minV2Res.minV2+' — SAFE (TOGA)</div>';
-      } else {
-        banners += '<div class="error-banner">Computed V2 '+V2+' < min V2 '+minV2Res.minV2+' — NOT SAFE (TOGA)</div>';
-      }
-    }
+  const A = parseSpeeds(dataset.values[String(tLow)][String(rLow)]);
+  const B = parseSpeeds(dataset.values[String(tLow)][String(rHigh)]);
+  const C = parseSpeeds(dataset.values[String(tHigh)][String(rLow)]);
+  const D = parseSpeeds(dataset.values[String(tHigh)][String(rHigh)]);
 
-    document.getElementById("banners").innerHTML = banners;
-    const resultEl = document.getElementById("result");
-    resultEl.style.display = "block";
-    resultEl.innerHTML =
-      '<strong>Config:</strong> ' + cfg + '<br>' +
-      '<strong>Runway:</strong> ' + rw + ' m<br>' +
-      '<strong>Condition:</strong> ' + condition + '<br>' +
-      '<strong>Weight:</strong> ' + weight + ' t<br>' +
-      '<strong>CG:</strong> ' + cg + ' % MAC<br>' +
-      '<strong>Computed Speeds (TOGA):</strong> V1=' + V1 + ', VR=' + VR + ', V2=' + V2 + '<br>' +
-      '<strong>Trim (UP):</strong> ' + trim + '<br>' +
-      (minV2Res.minV2!==null ? ('<strong>Min V2 (sea level):</strong> ' + minV2Res.minV2 + ' kt') : '');
-    return; // exit early, skip flex logic
+  const speeds = [];
+  for(let i=0;i<3;i++){
+    const v_rLow = interpolate(0, tLow, A[i], tHigh, C[i]);
+    const v_rHigh = interpolate(0, tLow, B[i], tHigh, D[i]);
+    const v_final = interpolate(rw, rLow, v_rLow, rHigh, v_rHigh);
+    speeds.push(Math.round(v_final));
   }
+  let V1 = speeds[0], VR = speeds[1], V2 = speeds[2];
+
+  // Apply Airbus contaminated runway correction: V1 - 2 kt
+  V1 = Math.max(V1 - 2, 0);
+  banners += '<div class="caution-banner">Contaminated runway — V1 corrected by -2 kt per Airbus guidance.</div>';
+
+  const trim = computeTrim(cg);
+  const minV2Res = getMinV2(cfg, weight);
+
+  if(minV2Res.minV2!==null){
+    if(V2 >= minV2Res.minV2){
+      banners += '<div class="ok-banner">Computed V2 '+V2+' ≥ min V2 '+minV2Res.minV2+' — SAFE (TOGA)</div>';
+    } else {
+      banners += '<div class="error-banner">Computed V2 '+V2+' < min V2 '+minV2Res.minV2+' — NOT SAFE (TOGA)</div>';
+    }
+  }
+
+  document.getElementById("banners").innerHTML = banners;
+  const resultEl = document.getElementById("result");
+  resultEl.style.display = "block";
+  resultEl.innerHTML =
+    '<strong>Config:</strong> ' + cfg + '<br>' +
+    '<strong>Runway:</strong> ' + rw + ' m<br>' +
+    '<strong>Condition:</strong> ' + condition + ' (treated as contaminated)<br>' +
+    '<strong>Weight:</strong> ' + weight + ' t<br>' +
+    '<strong>CG:</strong> ' + cg + ' % MAC<br>' +
+    '<strong>Computed Speeds (TOGA):</strong> V1=' + V1 + ', VR=' + VR + ', V2=' + V2 + '<br>' +
+    '<strong>Trim (UP):</strong> ' + trim + '<br>' +
+    (minV2Res.minV2!==null ? ('<strong>Min V2 (sea level):</strong> ' + minV2Res.minV2 + ' kt') : '');
+  return; // exit early, skip flex logic
+}
 
 
     // Effective runway length with wind adjustment (~10 m per knot)
