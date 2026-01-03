@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>✈️ A330 Speed & Trim Calculator</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;margin:20px;background:#f6f8fb;color:#0b2545}
+    h1{color:#003366;margin:0 0 12px}
+    .panel{background:#fff;padding:14px;border-radius:10px;box-shadow:0 1px 8px rgba(0,0,0,0.06);margin-bottom:12px}
+    label{display:block;margin-top:10px;font-weight:700}
+    input,select{padding:8px;margin-top:6px;width:280px;border-radius:8px;border:1px solid #d7e1ef}
+    button{margin-top:12px;padding:10px 14px;background:#003366;color:#fff;border:none;border-radius:8px;cursor:pointer}
+    button:hover{background:#0055aa}
+    #result{margin-top:12px;background:#fff;padding:14px;border-radius:8px;box-shadow:0 1px 6px rgba(0,0,0,0.04)}
+    .error-banner { background:#fff4f4; border-left:4px solid #8a2b2b; padding:10px; border-radius:6px; color:#8a2b2b; font-weight:700; margin-top:8px; }
+    .ok-banner { background:#f1fff4; border-left:4px solid #0b7a3a; padding:10px; border-radius:6px; color:#0b7a3a; font-weight:700; margin-top:8px; }
+    .caution-banner { background:#fff8ec; border-left:4px solid #b36b00; padding:10px; border-radius:6px; color:#b36b00; font-weight:700; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <h1>✈️ A330 Speed & Trim Calculator</h1>
+
+  <div class="panel">
+    <label for="config">Configuration</label>
+    <select id="config">
+      <option value="1+F">1+F</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <label for="temp">Temperature (°C)</label>
+    <input id="temp" type="number" placeholder="leave blank for dynamic optimum flex" />
+
+    <label for="aircond">Air conditioning/Packs</label>
+    <select id="aircond">
+      <option value="off">OFF</option>
+      <option value="on">ON</option>
+    </select>
+	<label for="weight">Takeoff weight (t)</label>
+    <input id="weight" type="number" value="220" step="0.1" />
+
+    <label for="cg">Center of Gravity (% MAC)</label>
+    <input id="cg" type="number" value="28" step="0.1" />
+	
+    <label for="runway">Corrected Runway length (m)</label>
+    <input id="runway" type="number" value="3000" />
+	
+	<label for="wind">Wind component (knots, +headwind / -tailwind)</label>
+	<input id="wind" type="number" value="0" />
+ 
+    <button id="calcBtn">Calculate</button>
+  </div>
+
+  <div id="banners"></div>
+  <div id="result" style="display:none;"></div>
+  <script>
+  // --- Certified data (shortened for demo) ---
+  const DATA = {
+    "1+F": {
+      temps:[-20,0,58],
+      runways:[3000,4000],
+      values:{
+        "-20":{ "3000":"160/161/166", "4000":"160/171/175" },
+        "0":  { "3000":"156/157/162", "4000":"153/166/171" },
+        "58": { "3000":"143/143/147", "4000":"167/167/170" }
+      }
+    },
+    "2": {
+      temps:[-20,0,58],
+      runways:[2500,3000],
+      values:{
+        "-20":{ "2500":"150/151/156", "3000":"154/156/160" },
+        "0":  { "2500":"148/150/154", "3000":"152/154/158" },
+        "58": { "2500":"140/142/146", "3000":"146/148/151" }
+      }
+    },
+    "3": {
+      temps:[-20,0,58],
+      runways:[2000,3000],
+      values:{
+        "-20":{ "2000":"145/147/150", "3000":"150/152/155" },
+        "0":  { "2000":"143/145/148", "3000":"148/150/153" },
+        "58": { "2000":"136/138/141", "3000":"142/144/147" }
+      }
+    }
+  };
+
+  const TRIM_ANCHORS = [
+    { cg: 15, trim: 7.0 },
+    { cg: 21, trim: 7.0 },
+    { cg: 24, trim: 5.5 },
+    { cg: 26, trim: 4.0 },
+    { cg: 32, trim: 1.5 },
+    { cg: 35, trim: 0.0 },
+    { cg: 41, trim: 0.0 }
+  ];
+
+  const MIN_V2_SEALEVEL = {
+    "1+F": {"130":117,"140":121,"150":125,"160":130,"170":134,"180":137,"190":141,"200":145,"210":149,"220":152,"230":155,"240":159},
+    "2":   {"130":128,"140":128,"150":128,"160":128,"170":130,"180":133,"190":137,"200":140,"210":144,"220":147},
+    "3":   {"130":129,"140":129,"150":129,"160":129,"170":129,"180":129,"190":132,"200":135,"210":139,"220":142}
+  };
+  // Helpers
+  function interpolate(x,x1,y1,x2,y2){ if(x2===x1) return y1; return y1+(y2-y1)*((x-x1)/(x2-x1)); }
+  function bracket(value,arr){
+    if(value<=arr[0])return[arr[0],arr[0]];
+    if(value>=arr[arr.length-1])return[arr[arr.length-1],arr[arr.length-1]];
+    for(let i=0;i<arr.length-1;i++) if(value>=arr[i]&&value<=arr[i+1]) return [arr[i],arr[i+1]];
+    return [arr[0],arr[arr.length-1]];
+  }
+  function parseSpeeds(str){ return String(str).split('/').map(s=>parseInt(s,10)); }
+
+  function getMinV2(config,weight){
+    const table=MIN_V2_SEALEVEL[config];
+    if(!table) return {minV2:null,source:"missing"};
+    const cols=Object.keys(table).map(Number).sort((a,b)=>a-b);
+    if(weight<=cols[0]) return {minV2:table[String(cols[0])],source:"exact"};
+    if(weight>=cols[cols.length-1]) return {minV2:table[String(cols[cols.length-1])],source:"exact"};
+    let low=cols[0],high=cols[cols.length-1];
+    for(let i=0;i<cols.length-1;i++) if(weight>=cols[i]&&weight<=cols[i+1]) { low=cols[i]; high=cols[i+1]; break; }
+    const vLow=table[String(low)], vHigh=table[String(high)];
+    const interp = interpolate(weight, low, vLow, high, vHigh);
+    return { minV2: +interp.toFixed(1), source:"interpolated" };
+  }
+
+  function computeTrim(cg){
+    for(const a of TRIM_ANCHORS){ if(Math.abs(cg - a.cg) < 1e-9) return +a.trim.toFixed(2); }
+    if(cg <= TRIM_ANCHORS[0].cg) return +TRIM_ANCHORS[0].trim.toFixed(2);
+    if(cg >= TRIM_ANCHORS[TRIM_ANCHORS.length-1].cg) return +TRIM_ANCHORS[TRIM_ANCHORS.length-1].trim.toFixed(2);
+    for(let i=0;i<TRIM_ANCHORS.length-1;i++){
+      const lower = TRIM_ANCHORS[i], upper = TRIM_ANCHORS[i+1];
+      if(cg >= lower.cg && cg <= upper.cg){
+        const val = interpolate(cg, lower.cg, lower.trim, upper.cg, upper.trim);
+        return +val.toFixed(2);
+      }
+    }
+    return +TRIM_ANCHORS[0].trim.toFixed(2);
+  }
+
+  // Dynamic flex suggestion: scan temps in 1°C steps
+  function suggestFlexTemp(cfg, weight, runway){
+    const dataset = DATA[cfg];
+    if(!dataset) return null;
+    const minV2Res = getMinV2(cfg, weight);
+    if(minV2Res.minV2===null) return null;
+
+    let best=null;
+    for(let t=58;t>=-20;t--){ // scan downwards
+      const [tLow,tHigh] = bracket(t, dataset.temps);
+      const [rLow,rHigh] = bracket(runway, dataset.runways);
+      const A = parseSpeeds(dataset.values[String(tLow)][String(rLow)]);
+      const B = parseSpeeds(dataset.values[String(tLow)][String(rHigh)]);
+      const C = parseSpeeds(dataset.values[String(tHigh)][String(rLow)]);
+      const D = parseSpeeds(dataset.values[String(tHigh)][String(rHigh)]);
+      const speeds=[];
+      for(let i=0;i<3;i++){
+        const v_rLow = interpolate(t, tLow, A[i], tHigh, C[i]);
+        const v_rHigh = interpolate(t, tLow, B[i], tHigh, D[i]);
+        const v_final = interpolate(runway, rLow, v_rLow, rHigh, v_rHigh);
+        speeds.push(Math.round(v_final));
+      }
+      const V2 = speeds[2];
+      if(V2 >= minV2Res.minV2){ best=t; break; }
+    }
+    return best;
+  }
+  document.getElementById("calcBtn").addEventListener("click",()=>{
+    const cfg = document.getElementById("config").value;
+    const tempField = document.getElementById("temp").value;
+    const aircond = document.getElementById("aircond").value;
+    const rw = parseInt(document.getElementById("runway").value,10);
+    const weight = parseFloat(document.getElementById("weight").value);
+    const cg = parseFloat(document.getElementById("cg").value);
+    const windComp = parseFloat(document.getElementById("wind")?.value || "0"); // +headwind, -tailwind
+
+    let banners = "";
+
+    // Weight validation
+    if(isNaN(weight) || weight<121 || weight>242){
+      document.getElementById("banners").innerHTML =
+        '<div class="error-banner">Invalid weight: must be between 121 t and 242 t (MTOW).</div>';
+      document.getElementById("result").style.display="none";
+      return;
+    }
+
+    const dataset = DATA[cfg];
+    if(!dataset){
+      document.getElementById("banners").innerHTML =
+        '<div class="error-banner">No certified speed data for configuration '+cfg+'.</div>';
+      document.getElementById("result").style.display="none";
+      return;
+    }
+
+    // Effective runway length with wind adjustment (~10 m per knot)
+    const effectiveRunway = rw + (windComp*10);
+    banners += '<div class="caution-banner">Wind component: '+windComp+' kt → effective runway '+effectiveRunway+' m</div>';
+
+    // Temperature handling
+    let temp;
+    if(tempField===""){
+      const suggested = suggestFlexTemp(cfg, weight, effectiveRunway);
+      if(suggested===null){
+        document.getElementById("banners").innerHTML =
+          '<div class="error-banner">No safe flex temperature found for current inputs.</div>';
+        document.getElementById("result").style.display="none";
+        return;
+      }
+      temp = aircond==="on" ? (suggested-2) : suggested;
+      banners += '<div class="caution-banner">Suggested optimum flex temp: '+suggested+' °C'+(aircond==='on'?' → effective '+temp+' °C (AC ON)':'')+'</div>';
+    } else {
+      const entered = parseFloat(tempField);
+      if(isNaN(entered)){
+        document.getElementById("banners").innerHTML =
+          '<div class="error-banner">Enter a valid numeric temperature or leave blank for suggested flex.</div>';
+        document.getElementById("result").style.display="none";
+        return;
+      }
+      temp = aircond==="on" ? (entered-2) : entered;
+      if(aircond==="on"){
+        banners += '<div class="caution-banner">Air conditioning ON — effective temp reduced by 2 °C to '+temp+' °C</div>';
+      }
+    }
+
+    // Interpolation brackets
+    const [tLow,tHigh] = bracket(temp, dataset.temps);
+    const [rLow,rHigh] = bracket(effectiveRunway, dataset.runways);
+
+    // Parse corner values
+    const A = parseSpeeds(dataset.values[String(tLow)][String(rLow)]);
+    const B = parseSpeeds(dataset.values[String(tLow)][String(rHigh)]);
+    const C = parseSpeeds(dataset.values[String(tHigh)][String(rLow)]);
+    const D = parseSpeeds(dataset.values[String(tHigh)][String(rHigh)]);
+
+    // Bilinear interpolation for V1/VR/V2
+    const speeds = [];
+    for(let i=0;i<3;i++){
+      const v_rLow = interpolate(temp, tLow, A[i], tHigh, C[i]);
+      const v_rHigh = interpolate(temp, tLow, B[i], tHigh, D[i]);
+      const v_final = interpolate(effectiveRunway, rLow, v_rLow, rHigh, v_rHigh);
+      speeds.push(Math.round(v_final));
+    }
+    const V1 = speeds[0], VR = speeds[1], V2 = speeds[2];
+
+    // Trim
+    const trim = computeTrim(cg);
+
+    // V2 safety check
+    const minV2Res = getMinV2(cfg, weight);
+    if(minV2Res.minV2===null){
+      banners += '<div class="caution-banner">No min V2 data available for this configuration.</div>';
+    } else if(V2 >= minV2Res.minV2){
+      banners += '<div class="ok-banner">Computed V2 '+V2+' ≥ min V2 '+minV2Res.minV2+' ('+minV2Res.source+') — SAFE</div>';
+    } else {
+      banners += '<div class="error-banner">Computed V2 '+V2+' < min V2 '+minV2Res.minV2+' ('+minV2Res.source+') — NOT SAFE</div>';
+    }
+    document.getElementById("banners").innerHTML = banners;
+
+    // Output
+    const resultEl = document.getElementById("result");
+    resultEl.style.display = "block";
+    resultEl.innerHTML =
+      '<strong>Config:</strong> ' + cfg + '<br>' +
+      '<strong>Temp (effective):</strong> ' + temp + ' °C' + (aircond==='on'?' (AC ON)':'') + '<br>' +
+      '<strong>Runway:</strong> ' + rw + ' m (effective ' + effectiveRunway + ' m)' + '<br>' +
+      '<strong>Wind component:</strong> ' + windComp + ' kt<br>' +
+      '<strong>Weight:</strong> ' + weight + ' t<br>' +
+      '<strong>CG:</strong> ' + cg + ' % MAC<br>' +
+      '<strong>Computed Speeds:</strong> V1=' + V1 + ', VR=' + VR + ', V2=' + V2 + '<br>' +
+      '<strong>Trim (UP):</strong> ' + trim + '<br>' +
+      (minV2Res.minV2!==null ? ('<strong>Min V2 (sea level):</strong> ' + minV2Res.minV2 + ' kt (' + minV2Res.source + ')') : '');
+  });
+</script>
+<footer style="margin-top:20px; font-size:2em; color:red; font-weight:bold; text-align:center;"> ⚠️ For simulation purposes only — not for real‑world Calculations</footer> </body> </html>
+
