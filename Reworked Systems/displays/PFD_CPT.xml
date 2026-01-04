@@ -119,17 +119,6 @@
 			</Script>
 			</Update>
 			<Update>
-				<Script>
-				<!-- Activate NEO features -->
-				(A:Title, string) lc 'neo' sstr -1 !=
-								if{
-								1 (&gt;L:AB_NEO_features,number) }
-								els{
-								0 (&gt;L:AB_NEO_features,number) }
-				
-				</Script>
-			</Update>
-			<Update>
 			<Script>
 			<!-- Destination Airport Elevation from SIM, not NAVDATA. Because (L:AB_AP_MCDU_RWYALT, number) is offering Treshold altitude from NAVDATA. Will not work on default flat airports in P3D.
 			AB_DEST_ICAO 1 to 4 deliver ASCII numbers for ICAO letters from FMGS.dll. Then sim value is then read in fs9gps gauge. That's the best solution for the <Element id="landing elevation strip"> -->
@@ -245,14 +234,19 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -25 max
+							<Script>
+								(A:sim on ground, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg 0 &gt;= &amp;&amp;
+								if{
+									0
+								} els{
+								(A:PLANE PITCH DEGREES, radians) rddg 15 min -25 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
-								
 								(A:PLANE PITCH DEGREES, radians) -25 &lt;
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg 0.53 * 
+								}
 								}
 							</Script>
 						</Expression>
@@ -313,14 +307,18 @@
 					<Shift>
 						<Expression>
 							<Script>
-								(A:PLANE PITCH DEGREES, radians) rddg 30 min -10 max
+								(A:sim on ground, bool) 1 == (A:PLANE PITCH DEGREES, radians) rddg 0 &gt;= &amp;&amp;
+								if{
+									0
+								} els{
+									(A:PLANE PITCH DEGREES, radians) rddg 15 min -10 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
-								}
-								
+									}
 								(A:PLANE PITCH DEGREES, radians) -10 &lt;
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg 0.5 * 
+									}
 								}
 							</Script>
 						</Expression>
@@ -376,7 +374,8 @@
 					</MaskImage>
 					<Shift>
 						<Expression>
-							<Script>(A:PLANE PITCH DEGREES, radians) rddg 15 min -25 max
+							<Script>
+								(A:PLANE PITCH DEGREES, radians) rddg 15 min -25 max
 								if{
 									(A:PLANE PITCH DEGREES, radians) rddg
 								}
