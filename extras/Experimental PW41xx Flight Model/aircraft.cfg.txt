@@ -175,18 +175,6 @@ flaps-position.0 = 0	   ; CONF 0
 flaps-position.2 = 5, 215  ; CONF 1+F
 flaps-position.3 = 10, 196 ; CONF 2
 
-[FLAPS.5] //Correct lift 3/F
-type = 1 
-system_type = 1 
-span-outboard = 0.25
-extending-time = 20 
-damaging-speed = 240 
-blowout-speed = 260 
-drag_scalar = 0
-pitch_scalar = 0
-lift_scalar=-1
-flaps-position.0 = 0	   ; CONF 0
-flaps-position.4 = 10, 186 ; CONF 3
 
 [GENERALENGINEDATA]//PW4170A 
 engine_type 				= 1
