@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SimBase.Document
+        Type="AceXML"
+        version="1,0"
+        id="MCDU2c">
+<Descr>AceXML Document</Descr>
+<Filename>MCDU2c.xml</Filename>
+<SimGauge.Gauge id="Gauge">
+<FloatPosition>0.000,0.000</FloatPosition>
+<Update_When_Hidden>True</Update_When_Hidden>
+<Update id="MCDU2c">
+<Frequency>12</Frequency>
+<Script>
+
+<!-- MCDU2 Checklist Valid -->
+	(L:Load2, number) 1 ==
+	<!-- -BCA180301
+	(L:DC_ESS_Avail, number) 1 == &amp;&amp;
+	-->
+	if{
+		1 (&gt; L:MCDU2_CL_Valid,bool)
+	}
+<!-- MCDU2 Doors Valid -->
+	(A:SIM ON GROUND,bool) 1 ==
+	(L:Wheelchocks, bool) 1 ==
+	(A:BRAKE PARKING INDICATOR, bool) 1 == || &amp;&amp;
+	(A:ENG1 N1 RPM, percent) 10 &lt; &amp;&amp;
+	(A:ENG2 N1 RPM, percent) 10 &lt; &amp;&amp;
+	(L:AB_PDS_Eng1Master, number) 0 == &amp;&amp;
+	(L:AB_PDS_Eng2Master, number) 0 == &amp;&amp;
+	if{
+		1 (&gt; L:MCDU2_Doors_Valid,bool)
+	}
+				
+	els{
+		0 (&gt; L:MCDU2_Doors_Valid,bool)
+	}
+				
+<!-- MCDU2 Gnd Services Valid -->
+	(A:SIM ON GROUND,bool) 1 ==
+	(A:BRAKE PARKING INDICATOR, bool) 1 == &amp;&amp;
+	(L:Wheelchocks, bool) 1 == ||
+	(A:GROUND VELOCITY, knots) 0.3 &lt; &amp;&amp;
+	if{
+		1 (&gt; L:MCDU2_GndServ_Valid,bool)
+	}
+
+	els{
+        0 (&gt; L:MCDU2_GndServ_Valid,bool)
+	}
+
+<!-- MCDU2 Off -->		
+<!-- -BCA180301
+	(L:DC_ESS_Avail, number) 0 ==
+	if{
+		0 (&gt; L:Enable_MCDU2_Scratchpad, number)
+		0 (&gt; L:MCDU2_Page, number)
+		0 (&gt; L:MCDU2_Lum, number)
+	}
+-->
+				
+<!-- MCDU2 ACFT States Load Locked -->		
+	(A:SIM ON GROUND,bool) 0 == 
+	if{
+		0 (&gt; L:AB_ACFTState_Gnd_Avail, bool)
+		1 (&gt; L:AB_ACFTState_OnAir_Avail, bool)
+	}
+	(A:SIM ON GROUND,bool) 1 == 
+	if{
+		1 (&gt; L:AB_ACFTState_Gnd_Avail, bool)
+		0 (&gt; L:AB_ACFTState_OnAir_Avail, bool)
+	}
+				
+<!-- Scratchpad -->
+	(L:Enable_MCDU2_Scratchpad, number) 1 ==
+	(L:Scratchpad_invalid, bool) 0 == &amp;&amp;
+	(L:Scratchpad_invalid2, bool) 0 == &amp;&amp;
+	if{
+		(L:Scratchpad_Clr, bool) 0 ==
+		if{
+			<!-- -->				
+			(L:Scratchpad_pt, number) 1 ==
+			(L:MCDU2_mouseclick_bypass, bool) 1 == &amp;&amp;
+			if{
+				10 (&gt; L:Scratchpad_NumSt, number)
+				(L:Scratchpad_Num, number) (&gt; L:Scratchpad, number)
+				0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+			}
+						
+			<!-- -->
+			(L:Scratchpad_pt, number) 1 &gt;					
+			(L:MCDU2_mouseclick_bypass, bool) 1 == &amp;&amp;
+			if{
+				(L:Scratchpad_ST, bool) 0 ==
+				if{
+					(L:Scratchpad, number) 10 * (L:Scratchpad_Num, number) + (&gt; L:Scratchpad, number)
+				}
+				(L:Scratchpad_ST, bool) 1 ==
+				if{
+					(L:Scratchpad_NumSt, number) 1000 &lt;
+					if{
+						(L:Scratchpad, number) (L:Scratchpad_Num, number) (L:Scratchpad_NumSt, number) / + (&gt; L:Scratchpad, number)
+						(L:Scratchpad_NumSt, number) 10 * (&gt; L:Scratchpad_NumSt, number)
+					}
+				}							
+				0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+			}
+		}
+
+	<!-- Delete -->
+		(L:Scratchpad_Clr, bool) 1 ==
+		if{
+			(L:Scratchpad_ST, bool) 0 ==
+			if{
+				(L:MCDU2_mouseclick_bypass, bool) 1 ==
+				if{
+					(L:Scratchpad, number) 10 / flr (&gt; L:Scratchpad, number)
+					(L:Scratchpad_pt, number) 1 - (&gt; L:Scratchpad_pt, number)
+		
+					(L:Scratchpad, number)	0 ==
+					if{
+						0 (&gt; L:Scratchpad_pt, number)
+						0 (&gt; L:Scratchpad_NumSt, number)
+					}
+					0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+				}
+			}
+		
+			(L:Scratchpad_ST, bool) 1 ==
+			if{
+				(L:Scratchpad_NumSt, number) 1000 ==
+				if{
+					(L:MCDU2_mouseclick_bypass, bool) 1 ==
+					if{
+						(L:Scratchpad_NumSt, number) 10 / (&gt; L:Scratchpad_NumSt, number)
+						(L:Scratchpad, number) 10 * flr 10 / (&gt; L:Scratchpad, number)
+						0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+					}
+				}
+
+				(L:Scratchpad_NumSt, number) 100 ==
+				if{
+					(L:MCDU2_mouseclick_bypass, bool) 1 ==
+					if{
+						(L:Scratchpad_NumSt, number) 10 / (&gt; L:Scratchpad_NumSt, number)
+						(L:Scratchpad, number) flr (&gt; L:Scratchpad, number)
+						0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+					}
+				}
+				
+				(L:Scratchpad_NumSt, number) 10 ==
+				if{
+					(L:MCDU2_mouseclick_bypass, bool) 1 ==
+					if{
+						0 (&gt; L:Scratchpad_ST, bool)
+						0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+					}
+				}
+			}
+			0 (&gt; L:Scratchpad_Clr, bool)
+		}
+	}
+	
+	<!-- Input Format Check -->
+	
+		<!-- 2 Digit -->	
+		(L:Scratchpad, number) 100 &lt;
+		(L:Scratchpad_ST, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Scratchpad_2digit_valid, bool)
+		}
+		els{
+			0 (&gt; L:Scratchpad_2digit_valid, bool)
+		}	
+	
+		<!-- 2 Digit PT -->	
+		(L:Scratchpad, number) 100 &lt;
+		(L:Scratchpad_ST, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt; L:Scratchpad_2digitST_valid, bool)
+		}
+		els{
+			0 (&gt; L:Scratchpad_2digitST_valid, bool)
+		}
+		
+		<!-- 3 Digit -->
+		(L:Scratchpad, number) 1000 &lt;
+		(L:Scratchpad_ST, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Scratchpad_3digit_valid, bool)
+		}
+		els{
+			0 (&gt; L:Scratchpad_3digit_valid, bool)
+		}
+
+		<!-- 3 Digit PT-->
+		(L:Scratchpad, number) 1000 &lt;
+		(L:Scratchpad_ST, bool) 1 == &amp;&amp;
+		if{
+			1 (&gt; L:Scratchpad_3digitST_valid, bool)
+		}
+		els{
+			0 (&gt; L:Scratchpad_3digitST_valid, bool)
+		}
+		
+		<!-- Percent -->
+		(L:Scratchpad, number) 100 &lt;=
+		(L:Scratchpad_ST, bool) 0 == &amp;&amp;
+		if{
+			1 (&gt; L:Scratchpad_percent_valid, bool)
+		}
+		els{
+			0 (&gt; L:Scratchpad_percent_valid, bool)
+		}		
+		
+		<!-- Reset BAD FORMAT and NOT ALLOWED -->
+		(L:Enable_MCDU2_Scratchpad, number) 1 ==
+		(L:Scratchpad_invalid, bool) 1 ==
+		(L:Scratchpad_invalid2, bool) 1 == || &amp;&amp;
+		(L:Scratchpad_Clr, bool) 1 == &amp;&amp;
+		if{
+			0 (&gt; L:MCDU2_mouseclick_bypass, bool)
+			0 (&gt; L:Scratchpad_invalid, bool)
+			0 (&gt; L:Scratchpad_invalid2, bool)
+			0 (&gt; L:Scratchpad_Clr, bool)
+		}
+
+	<!-- Insert Reset -->
+		(L:Scratchpad_Rst, bool) 1 ==
+		if{
+			0 (&gt; L:Scratchpad, number)
+			0 (&gt; L:Scratchpad_Num, number)
+			0 (&gt; L:Scratchpad_NumSt, number)
+			0 (&gt; L:Scratchpad_pt, number)
+			0 (&gt; L:Scratchpad_ST, bool)
+			0 (&gt; L:Scratchpad_Rst, bool)
+		}
+
+<!-- Load Fuel Page -->
+		<!-- fixed constraints, can be manually setted-->
+		400 (&gt; L:MCDU2_FP_max_Pax, number) <!-- 1-class-->
+		44.84 (&gt; L:MCDU2_FP_max_Cargo, number) <!-- per TCDS-->
+
+		<!--below values are automatically setted via aircraft.cfg-->
+		(A:FUEL TANK LEFT MAIN CAPACITY, gallons) 
+		(A:FUEL TANK RIGHT MAIN CAPACITY, gallons) +
+		(A:FUEL TANK LEFT AUX CAPACITY, gallons) +
+		(A:FUEL TANK RIGHT AUX CAPACITY, gallons) +
+		(A:FUEL TANK CENTER2 CAPACITY, gallons) +  
+		(A:FUEL WEIGHT PER GALLON, pounds) * 2.20462 / 10 / near 100 / (&gt; L:MCDU2_FP_max_Fuel, number)				<!-- max fuel in kg (0.785kg/l or 6.551 lb/US Gal) -->
+		(A:MAX GROSS WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_max_Tow, number)			<!-- MTOW at brake release -->
+		(A:EMPTY WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_empty_weight, number)		 <!-- OEW (incl. unusable fuel) -->
+
+	<!-- FOB Calc -->	
+	(A:FUEL TANK LEFT MAIN QUANTITY, gallons) 
+	(A:FUEL TANK RIGHT MAIN QUANTITY, gallons) +
+	(A:FUEL TANK LEFT AUX QUANTITY, gallons) +
+	(A:FUEL TANK RIGHT AUX QUANTITY, gallons) +
+	(A:FUEL TANK CENTER QUANTITY, gallons) +
+	(A:FUEL TANK CENTER2 QUANTITY, gallons) +  
+	<!-- F.W. 2019.09.09 -->
+	<!-- ATTENTION: Airbus uses different specific fuel weight (0.785kg/l) than sim (0.8028kg/l), so for A330 I now take AIRBUS values into account, so that all indications on ECAM etc. do match -->
+	<!-- (A:FUEL WEIGHT PER GALLON, pounds) * 2.20462 / 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	 -->
+	<!-- F.W. 2020.01.16 -->
+	<!--  3.785411784 * 0.785 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)  -->	
+	 3.785411784 * 0.8028 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	
+	
+	<!-- ZFW Calc -->	
+	(L:MCDU2_FP_empty_weight, number)
+	(L:AB_MCDU2_LS_PAX_KG, number) 1000 / (L:AB_MCDU2_LS_PAX, number) * +
+	(L:AB_MCDU2_LS_CAR_KG, number) + (&gt; L:MCDU2_FP_ZFW_weight, number)
+
+	<!-- TOW Calc -->	
+	<!-- did remove the fix substraction of 0.543t here -->
+	(L:MCDU2_FP_ZFW_weight, number)	(L:AB_MCDU2_LS_FUEL_KG, number) + (&gt; L:MCDU2_FP_To_weight, number)
+
+	<!-- Pax On Board Calc -->
+	(L:FSDT_GSX_BOARDING_STATE, number) 3 &lt;=
+	(L:FSDT_GSX_DEBOARDING_STATE, number) 3 &lt;= &amp;&amp;	
+	if{	
+		(A:PAYLOAD STATION WEIGHT:1, pounds)
+		(A:PAYLOAD STATION WEIGHT:2, pounds) + 2.20462 / (L:AB_MCDU2_LS_PAX_KG, number) / near (&gt; L:MCDU2_Loaded_Pax, number)
+	}
+	
+	<!-- Loaded Cargo Calc -->
+	(A:PAYLOAD STATION WEIGHT:3, pounds)
+	(A:PAYLOAD STATION WEIGHT:4, pounds) + 2.20462 / 1000 / (&gt; L:MCDU2_Loaded_Cargo, number)	
+	
+	<!-- Pax Boarding -->
+	(L:AB_MCDU2_LS_PAX, number) 0 !=
+	(L:MCDU2_FP_Load_PAX, number) 0 == &amp;&amp;
+	<!-- (L:MCDU2_Loaded_Pax, number) (L:AB_MCDU2_LS_PAX, number) != &amp;&amp; --> 
+	<!-- (L:MCDU2_Loaded_Pax, number) (L:AB_MCDU2_LS_PAX, number) != --> 
+	<!-- (L:MCDU2_Loaded_Pax, number) 0 != || &amp;&amp; -->
+	<!-- (L:MCDU2_FP_Load_Pax, number) 0 == &amp;&amp; -->
+	if{
+		1 (&gt; L:MCDU2_FP_Load_Pax, number)
+	}
+	
+	(L:MCDU2_FP_Load_Pax, number) 1 ==
+	(L:AB_MCDU2_LD_LOAD, number) 1 ==
+	(L:AB_MCDU2_LD_LOAD, number) 4 == || &amp;&amp;
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &lt;= &amp;&amp;	
+	
+	(L:FSDT_GSX_BOARDING_STATE,number) 4 ==
+	(L:FSDT_GSX_BOARDING_STATE,number) 5 == ||
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &gt; &amp;&amp; ||
+	
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 4 ==
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 5 == ||
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 3 &gt; &amp;&amp; ||
+	if{
+		2 (&gt; L:MCDU2_FP_Load_Pax, number)
+	}
+
+	(L:MCDU2_FP_Load_Pax, number) 2 == ||
+	(L:MCDU2_Loaded_Pax, number) (L:AB_MCDU2_LS_PAX, number) == &amp;&amp;
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &lt;= &amp;&amp;	
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 3 &lt;= &amp;&amp; ||
+	
+	(L:FSDT_GSX_BOARDING_STATE,number) 6 ==
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &gt; &amp;&amp; ||
+	if{
+		3 (&gt; L:MCDU2_FP_Load_Pax, number)
+	}
+	
+	<!-- Cargo Loading -->
+	(L:AB_MCDU2_LS_CAR_KG, number) 0 !=
+	(L:MCDU2_FP_Load_Cargo, number) 0 == &amp;&amp;
+	if{
+		1 (&gt; L:MCDU2_FP_Load_Cargo, number)
+	}
+
+	(L:MCDU2_FP_Load_Cargo, number) 1 ==
+	(L:AB_MCDU2_LD_LOAD, number) 2 ==
+	(L:AB_MCDU2_LD_LOAD, number) 4 == || &amp;&amp;
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &lt;= &amp;&amp;
+	
+	(L:FSDT_GSX_DEBOARDING_STATE, number) 4 ==
+	(L:FSDT_GSX_DEBOARDING_STATE, number) 5 == ||
+	(L:FSDT_GSX_DEBOARDING_STATE, number) 3 &gt; &amp;&amp; ||
+	(L:FSDT_GSX_DEBOARDING_CARGO_PERCENT, number) 100 != &amp;&amp;
+	
+	(L:FSDT_GSX_BOARDING_CARGO_PERCENT,number) 100 &lt;
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &gt; &amp;&amp; ||
+	if{
+		2 (&gt; L:MCDU2_FP_Load_Cargo, number)
+	}
+
+	(L:MCDU2_FP_Load_Cargo, number) 2 == ||
+	(L:MCDU2_Loaded_Cargo, number) 100 * near 100 / (L:AB_MCDU2_LS_CAR_KG, number) 100 * near 100 / 0.03 + &lt; &amp;&amp;
+	(L:MCDU2_Loaded_Cargo, number) 100 * near 100 / (L:AB_MCDU2_LS_CAR_KG, number) 100 * near 100 / 0.03 - &gt; &amp;&amp;	
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &lt;= &amp;&amp;
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 3 &lt;= &amp;&amp; ||	
+	
+	(L:FSDT_GSX_BOARDING_CARGO_PERCENT,number) 100 ==
+	(L:FSDT_GSX_BOARDING_STATE,number) 3 &gt; &amp;&amp; ||
+	if{
+		3 (&gt; L:MCDU2_FP_Load_Cargo, number)
+	}
+	
+	<!-- Fuel Loading -->
+	(L:AB_MCDU2_LS_FUEL_KG, number) 0 !=
+	(L:MCDU2_FP_Load_Fuel, number) 0 == &amp;&amp;
+	if{
+		1 (&gt; L:MCDU2_FP_Load_Fuel, number)
+	}
+	
+	(L:MCDU2_FP_Load_Fuel, number) 1 ==
+	(L:AB_MCDU2_LD_LOAD, number) 3 ==
+	(L:AB_MCDU2_LD_LOAD, number) 4 == || &amp;&amp;	
+	if{
+		2 (&gt; L:MCDU2_FP_Load_Fuel, number)
+	}
+	
+	(L:MCDU2_FP_Load_Fuel, number) 2 ==
+	(L:MCDU2_Load_act_Fuel, number) (L:AB_MCDU2_LS_FUEL_KG, number) 100 * int 100 / 0.03 + &lt; &amp;&amp;
+	(L:MCDU2_Load_act_Fuel, number) (L:AB_MCDU2_LS_FUEL_KG, number) 100 * int 100 / 0.03 - &gt; &amp;&amp;
+	if{
+		3 (&gt; L:MCDU2_FP_Load_Fuel, number)
+	}
+	
+	<!-- Instant Loading -->
+	(L:AB_MCDU2_LS_FUEL_KG, number) 0 !=
+	(L:MCDU2_FP_Load_Instant, number) 0 == &amp;&amp;
+	if{
+		1 (&gt; L:MCDU2_FP_Load_Instant, number)
+	}
+	
+	(L:MCDU2_FP_Load_Instant, number) 1 ==
+	(L:AB_MCDU2_LD_LOAD, number) 4 == &amp;&amp;
+	if{
+		2 (&gt; L:MCDU2_FP_Load_Instant, number)
+	}
+	
+	(L:MCDU2_FP_Load_Instant, number) 2 ==
+	(L:MCDU2_Loaded_Pax, number) (L:AB_MCDU2_LS_PAX, number) == &amp;&amp;
+	(L:MCDU2_Loaded_Cargo, number) 100 * near 100 / (L:AB_MCDU2_LS_CAR_KG, number) 100 * near 100 / == &amp;&amp;
+	(L:MCDU2_Load_act_Fuel, number) (L:AB_MCDU2_LS_FUEL_KG, number) 100 * near 100 / == &amp;&amp;
+	if{
+		3 (&gt; L:MCDU2_FP_Load_Instant, number)
+	}
+
+	<!-- Refueling with GSX - detect Airbus Fueling System and start-->         
+	(L:FSDT_GSX_REFUELING_STATE,number) 4 == 
+	if{
+		1 (&gt; L:FSDT_GSX_DISABLE_DETECT_REFUELING, number)	
+	}	
+
+	(L:FSDT_GSX_REFUELING_STATE,number) 5 ==
+	(L:FSDT_GSX_FUELHOSE_CONNECTED, number) 1 == &amp;&amp;
+	(L:MCDU2_Doors_Valid,bool) 1 == &amp;&amp;
+	if{
+		(L:AB_MCDU2_LS_FUEL_KG, number) 1000 * (&gt; L:AB_MCDU2_LD_FUEL, number)
+		3 (&gt; L:AB_MCDU2_LD_LOAD, number)
+	}
+
+	<!-- Pilots and Crew boarding - deboarding with GSX-->	
+	<!-- C&D Aircraft State-->		
+	(L:ASC_filetoload, number) 1 ==
+	if{
+		1 (&gt;L:FSDT_GSX_PILOTS_NOT_DEBOARDING, number)
+		1 (&gt;L:FSDT_GSX_CREW_NOT_DEBOARDING, number)
+		0 (&gt;L:FSDT_GSX_PILOTS_NOT_BOARDING, number)
+		0 (&gt;L:FSDT_GSX_CREW_NOT_BOARDING, number)
+	}
+	
+	<!-- Turnaround Aircraft State-->		
+	(L:ASC_filetoload, number) 2 ==
+	if{
+		1 (&gt;L:FSDT_GSX_PILOTS_NOT_DEBOARDING, number)
+		1 (&gt;L:FSDT_GSX_CREW_NOT_DEBOARDING, number)
+		1 (&gt;L:FSDT_GSX_PILOTS_NOT_BOARDING, number)
+		1 (&gt;L:FSDT_GSX_CREW_NOT_BOARDING, number)
+	}
+		
+	<!-- Auto Unload Pax Cargo and reset fuel without GSX-->
+	(L:AB_AES_On,bool) 0 ==
+	(L:Flightmode, number) 10 == &amp;&amp;
+	if{
+		(L:AB_DOOR_PAX_LEFT_FWD1, number) 100 ==
+		(L:AB_DOOR_PAX_LEFT_FWD2, number) 100 == ||
+		(L:MCDU2_Doors_Valid,bool) 1 == &amp;&amp;
+		(L:MCDU2_FP_Unload_Pax, bool) 0 == &amp;&amp;
+		if{
+			0 (&gt;L:AB_MCDU2_LS_PAX, number)
+			0 (&gt;L:MCDU2_Loaded_Pax, number)
+			0 (&gt;L:MCDU2_FP_Load_Pax, number)
+			0 (&gt;L:AB_MCDU2_LS_Pax_Ent, number)
+			0 (&gt;L:AB_MCDU2_LS_Pax, number)
+			0 (&gt;L:AB_MCDU2_LS_RES, number)
+			0 (&gt;L:AB_MCDU2_LD_Pax, number)
+		}
+		
+		(L:AB_DOOR_CARGO_FWD, number) 100 ==
+		(L:AB_DOOR_CARGO_AFT, number) 100 == &amp;&amp;
+		(L:MCDU2_Doors_Valid,bool) 1 == &amp;&amp;
+		(L:MCDU2_FP_Unload_Cargo, bool) 0 == &amp;&amp;
+		if{
+			0 (&gt;L:AB_MCDU2_LS_CAR_KG, number)
+			0 (&gt;L:MCDU2_Loaded_Cargo, number)
+			0 (&gt;L:MCDU2_FP_Load_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LS_Cargo_Ent, number)
+			0 (&gt;L:AB_MCDU2_LS_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LS_RES, number)
+			0 (&gt;L:AB_MCDU2_LD_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LS_FUEL_KG, number)
+			0 (&gt;L:AB_MCDU2_LS_FUEL_Ent, number)
+			0 (&gt;L:MCDU2_FP_Load_Fuel, number)
+		}
+	}
+
+	<!-- Reset Pax and Cargo with GSX-->
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 5 ==
+	if{
+		(L:FSDT_GSX_NUMPASSENGERS, number) (L:FSDT_GSX_NUMPASSENGERS_DEBOARDING_TOTAL, number) ==
+		(L:FSDT_GSX_DEBOARDING_CARGO_PERCENT,number) 100 == &amp;&amp;
+		(L:MCDU2_FP_Load_Pax, number) 2 == &amp;&amp;
+		(L:MCDU2_FP_Load_Cargo, number) 2 == &amp;&amp;
+		if{
+			0 (&gt;L:AB_MCDU2_LS_PAX, number)
+			0 (&gt;L:MCDU2_Loaded_Pax, number)
+			0 (&gt;L:AB_MCDU2_LS_Pax_Ent, number)
+			0 (&gt;L:AB_MCDU2_LS_Pax, number)
+			0 (&gt;L:AB_MCDU2_LD_Pax, number)
+			0 (&gt;L:MCDU2_FP_Load_Pax, number)
+			0 (&gt;L:AB_MCDU2_LS_CAR_KG, number)
+			0 (&gt;L:MCDU2_Loaded_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LS_Cargo_Ent, number)
+			0 (&gt;L:AB_MCDU2_LS_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LD_Cargo, number)
+			0 (&gt;L:MCDU2_FP_Load_Cargo, number)
+			0 (&gt;L:AB_MCDU2_LD_LOAD, number)
+			0 (&gt;L:AB_MCDU2_LS_Chg, bool)
+			0 (&gt;L:AB_MCDU2_LS_RES, number)
+		}	
+	}
+
+	<!-- Necessary adjustment because of delay setting ACT PAX to zero-->	
+	<!--(L:AB_AES_On,bool) 1 ==
+	(L:AB_MCDU2_LS_PAX, number) 0 == &amp;&amp;
+	if{
+		0 (&gt;L:MCDU2_FP_Load_Pax, number)
+	}-->		
+
+	<!-- Reset Fuel with GSX-->
+	(L:FSDT_GSX_DEBOARDING_STATE,number) 4 ==	
+	if{
+		0 (&gt;L:AB_MCDU2_LS_FUEL_KG, number)
+		0 (&gt;L:AB_MCDU2_LS_FUEL_Ent, number)
+		0 (&gt;L:MCDU2_FP_Load_Fuel, number)
+	}
+	
+	<!-- Default CoG -->
+	(L:AB_MCDU2_LS_CG, number) 0 ==
+	if{
+		26 (&gt; L:AB_MCDU2_LS_CG, number)
+		4.0 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	
+<!-- Detect Autoload -->	
+	(L:ASC_AUTOLOAD_TRIGGER, number) 1 ==
+	if{
+		1 (&gt; L:ASC_Autoload_act, bool)
+	}
+	
+<!-- Load User Settings -->
+
+	(L:MCDU2_CL_Valid,bool) 1 ==
+	if{
+		(L:set1_ASC_AB_SND_CAB,Number) (&gt; L:AB_SND_CAB,bool)
+	}
+	(L:set1_ASC_AB_SND_FC,number) (&gt; L:AB_SND_FC,bool) 
+	(L:set1_ASC_AB_SND_ATC,number) (&gt; L:AB_SND_ATC,bool)
+	(L:set1_ASC_AB_Enh_GPWS,number) (&gt; L:AB_Enh_GPWS,bool) 
+	(L:set1_ASC_Panelbar_Off,number) (&gt; L:Panelbar_Off,bool)
+	(L:set1_ASC_Panelbar_Mode_2D,number) (&gt; L:Panelbar_Mode_2D,bool)
+	(L:set1_ASC_Panelbar_Left_Init,number) (&gt; L:Panelbar_Left_Init,bool)
+	(L:set1_ASC_Panelbar_Snd_Mute,number) (&gt; L:Panelbar_Snd_Mute,bool)
+	(L:set1_ASC_Wingviewbar_On,number) (&gt; L:Wingviewbar_On,bool)
+	(L:set1_ASC_AB_CL_Infobar,number) (&gt; L:AB_CL_Infobar, bool)
+	(L:set1_ASC_AB_AES_On,number) (&gt; L:AB_AES_On,bool)
+	(L:set1_ASC_CL_CAT1_ILS,number) (&gt; L:CL_CAT1_ILS,bool)
+	(L:set1_ASC_CP_App_Speedbrake,number) (&gt; L:CP_App_Speedbrake,bool)
+	(L:set1_ASC_AB_250Kt_Limiter,number) (&gt; L:AB_250Kt_Limiter,bool)
+	(L:set1_ASC_AB_TOD_Pause_On,number) (&gt; L:AB_TOD_Pause_On,bool)
+	(L:set1_ASC_AB_NextWP_Pause_On,number) (&gt; L:AB_NextWP_Pause_On,bool)
+	(L:set1_ASC_ViewSys_Off,number) (&gt; L:ViewSys_Off,bool)
+	(L:set1_ASC_AB_FDR_On,number) (&gt; L:AB_FDR_On,bool)
+	(L:set1_AB_ACFTState_Default,number) (&gt; L:AB_ACFTState_Default,number)
+	(L:set1_ASC_FBWAutoRudGnd,number) (&gt; L:FBWAUTORUDGND, bool)
+	(L:set1_ASC_CL_HotKey_Off,number) (&gt; L:AB_CL_HotKey_Off,bool)
+	(L:set1_ASC_AB_ThurstBump, number) (&gt; L:AB_ThurstBump,bool)
+	(L:set1_ASC_Vol_Batteries, number) (&gt; L:ASC_Vol_Batteries, number)
+	(L:set1_ASC_Vol_Avionics, number) (&gt; L:ASC_Vol_Avionics, number)
+	(L:set1_ASC_Vol_Cooling, number) (&gt; L:ASC_Vol_Cooling, number)
+	(L:set1_ASC_Vol_GPWS, number) (&gt; L:ASC_Vol_GPWS, number)
+	(L:set1_ASC_Vol_Checklist_PF, number) (&gt; L:ASC_Vol_Checklist_PF, number)
+	(L:set1_ASC_Vol_Checklist_PnF, number) (&gt; L:ASC_Vol_Checklist_PnF, number)
+	(L:set1_ASC_Vol_ATC, number) (&gt; L:ASC_Vol_ATC, number)
+	(L:set1_ASC_Vol_CabinCrew, number) (&gt; L:ASC_Vol_CabinCrew, number)
+	(L:set1_ASC_AB_Tiller_Enabled, number) (&gt; L:AB_Tiller_Enabled, number)
+	(L:set1_ASC_Vol_GroundCrew, number) (&gt; L:ASC_Vol_GroundCrew, number)
+	(L:set1_ASC_AB_Sim_detect,number) (&gt; L:AB_Sim_detect,number)
+	(L:set1_ASC_PAX_Weight_KG,number) (&gt; L:AB_MCDU2_LS_PAX_KG, number)
+	(L:set1_ASC_MCDU_UNITS, number) (&gt; L:MCDU_UNITS, number)
+	(L:set1_ASC_AS_WeatherSource, number) (&gt; L:AS_WeatherSource, number)
+	(L:set1_ASC_Checklist_camera_disable, number) (&gt; L:Checklist_camera_disable, bool)
+	(L:set1_ASC_VF_ChasePlane_disable, number) (&gt; L:VF_ChasePlane_disable, bool)
+	(L:set1_ASC_AB_NextALTSTEP_Pause_On, number) (&gt; L:AB_NextALTSTEP_Pause_On, number)
+
+<!-- Misc -->
+	(L:AB_ACFTState_Default,number) (&gt; L:AB_ACFTState_Default_hist,number)
+				
+	<!-- F.W. 2019.02.25: Sorry, but currently I don't get the logic why "Load User Settings" is called above as it e.g. overwrites "AB_MCDU2_LS_PAX_KG" with zero!!!!! So I do shift at least following logic --> 
+	<!-- from before loading user setting to now doing it after loading usersetting :  			 -->
+	<!-- Default Pax Weight -->
+	(L:AB_MCDU2_LS_PAX_KG, number) 0 ==
+	if{
+		84 (&gt; L:AB_MCDU2_LS_PAX_KG, number)
+
+	}
+				
+</Script>
+</Update>
+</SimGauge.Gauge>
+</SimBase.Document>
