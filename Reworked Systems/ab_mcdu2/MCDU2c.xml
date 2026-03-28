@@ -265,15 +265,12 @@
 	<!--  3.785411784 * 0.785 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)  -->	
 	 3.785411784 * 0.8028 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	
 	
-	<!-- ZFW Calc -->	
-	(L:MCDU2_FP_empty_weight, number)
-	(L:AB_MCDU2_LS_PAX_KG, number) 1000 / (L:AB_MCDU2_LS_PAX, number) * +
-	(L:AB_MCDU2_LS_CAR_KG, number) + (&gt; L:MCDU2_FP_ZFW_weight, number)
-
 	<!-- TOW Calc -->	
-	<!-- did remove the fix substraction of 0.543t here -->
-	(L:MCDU2_FP_ZFW_weight, number)	(L:AB_MCDU2_LS_FUEL_KG, number) + (&gt; L:MCDU2_FP_To_weight, number)
+	(A:TOTAL WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
 
+	<!-- ZFW Calc -->	
+	(L:MCDU2_FP_To_weight, number) (L:MCDU2_Load_act_Fuel, number) - (&gt; L:MCDU2_FP_ZFW_weight, number) <!--Straightforward-->
+	
 	<!-- Pax On Board Calc -->
 	(L:FSDT_GSX_BOARDING_STATE, number) 3 &lt;=
 	(L:FSDT_GSX_DEBOARDING_STATE, number) 3 &lt;= &amp;&amp;	
