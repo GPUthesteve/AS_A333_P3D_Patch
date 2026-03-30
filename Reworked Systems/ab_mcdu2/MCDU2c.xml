@@ -247,9 +247,10 @@
 		(A:FUEL TANK LEFT AUX CAPACITY, gallons) +
 		(A:FUEL TANK RIGHT AUX CAPACITY, gallons) +
 		(A:FUEL TANK CENTER2 CAPACITY, gallons) +  
+		(A:FUEL TANK CENTER CAPACITY, gallons) +  
 		(A:FUEL WEIGHT PER GALLON, pounds) * 2.20462 / 10 / near 100 / (&gt; L:MCDU2_FP_max_Fuel, number)				<!-- max fuel in kg (0.785kg/l or 6.551 lb/US Gal) -->
-		(A:MAX GROSS WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_max_Tow, number)			<!-- MTOW at brake release -->
-		(A:EMPTY WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_empty_weight, number)		 <!-- OEW (incl. unusable fuel) -->
+		(A:MAX GROSS WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_max_Tow, number)			<!-- MTOW at brake release -->
+		(A:EMPTY WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_empty_weight, number)		 <!-- OEW (incl. unusable fuel) -->
 
 	<!-- FOB Calc -->	
 	(A:FUEL TANK LEFT MAIN QUANTITY, gallons) 
@@ -266,7 +267,7 @@
 	 3.785411784 * 0.8028 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	
 	
 	<!-- TOW Calc -->	
-	(A:TOTAL WEIGHT,pounds) 2000 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
+	(A:TOTAL WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
 
 	<!-- ZFW Calc -->	
 	(L:MCDU2_FP_To_weight, number) (L:MCDU2_Load_act_Fuel, number) - (&gt; L:MCDU2_FP_ZFW_weight, number) <!--Straightforward-->
