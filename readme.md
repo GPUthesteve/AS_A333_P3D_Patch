@@ -68,7 +68,7 @@ by editing `mcdu2c.xml`, one can thoroughly modify the aircraft's load limits (a
 <img width="1289" height="701" alt="image" src="https://github.com/user-attachments/assets/d4bad013-04fa-405e-b487-087337ac8763" />
 by directing the ZFW,MTOW, Max Fuel from aircraft.cfg (rather than predefined values, eg. pax value and cargo limit which is defined in TCDS)
 one can edit aircraft.cfg and make various "Weight Variant" out of this plane, eg. 242t version. 
-(or even fake 'three tank' variant, if MCDU Block fuel limit doesn't exist.- it doesn't :D)
+(or even fake 'three tank' variant, if MCDU Block fuel limit doesn't exist.)
 
 # Bug Reports
 
