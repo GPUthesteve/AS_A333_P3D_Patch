@@ -248,9 +248,9 @@
 		(A:FUEL TANK RIGHT AUX CAPACITY, gallons) +
 		(A:FUEL TANK CENTER2 CAPACITY, gallons) +  
 		(A:FUEL TANK CENTER CAPACITY, gallons) +  
-		(A:FUEL WEIGHT PER GALLON, pounds) * 2.20462 / 10 / near 100 / (&gt; L:MCDU2_FP_max_Fuel, number)				<!-- max fuel in kg (0.785kg/l or 6.551 lb/US Gal) -->
-		(A:MAX GROSS WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_max_Tow, number)			<!-- MTOW at brake release -->
-		(A:EMPTY WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_empty_weight, number)		 <!-- OEW (incl. unusable fuel) -->
+		(A:FUEL WEIGHT PER GALLON, pounds) * 2204.62 / (&gt; L:MCDU2_FP_max_Fuel, number) <!-- max fuel in kg (0.785kg/l or 6.551 lb/US Gal) -->
+		(A:MAX GROSS WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_max_Tow, number)			  <!-- MTOW at brake release -->
+		(A:EMPTY WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_empty_weight, number)		  <!-- OEW (incl. unusable fuel) -->
 
 	<!-- FOB Calc -->	
 	(A:FUEL TANK LEFT MAIN QUANTITY, gallons) 
@@ -259,12 +259,7 @@
 	(A:FUEL TANK RIGHT AUX QUANTITY, gallons) +
 	(A:FUEL TANK CENTER QUANTITY, gallons) +
 	(A:FUEL TANK CENTER2 QUANTITY, gallons) +  
-	<!-- F.W. 2019.09.09 -->
-	<!-- ATTENTION: Airbus uses different specific fuel weight (0.785kg/l) than sim (0.8028kg/l), so for A330 I now take AIRBUS values into account, so that all indications on ECAM etc. do match -->
-	<!-- (A:FUEL WEIGHT PER GALLON, pounds) * 2.20462 / 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	 -->
-	<!-- F.W. 2020.01.16 -->
-	<!--  3.785411784 * 0.785 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)  -->	
-	 3.785411784 * 0.8028 * 10 / near 100 / (&gt; L:MCDU2_Load_act_Fuel, number)	
+	(A:FUEL WEIGHT PER GALLON, pounds) * 2204.62 / (&gt; L:MCDU2_Load_act_Fuel, number)	
 	
 	<!-- TOW Calc -->	
 	(A:TOTAL WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
@@ -282,7 +277,7 @@
 	
 	<!-- Loaded Cargo Calc -->
 	(A:PAYLOAD STATION WEIGHT:3, pounds)
-	(A:PAYLOAD STATION WEIGHT:4, pounds) + 2.20462 / 1000 / (&gt; L:MCDU2_Loaded_Cargo, number)	
+	(A:PAYLOAD STATION WEIGHT:4, pounds) + 2204.62 / (&gt; L:MCDU2_Loaded_Cargo, number)	
 	
 	<!-- Pax Boarding -->
 	(L:AB_MCDU2_LS_PAX, number) 0 !=
