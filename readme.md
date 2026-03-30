@@ -59,6 +59,15 @@ yes, as it sounds. I use flybywire's airbus display font for replacement.
 
 simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
+#Manipulating Pax limit 
+<img width="353" height="487" alt="image" src="https://github.com/user-attachments/assets/a8a216f6-c9c9-46e5-bbab-56b6dd36da54" />
+as seen in image, pax limit can now be manipulated (actually, it could, from the beginning, just found the workaround so)
+by editing `mcdu2c.xml`, one can thoroughly modify the aircraft's load limits (and fuel limit, somewhat)
+<img width="1289" height="701" alt="image" src="https://github.com/user-attachments/assets/d4bad013-04fa-405e-b487-087337ac8763" />
+by directing the ZFW,MTOW, Max Fuel from aircraft.cfg (rather than predefined values, eg. pax value and cargo limit which is defined in TCDS)
+one can edit aircraft.cfg and make various "Weight Variant" out of this plane, eg. 242t version. 
+(or even fake 'three tank' variant, if MCDU Block fuel limit doesn't exist.)
+
 # Bug Reports
 
 simply raise an issue like you'd do on normal github opensource repo.
