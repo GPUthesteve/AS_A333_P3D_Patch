@@ -59,8 +59,10 @@ yes, as it sounds. I use flybywire's airbus display font for replacement.
 
 simply reinstall fonts by given ones or replace those fonts in `c:\windows\fonts`
 
-#Manipulating Pax limit 
+# Manipulating Pax limit 
+
 <img width="353" height="487" alt="image" src="https://github.com/user-attachments/assets/a8a216f6-c9c9-46e5-bbab-56b6dd36da54" />
+
 as seen in image, pax limit can now be manipulated (actually, it could, from the beginning, just found the workaround so)
 by editing `mcdu2c.xml`, one can thoroughly modify the aircraft's load limits (and fuel limit, somewhat)
 <img width="1289" height="701" alt="image" src="https://github.com/user-attachments/assets/d4bad013-04fa-405e-b487-087337ac8763" />
