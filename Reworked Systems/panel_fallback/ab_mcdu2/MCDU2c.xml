@@ -266,8 +266,8 @@
 
 	<!-- ZFW Calc -->	
 	(L:MCDU2_FP_empty_weight, number) 
-	(L:AB_MCDU2_LS_PAX, number) (L:AB_MCDU2_LS_PAX_KG, number) *  + 
-	(L:AB_MCDU2_LS_CAR_KG, number) 100 * + 1000 / (&gt; L:MCDU2_FP_ZFW_weight, number)
+	(L:AB_MCDU2_LS_PAX, number) (L:AB_MCDU2_LS_PAX_KG, number) * 1000 / + <!--Actual weights in kg must be expressed in tonnes-->
+	(L:AB_MCDU2_LS_CAR_KG, number) + (&gt; L:MCDU2_FP_ZFW_weight, number) <!-- Cargo weights and OEW is indeed expressed in tonnes so no need to divide -->
 	
 	<!-- Pax On Board Calc -->
 	(L:FSDT_GSX_BOARDING_STATE, number) 3 &lt;=
