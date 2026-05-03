@@ -265,7 +265,9 @@
 	(A:TOTAL WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
 
 	<!-- ZFW Calc -->	
-	(L:MCDU2_FP_To_weight, number) (L:MCDU2_Load_act_Fuel, number) - (&gt; L:MCDU2_FP_ZFW_weight, number) <!--Straightforward-->
+	(L:MCDU2_FP_empty_weight, number) 
+	((L:AB_MCDU2_LS_PAX, number) (L:AB_MCDU2_LS_PAX_KG, number) * ) + 
+	((L:AB_MCDU2_LS_CAR_KG, number) 100 *) + (&gt; L:MCDU2_FP_ZFW_weight, number)
 	
 	<!-- Pax On Board Calc -->
 	(L:FSDT_GSX_BOARDING_STATE, number) 3 &lt;=
