@@ -221,7 +221,15 @@
       V2:      [130, 140, 145, 165, 175]
     }
   };
-
+const trimAnchors = [
+  { cg: 15, trim: 7.0 },
+  { cg: 21, trim: 7.0 }, // flat upper limit
+  { cg: 24, trim: 5.5 },
+  { cg: 28, trim: 3.5 },
+  { cg: 32, trim: 1.5 },
+  { cg: 35, trim: 0.0 },
+  { cg: 41, trim: 0.0 }  // flat lower limit
+ ];
   /* ======= Fit polynomials ======= */
   const fitDegree = { mtow: 1, speeds: 2 };
   const fitted = {};
@@ -337,8 +345,22 @@ function chooseRunwayAnchor(cfg, availableRunway, weight){
     return Math.round(windComp * 8);
   }
 
-  /* ======= Trim helper (simple linear) ======= */
-  function computeTrim(cg){ return Math.round((cg - 25) / 2); }
+  function computeTrim(cg){
+  // clamp CG to certified range
+  if(cg <= trimAnchors[0].cg) return trimAnchors[0].trim.toFixed(1);
+  if(cg >= trimAnchors[trimAnchors.length-1].cg) return trimAnchors[trimAnchors.length-1].trim.toFixed(1);
+
+  // find segment for interpolation
+  for(let i=0;i<trimAnchors.length-1;i++){
+    const a = trimAnchors[i], b = trimAnchors[i+1];
+    if(cg >= a.cg && cg <= b.cg){
+      const frac = (cg - a.cg) / (b.cg - a.cg);
+      const trimVal = a.trim + frac * (b.trim - a.trim);
+      return trimVal.toFixed(1);
+    }
+  }
+  return null;
+}
 
   /* ======= Output rendering ======= */
   function outputResult({ type, cfg, rw, effectiveRunway, condition, weight, cg, V1, VR, V2, trim, minV2, elevationFt, temp }){
