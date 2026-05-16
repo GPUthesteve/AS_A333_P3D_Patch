@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>A330 Takeoff Calculator</title>
+  <style>
+    :root{--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--accent:#2dd4bf;--danger:#ff6b6b;--ok:#6ee7b7}
+    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071021 0%,#071827 100%);color:#e6eef6;margin:0;padding:24px}
+    .wrap{max-width:980px;margin:0 auto}
+    header h1{margin:0 0 8px;font-size:20px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+    .card{background:var(--card);border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,.6)}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select{width:100%;padding:8px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.04);background:transparent;color:inherit;font-size:14px}
+    .row{display:flex;gap:10px}
+    .row > *{flex:1}
+    .small{font-size:13px;color:var(--muted)}
+    button{background:var(--accent);border:none;color:#042024;padding:10px 12px;border-radius:8px;font-weight:600;cursor:pointer}
+    .banners{margin:12px 0}
+    .banners .caution{background:#1b2b34;color:#dbeef0;padding:8px;border-radius:6px;margin-bottom:6px}
+    .banners .error{background:linear-gradient(90deg,#3b0f0f,#2b0b0b);color:#ffdede;padding:8px;border-radius:6px;margin-bottom:6px}
+    .banners .ok{background:linear-gradient(90deg,#052018,#073022);color:var(--ok);padding:8px;border-radius:6px;margin-bottom:6px}
+    #result{margin-top:12px;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);padding:12px;border-radius:8px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .speeds{display:flex;gap:8px;margin-top:8px}
+    .speeds .box{flex:1;background:rgba(255,255,255,.02);padding:10px;border-radius:8px;text-align:center}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:880px){ .grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="card">
+      <h1>A330 Takeoff Calculator</h1>
+      <div class="small"></div>
+    </header>
+
+    <main class="grid" style="margin-top:14px">
+      <section class="card" aria-labelledby="inputs">
+        <h3 id="inputs">Inputs</h3>
+
+        <div style="margin-top:8px">
+          <label>Configuration</label>
+          <select id="cfg">
+            <option value="1+F">Flaps 1 + F</option>
+            <option value="2">Flaps 2</option>
+			<option value="3">Flaps 3</option>
+          </select>
+        </div>
+
+        <div style="margin-top:10px" class="row">
+          <div>
+            <label>Takeoff Weight</label>
+            <input id="weight" type="number" step="0.1" value="230" />
+            <div class="small" style="margin-top:6px">
+              <select id="weightUnit" style="width:120px;padding:6px">
+                <option value="t">tonnes</option>
+                <option value="lb">lb</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label>CG (% MAC)</label>
+            <input id="cg" type="number" step="0.1" value="30" />
+          </div>
+        </div>
+
+        <div style="margin-top:10px" class="row">
+          <div>
+            <label>Runway length</label>
+            <input id="rw" type="number" step="1" value="4000" />
+          </div>
+          <div>
+            <label>Runway unit</label>
+            <select id="rwUnit">
+              <option value="m">m</option>
+              <option value="ft">ft</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:10px" class="row">
+          <div>
+            <label>Airport elevation (ft)</label>
+            <input id="elevation" type="number" step="1" value="0" />
+          </div>
+          <div>
+            <label>OAT (°C)</label>
+            <input id="temp" type="number" step="1" value="30" />
+          </div>
+        </div>
+
+        <div style="margin-top:10px" class="row">
+          <div>
+            <label>Wind component (kt)</label>
+            <input id="windComp" type="number" step="1" value="0" />
+          </div>
+          <div>
+            <label>Runway condition</label>
+            <select id="condition">
+              <option value="dry">Dry</option>
+              <option value="wet">Wet</option>
+              <option value="contaminated">Contaminated</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="row">
+          <div>
+            <label>Use FLEX</label>
+            <select id="useFlex">
+              <option value="auto">Auto (suggest)</option>
+              <option value="yes">Yes (use provided OAT)</option>
+              <option value="no">No (TOGA)</option>
+            </select>
+          </div>
+          <div style="display:flex;align-items:end">
+            <button id="calcBtn">Calculate</button>
+          </div>
+        </div>
+
+        <div class="banners" id="banners" style="margin-top:12px"></div>
+      </section>
+
+      <aside class="card">
+        <h3>Results</h3>
+        <div id="result" style="display:none">
+          <!-- populated by JS -->
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div></div>
+    </footer>
+  </div>
+
+  <script>
+  // -----------------------------
+  // A330 Single-Variant Calculator (HTML UI)
+  // Fitted polynomial implementation — tuned from anchor arrays below.
+  // -----------------------------
+
+  /* ======= Linear algebra helpers for polynomial least-squares ======= */
+  function zeros(n){ return Array(n).fill(0); }
+  function transpose(A){ const m=A.length,n=A[0].length; const T=Array.from({length:n},()=>Array(m).fill(0)); for(let i=0;i<m;i++) for(let j=0;j<n;j++) T[j][i]=A[i][j]; return T; }
+  function matMul(A,B){ const m=A.length,p=A[0].length,n=B[0].length; const C=Array.from({length:m},()=>Array(n).fill(0)); for(let i=0;i<m;i++) for(let k=0;k<p;k++) if(A[i][k]!==0) for(let j=0;j<n;j++) C[i][j]+=A[i][k]*B[k][j]; return C; }
+  function matVecMul(A,v){ const m=A.length,n=A[0].length; const r=Array(m).fill(0); for(let i=0;i<m;i++) for(let j=0;j<n;j++) r[i]+=A[i][j]*v[j]; return r; }
+  function solveLinear(A,b){
+    const n=A.length; const M=A.map(r=>r.slice()); const rhs=b.slice();
+    for(let k=0;k<n;k++){
+      let piv=k; for(let i=k+1;i<n;i++) if(Math.abs(M[i][k])>Math.abs(M[piv][k])) piv=i;
+      if(Math.abs(M[piv][k])<1e-12) return null;
+      if(piv!==k){ [M[k],M[piv]]=[M[piv],M[k]]; [rhs[k],rhs[piv]]=[rhs[piv],rhs[k]]; }
+      const diag=M[k][k];
+      for(let j=k;j<n;j++) M[k][j]/=diag; rhs[k]/=diag;
+      for(let i=0;i<n;i++) if(i!==k){
+        const f=M[i][k];
+        for(let j=k;j<n;j++) M[i][j]-=f*M[k][j];
+        rhs[i]-=f*rhs[k];
+      }
+    }
+    return rhs;
+  }
+  function polyDesignMatrix(x,degree){
+    const N=x.length; const A=Array.from({length:N},()=>Array(degree+1).fill(0));
+    for(let i=0;i<N;i++){ let val=1; for(let d=0;d<=degree;d++){ A[i][d]=val; val*=x[i]; } }
+    return A;
+  }
+  function fitPoly(x,y,degree){
+    if(x.length!==y.length||x.length===0) return null;
+    const A=polyDesignMatrix(x,degree); const AT=transpose(A); const ATA=matMul(AT,A); const ATy=matVecMul(AT,y);
+    return solveLinear(ATA,ATy);
+  }
+  function evalPoly(coeffs,x){ let v=0,pow=1; for(let i=0;i<coeffs.length;i++){ v+=coeffs[i]*pow; pow*=x; } return v; }
+
+  /* ======= Certified anchor arrays (replace with your exact certified numbers) ======= */
+  const mtowAnchors = {
+    "1+F": [
+      { runwayM: 2000, mtow: 212 },
+      { runwayM: 2500, mtow: 215 },
+      { runwayM: 3000, mtow: 234 },
+	  { runwayM: 3500, mtow: 238 },
+      { runwayM: 4000, mtow: 242 }
+    ],
+    "2": [
+      { runwayM: 2000, mtow: 210 },
+      { runwayM: 2500, mtow: 215 },
+      { runwayM: 3000, mtow: 232 },
+	  { runwayM: 3500, mtow: 235 },
+      { runwayM: 4000, mtow: 241 }
+    ],
+	"3": [
+      { runwayM: 2000, mtow: 208 },
+      { runwayM: 2500, mtow: 214 },
+      { runwayM: 3000, mtow: 230 },
+	  { runwayM: 3500, mtow: 233 },
+      { runwayM: 4000, mtow: 240 }
+    ]
+  };
+
+  const speedAnchors = {
+    "1+F": {
+      weights: [160, 180, 200, 220, 240],
+      V1:      [130, 145, 150, 150, 160],
+      VR:      [135, 145, 150, 155, 170],
+      V2:      [135, 150, 155, 160, 175]
+    },
+    "2": {
+      weights: [160, 180, 200, 220, 240],
+      V1:      [125, 140, 145, 155, 165],
+      VR:      [130, 140, 145, 160, 170],
+      V2:      [130, 145, 145, 165, 175]
+    },
+	"3": {
+      weights: [160, 180, 200, 220, 240],
+      V1:      [125, 135, 140, 155, 170],
+      VR:      [125, 135, 140, 160, 170],
+      V2:      [130, 140, 145, 165, 175]
+    }
+  };
+
+  /* ======= Fit polynomials ======= */
+  const fitDegree = { mtow: 1, speeds: 2 };
+  const fitted = {};
+
+  for(const cfg of Object.keys(mtowAnchors)){
+    const arr = mtowAnchors[cfg];
+    const x = arr.map(a=>a.runwayM);
+    const y = arr.map(a=>a.mtow);
+    fitted[cfg] = fitted[cfg] || {};
+    fitted[cfg].mtowCoeffs = fitPoly(x,y,fitDegree.mtow);
+    fitted[cfg].mtowDomain = { minRunway: Math.min(...x), maxRunway: Math.max(...x) };
+  }
+
+  for(const cfg of Object.keys(speedAnchors)){
+    const s = speedAnchors[cfg];
+    const x = s.weights;
+    fitted[cfg] = fitted[cfg] || {};
+    fitted[cfg].speedDomain = { minW: Math.min(...x), maxW: Math.max(...x) };
+    fitted[cfg].V1coeffs = fitPoly(x, s.V1, fitDegree.speeds);
+    fitted[cfg].VRcoeffs = fitPoly(x, s.VR, fitDegree.speeds);
+    fitted[cfg].V2coeffs = fitPoly(x, s.V2, fitDegree.speeds);
+  }
+  
+function chooseRunwayAnchor(cfg, availableRunway, weight){
+  const cfgData = mtowAnchors[cfg];
+  if(!cfgData) return availableRunway;
+
+  // Collect all certified anchors for this config
+  const anchors = cfgData.map(a => a.runwayM).sort((a,b)=>a-b);
+
+  // Pick the longest anchor ≤ available runway
+  let chosen = anchors.filter(r => r <= availableRunway).pop() || anchors[0];
+
+  // Conservative step-down: only if weight ≤ 80% of MTOW at full runway
+  const mtowFull = mtowLimit(availableRunway, cfg);
+  if(weight <= 0.8 * mtowFull){
+    const idx = anchors.indexOf(chosen);
+    if(idx > 0){
+      const shorter = anchors[idx-1];
+      // Check if shorter anchor is valid for this weight
+      const mtowShort = mtowLimit(shorter, cfg);
+      if(weight <= mtowShort){
+        chosen = shorter;
+      }
+    }
+  }
+
+  return chosen;
+}
+
+  /* ======= Derived functions using fitted coefficients ======= */
+  function mtowLimit(runwayM,cfg){
+    const cfgFit = fitted[cfg];
+    if(!cfgFit || !cfgFit.mtowCoeffs){
+      if(cfg==="1+F") return 200 + 0.02*(runwayM-2000);
+      if(cfg==="2") return 210 + 0.016*(runwayM-2000);
+      return 0;
+    }
+    const minR = cfgFit.mtowDomain.minRunway, maxR = cfgFit.mtowDomain.maxRunway;
+    const r = Math.max(minR, Math.min(maxR, runwayM));
+    return evalPoly(cfgFit.mtowCoeffs, r);
+  }
+  function v1FromWeight(weight,cfg){
+    const c = fitted[cfg] && fitted[cfg].V1coeffs;
+    if(!c) return 120 + 0.18*(weight-150);
+    const minW=fitted[cfg].speedDomain.minW, maxW=fitted[cfg].speedDomain.maxW;
+    const w=Math.max(minW,Math.min(maxW,weight));
+    return evalPoly(c,w);
+  }
+  function vrFromWeight(weight,cfg){
+    const c = fitted[cfg] && fitted[cfg].VRcoeffs;
+    if(!c) return 125 + 0.22*(weight-150);
+    const minW=fitted[cfg].speedDomain.minW, maxW=fitted[cfg].speedDomain.maxW;
+    const w=Math.max(minW,Math.min(maxW,weight));
+    return evalPoly(c,w);
+  }
+  function v2FromWeight(weight,cfg){
+    const c = fitted[cfg] && fitted[cfg].V2coeffs;
+    if(!c) return 130 + 0.25*(weight-150);
+    const minW=fitted[cfg].speedDomain.minW, maxW=fitted[cfg].speedDomain.maxW;
+    const w=Math.max(minW,Math.min(maxW,weight));
+    return evalPoly(c,w);
+  }
+
+  /* ======= Altitude correction and FLEX suggestion ======= */
+  function minV2AtAltitude(weight,elevationFt,cfg){
+    const base = v2FromWeight(weight,cfg);
+    const correction = (elevationFt/1000)*1.5;
+    return base + correction;
+  }
+  function suggestFlexTemp(weight,oat,runwayM,cfg){
+    const mtow = mtowLimit(runwayM,cfg);
+    const margin = Math.max(0, mtow - weight);
+    const flexDelta = Math.min(60, Math.floor(margin/2));
+    const baseFlex = oat + flexDelta;
+    return Math.round(baseFlex/5)*5;
+  }
+
+  /* ======= UI helpers ======= */
+  function toTonnes(weight,unit){ return unit==="lb" ? weight/2204.62 : weight; }
+  function toMetres(runway,unit){ return unit==="ft" ? runway/3.28084 : runway; }
+  function displayWeightVal(weight,unit){ return unit==="lb" ? (weight*2204.62).toFixed(1) : weight.toFixed(1); }
+  function displayRunwayVal(runway,unit){ return unit==="ft" ? (runway*3.28084).toFixed(0) : runway.toFixed(0); }
+  function appendBanner(banners,type,msg){ return banners + '<div class="'+type+'">'+msg+'</div>'; }
+  function outputBanners(banners){ const el=document.getElementById("banners"); if(el) el.innerHTML=banners; }
+  function setErrorBanner(msg){ outputBanners(appendBanner("", "error", msg)); hideResult(); }
+  function hideResult(){ const el=document.getElementById("result"); if(el) el.style.display="none"; }
+
+  /* ======= Simple runway wind adjustment helper ======= */
+  function windRunwayAdjustment(runwayM, windComp){
+    // headwind adds effective runway; tailwind subtracts.
+    // Use a conservative conversion: 1 kt headwind ~ +8 m effective runway (tunable).
+    return Math.round(windComp * 8);
+  }
+
+  /* ======= Trim helper (simple linear) ======= */
+  function computeTrim(cg){ return Math.round((cg - 25) / 2); }
+
+  /* ======= Output rendering ======= */
+  function outputResult({ type, cfg, rw, effectiveRunway, condition, weight, cg, V1, VR, V2, trim, minV2, elevationFt, temp }){
+    const el=document.getElementById("result");
+    if(!el) return;
+    const weightUnit=(document.getElementById("weightUnit")||{}).value||"t";
+    const rwUnit=(document.getElementById("rwUnit")||{}).value||"m";
+    const displayWeight=displayWeightVal(weight,weightUnit);
+    const displayRunway=displayRunwayVal(rw,rwUnit);
+    el.style.display="block";
+    el.innerHTML =
+      '<div class="meta"><strong>Aircraft:</strong> A330 &nbsp; <strong>Config:</strong> '+cfg+'</div>' +
+      '<div><strong>Runway available:</strong> '+displayRunway+' '+rwUnit+'</div>' +
+      '<div><strong>Effective runway (wind adj):</strong> '+Math.round(effectiveRunway)+' '+rwUnit+'</div>' +
+      '<div><strong>Airport elevation:</strong> '+elevationFt+' ft</div>' +
+      '<div><strong>Condition:</strong> '+condition+'</div>' +
+      '<div><strong>Weight:</strong> '+displayWeight+' '+weightUnit+'</div>' +
+      '<div><strong>CG:</strong> '+cg+' % MAC</div>' +
+      '<div style="margin-top:8px"><strong>Assumed Temp (°C):</strong> '+(temp!==undefined?temp:'N/A')+'</div>' +
+      '<div class="speeds" style="margin-top:10px">' +
+        '<div class="box"><strong>V1</strong><div style="font-size:20px;margin-top:6px">'+V1+' kt</div></div>' +
+        '<div class="box"><strong>VR</strong><div style="font-size:20px;margin-top:6px">'+VR+' kt</div></div>' +
+        '<div class="box"><strong>V2</strong><div style="font-size:20px;margin-top:6px">'+V2+' kt</div></div>' +
+      '</div>' +
+      '<div style="margin-top:10px"><strong>Trim (UP):</strong> '+trim+'</div>' +
+      (minV2!=null?('<div style="margin-top:8px"><strong>Min V2 (cert table):</strong> '+Math.round(minV2)+' kt</div>'):'');
+  }
+
+  /* ======= Main calculate() using fitted functions ======= */
+  function calculate(){
+    const cfg = (document.getElementById("cfg")||{}).value || "1+F";
+    const condition = (document.getElementById("condition")||{}).value || "dry";
+
+    const weightInput = parseFloat((document.getElementById("weight")||{}).value);
+    const weightUnit = (document.getElementById("weightUnit")||{}).value || "t";
+    const weight = toTonnes(weightInput, weightUnit);
+
+    const rwInput = parseFloat((document.getElementById("rw")||{}).value);
+    const rwUnit = (document.getElementById("rwUnit")||{}).value || "m";
+    const rw = toMetres(rwInput, rwUnit);
+
+    const elevationFt = parseFloat((document.getElementById("elevation")||{}).value) || 0;
+    const cg = parseFloat((document.getElementById("cg")||{}).value) || 30;
+    const oat = parseFloat((document.getElementById("temp")||{}).value) || 30;
+    const windComp = parseFloat((document.getElementById("windComp")||{}).value || 0);
+    const useFlex = (document.getElementById("useFlex")||{}).value || "auto";
+
+    if(isNaN(weight) || isNaN(cg) || isNaN(rw)){ setErrorBanner("Please enter valid numeric values for weight, CG, and runway length."); return; }
+
+    const windAdj = windRunwayAdjustment(rw, windComp);
+    const effectiveRunway = rw + windAdj;
+	let chosenRunway = chooseRunwayAnchor(cfg, effectiveRunway, weight);
+    let banners = "";
+    banners = appendBanner(banners, "caution", "Wind " + windComp + " kt → runway adjusted by " + Math.round(windAdj) + " m → effective " + Math.round(effectiveRunway) + " m");
+    if(condition !== "dry") banners = appendBanner(banners, "error", "Runway " + condition + " — FLEX not permitted. Using TOGA thrust.");
+
+    const mtow = mtowLimit(effectiveRunway, cfg);
+    if(weight > mtow){ setErrorBanner("Weight exceeds MTOW for runway length ("+Math.round(mtow)+" t)."); return; }
+
+    const V1 = Math.round(v1FromWeight(weight, cfg));
+    const VR = Math.round(vrFromWeight(weight, cfg));
+    const V2 = Math.round(v2FromWeight(weight, cfg));
+    const minV2 = Math.round(minV2AtAltitude(weight, elevationFt, cfg));
+    const trim = computeTrim(cg);
+    const flexTemp = (useFlex === "no" || condition !== "dry") ? undefined : suggestFlexTemp(weight, oat, effectiveRunway, cfg);
+
+    if(V2 < minV2) banners = appendBanner(banners, "error", "Computed V2 " + V2 + " < min V2 " + minV2 + " — NOT SAFE");
+    else banners = appendBanner(banners, "ok", "Computed V2 " + V2 + " ≥ min V2 " + minV2 + " — SAFE");
+
+    outputBanners(banners);
+    outputResult({ type: "A330", cfg, rw, effectiveRunway, condition, weight, cg, V1, VR, V2, trim, minV2, elevationFt, temp: flexTemp });
+  }
+
+  /* ======= Wire UI ======= */
+  document.getElementById("calcBtn").addEventListener("click", calculate);
+  // allow Enter key on inputs to trigger calculate
+  ["weight","rw","cg","elevation","temp","windComp"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener("keydown", e=>{ if(e.key==="Enter") calculate(); });
+  });
+
+  // initial compute
+  calculate();
+
+  </script>
+</body>
+</html>

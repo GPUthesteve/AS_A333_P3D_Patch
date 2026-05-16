@@ -34,7 +34,7 @@ Heading=0.00, 0.00
 
 [Particle.0]
 Lifetime=0.00, 0.00
-Type=19
+Type=25
 X Scale=0.5, 0.5
 Y Scale=0.5, 0.5
 Z Scale=0.00, 0.00

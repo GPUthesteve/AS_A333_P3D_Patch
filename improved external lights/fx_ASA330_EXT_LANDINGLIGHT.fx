@@ -9,6 +9,7 @@ Priority=0
 Spot=1
 Tower=1
 Map=1
+
 [Emitter.0]
 Lifetime=0.50, 0.50
 Delay=0.00, 0.00
@@ -34,7 +35,7 @@ Heading=0.00, 0.00
 
 [Particle.0]
 Lifetime=0.00, 0.00
-Type=19
+Type=25
 X Scale=0.5, 0.5
 Y Scale=0.5, 0.5
 Z Scale=0.00, 0.00
@@ -118,6 +119,6 @@ Bounce=0.00
 X Scale Goal=0.00
 Y Scale Goal=0.00
 Z Scale Goal=0.00
-Falloff Exponent=1.1
-Inner Cone Angle=0.5
-Outer Cone Angle=17
+Falloff Exponent=1.5
+Inner Cone Angle=0.1
+Outer Cone Angle=15
