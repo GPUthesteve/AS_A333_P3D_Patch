@@ -60,36 +60,6 @@
 						
 			</Script>
 			</Update>
-			<Update> <!-- Pitch chevron visiblity calculation-->
-			<script>
-					(A:GROUND VELOCITY, knots) 45 &gt;
-					if{
-						(L:Flightmode, number) 6 ==
-						if{
-							(L:PFD_Radalt, number) near 400 &lt;
-							if{ 
-								1(&gt;L:strikechev_vis,number)
-							}
-							els{
-								0 (&gt;L:strikechev_vis,number)
-							}
-						}
-						(L:Flightmode, number) 4 == (L:Flightmode, number) 5 == || 
-						if{
-							(L:PFD_Radalt, number) near 20 &lt;	
-							if{
-								1(&gt;L:strikechev_vis,number)
-							}
-							els{
-								0 (&gt;L:strikechev_vis,number)
-							}
-						}
-					}
-					els{
-						0 (&gt;L:strikechev_vis,number)
-					}
-			</script>
-			</Update>
 			<Update>
 			<Script>
 			<!-- Align ATT SCREEN -->
@@ -656,7 +626,11 @@
 					</Rotation>
 				</Element>
 				<Element id="Strike Pitch Chevron 333">
-					<Visibility>(L:strikechev_vis,number) 1 ==</Visibility>
+					<Visibility>
+					(L:Flightmode, number) 5 &gt;= 
+					(L:PFD_Radalt, number) 400 &lt; &amp;&amp;
+					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
+					</Visibility>
 					<Polygon id="Tail Chevron 333">
 						<Bright>True</Bright>
 						<LineWidth>2</LineWidth>
