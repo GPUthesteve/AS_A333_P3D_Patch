@@ -627,7 +627,7 @@
 				</Element>
 				<Element id="Strike Pitch Chevron 333">
 					<Visibility>
-					(L:Flightmode, number) 5 &gt;= 
+					(L:Flightmode, number) 6 &gt;= 
 					(L:PFD_Radalt, number) 400 &lt; &amp;&amp;
 					(A:GROUND VELOCITY, knots) 45 &gt; &amp;&amp;
 					</Visibility>
