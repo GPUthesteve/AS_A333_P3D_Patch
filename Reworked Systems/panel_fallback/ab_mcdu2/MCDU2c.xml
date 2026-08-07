@@ -238,9 +238,11 @@
 
 <!-- Load Fuel Page -->
 		<!-- fixed constraints, can be manually setted-->
+	(L:AB_TypeIdent, number) 51 ==
+	if{
 		400 (&gt; L:MCDU2_FP_max_Pax, number) <!-- 1-class-->
 		44.84 (&gt; L:MCDU2_FP_max_Cargo, number) <!-- per TCDS-->
-
+	} <!-- Foolproof-->
 		<!--below values are automatically setted via aircraft.cfg-->
 		(A:FUEL TANK LEFT MAIN CAPACITY, gallons) 
 		(A:FUEL TANK RIGHT MAIN CAPACITY, gallons) +
@@ -265,9 +267,9 @@
 	(A:TOTAL WEIGHT,pounds) 2204.62 / (&gt; L:MCDU2_FP_To_weight, number) <!-- Taken directly from Simulator-->
 
 	<!-- ZFW Calc -->	
-	(L:MCDU2_FP_empty_weight, number) 
-	(L:AB_MCDU2_LS_PAX, number) (L:AB_MCDU2_LS_PAX_KG, number) * 1000 / + <!--Actual weights in kg must be expressed in tonnes-->
-	(L:AB_MCDU2_LS_CAR_KG, number) + (&gt; L:MCDU2_FP_ZFW_weight, number) <!-- Cargo weights and OEW is indeed expressed in tonnes so no need to divide -->
+	(L:MCDU2_FP_empty_weight, number)
+	(L:AB_MCDU2_LS_PAX_KG, number) 1000 / (L:AB_MCDU2_LS_PAX, number) * +
+	(L:AB_MCDU2_LS_CAR_KG, number) + (&gt; L:MCDU2_FP_ZFW_weight, number)
 	
 	<!-- Pax On Board Calc -->
 	(L:FSDT_GSX_BOARDING_STATE, number) 3 &lt;=
@@ -510,7 +512,6 @@
 	(L:AB_MCDU2_LS_CG, number) 0 ==
 	if{
 		26 (&gt; L:AB_MCDU2_LS_CG, number)
-		4.0 (&gt; L:AB_MCDU2_LS_TRIM, number)
 	}
 	
 <!-- Detect Autoload -->	
@@ -575,7 +576,40 @@
 		84 (&gt; L:AB_MCDU2_LS_PAX_KG, number)
 
 	}
-				
+
+	<!-- WIP Trim Calculator-->
+	15 21 (A:CG PERCENT,percent) rng 
+	if{
+		7 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	22 23 (A:CG PERCENT,percent) rng 
+	if{
+		6 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	24 25 (A:CG PERCENT,percent) rng 
+	if{
+		5 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	26 27 (A:CG PERCENT,percent) rng 
+	if{
+		4 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	28 29 (A:CG PERCENT,percent) rng 
+	if{
+		3 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	30 31 (A:CG PERCENT,percent) rng 
+	if{
+		2 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	32 34 (A:CG PERCENT,percent) rng 
+	if{
+		1 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}
+	35 41 (A:CG PERCENT,percent) rng 
+	if{
+		0 (&gt; L:AB_MCDU2_LS_TRIM, number)
+	}		
 </Script>
 </Update>
 </SimGauge.Gauge>
