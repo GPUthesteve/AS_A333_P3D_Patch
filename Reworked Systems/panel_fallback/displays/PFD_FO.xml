@@ -4275,7 +4275,7 @@
 					</Polyline>
 					<Shift>
 						<Expression>
-							<Script>(L:IAS_SM, number) (L:AB_PFD_VLS, number) (L:AB_SPOIL_EXT_PERF_CORR_PERC, number) 100 / 10 * + - (L:FBWAlphaMax, number) (A:INCIDENCE ALPHA, radians) rddg abs / 1 min * 75 min 75 /-/ max</Script>
+							<Script>(L:IAS_SM, number) (L:AB_PFD_VLS, number) (A:SPOILERS HANDLE POSITION, percent) 100 / 10 * + - (L:FBWAlphaMax, number) (A:INCIDENCE ALPHA, radians) rddg abs / 1 min * 75 min 75 /-/ max</Script>
 						</Expression>
 						<NonlinearityTable>
 							<NonlinearityEntry>
