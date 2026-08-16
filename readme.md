@@ -70,6 +70,13 @@ by directing the ZFW,MTOW, Max Fuel from aircraft.cfg (rather than predefined va
 one can edit aircraft.cfg and make various "Weight Variant" out of this plane, eg. 242t version. 
 (or even fake 'three tank' variant, if MCDU Block fuel limit doesn't exist, too bad it does, at around 76.5t)
 
+# Flight Model Decompiling
+Majority of defined flight model (and engine model) is in `.air` file. 
+Even though it is originally compiled from assembly file, there's easier way than that- 
+decompiling into text file (and vice versa) using this tool, AirUpdate (which is shipped with AirEd., https://aero.sors.fr/hfiles/aired152.zip)
+also, this can be used directly in MSFS table formats
+<img width="1329" height="835" alt="image" src="https://github.com/user-attachments/assets/2852cbc3-67c7-4940-99d9-b1ea04893b62" />
+
 # Bug Reports & Contributing
 
 simply raise an issue, fork a branch and raise PR like what you'd do on normal github opensource repo.
