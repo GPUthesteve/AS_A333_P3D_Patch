@@ -1879,7 +1879,7 @@
 							<Bright>True</Bright>
 							<LineWidth>2</LineWidth>
 							<LineColor>#ffff00</LineColor>
-							<!--<FillColorScript>@InTrkFpaMode if{ 0x010101 } els{ 0x000000 }</FillColorScript>-->
+							<!--<FillColorScript>(L:AB_AP_HDGTRK, bool) if{ 0x010101 } els{ 0x000000 }</FillColorScript>-->
 							<FillColor>#000000</FillColor>
 							<Point>
 								<FloatPosition>-3,-3</FloatPosition>
